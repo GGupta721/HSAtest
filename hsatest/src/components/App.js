@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
+import Top from './Header/Header.js'
+import Bottom from './Footer/Footer.js'
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Testing 123..</p>
-      </header>
+      <Top/>
+      <Bottom/>
     </div>
   );
 }

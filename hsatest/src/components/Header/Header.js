@@ -1,18 +1,14 @@
 import { Component } from "react";
 import './Header.css'
 
-class Top extends Component {
+class Header extends Component {
     render() {
-
         return(   
-            <div className='Headstuff' >
-                <h1>
-                    Home Safety Assessment Form
-                </h1>
+            <div className="header-div">
+                Home Safety Assessment Form
             </div>      
         )
     }
-
 }
 
-export default Top;
+export default Header;

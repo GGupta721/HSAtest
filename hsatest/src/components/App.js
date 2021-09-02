@@ -1,17 +1,18 @@
-import React from 'react';
+import { Component } from 'react';
 import './App.css';
-import Top from './Header/Header.js'
-import Bottom from './Footer/Footer.js'
+// import Top from './Header/Header.js'
+// import Bottom from './Footer/Footer.js'
 
 
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
 
-function App() {
-  return (
-    <div className="App">
-      <Top/>
-      <Bottom/>
-    </div>
-  );
+      </div>
+    )
+  }
 }
+
 
 export default App;

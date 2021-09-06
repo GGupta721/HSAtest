@@ -1,0 +1,11 @@
+.assessment-div {
+    border-style: solid;
+    background-color: blue;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+}
+
+.assessment-div h3 {
+    text-align: center;
+}

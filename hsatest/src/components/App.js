@@ -1,14 +1,19 @@
 import { Component } from 'react';
 import './App.css';
-import Header from './Header/Header.js'
-// import Bottom from './Footer/Footer.js'
+import Assessment from "./assessment/assessment"
+import Form from "./Form/form"
+import Footer from './Footer/Footer.js'
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <div className="page-body">
+          <Assessment />
+          <Form />
+          <Footer />
+        </div>
       </div>
     )
   }

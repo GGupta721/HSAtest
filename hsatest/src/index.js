@@ -8,8 +8,6 @@ ReactDOM.render(
   document.querySelector('#root')
 );
 
-
 if(module.hot){
   module.hot.accept();
 }
-

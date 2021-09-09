@@ -21,8 +21,11 @@ class Form extends Component {
                             <OccupantDetails />
                         </div><p/>
                         <div className="c-details">
+
                             <h2> Community Details</h2><p/>
                             <CommunityDetails />
+
+                
                         </div>
                     </form>
                 </div>

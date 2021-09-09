@@ -1,31 +1,31 @@
-.details, .c-details  {
-    border-style: solid;
-    margin-left: 60px;
-    margin-right: 60px;
+.details,
+.c-details {
+  border-style: solid;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
-.details h4, .c-details h4 {
-    text-align: center;
+.details h2,
+.c-details h2 {
+  text-align: center;
 }
 
-.oc-details, .co-details {
-    margin-right: 20px;
-    margin-left: 20px;
-    display: flex;
-    padding-bottom: 20px;
-
+.oc-details,
+.co-details {
+  margin-right: 20px;
+  margin-left: 20px;
+  display: flex;
+  padding-bottom: 20px;
 }
 
 .form {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .block input {
-    width: 8cm;
+  width: 8cm;
 }
 
 .block select {
-    width: 8cm;
+  width: 8cm;
 }
-
-

@@ -17,11 +17,11 @@ class Form extends Component {
                         Date: <input type="Date" />
                         <p/>
                         <div className="details">
-                            <h4> Occupant's Details</h4><p/>
+                            <h2> Occupant's Details</h2><p/>
                             <OccupantDetails />
                         </div><p/>
                         <div className="c-details">
-                            <h4> Community Details</h4><p/>
+                            <h2> Community Details</h2><p/>
                             <CommunityDetails />
                         </div>
                     </form>

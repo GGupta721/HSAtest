@@ -7,10 +7,10 @@ function OccupantDetails() {
         <div className="oc-details">
             <section className="block">
                 Occupant's Fist Name:&emsp; <input type="text" placeholder= "Enter First Name"/><p/>
-                Number of Occupants:&emsp; <select type="text" placeholder= "Enter number of Occupants" /><p/>
-                Number of Bedrooms:&emsp; <select type="text" placeholder= "Enter number of Bedrooms" /><p/>
-                Number of Floors:&emsp; <select type="text" placeholder= "Enter number of Floors"/><p/>
-                Approximate Square:&emsp; <input type="text" placeholder= "Enter value"/><p/>
+                Number of Occupants:&emsp; <input type="value" placeholder= "Nos of Occupants" /><p/>
+                Number of Bedrooms:&emsp; <input type="value" placeholder= "Nos of Bedrooms" /><p/>
+                Number of Floors:&emsp;&emsp; <input type="value" placeholder= "Nos of Floors"/><p/>
+                Approximate Square:&emsp; <input type="value" placeholder= "Enter value"/><p/>
                 {/* Adress:&emsp; <textarea rows="4" cols="49"/><p/>
                 Geolocation (GPS Coordinate):<p/> */}
                 Address: <MapContainer/>

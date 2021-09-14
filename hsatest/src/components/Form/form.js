@@ -14,9 +14,9 @@ class Form extends Component {
                 <div>
                     <form className="form">
                         <input type="checkbox" />
-                        I Acknowledge Reading This Instruction  
-                        Assessor's First Name: <input type="text" name="fname" />&nbsp; 
-                        Assessor's Last Name: <input type="text" name="lname" />&nbsp;
+                        I Acknowledge Reading This Instruction; <br/>
+                        Assessor's First Name: <input type="text" name="fname" />&nbsp;&emsp; 
+                        Assessor's Last Name: <input type="text" name="lname" />&nbsp;&emsp;
                         Date: <input type="Date" />
                         <p/>
                         <div className="details">

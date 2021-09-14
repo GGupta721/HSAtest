@@ -3,6 +3,7 @@ import "./form.css";
 import OccupantDetails from "./details/occupantDetails";
 import CommunityDetails from "./details/communityDetails";
 import Exterior from "./Exterior/Exterior";
+import InteriorDetails from "./InteriorDetails/InteriorDetails";
 
 class Form extends Component {
     render() {
@@ -25,9 +26,15 @@ class Form extends Component {
                             <h1 className="blue"> Community Details</h1><p/>
                             <CommunityDetails />
                         </div><p/>
+
                         <div className="exterior db">
                         <h1 className="blue"> Exterior Details</h1><p/>
                          <Exterior/>
+                        </div>
+
+                        <div className="interior db">
+                        <h1 className="blue"> Interior Details</h1><p/>
+                         <InteriorDetails/>
                         </div>
                     </form>
                 </div>

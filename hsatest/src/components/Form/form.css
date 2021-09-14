@@ -68,6 +68,15 @@
 }
 
 .exterior {
+  padding: auto;
+  margin-right: 60px;
+  margin-left: 60px;
+  border-style: none;
+  padding-bottom: 40px;
+}
+
+.interior {
+  margin-top: 20px;
   margin-right: 60px;
   margin-left: 60px;
   border-style: none;

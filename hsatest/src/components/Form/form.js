@@ -1,10 +1,8 @@
-import {Component} from "react"
-import "./form.css"
+import {Component} from "react";
+import "./form.css";
 import OccupantDetails from "./details/occupantDetails";
 import CommunityDetails from "./details/communityDetails";
 import Exterior from "./Exterior/Exterior";
-
-
 
 class Form extends Component {
     render() {
@@ -29,7 +27,7 @@ class Form extends Component {
                         </div><p/>
                         <div className="exterior">
                          <Exterior/>
-                         </div>
+                        </div>
                     </form>
                 </div>
             </div>

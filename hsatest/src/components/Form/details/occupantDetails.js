@@ -1,6 +1,7 @@
 import React from "react";
 import  MapContainer from "../mapIntegration/map";
 // import map from "../mapIntegration/map";
+import Info from "../Exterior/info";
 
 function OccupantDetails() {
     return(
@@ -16,6 +17,7 @@ function OccupantDetails() {
                 Address: <MapContainer/>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             </section>
+            {/* Address:&emsp; <MapContainer/> */}
             <section className="block">
                 &emsp; Occupant's Last Name:&emsp; <input type="text" placeholder= "Enter Last Name"/><p/> 
                 <fieldset>      
@@ -24,7 +26,11 @@ function OccupantDetails() {
                     <input type="checkbox" name="house-type" value="Rental"/>Rental<br/>      
                     <input type="checkbox" name="house-type" value="Social-House"/>Social House<br/>      
                 </fieldset>  
+
             </section>
+
+            
+
         </div>
     )
 }

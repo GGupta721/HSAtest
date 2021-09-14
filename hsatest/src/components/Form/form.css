@@ -18,7 +18,7 @@
   padding-bottom: 20px;
 }
 
-.co-details{
+.co-details {
   text-align: right;
   margin-right: 20px;
   margin-left: 20px;
@@ -30,24 +30,18 @@
   font-size: 15px;
 }
 
-.block{
-display: inline-block;
-
-
+.block {
+  display: inline-block;
 }
 
 .block input {
   display: inline;
   width: 8cm;
-
-
 }
 
-.block input[type="value"]{
-
+.block input[type="value"] {
   width: 4cm;
-
-} 
+}
 
 .block select {
   width: 8cm;
@@ -56,7 +50,5 @@ display: inline-block;
 .exterior {
   margin-right: 60px;
   margin-left: 60px;
-  border-style:solid;
-
+  border-style: solid;
 }
-

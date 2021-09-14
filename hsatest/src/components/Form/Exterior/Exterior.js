@@ -65,8 +65,11 @@ function Exterior(){
                                         </p>
 
                                 </div>     
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No 
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                    <input type="radio" value="N/A" name="options" /> N/A
+                                </div>
                                 <p/>       
                                 <div>       
                                         <textarea rows="3" cols="40" placeholder="Enter Comments.." ></textarea>

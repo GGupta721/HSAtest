@@ -21,12 +21,18 @@ function OccupantDetails() {
             {/* Address:&emsp; <MapContainer/> */}
             <section className="block right">
                 &emsp; Occupant's Last Name:&emsp; <input type="text" placeholder= "Enter Last Name"/><p/> 
-                <fieldset>      
+                &emsp;House Type: &emsp;
+                <select type="dropdown">
+                    <option value="Private Owned">Private Owned</option>
+                    <option value="Rental">Rental</option>
+                    <option value="Social House">Social House</option>
+                </select>
+               {/* <fieldset>      
                     <legend>House Type</legend>      
                     <input type="radio" name="house-type" value="Privately-Owned"/>Privately Owned<br/>      
                     <input type="radio" name="house-type" value="Rental"/>Rental<br/>      
                     <input type="radio" name="house-type" value="Social-House"/>Social House<br/>      
-                </fieldset>  
+               </fieldset>  */}
 
             </section>
         </div>

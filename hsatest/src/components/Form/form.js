@@ -26,6 +26,7 @@ class Form extends Component {
                             <CommunityDetails />
                         </div><p/>
                         <div className="exterior db">
+                        <h1 className="blue"> Exterior Details</h1><p/>
                          <Exterior/>
                         </div>
                     </form>

@@ -17,15 +17,15 @@ class Form extends Component {
                         Assessor's Last Name: <input type="text" name="lname" />&nbsp;&emsp;
                         Date: <input type="Date" />
                         <p/>
-                        <div className="details">
-                            <h2> Occupant's Details</h2><p/>
+                        <div className="details db">
+                            <h1 className="blue"> Occupant's Details</h1><p/>
                             <OccupantDetails />
                         </div><p/>
-                        <div className="c-details">
-                            <h2> Community Details</h2><p/>
+                        <div className="c-details db">
+                            <h1 className="blue"> Community Details</h1><p/>
                             <CommunityDetails />
                         </div><p/>
-                        <div className="exterior">
+                        <div className="exterior db">
                          <Exterior/>
                         </div>
                     </form>

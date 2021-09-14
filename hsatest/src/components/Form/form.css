@@ -5,8 +5,12 @@
   margin-right: 60px;
 }
 
-.details h2,
-.c-details h2 {
+.db {
+  background-color: rgb(255, 255, 255);
+}
+
+.details h1,
+.c-details h1 {
   text-align: center;
 }
 
@@ -27,19 +31,34 @@
 }
 
 .form {
-  font-size: 15px;
+  font-size: 18px;
+  font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
+}
+
+.blue {
+  color: #00a5b8;
+  /* font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; */
 }
 
 .block {
   display: inline-block;
 }
 
+.left {
+  margin-right: 40px;
+}
+
+.right {
+  margin-left: 40px;
+}
+
 .block input {
   display: inline;
-  width: 8cm;
+  width: 7cm;
 }
 
 .block input[type="value"] {
+  display: inline;
   width: 4cm;
 }
 
@@ -52,3 +71,7 @@
   margin-left: 60px;
   border-style: solid;
 }
+
+/* 
+.map {
+} */

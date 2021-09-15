@@ -4,6 +4,7 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
+import './map.css'
 
 class MapContainer extends Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class MapContainer extends Component {
         >
           {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
             <div>
+              Address:&emsp;
               <input
                 {...getInputProps({
                   placeholder: 'Search Places ...',
@@ -82,8 +84,8 @@ class MapContainer extends Component {
           )}
         </PlacesAutocomplete>
 
-        <Map className="mapStyle"
-          style={{maxWidth: '25%', maxHeight: '25%', 'top': '1.5rem', overflow:'hidden' }}
+        <Map className="map"
+          style={{maxWidth: '25%', maxHeight: '25%', 'top': '2.5rem'}}
           centerAroundCurrentLocation={true}
           zoom={8}
           google={this.props.google}

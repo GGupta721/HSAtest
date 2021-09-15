@@ -12,32 +12,32 @@ class Form extends Component {
             <p/>
                 <div>
                     <form className="form">
-                        <div className="rightIndent">
-                            <input type="checkbox" />&emsp;
-                            I Acknowledge Reading This Instruction; <br/><br/>&emsp;&nbsp;&nbsp;&nbsp;
-                            Assessor's First Name: <input type="text" name="fname" />&nbsp;&emsp; 
-                            Assessor's Last Name: <input type="text" name="lname" />&nbsp;&emsp;
-                            Date: <input type="Date" />
-                        </div>
-                        <p/>
-                        <div className="details db">
-                            <h1 className="blue"> Occupant's Details</h1><p/>
-                            <OccupantDetails />
-                        </div><p/>
-                        <div className="c-details db">
-                            <h1 className="blue"> Community Details</h1><p/>
-                            <CommunityDetails />
-                        </div><p/>
+                            <div className="rightIndent">
+                                <input type="checkbox" />&emsp;
+                                I Acknowledge Reading This Instruction; <br/><br/>&emsp;&nbsp;&nbsp;&nbsp;
+                                Assessor's First Name: <input type="text" name="fname" />&nbsp;&emsp; 
+                                Assessor's Last Name: <input type="text" name="lname" />&nbsp;&emsp;
+                                Date: <input type="Date" />
+                            </div>
+                            <p/>
+                            <div className="details db">
+                                <h1 className="blue"> Occupant's Details</h1><p/>
+                                <OccupantDetails />
+                            </div><p/>
+                            <div className="c-details db">
+                                <h1 className="blue"> Community Details</h1><p/>
+                                <CommunityDetails />
+                            </div><p/>
 
-                        <div className="exterior db">
-                            <h1 className="blue"> Exterior Details</h1><p/>
-                            <Exterior/>
-                        </div>
+                            <div className="exterior db">
+                                <h1 className="blue"> Exterior Details</h1><p/>
+                                <Exterior/>
+                            </div>
 
-                        <div className="interior db">
-                            <h1 className="blue"> Interior Details</h1><p/>
-                            <InteriorDetails/>
-                        </div>
+                            <div className="interior db">
+                                <h1 className="blue"> Interior Details</h1><p/>
+                                <InteriorDetails/>
+                            </div>
                     </form>
                 </div>
             </div>

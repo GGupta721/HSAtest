@@ -14,9 +14,10 @@ function OccupantDetails() {
                 {/* Adress:&emsp; <textarea rows="4" cols="49"/><p/>
                 Geolocation (GPS Coordinate):<p/> */}
                 {/* Address:&emsp; <input type="text" placeholder= "Enter Address"/><p/>  */}
-                <div>
+                {/* <div>
                     <MapContainer/>
-                </div>
+                </div> */}
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             </section>
             {/* Address:&emsp; <MapContainer/> */}
             <section className="block right">
@@ -26,7 +27,10 @@ function OccupantDetails() {
                     <option value="Private Owned">Private Owned</option>
                     <option value="Rental">Rental</option>
                     <option value="Social House">Social House</option>
-                </select>
+                </select><br/>&emsp;
+                <div>
+                    <MapContainer/>
+                </div>
             </section>
         </div>
     )

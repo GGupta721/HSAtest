@@ -8,7 +8,7 @@ function Exterior(){
                 <div class="form-header ">
                         <section className="questions">
                                 <h3>House Details</h3>
-                                <i class="comment icon"/>&emsp;<div className="ques">1. Is the house address visible ?</div>&emsp;
+                                <div className="ques">1. Is the house address visible ?</div>&emsp;
                                 <input type="radio" value="Yes" name="options" /> Yes &emsp;
                                 <input type="radio" value="No" name="options" /> No &emsp;
                                 <input type="radio" value="N/A" name="options" /> N/A

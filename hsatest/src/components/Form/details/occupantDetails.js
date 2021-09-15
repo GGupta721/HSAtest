@@ -13,9 +13,9 @@ function OccupantDetails() {
                 Approximate Square:&emsp; <input type="value" placeholder= "Enter value"/><p/>
                 {/* Adress:&emsp; <textarea rows="4" cols="49"/><p/>
                 Geolocation (GPS Coordinate):<p/> */}
-                Address:&emsp; <input type="text" placeholder= "Enter Address"/><p/> 
+                {/* Address:&emsp; <input type="text" placeholder= "Enter Address"/><p/>  */}
                 <div>
-                    {/* <MapContainer/> */}
+                    <MapContainer/>
                 </div>
             </section>
             {/* Address:&emsp; <MapContainer/> */}

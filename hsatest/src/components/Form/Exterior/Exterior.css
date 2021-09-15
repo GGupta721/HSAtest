@@ -3,30 +3,41 @@
   margin-left: 20px;
   margin-top: 20px;
 }
-/* 
-.textfield input{
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
- */
 
 .info.right {
   float: right;
   width: 400px;
-  /* max-height: 100px; */
+  max-height: 120px;
   border: 3px solid burlywood;
   padding: 10px;
   vertical-align: sub;
+  overflow-y: scroll;
+}
 
-  /* overflow-y: scroll; */
+.questions {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 .info {
   font-size: 15px;
 }
 
-.radioOptions{
-margin-left: 60px;
-margin-right: 80px;
+.radioOptions {
+  margin-left: 60px;
+  margin-right: 80px;
+}
+
+.exterior {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin-right: 60px;
+  margin-left: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment.icon {
+  vertical-align: super;
 }

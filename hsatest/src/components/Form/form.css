@@ -3,6 +3,7 @@
   border-style: none;
   margin-left: 60px;
   margin-right: 60px;
+  /* z-index: 2; */
 }
 
 .db {
@@ -20,7 +21,7 @@
   margin-left: 20px;
   display: flex;
   padding-bottom: 20px;
-  text-align: right ;
+  text-align: right;
 }
 
 .co-details {
@@ -38,7 +39,6 @@
 
 .blue {
   color: #00a5b8;
-  /* font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; */
 }
 
 .block {
@@ -46,11 +46,13 @@
 }
 
 .left {
-  margin-right: 40px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .right {
-  margin-left: 40px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .block input {
@@ -67,22 +69,11 @@
   width: 8cm;
 }
 
-.exterior {
-  padding: auto;
-  margin-right: 60px;
-  margin-left: 60px;
-  border-style: none;
-  padding-bottom: 40px;
-}
-
-.interior {
-  margin-top: 20px;
-  margin-right: 60px;
-  margin-left: 60px;
-  border-style: none;
-}
-
 /* 
 .map {
 } */
 
+.rightIndent {
+  margin-left: 25px;
+  margin-right: 5px;
+}

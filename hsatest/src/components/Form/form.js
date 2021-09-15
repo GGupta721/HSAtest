@@ -12,11 +12,13 @@ class Form extends Component {
             <p/>
                 <div>
                     <form className="form">
-                        <input type="checkbox" />
-                        I Acknowledge Reading This Instruction; <br/>
-                        Assessor's First Name: <input type="text" name="fname" />&nbsp;&emsp; 
-                        Assessor's Last Name: <input type="text" name="lname" />&nbsp;&emsp;
-                        Date: <input type="Date" />
+                        <div className="rightIndent">
+                            <input type="checkbox" />&emsp;
+                            I Acknowledge Reading This Instruction; <br/><br/>&emsp;&nbsp;&nbsp;&nbsp;
+                            Assessor's First Name: <input type="text" name="fname" />&nbsp;&emsp; 
+                            Assessor's Last Name: <input type="text" name="lname" />&nbsp;&emsp;
+                            Date: <input type="Date" />
+                        </div>
                         <p/>
                         <div className="details db">
                             <h1 className="blue"> Occupant's Details</h1><p/>
@@ -28,13 +30,13 @@ class Form extends Component {
                         </div><p/>
 
                         <div className="exterior db">
-                        <h1 className="blue"> Exterior Details</h1><p/>
-                         <Exterior/>
+                            <h1 className="blue"> Exterior Details</h1><p/>
+                            <Exterior/>
                         </div>
 
                         <div className="interior db">
-                        <h1 className="blue"> Interior Details</h1><p/>
-                         <InteriorDetails/>
+                            <h1 className="blue"> Interior Details</h1><p/>
+                            <InteriorDetails/>
                         </div>
                     </form>
                 </div>

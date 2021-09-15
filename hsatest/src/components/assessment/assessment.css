@@ -1,12 +1,12 @@
 .assessment-div {
-    border-style: solid;
-    background-color: #d6631f!important;
-    color: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 30px;
+  border-style: solid;
+  background-color: #d6631f !important;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
 }
 
 .assessment-div h3 {
-    text-align: center;
+  text-align: center;
 }

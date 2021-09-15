@@ -6,8 +6,8 @@ function InteriorDetails(){
                 <div class="form-header">
                         <section className="questions">
                                 <h3 >SMOKE / CO DETECTORS</h3>
-                                <BsPeopleCircle/>&emsp;<label>8. Are there smoke/CO detectors installed in the home?
-                                Smoke: </label>&emsp;
+                                <div className="ques">8. Are there smoke/CO detectors installed in the home?
+                                Smoke: </div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> Smoke/CO detectors alert the occupants in the house of the danger of a fire or elevated carbon monoxide levels.<br/>
@@ -18,19 +18,20 @@ function InteriorDetails(){
                                 </div>      
                                 <input type="radio" value="Yes" name="options" /> Yes &emsp;
                                 <input type="radio" value="No" name="options" /> No
-                                <p/> 
-                                <label>8a. Do they work when tested? Co: </label>&emsp;      
+                                <p/> &emsp; &emsp; 
+                                <div className="ques">8a. Do they work when tested? Co: </div>&emsp;      
                                 <input type="radio" value="Yes" name="options" /> Yes &emsp;
                                 <input type="radio" value="No" name="options" /> No      
+                                <p/>
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>FIRE EXTINGUISHERS:</h3>
-                                <BsPeopleCircle/>&emsp;<label>9. Is there a minimum of 1 fire 
-                                extinguisher on each floor? </label>&emsp;
+                                <div className="ques">9. Is there a minimum of 1 fire 
+                                extinguisher on each floor? </div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> In case a small fire takes place, 
@@ -46,14 +47,14 @@ function InteriorDetails(){
                                 <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>DOORS AND WINDOWS:</h3>
-                                <BsPeopleCircle/>&emsp;<label>10. Are all doors and windows clear 
-                                of obstructions and do they open? </label>&emsp;
+                                <div className="ques">10. Are all doors and windows clear 
+                                of obstructions and do they open? </div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> The presence of mould indicates an underlying issue. 
@@ -66,23 +67,23 @@ function InteriorDetails(){
                                 <input type="radio" value="Yes" name="options" /> Yes &emsp;
                                 <input type="radio" value="No" name="options" /> No
                                 <p/>    
-                                <label>11. Is the home free of black mould-like stains, a musty scent
+                                <div className="ques">11. Is the home free of black mould-like stains, a musty scent
                                 or any evidence of water leaking or seeping in? <br/><br/>
-                                If no, EHO / Remediation Contact advised?</label>&emsp;      
+                                If no, EHO / Remediation Contact advised?</div>&emsp;      
                                 <input type="radio" value="Yes" name="options" /> Yes &emsp;
                                 <input type="radio" value="No" name="options" /> No
                                 <p/> 
                                 Name:&emsp; <input type="text" />&emsp;
                                 Phone Number:&emsp; <input type="text" /><p/> 
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>STAIRCASE AND HANDRAILS:</h3>
-                                <BsPeopleCircle/>&emsp;<label>12. Is the staircase clear of 
-                                obstructions and are the stairs and handrails secure?</label>&emsp;
+                                <div className="ques">12. Is the staircase clear of 
+                                obstructions and are the stairs and handrails secure?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> : Obstructions on the stairs can be a trip hazard and can make it hard for people to escape the building safely
@@ -97,14 +98,14 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>PLUMBING:</h3>
-                                <BsPeopleCircle/>&emsp;<label>13. Are the bathroom, kitchen and/or 
-                                laundry room sinks free of leaks?</label>&emsp;
+                                <div className="ques">13. Are the bathroom, kitchen and/or 
+                                laundry room sinks free of leaks?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> Mould and damp conditions can cause a variety of health issues. 
@@ -118,14 +119,14 @@ function InteriorDetails(){
                                 <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>ELECTRICAL:</h3>
-                                <BsPeopleCircle/>&emsp;<label>14. Is the electrical panel easy 
-                                to access and free from clutter? </label>&emsp;
+                                <div className="ques">14. Is the electrical panel easy 
+                                to access and free from clutter? </div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> In the case of an emergency, rescue personnel may need to turn off the electricity at the panel.<br/>
@@ -137,13 +138,13 @@ function InteriorDetails(){
                                 <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>15. Are outlets installed within 6 feet 
-                                of sinks, baths or any other water source GFCI outlets? </label>&emsp;
+                                <div className="ques">15. Are outlets installed within 6 feet 
+                                of sinks, baths or any other water source GFCI outlets? </div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> There is a high chance that someone using an item that is plugged in near water could suffer an electric shock if
@@ -156,14 +157,14 @@ function InteriorDetails(){
                                 <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>16. Are electrical outlets in all rooms in the house functioning
+                                <div className="ques">16. Are electrical outlets in all rooms in the house functioning
                                 and there have been no problems with any of the outlets?
-                                </label>&emsp;
+                                </div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> Proper electrical current will keep the wires from overheating when used. 
@@ -176,14 +177,14 @@ function InteriorDetails(){
                                 <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>17. Do all light switches and outlets have covers and are they
+                                <div className="ques">17. Do all light switches and outlets have covers and are they
                                 free from discolouration?
-                                </label>&emsp;
+                                </div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> : PLight switch and outlet covers are there to prevent any possible shock hazards. 
@@ -197,14 +198,14 @@ function InteriorDetails(){
                                 <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>HEATING SYSTEMS:</h3>
-                                <BsPeopleCircle/>&emsp;<label>18. Is the furnace clear of obstructions 
-                                and combustible materials?</label>&emsp;
+                                <div className="ques">18. Is the furnace clear of obstructions 
+                                and combustible materials?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> Furnaces require at least 2 feet of clearance around them to remain cool and not overheat. 
@@ -218,14 +219,14 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>19. Does the furnace appear to be in good condition? 
+                                <div className="ques">19. Does the furnace appear to be in good condition? 
                                 Is it clean and free from dust and discoloration on the main body and
-                                venting?</label>&emsp;
+                                venting?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> A furnace is used to heat a home. It also exchanges the air in the home, meaning it freshens the air occupants breathe. 
@@ -239,15 +240,15 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>HEATING SYSTEMS:</h3>
-                                <BsPeopleCircle/>&emsp;<label>20. Is there a shutoff valve on or near 
+                                <div className="ques">20. Is there a shutoff valve on or near 
                                 the furnace and does the furnace turn on right away when the thermostat 
-                                is turned up? </label>&emsp;
+                                is turned up? </div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> In the case of an emergency, the responders may need to turn off the gas valve to the furnace. 
@@ -262,14 +263,14 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>BASEBOARDS AND SPACE HEATERS:</h3>
-                                <BsPeopleCircle/>&emsp;<label>21. Are the baseboards and space heaters clear of
-                                obstructions?</label>&emsp;
+                                <div className="ques">21. Are the baseboards and space heaters clear of
+                                obstructions?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> : Baseboards and space heaters operate at high temperatures. 
@@ -283,13 +284,13 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
                         
                         <section className="questions">
-                                <label>22. Are the baseboards and space heaters functioning
-                                properly? When you turn up the thermostat do, they heat up?</label>&emsp;
+                                <div className="ques">22. Are the baseboards and space heaters functioning
+                                properly? When you turn up the thermostat do, they heat up?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> Baseboards and space heaters operate at high temperatures. 
@@ -303,13 +304,13 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>23. Do the baseboards appear to be in good condition? Are
-                                they free from dust and discoloration?</label>&emsp;
+                                <div className="ques">23. Do the baseboards appear to be in good condition? Are
+                                they free from dust and discoloration?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> If the baseboards are discoloured with blackish, brown stains they may be over heating which could eventually cause a fire<br/>
@@ -322,14 +323,14 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>WOOD STOVE:</h3>
-                                <BsPeopleCircle/>&emsp;<label>24. Is the Exterior chimney free of any cracks, missing bricks
-                                or chimney cap, or black creosote buildup?</label>&emsp;
+                                <div className="ques">24. Is the Exterior chimney free of any cracks, missing bricks
+                                or chimney cap, or black creosote buildup?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> A chimney with obvious cracks, missing bricks, missing chimney cap, 
@@ -343,13 +344,13 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>25. Does the wood stove and interior chimney appear to be in
-                                good condition? Is the glass door free from cracks and black discolouration?</label>&emsp;
+                                <div className="ques">25. Does the wood stove and interior chimney appear to be in
+                                good condition? Is the glass door free from cracks and black discolouration?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> If a wood stove or chimney has signs of leaking joints or any cracks or discolouration, 
@@ -363,14 +364,14 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>26. Is there a working smoke/CO detector centrally located on
+                                <div className="ques">26. Is there a working smoke/CO detector centrally located on
                                 the ceiling but not closer than 20 feet of the wood stove or
-                                fireplace?</label>&emsp;
+                                fireplace?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> It is important not to put the detector too close to the fireplace or woodstove because quite often smoke is released in the home while the 
@@ -385,13 +386,13 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>27. Is there a fire extinguisher within 20 feet of the wood stove
-                                or fireplace but not closer than 10 feet?</label>&emsp;
+                                <div className="ques">27. Is there a fire extinguisher within 20 feet of the wood stove
+                                or fireplace but not closer than 10 feet?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> Fire extinguishers should be kept a minimum of 10 feet away from a woodstove or fireplace. 
@@ -405,14 +406,14 @@ function InteriorDetails(){
                                 <input type="radio" value="N/A" name="options" /> N/A 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
                                 <h3>HOME SAFETY PLAN:</h3>
-                                <BsPeopleCircle/>&emsp;<label>28. Does the household have a safety plan and a meeting
-                                location in place?</label>&emsp;
+                                <div className="ques">28. Does the household have a safety plan and a meeting
+                                location in place?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> A safety plan will let everyone in the home know how to escape and get to a safe meeting location. 
@@ -428,12 +429,12 @@ function InteriorDetails(){
                                 <input type="radio" value="No" name="options" /> No 
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>29. Is there a list of emergency numbers and contacts?</label>&emsp;
+                                <div className="ques">29. Is there a list of emergency numbers and contacts?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> In the case of an emergency, there should be a list of emergency numbers close to the phone for anyone who is there to use.<br/>
@@ -445,12 +446,12 @@ function InteriorDetails(){
                                 <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section><br/>
 
                         <section className="questions">
-                                <label>30. Is there a phone that works without power?</label>&emsp;
+                                <div className="ques">30. Is there a phone that works without power?</div>&emsp;
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> If there is a power outage, any house phones that operate on electricity will not work.<br/>
@@ -462,7 +463,7 @@ function InteriorDetails(){
                                 <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder="Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>
                         </section>
                 </div>

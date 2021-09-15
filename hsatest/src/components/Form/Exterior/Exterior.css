@@ -1,32 +1,35 @@
 .form-header {
   margin-right: 20px;
   margin-left: 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .info.right {
   float: right;
-  width: 400px;
-  max-height: 120px;
-  border: 3px solid burlywood;
+  width: 500px;
+  max-height: 125px;
+  border: 3px solid rgb(235, 186, 122);
+  background-color: rgb(253, 240, 222);
   padding: 10px;
-  vertical-align: sub;
+  vertical-align: baseline;
   overflow-y: scroll;
+  border-radius: 8px;
 }
 
 .questions {
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+}
+
+.ques {
+  font-size: 18px;
+  inline-size: 650px;
+  /* width: 50px; */
 }
 
 .info {
   font-size: 15px;
-}
-
-.radioOptions {
-  margin-left: 60px;
-  margin-right: 80px;
 }
 
 .exterior {
@@ -34,8 +37,8 @@
   padding-left: 20px;
   margin-right: 60px;
   margin-left: 60px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .comment.icon {

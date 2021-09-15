@@ -62,16 +62,12 @@
 
 .block input[type="value"] {
   display: inline;
-  width: 4cm;
+  width: 7cm;
 }
 
 .block select {
   width: 8cm;
 }
-
-/* 
-.map {
-} */
 
 .rightIndent {
   margin-left: 25px;

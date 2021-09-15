@@ -83,7 +83,7 @@ class MapContainer extends Component {
         </PlacesAutocomplete>
 
         <Map className="mapStyle"
-          style={{width: '25%', height: '25%', 'top': '1.5rem', overflow:'hidden' }}
+          style={{maxWidth: '25%', maxHeight: '25%', 'top': '1.5rem', overflow:'hidden' }}
           centerAroundCurrentLocation={true}
           zoom={8}
           google={this.props.google}

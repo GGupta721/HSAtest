@@ -7,7 +7,7 @@
 h1 {
   font-size: 40px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   font-weight: bold;
   text-align: center;
 }
@@ -18,5 +18,16 @@ h3 {
 }
 
 input {
-  color: #999;
+  background-color: #eee !important;
+  color: #999 !important;
+}
+
+textarea {
+  background-color: #eee !important;
+  color: #999 !important;
+}
+
+select {
+  background-color: #eee !important;
+  color: black !important;
 }

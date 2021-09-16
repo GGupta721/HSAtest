@@ -1,36 +1,40 @@
 import React from "react";
 import  MapContainer from "../mapIntegration/map";
 import Info from "../Exterior/info";
+import Province from "./province"
+import Territory from "./territory";
+
 
 function OccupantDetails() {
     return(
         <div className="oc-details">
             <section className="block left">
-                Occupant's Fist Name:&emsp; <input type="text" placeholder= "Enter First Name"/><p/>
+                Occupant's First Name:&emsp; <input type="text" placeholder= "Enter First Name"/><p/>
                 Number of Occupants:&emsp; <input type="value" placeholder= "Number of Occupants" /><p/>
                 Number of Bedrooms:&emsp; <input type="value" placeholder= "Number of Bedrooms" /><p/>
                 Number of Floors:&emsp;&emsp; <input type="value" placeholder= "Number of Floors"/><p/>
-                Approximate Square:&emsp; <input type="value" placeholder= "Enter value"/><p/>
-                {/* Adress:&emsp; <textarea rows="4" cols="49"/><p/>
-                Geolocation (GPS Coordinate):<p/> */}
-                {/* Address:&emsp; <input type="text" placeholder= "Enter Address"/><p/>  */}
-                {/* <div>
-                    <MapContainer/>
-                </div> */}
+                Approximate Square Footage:&emsp; <input type="value" placeholder= "Enter value"/><p/>
+                &emsp;House Type: &emsp;
+                <select type="dropdown">
+                    <option value="Owned">Private Owned</option>
+                    <option value="Rented">Rental</option>
+                    <option value="Band Housing">Social House</option>
+                </select><br/><p/>
+                
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             </section>
             {/* Address:&emsp; <MapContainer/> */}
             <section className="block right">
                 &emsp; Occupant's Last Name:&emsp; <input type="text" placeholder= "Enter Last Name"/><p/> 
-                &emsp;House Type: &emsp;
-                <select type="dropdown">
-                    <option value="Private Owned">Private Owned</option>
-                    <option value="Rental">Rental</option>
-                    <option value="Social House">Social House</option>
-                </select><br/>&emsp;
-                <div>
+                Unit/Suite Number: &emsp; <input type="value" placeholder="Enter Unit Number"/><p/>
+                Street Name: &emsp; <input type="text" placeholder="Enter Street Name"/><p/>
+                Street Number: &emsp; <input type="value" placeholder="Enter Street Number"/><p/> 
+                Postal Code: &emsp; <input type="text" placeholder="Enter Postal Code"/><p/>
+                Province:&emsp; <Province /> <p/>
+                Territory:&emsp; < Territory /> <p/>
+                {/* <div>
                     <MapContainer/>
-                </div>
+                </div> */}
             </section>
         </div>
     )

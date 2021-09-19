@@ -6,12 +6,31 @@ import Exterior from "./Exterior/Exterior";
 import InteriorDetails from "./InteriorDetails/InteriorDetails";
 
 class Form extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          value: 'Your filled form has been submitted.'
+        };
+    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+    
+      handleChange(event) {
+        this.setState({value: event.target.value});
+      }
+    
+      handleSubmit(event) {
+        alert('An essay was submitted: ' + this.state.value);
+        event.preventDefault();
+      }
+
     render() {
         return (
             <div className="form-div">
             <p/>
                 <div>
-                    <form className="form">
+                    <form className="form" onSubmit={this.handleSubmit}>
                             <div className="rightIndent">
                                 <input type="checkbox" />&emsp;
                                 I Acknowledge Reading This Instruction; <br/><br/>&emsp;&nbsp;&nbsp;&nbsp;
@@ -38,6 +57,7 @@ class Form extends Component {
                                 <h1 className="blue"> Interior Details</h1><p/>
                                 <InteriorDetails/>
                             </div>
+                            <input type="submit" value="submit"></input>
                     </form>
                 </div>
             </div>

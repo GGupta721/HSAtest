@@ -27,7 +27,7 @@ function OccupantDetails() {
                 &emsp; Occupant's Last Name:&emsp; <input type="text" placeholder= "Enter Last Name"/><p/> 
                 Unit/Suite Number: &emsp; <input type="value" placeholder="Enter Unit Number"/><p/>
                 Street Number: &emsp; <input type="value" placeholder="Enter Street Number"/><p/> 
-                Street Name: &emsp; <input type="text" placeholder="Enter Street Name"/><p/>               
+                Street Name: &emsp; <input type="text"   placeholder="Enter Street Name"/><p/>               
                 Postal Code: &emsp; <input type="text" placeholder="Enter Postal Code"/><p/>
                 Province:&emsp; <Province /> <p/>
                 Territory:&emsp; < Territory /> <p/>

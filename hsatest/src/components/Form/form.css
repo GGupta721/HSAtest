@@ -22,6 +22,7 @@
   display: flex;
   padding-bottom: 20px;
   text-align: right;
+  
 }
 
 .co-details {
@@ -66,10 +67,12 @@
 }
 
 .block select {
-  width: 8cm;
+  width: 7cm;
 }
 
 .rightIndent {
   margin-left: 25px;
   margin-right: 5px;
 }
+
+

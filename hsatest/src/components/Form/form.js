@@ -32,7 +32,7 @@ class Form extends Component {
                 <div>
                     <form className="form" onSubmit={this.handleSubmit}>
                             <div className="rightIndent">
-                                <input type="checkbox" />&emsp;
+                            &emsp;&emsp;<input type="checkbox" />&emsp;
                                 I Acknowledge Reading This Instruction; <br/><br/>&emsp;&nbsp;&nbsp;&nbsp;
                                 Assessor's First Name: <input type="text" name="fname" />&nbsp;&emsp; 
                                 Assessor's Last Name: <input type="text" name="lname" />&nbsp;&emsp;

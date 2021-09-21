@@ -31,3 +31,8 @@ select {
   background-color: #eee !important;
   color: black !important;
 }
+
+.center {
+  margin: auto;
+  width: 90%;
+}

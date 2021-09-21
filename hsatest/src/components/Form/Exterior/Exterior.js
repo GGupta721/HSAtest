@@ -9,9 +9,11 @@ function Exterior(){
                         <section className="questions">
                                 <h3>House Details</h3>
                                 <div className="ques">1. Is the house address visible ?</div>&emsp;
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No &emsp;
-                                <input type="radio" value="N/A" name="options" /> N/A
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                    <input type="radio" value="N/A" name="options" /> N/A
+                                </div>
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> If outside safety or rescue personnel respond, 
@@ -24,7 +26,7 @@ function Exterior(){
                                 </div> 
                                 <p/>
                                 <div>       
-                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                        <textarea rows="4" cols="60" placeholder=" Enter Comments.." focus ></textarea>
                                 </div><p/>
                                 
                                 
@@ -33,9 +35,11 @@ function Exterior(){
                         <section className="questions">
                                 <h3 >Exterior Fuel Tank or Gas Meter</h3>
                                 <div className="ques">2. Do they have visible shutoff valves ?</div>&emsp;      
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No &emsp;
-                                <input type="radio" value="N/A" name="options" /> N/A
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                    <input type="radio" value="N/A" name="options" /> N/A
+                                </div>
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> During an emergency, the gas or propane may
@@ -78,6 +82,11 @@ function Exterior(){
                                 <h3 >Steps And Handrails</h3>
                                 <div className="ques">4. Are the steps and handrails 
                                 free of rot and cracks? Are the stairs and handrails secure?</div>&emsp;
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                    <input type="radio" value="N/A" name="options" /> N/A
+                                </div>
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> Steps and handrails that are in poor shape may break when someone is using them. 
@@ -85,10 +94,7 @@ function Exterior(){
                                                 <b>Recommendation:</b> If <u>No</u> - Recommend steps and/or handrails be repaired and secured.
                                         </p>
 
-                                </div>      
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No &emsp;
-                                <input type="radio" value="N/A" name="options" /> N/A 
+                                </div>       
                                 <p/>       
                                 <div>       
                                         <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
@@ -98,8 +104,10 @@ function Exterior(){
                         <section className="questions">
                                 <div className="ques">5. Is the walkway and stairs free
                                 from trip hazards?</div>&emsp;
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No 
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                </div> 
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> Trip hazards could cause injuries to people coming or going from the home. 
@@ -120,9 +128,11 @@ function Exterior(){
                                 are they GFCI outlets; is there proper current flow to the outlets; does the 
                                 does the outlet breaker work?
                                 </div>&emsp;    
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No &emsp;
-                                <input type="radio" value="N/A" name="options" /> N/A
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                    <input type="radio" value="N/A" name="options" /> N/A
+                                </div>
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> If proper outlets and covers are not in place, there is a risk of electric shock.<br/>
@@ -139,6 +149,10 @@ function Exterior(){
                                 <h3 >Exterior Door</h3>
                                 <div className="ques">7. Are all exterior doors clear of obstructions
                                 and in good working order so they can be used in case of an emergency? </div>&emsp;
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                </div>
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> In an emergency, if any of the exits are blocked, 
@@ -147,8 +161,6 @@ function Exterior(){
                                         </p>
 
                                 </div>      
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
                                         <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>

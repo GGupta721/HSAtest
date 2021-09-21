@@ -11,7 +11,7 @@
   border: 3px solid rgb(235, 186, 122);
   background-color: rgb(253, 240, 222);
   padding: 10px;
-  vertical-align: baseline;
+  vertical-align: super;
   overflow-y: scroll;
   border-radius: 8px;
 }

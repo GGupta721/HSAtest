@@ -10,10 +10,10 @@ function OccupantDetails() {
         <div className="oc-details">
             <section className="block left">
                 Occupant's First Name:&emsp; <input type="text" placeholder= "Enter First Name"/><p/>
-                Number of Occupants:&emsp; <input type="value" placeholder= "Number of Occupants" /><p/>
-                Number of Bedrooms:&emsp; <input type="value" placeholder= "Number of Bedrooms" /><p/>
-                Number of Floors:&emsp;&emsp; <input type="value" placeholder= "Number of Floors"/><p/>
-                Approximate Square Footage:&emsp; <input type="value" placeholder= "Enter value"/><p/>
+                Number of Occupants:&emsp; <input type="number" placeholder= "Number of Occupants" step="1"/><p/>
+                Number of Bedrooms:&emsp; <input type="number" placeholder= "Number of Bedrooms" step="1" /><p/>
+                Number of Floors:&emsp;&emsp; <input type="number" placeholder= "Number of Floors" step="1"/><p/>
+                Approximate Square Footage:&emsp; <input type="number" placeholder= "Enter value" step="0.1"/><p/>
                 &emsp;House Type: &emsp;
                 <select type="dropdown">
                     <option value="Owned">Private Owned</option>

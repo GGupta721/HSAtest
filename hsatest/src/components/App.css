@@ -19,12 +19,12 @@ h3 {
 
 input {
   background-color: #eee !important;
-  color: #999 !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 textarea {
   background-color: #eee !important;
-  color: #999 !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 select {

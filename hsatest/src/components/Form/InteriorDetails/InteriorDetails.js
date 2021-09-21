@@ -8,6 +8,10 @@ function InteriorDetails(){
                                 <h3 >SMOKE / CO DETECTORS</h3>
                                 <div className="ques">8. Are there smoke/CO detectors installed in the home?
                                 Smoke: </div>&emsp;
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                </div>
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> Smoke/CO detectors alert the occupants in the house of the danger of a fire or elevated carbon monoxide levels.<br/>
@@ -15,13 +19,13 @@ function InteriorDetails(){
                                                 change batteries and check expiration dates. Recommend a minimum of 1 smoke/CO detector on each floor.
                                         </p>
 
-                                </div>      
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No
-                                <p/> &emsp; &emsp; 
+                                </div>
+                                &emsp;&emsp; 
                                 <div className="ques">8a. Do they work when tested? Co: </div>&emsp;      
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No      
+                                <div className="radioOptions">
+                                    <input type="radio" value="Yes" name="options" />Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                </div>      
                                 <p/>
                                 <div>       
                                         <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
@@ -32,6 +36,10 @@ function InteriorDetails(){
                                 <h3>FIRE EXTINGUISHERS:</h3>
                                 <div className="ques">9. Is there a minimum of 1 fire 
                                 extinguisher on each floor? </div>&emsp;
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                </div>
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> In case a small fire takes place, 
@@ -43,8 +51,6 @@ function InteriorDetails(){
                                         </p>
 
                                 </div>      
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No
                                 <p/>       
                                 <div>       
                                         <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
@@ -55,6 +61,10 @@ function InteriorDetails(){
                                 <h3>DOORS AND WINDOWS:</h3>
                                 <div className="ques">10. Are all doors and windows clear 
                                 of obstructions and do they open? </div>&emsp;
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                </div>
                                 <div className="info right">
                                         <p>
                                                 <b>Consideration:</b> The presence of mould indicates an underlying issue. 
@@ -64,17 +74,18 @@ function InteriorDetails(){
                                         </p>
 
                                 </div>      
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No
                                 <p/>    
+
                                 <div className="ques">11. Is the home free of black mould-like stains, a musty scent
                                 or any evidence of water leaking or seeping in? <br/><br/>
                                 If no, EHO / Remediation Contact advised?</div>&emsp;      
-                                <input type="radio" value="Yes" name="options" /> Yes &emsp;
-                                <input type="radio" value="No" name="options" /> No
+                                <div className="radioOptions">   
+                                    <input type="radio" value="Yes" name="options" /> Yes &emsp;
+                                    <input type="radio" value="No" name="options" /> No &emsp;
+                                </div>
                                 <p/> 
-                                Name:&emsp; <input type="text" />&emsp;
-                                Phone Number:&emsp; <input type="text" /><p/> 
+                                Name:&emsp; <input type="text" placeholder="Enter Name"/>&emsp;
+                                Phone Number:&emsp; <input type="text" placeholder="Enter Number"/><p/> 
                                 <div>       
                                         <textarea rows="4" cols="60" placeholder=" Enter Comments.." ></textarea>
                                 </div><p/>

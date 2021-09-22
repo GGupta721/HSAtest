@@ -1,0 +1,25 @@
+.form-div {
+    border-style: solid;
+}
+
+.occ-div, .comm-div, .ext-div {
+    border-style: solid;
+    margin-left: 35px;
+    margin-right: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.occ-div h4, .comm-div h4, .ext-div h4 {
+    text-align: center;
+}
+
+.occ-details, .comm-details, .ext-details {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 15px;
+}

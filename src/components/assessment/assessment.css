@@ -1,0 +1,15 @@
+.assessment-div {
+  border-style: solid;
+  background-color: #d6631f !important;
+  color: white;
+}
+
+.assessment-div h3 {
+  text-align: center;
+}
+
+.assessment-body {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 15px;
+}

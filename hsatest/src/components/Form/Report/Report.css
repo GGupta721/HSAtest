@@ -1,0 +1,40 @@
+.report {
+    margin-top: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
+    border-style: none;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /* display: flex;
+    flex-direction: column; */
+  }
+
+.pageContent{
+    margin-left: 250px; 
+    
+}
+
+
+  table{
+    border: 2px solid black; 
+     
+  }
+
+
+  th {
+    border:1px solid black;
+    color:  #d6631f; 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+  }
+
+  td {
+    border:1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }

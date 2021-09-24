@@ -5,6 +5,7 @@ import CommunityDetails from "./details/communityDetails";
 import Exterior from "./Exterior/Exterior";
 import InteriorDetails from "./InteriorDetails/InteriorDetails";
 import Router from "../Router";
+import Report from "./Report/Report";
 
 class Form extends Component {
     constructor(props) {
@@ -68,6 +69,15 @@ class Form extends Component {
                                 </div>
                             </Router>
 
+                            <div className="interior db">
+                                <h1 className="blue"> Interior Details</h1><p/>
+                                <InteriorDetails/>
+                            </div>
+
+                            <div className="report db">
+                                <h1 className="blue">Report</h1>
+                                <Report/>
+                            </div>
                             <input type="submit" value="submit"></input>
                     </form>
                 </div>

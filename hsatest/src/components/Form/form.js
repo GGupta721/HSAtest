@@ -4,6 +4,7 @@ import OccupantDetails from "./details/occupantDetails";
 import CommunityDetails from "./details/communityDetails";
 import Exterior from "./Exterior/Exterior";
 import InteriorDetails from "./InteriorDetails/InteriorDetails";
+import Router from "../Router";
 
 class Form extends Component {
     constructor(props) {
@@ -34,29 +35,39 @@ class Form extends Component {
                             <div className="rightIndent">
                             &emsp;&emsp;<input type="checkbox" />&emsp;
                                 I Acknowledge Reading This Instruction; <br/><br/>&emsp;&nbsp;&nbsp;&nbsp;
-                                Assessor's First Name: <input type="text" name="fname" />&nbsp;&emsp; 
-                                Assessor's Last Name: <input type="text" name="lname" />&nbsp;&emsp;
+                                Assessor's First Name: <input type="text" name="fname" className="inputV1"/>&nbsp;&emsp; 
+                                Assessor's Last Name: <input type="text" name="lname" className="inputV1" />&nbsp;&emsp;
                                 Date: <input type="Date" />
                             </div>
                             <p/>
-                            <div className="details db">
-                                <h1 className="blue"> Occupant's Details</h1><p/>
-                                <OccupantDetails />
-                            </div><p/>
-                            <div className="c-details db">
-                                <h1 className="blue"> Community Details</h1><p/>
-                                <CommunityDetails />
-                            </div><p/>
+                            <div>
+                                <Router pathName = "/details">
+                                    <div className="details db">
+                                        <h1 className="blue"> Occupant's Details</h1><p/>
+                                        <OccupantDetails />
+                                        
+                                    </div><p/>
+                                    <div className="details db">
+                                        <h1 className="blue"> Community Details</h1><p/>
+                                        <CommunityDetails />
+                                    </div>
 
-                            <div className="exterior db">
-                                <h1 className="blue"> Exterior Details</h1><p/>
-                                <Exterior/>
-                            </div>
+                                </Router>
+                            </div><p/>
+                            <Router pathName = "/exterior">
+                                <div className="exterior db">
+                                    <h1 className="blue"> Exterior Details</h1><p/>
+                                    <Exterior/>
+                                </div>
+                            </Router><p/>
 
-                            <div className="interior db">
-                                <h1 className="blue"> Interior Details</h1><p/>
-                                <InteriorDetails/>
-                            </div>
+                            <Router pathName = "/interior">
+                                <div className="interior db">
+                                    <h1 className="blue"> Interior Details</h1><p/>
+                                    <InteriorDetails/>
+                                </div>
+                            </Router>
+
                             <input type="submit" value="submit"></input>
                     </form>
                 </div>

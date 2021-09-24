@@ -1,8 +1,7 @@
-.details,
-.c-details {
+.details {
   border-style: none;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 100px;
+  margin-right: 100px;
   /* z-index: 2; */
 }
 
@@ -33,7 +32,7 @@
 }
 
 .form {
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
 }
 
@@ -60,9 +59,9 @@
   width: 7cm;
 }
 
-.block input[type="value"] {
+.block input[type="number"] {
   display: inline;
-  width: 7cm;
+  width: 6cm;
 }
 
 .block select {
@@ -87,9 +86,17 @@
 } */
 
 .card {
-  text-align: initial;
+  text-align: right;
 }
 
 .container {
   text-align: center;
+}
+
+.inputV2 {
+  width: 20cm !important;
+}
+
+.inputV3 {
+  width: 8cm !important;
 }

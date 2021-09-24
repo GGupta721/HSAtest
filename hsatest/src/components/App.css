@@ -2,6 +2,7 @@
   margin-left: 5px;
   margin-right: 5px;
   background-color: rgba(138, 191, 196, 0.2) !important;
+  font-size: 20px;
 }
 
 h1 {
@@ -25,6 +26,8 @@ input {
 textarea {
   background-color: #eee !important;
   color: rgb(0, 0, 0) !important;
+  font-size: 18px !important;
+  width: 17cm;
 }
 
 select {
@@ -34,5 +37,15 @@ select {
 
 .center {
   margin: auto;
-  width: 90%;
+  width: 99%;
+}
+
+.inputV1 {
+  width: 10cm;
+}
+
+input[type="radio"] {
+  border: 0px;
+  width: 1em;
+  height: 0.8em;
 }

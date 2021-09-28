@@ -25,6 +25,7 @@
 .ques {
   font-size: 20px;
   inline-size: 700px;
+  line-height: 25px;
 
   font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
   /* width: 50px; */
@@ -35,7 +36,7 @@
   font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
   /* float: right; */
   width: 500px;
-  /* max-height: 200px; */
+  max-height: 210px;
   border: 3px solid rgb(235, 186, 122);
   background-color: rgb(253, 240, 222);
   padding: 15px;

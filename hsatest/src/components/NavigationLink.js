@@ -1,14 +1,18 @@
 import React from 'react';
 
-const NavigationLink = ({children,className, href}) => {
+const NavigationLink = ({children, href}) => {
 
-    const onClick = ({event}) => {
+    const onClick = (event) => {
         event.preventDefault();
+        console.log("onclickeddd")
         window.history.pushState({}, '', href);
+
+        const navigationEvent = new PopStateEvent('popstate');
+        window.dispatchEvent(navigationEvent);
     }
 
     return (
-        <a className = {className} href = {href} onClick={onClick}>
+        <a  href = {href} onClick={onClick}>
             {children}
         </a>
     );

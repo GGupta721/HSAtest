@@ -1,25 +1,46 @@
 import React from "react";
 import Province from "./province"
 import Territory from "./territory";
+import "./CommunityDetails.css"
 
-function CommunityDetails() {
+
+const CommunityDetails = () => {
     return(
-        <div class="container center">
+        <div className="community-card center">
             <div className="co-details">
-                <div className="card block left">
-                    Community:&emsp; <input type="text" placeholder="Enter Community name" /><p/>
-                    Representative First Name:&emsp; <input type="text" placeholder="Enter First Name"/><p/>
-                    Representative Last Name:&emsp; <input type="text" placeholder="Enter Last Name" /><p/>
-                    Band Number:&emsp; <input type="value" maxLength="3" placeholder="Enter Band Number"/><p/>
-                    Province:&emsp; <Province /> <p/>
+                <div className="cell-1">
+                    Community:&emsp; <input type="text" placeholder=" Enter Community Name" className="inputV2"/>
+                </div><br/>
+                
+                <div class="grid-CommunityDetails">
+                    
+                    <div className="cell-2">
+                        Representative First Name:&emsp; <input type="text" placeholder=" Enter First Name" className="inputV3"/>
+                    </div>
+                    <div className="cell-3">
+                        Representative Last Name:&emsp; <input type="text" placeholder=" Enter Last Name" className="inputV3"/>
+                    </div>
+                    <div className="cell-4">
+                        Phone Number:&emsp; <input type="tel" placeholder=" Enter Phone Number" />
+                    </div>
+                    <div className="cell-5">
+                        Alternative contact detail:&emsp; <input type="text" placeholder=" Enter Contact" />
+                    </div>
+                    <div className="cell-6">
+                        Representative Email:&emsp; <input type="email" placeholder=" Enter Email" />
+                    </div>
+                    <div className="cell-7">
+                        Band Number:&emsp; <input type="value" maxLength="3" placeholder=" Enter Band Number"/>
+                    </div>
+                    <div className="cell-8">
+                        Province:&emsp; <Province />
+                    </div>                        
+                    <div className="cell-9">
+                        Territory:&emsp; <Territory />
+                    </div>  
                     
                 </div>
-                <div className="card block right">
-                    &emsp;Representative Email:&emsp; <input type="email" placeholder="Enter Email" /><p/>
-                    &emsp;Phone Number:&emsp; <input type="tel" placeholder="Enter Phone Number" /><p/>
-                    &emsp;Alternative contact detail:&emsp; <input type="text" placeholder="Enter Phone Number" /><p/>   
-                    Territory:&emsp; < Territory /> <p/>
-                </div>
+                
             </div>
             <br/>
         </div>

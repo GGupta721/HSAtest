@@ -19,20 +19,20 @@ function Exterior(){
                                         
                                         <p/>
                                         <div>       
-                                                <textarea rows="5" cols="60" placeholder=" Enter Comments.." focus ></textarea>
+                                                <textarea rows="3" cols="60" placeholder=" Enter Comments.." focus ></textarea>
                                         </div><p/>
                                         
                                         
                                 </div>
 
                                 <div className="info grid-child">
-                                        <p>
-                                                <b>Consideration:</b> If outside safety or rescue personnel respond, 
-                                                they will need an address to find the home.<br/><br/>
-                                                <b>Recommendation:</b> If <u>No</u> - Recommend house numbers be a 
-                                                different colour than the background, illuminated and 
-                                                reflective, making it easy see from the street.
-                                        </p>
+                                        
+                                        <p><b>Consideration:</b> If outside safety or rescue personnel respond, 
+                                        they will need an address to find the home.</p>
+                                        <p><b>Recommendation:</b> If <u>No</u> - Recommend house numbers be a 
+                                        different colour than the background, illuminated and 
+                                        reflective, making it easy see from the street.</p>
+                                        
 
                                 </div>
                         
@@ -51,7 +51,7 @@ function Exterior(){
                                         
                                         <p/>       
                                         <div>       
-                                                <textarea rows="5" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
                                         </div><p/>
 
                                 </div>
@@ -59,7 +59,7 @@ function Exterior(){
                                 <div className="info grid-child">
                                         <p>
                                                 <b>Consideration:</b> During an emergency, the gas or propane may
-                                                need to be shut off for the safety of responders.<br/>
+                                                need to be shut off for the safety of responders.<br/><br/>
                                                 <b>Recommendation:</b> If <u>No</u> - Recommend the shutoff valves be
                                                 located and tested in the on and off position
                                         </p>
@@ -78,13 +78,13 @@ function Exterior(){
                                         
                                         <p/>       
                                         <div>       
-                                                <textarea rows="5" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
                                         </div><p/>
                                 </div>
                                 <div className="info grid-child">
                                         <p>
                                                 <b>Consideration:</b> If the electrical wires are not securely attached to the building or are knocked off the building, 
-                                                there is a possibility of electrical shock.<br/>
+                                                there is a possibility of electrical shock.<br/><br/>
                                                 <b>Recommendation:</b> If <u>No</u> - Recommend contacting the utility provider. Tree limbs should be removed.
                                         </p>
 
@@ -102,13 +102,13 @@ function Exterior(){
                                               
                                         <p/>       
                                         <div>       
-                                                <textarea rows="5" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
                                         </div><p/>
                                 </div>
                                 <div className="info grid-child">
                                         <p>
                                                 <b>Consideration:</b> Steps and handrails that are in poor shape may break when someone is using them. 
-                                                This could cause someone to fall or become injured.<br/>
+                                                This could cause someone to fall or become injured.<br/><br/>
                                                 <b>Recommendation:</b> If <u>No</u> - Recommend steps and/or handrails be repaired and secured.
                                         </p>
 
@@ -124,13 +124,13 @@ function Exterior(){
                                         
                                         <p/>       
                                         <div>       
-                                                <textarea rows="5" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
                                         </div><p/>
                                 </div>
                                 <div className="info grid-child">
                                         <p>
                                                 <b>Consideration:</b> Trip hazards could cause injuries to people coming or going from the home. 
-                                                Trip hazards may become less obvious in the dark, rain or snow<br/>
+                                                Trip hazards may become less obvious in the dark, rain or snow<br/><br/>
                                                 <b>Recommendation:</b> If <u>No</u> - Recommend repair and/or removal of any trip hazards.
                                         </p>
 
@@ -150,12 +150,12 @@ function Exterior(){
                                          
                                         <p/>       
                                         <div>       
-                                                <textarea rows="5" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
                                         </div><p/>
                                 </div>
                                 <div className="info grid-child">
                                         <p>
-                                                <b>Consideration:</b> If proper outlets and covers are not in place, there is a risk of electric shock.<br/>
+                                                <b>Consideration:</b> If proper outlets and covers are not in place, there is a risk of electric shock.<br/><br/>
                                                 <b>Recommendation:</b> If <u>No</u> - Recommend repair or replace as necessary.
                                         </p>
                                 </div>
@@ -171,13 +171,13 @@ function Exterior(){
                                             
                                         <p/>       
                                         <div>       
-                                                <textarea rows="5" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
                                         </div><p/>
                                 </div>
                                 <div className="info grid-child">
                                         <p>
                                                 <b>Consideration:</b> In an emergency, if any of the exits are blocked, 
-                                                there is a chance people will not be able to escape.<br/>
+                                                there is a chance people will not be able to escape.<br/><br/>
                                                 <b>Recommendation:</b> If <u>No</u> - Recommend obstructions be removed and doors fixed if required so they work properly.
                                         </p>
 

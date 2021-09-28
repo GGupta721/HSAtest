@@ -9,28 +9,6 @@
   background-color: rgb(255, 255, 255);
 }
 
-.details h1,
-.c-details h1 {
-  text-align: center;
-}
-
-.oc-details,
-.ex-details {
-  margin-right: 20px;
-  margin-left: 20px;
-  display: flex;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-.co-details {
-  text-align: right;
-  margin-right: 20px;
-  margin-left: 20px;
-  display: flex;
-  padding-bottom: 20px;
-}
-
 .form {
   font-size: 20px;
   font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
@@ -38,10 +16,6 @@
 
 .blue {
   color: #00a5b8;
-}
-
-.block {
-  display: inline-block;
 }
 
 .left {
@@ -54,6 +28,38 @@
   margin-right: 60px;
 }
 
+.NavLinks {
+  font-size: 24px;
+  /* font-weight: bold; */
+}
+
+.next {
+  float: right;
+  /* padding: 10px; */
+  margin-top: 20px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  /* color: #00a5b8 !important; */
+
+  /* margin-bottom: 5px; */
+}
+
+.previous {
+  float: left;
+  /* padding: 10px; */
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.block {
+  display: inline-block;
+}
+
+.details h1 {
+  text-align: center;
+}
+
 .block input {
   display: inline;
   width: 7cm;
@@ -61,42 +67,29 @@
 
 .block input[type="number"] {
   display: inline;
-  width: 6cm;
+  /* width: 6cm; */
 }
 
-.block select {
+/* .block select {
   width: 7cm;
-}
-
-.rightIndent {
-  margin-left: 25px;
-  margin-right: 5px;
-}
-
-/* .container {
-  column-width: 500px;
-  column-gap: 200px;
-}
-
-.card {
-  background-color: rgb(207, 232, 220);
-  border: 2px solid rgb(79, 185, 227);
-  padding: 40px;
-  margin: 10 10 1em 0;
 } */
-
-.card {
-  text-align: right;
-}
 
 .container {
   text-align: center;
 }
 
 .inputV2 {
-  width: 20cm !important;
+  width: 24.9cm !important;
 }
 
 .inputV3 {
   width: 8cm !important;
+}
+
+.inputV4 {
+  width: 5cm !important;
+}
+
+.inputV5 {
+  width: 2cm !important;
 }

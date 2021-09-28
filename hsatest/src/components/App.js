@@ -11,8 +11,8 @@ class App extends Component {
       <div className="App">
         <div className="page-body">
           <Assessment />
-          <Form />
-          <Footer />
+          <Form/><br/>
+          {/* <Footer/> */}
         </div>
       </div>
     )

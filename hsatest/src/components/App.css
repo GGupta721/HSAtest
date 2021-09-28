@@ -21,6 +21,7 @@ h3 {
 input {
   background-color: #eee !important;
   color: rgb(0, 0, 0) !important;
+  width: 8cm;
 }
 
 textarea {
@@ -33,6 +34,7 @@ textarea {
 select {
   background-color: #eee !important;
   color: black !important;
+  width: 8cm;
 }
 
 .center {

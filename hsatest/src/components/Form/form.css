@@ -28,30 +28,6 @@
   margin-right: 60px;
 }
 
-.NavLinks {
-  font-size: 24px;
-  /* font-weight: bold; */
-}
-
-.next {
-  float: right;
-  /* padding: 10px; */
-  margin-top: 20px;
-  margin-right: 25px;
-  margin-bottom: 20px;
-  /* color: #00a5b8 !important; */
-
-  /* margin-bottom: 5px; */
-}
-
-.previous {
-  float: left;
-  /* padding: 10px; */
-  margin-left: 15px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 .block {
   display: inline-block;
 }
@@ -70,26 +46,6 @@
   /* width: 6cm; */
 }
 
-/* .block select {
-  width: 7cm;
-} */
-
 .container {
   text-align: center;
-}
-
-.inputV2 {
-  width: 24.9cm !important;
-}
-
-.inputV3 {
-  width: 8cm !important;
-}
-
-.inputV4 {
-  width: 5cm !important;
-}
-
-.inputV5 {
-  width: 2cm !important;
 }

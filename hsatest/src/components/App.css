@@ -46,8 +46,49 @@ select {
   width: 10cm;
 }
 
+.inputV2 {
+  width: 24.9cm !important;
+}
+
+.inputV3 {
+  width: 8cm !important;
+}
+
+.inputV4 {
+  width: 5cm !important;
+}
+
+.inputV5 {
+  width: 2cm !important;
+}
+
 input[type="radio"] {
   border: 0px;
   width: 1em;
   height: 0.8em;
+}
+
+.submitButton {
+}
+
+.NavLinks {
+  font-size: 24px;
+  /* font-weight: bold; */
+}
+
+.next {
+  float: right;
+  /* padding: 10px; */
+  margin-top: 20px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  /* margin-bottom: 5px; */
+}
+
+.previous {
+  float: left;
+  /* padding: 10px; */
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

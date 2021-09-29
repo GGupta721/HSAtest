@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavigationLink = ({children, href}) => {
+const NavigationLink = ({children, className, href}) => {
 
     const onClick = (event) => {
         event.preventDefault();
@@ -12,7 +12,7 @@ const NavigationLink = ({children, href}) => {
     }
 
     return (
-        <a  href = {href} onClick={onClick}>
+        <a  href = {href} onClick={onClick} className={className}>
             {children}
         </a>
     );

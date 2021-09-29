@@ -32,8 +32,8 @@ class Form extends Component {
         return (
             <div className="form-div">
             <p/>
-                <div>
-                    <form className="form" onSubmit={this.handleSubmit}>
+                <div className="form">
+                    <form  onSubmit={this.handleSubmit}>
                         <div>
                             <Router pathName = "/details">
                                 <div className="rightIndent">
@@ -70,7 +70,8 @@ class Form extends Component {
                             <div className="NavLinks next">
                                 <NavigationLink href="/interior">Next <i class="arrow right icon"/></NavigationLink>
                             </div>
-                        </Router><p/>
+                        </Router>
+                        <br/>
 
                         <Router pathName = "/interior">
                             <div className="interior db">
@@ -82,23 +83,24 @@ class Form extends Component {
                                 <NavigationLink href="/exterior">  <i class="arrow left icon"/> Previous</NavigationLink>
                             </div>
                             <div className="NavLinks next">
-                                <NavigationLink href="/report">Next <i class="arrow right icon"/></NavigationLink>
+                                <NavigationLink href="/report" className="ui primary button submitButton">Submit</NavigationLink>
                             </div>
-                        
+                            <br/>
                         </Router>
+                        <br/>
 
-                        <Router pathName = "/report">      
-                            <div className="report db">
-                                <h1 className="blue">Report</h1>
-                                <Report/>
-                            </div>
-                            
-                            <div className="NavLinks previous">
-                                <NavigationLink href="/interior"> <i class="arrow left icon"/> Previous</NavigationLink>
-                            </div>
-                        </Router>
                         {/* <input type="submit" value="submit"></input> */}
                     </form>
+                    <Router pathName = "/report">      
+                        <div className="report db">
+                            <h1 className="blue">Report</h1>
+                            <Report/>
+                        </div>
+                        
+                        <div className="NavLinks previous">
+                            <NavigationLink href="/interior"> <i class="arrow left icon"/> Previous</NavigationLink>
+                        </div>
+                    </Router>
                 </div>
             </div>
         );

@@ -21,6 +21,10 @@ class OccupantDetails extends React.Component{
         territory:"",
 
     }
+
+    provinceHandler = () => {
+
+    }
         // const 
     render(){
         return (
@@ -59,10 +63,30 @@ class OccupantDetails extends React.Component{
                                         Postal Code:&emsp; <input type="text" placeholder=" Enter Postal Code" value={this.state.firstName} onChange={eve => this.setState({firstName: eve.target.value})}/>
                                     </div>
                                     <div className="cell-3">
-                                        Province:&emsp; <Province />
+                                        Province:&emsp; 
+                                        <select type="dropdown" value={this.state.province} onChange={eve => this.setState({province: eve.target.value})}>
+                                            <option value="AB">Alberta</option>
+                                            <option value="BC">British Columbia</option>
+                                            <option value="MB">Manitoba</option>
+                                            <option value="NB">New Brunswick</option>
+                                            <option value="NL">New Foundaland and Labrador</option>
+                                            <option value="NS">Nova Scotia</option>
+                                            <option value="ON">Ontario</option>
+                                            <option value="PE">Prince Edward Island</option>
+                                            <option value="QC">Quebec</option>
+                                            <option value="SK">Sasketchewan</option>
+
+                                        </select>
+                                        {/* <Province  /> */}
                                     </div>                        
                                     <div className="cell-4">
-                                        Territory:&emsp; <Territory />
+                                        Territory:&emsp; 
+                                        <select type="dropdown" value={this.state.territory} onChange={eve => this.setState({territory: eve.target.value})}>
+                                            <option value="NT">Northwest Territories</option>
+                                            <option value="NU">Nunavut</option>
+                                            <option value="YK">Yukon</option>
+                                        </select>
+                                        {/* <Territory /> */}
                                     </div>                      
                                 </div>
                                 

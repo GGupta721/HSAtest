@@ -1,6 +1,6 @@
 import React from "react";
 
-function Province() {
+const Province = () => {
     return(
         <select type="dropdown" >
             <option value="AB">Alberta</option>

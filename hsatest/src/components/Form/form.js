@@ -9,24 +9,46 @@ import Report from "./Report/Report";
 import NavigationLink from "../NavigationLink";
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          value: 'Your filled form has been submitted.'
-        };
+
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //       value: 'Your filled form has been submitted.',
+    //       territory: null,
+    //       province: null
+
+    //     };
     
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-      }
+    //     this.handleChange = this.handleChange.bind(this);
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+    //   }
     
-      handleChange(event) {
-        this.setState({value: event.target.value});
-      }
+    //   handleChange(event) {
+    //     this.setState({value: event.target.value});
+    //   }
     
-      handleSubmit(event) {
-        alert('An essay was submitted: ' + this.state.value);
-        event.preventDefault();
-      }
+    //   handleSubmit(event) {
+    //     alert('An essay was submitted: ' + this.state.value);
+    //     event.preventDefault();
+    //   }
+
+    state = {
+        Territory: null,
+        Province: null
+    }
+
+    provinceHandler = (event) => {
+        this.setState({ Province: event})
+        console.log("horay")
+
+    }
+
+    territoryHandler = () => {
+        
+    }  
+
+    // shouldComponentUpdate(nextProps, nextState)
+
 
     render() {
         return (
@@ -46,16 +68,17 @@ class Form extends Component {
                                 <p/>
                                 <div className="details db">
                                     <h1 className="blue"> Occupant's Details</h1><p/>
-                                    <OccupantDetails />
+                                    <OccupantDetails provincehandler={this.provinceHandler}/>
                                 </div><p/>
                                 <div className="details db">
                                     <h1 className="blue"> Community Details</h1><p/>
-                                    <CommunityDetails />
+                                    <CommunityDetails territory="NU" province="British Columbia"/>
                                 </div>
                                 <div className="NavLinks next blue">
                                     <NavigationLink href="/exterior">Next <i class="arrow right icon"/></NavigationLink>
                                     {/* <NavigationLink href="/exterior"></NavigationLink> */}
                                 </div>
+                                
 
                             </Router>
                         </div><p/>

@@ -4,24 +4,6 @@
   /* margin-top: 20px; */
 }
 
-/* .info.right {
-  float: right;
-  width: 500px;
-  max-height: 220px;
-  border: 3px solid rgb(235, 186, 122);
-  background-color: rgb(253, 240, 222);
-  padding: 10px;
-  vertical-align: super;
-  overflow-y: scroll;
-  border-radius: 8px;
-} */
-
-.questions {
-  /* padding-left: 25px; */
-  /* padding-right: 70px;
-  padding-bottom: 20px; */
-}
-
 .ques {
   font-size: 20px;
   inline-size: 700px;

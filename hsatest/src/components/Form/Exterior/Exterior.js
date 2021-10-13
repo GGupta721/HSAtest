@@ -1,4 +1,5 @@
 import React from  "react"
+import { Alert } from "reactstrap"
 import "./Exterior.css"
 // import PopoverPopupState from "../PopoverCommentRequired";
 // import Typography from '@mui/material/Typography';
@@ -17,6 +18,15 @@ class Exterior extends React.Component{
                 eve.preventDefault();
                 this.props.prevPage();
         }
+        state = {
+                visible:false
+        }
+        toggle(){
+                this.setState({
+                        visible: ! this.state.visible
+                 
+         })
+        }
 
         render(){
                 const {exteriorValues, handleChange} = this.props;
@@ -30,8 +40,9 @@ class Exterior extends React.Component{
                                         <div className="ques">1. Is the house address visible ?</div>&emsp;
                                         <div className="radioOptions" onChange={handleChange('q1')}>   
                                                 <input type="radio" value="Yes" name="q1" checked={exteriorValues.q1 === "Yes"} /> Yes &emsp;
-                                                <input type="radio" value="No" name="q1" checked={exteriorValues.q1 === "No"} /> No &emsp;
+                                                <input type="radio" value="No" onClick={this.toggle.bind(this)} name="q1" checked={exteriorValues.q1 === "No"} /> No &emsp;
                                                 <input type="radio" value="N/A" name="q1" checked={exteriorValues.q1 === "N/A"} /> N/A
+                                                <Alert className="popUp" isOpen={this.state.visible} toggle={this.toggle.bind(this)}>Please Enter Comments for selecting "NO"!</Alert>
                                         </div>
                                         
                                         <p/>
@@ -62,8 +73,9 @@ class Exterior extends React.Component{
                                         
                                         <div className="radioOptions" onChange={handleChange('q2')}>   
                                                 <input type="radio" value="Yes" name="q2" checked={exteriorValues.q2 === "Yes"} /> Yes &emsp;
-                                                <input type="radio" value="No" name="q2" checked={exteriorValues.q2 === "No"} /> No &emsp;
+                                                <input type="radio" value="No" onClick={this.toggle.bind(this)} name="q2" checked={exteriorValues.q2 === "No"} /> No &emsp;
                                                 <input type="radio" value="N/A" name="q2" checked={exteriorValues.q2 === "N/A"} /> N/A
+                                                <Alert className="popUp" isOpen={this.state.visible} toggle={this.toggle.bind(this)}>Please Enter Comments for selecting "NO"!</Alert>
                                         </div>
                                         
                                         <p/>       
@@ -89,8 +101,9 @@ class Exterior extends React.Component{
                                         attached to the building, and free from tree limbs?</div>&emsp;      
                                         <div className="radioOptions" onChange={handleChange('q3')}>   
                                                 <input type="radio" value="Yes" name="q3" checked={exteriorValues.q3 === "Yes"} /> Yes &emsp;
-                                                <input type="radio" value="No" name="q3" checked={exteriorValues.q3 === "No"} /> No &emsp;
+                                                <input type="radio" value="No" onClick={this.toggle.bind(this)} name="q3" checked={exteriorValues.q3 === "No"} /> No &emsp;
                                                 <input type="radio" value="N/A" name="q3" checked={exteriorValues.q3 === "N/A"} /> N/A
+                                                <Alert className="popUp" isOpen={this.state.visible} toggle={this.toggle.bind(this)}>Please Enter Comments for selecting "NO"!</Alert>
                                         </div>
                                         
                                         <p/>       
@@ -113,8 +126,9 @@ class Exterior extends React.Component{
                                         free of rot and cracks? Are the stairs and handrails secure?</div>&emsp;
                                         <div className="radioOptions" onChange={handleChange('q4')}>   
                                                 <input type="radio" value="Yes" name="q4" checked={exteriorValues.q4 === "Yes"} /> Yes &emsp;
-                                                <input type="radio" value="No" name="q4" checked={exteriorValues.q4 === "No"} /> No &emsp;
+                                                <input type="radio" value="No" onClick={this.toggle.bind(this)} name="q4" checked={exteriorValues.q4 === "No"} /> No &emsp;
                                                 <input type="radio" value="N/A" name="q4" checked={exteriorValues.q4 === "N/A"} /> N/A
+                                                <Alert className="popUp" isOpen={this.state.visible} toggle={this.toggle.bind(this)}>Please Enter Comments for selecting "NO"!</Alert>
                                         </div>
                                         
                                         <p/>       
@@ -136,7 +150,8 @@ class Exterior extends React.Component{
                                         from trip hazards?</div>&emsp;
                                         <div className="radioOptions" onChange={handleChange('q5')}>   
                                                 <input type="radio" value="Yes" name="q5" checked={exteriorValues.q5 === "Yes"} /> Yes &emsp;
-                                                <input type="radio" value="No" name="q5" checked={exteriorValues.q5 === "No"} /> No &emsp;
+                                                <input type="radio" value="No" onClick={this.toggle.bind(this)} name="q5" checked={exteriorValues.q5 === "No"} /> No &emsp;
+                                                <Alert className="popUp" isOpen={this.state.visible} toggle={this.toggle.bind(this)}>Please Enter Comments for selecting "NO"!</Alert>
                                         </div> 
                                         
                                         <p/>       
@@ -161,8 +176,9 @@ class Exterior extends React.Component{
                                         </div>&emsp;    
                                         <div className="radioOptions" onChange={handleChange('q6')}>   
                                                 <input type="radio" value="Yes" name="q6" checked={exteriorValues.q6 === "Yes"} /> Yes &emsp;
-                                                <input type="radio" value="No" name="q6" checked={exteriorValues.q6 === "No"} /> No &emsp;
+                                                <input type="radio" value="No" onClick={this.toggle.bind(this)} name="q6" checked={exteriorValues.q6 === "No"} /> No &emsp;
                                                 <input type="radio" value="N/A" name="q6" checked={exteriorValues.q6 === "N/A"} /> N/A
+                                                <Alert className="popUp" isOpen={this.state.visible} toggle={this.toggle.bind(this)}>Please Enter Comments for selecting "NO"!</Alert>
                                         </div>
                                         
                                         <p/>       
@@ -183,7 +199,8 @@ class Exterior extends React.Component{
                                         and in good working order so they can be used in case of an emergency? </div>&emsp;
                                         <div className="radioOptions" onChange={handleChange('q7')}>   
                                                 <input type="radio" value="Yes" name="q7" checked={exteriorValues.q7 === "Yes"} /> Yes &emsp;
-                                                <input type="radio" value="No" name="q7" checked={exteriorValues.q7 === "No"} /> No &emsp;
+                                                <input type="radio" value="No" onClick={this.toggle.bind(this)} name="q7" checked={exteriorValues.q7 === "No"} /> No &emsp;
+                                                <Alert className="popUp" isOpen={this.state.visible} toggle={this.toggle.bind(this)}>Please Enter Comments for selecting "NO"!</Alert>
                                         </div>
                                         
                                         <p/>       

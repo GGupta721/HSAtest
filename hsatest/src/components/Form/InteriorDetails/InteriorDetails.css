@@ -35,3 +35,11 @@
   /* display: flex;
   flex-direction: column; */
 }
+
+.popUp
+{
+  /* border: 3px solid rgb(235, 186, 122); */
+  color: red;
+  background-color: rgb(253, 240, 222);
+  margin-right: 250px;
+}

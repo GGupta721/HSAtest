@@ -32,15 +32,8 @@ class CommunityDetails extends React.Component{
                         
                         <div className="cell-7">
                             Band Number:&emsp; <input type="value" maxLength="3" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={handleChange('bandNum')}/>
-                        </div>
-                        <div className="cell-8">
-                            Province:&emsp; 
-                            <input type= "text" />
-                        </div>                        
-                        <div className="cell-9">
-                            Territory:&emsp; <Territory />
-                            {/* <input type= "text" value={this.state.territory} readonly/> */}
-                        </div>  
+                        </div>                       
+ 
                         
                     </div>
                     

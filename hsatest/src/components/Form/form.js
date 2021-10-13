@@ -7,6 +7,12 @@ import InteriorDetails from "./InteriorDetails/InteriorDetails";
 import Router from "../Router";
 import Report from "./Report/Report";
 import NavigationLink from "../NavigationLink";
+import {
+    Responsive,
+    isMobileDevice,
+    isTabletDevice,
+    isLaptopDevice
+  } from "responsive-react";
 
 class Form extends Component {
 

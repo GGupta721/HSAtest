@@ -25,19 +25,19 @@ class InteriorDetails extends React.Component{
                                                 <div className="ques">8. Are there smoke/CO detectors installed in the home?
                                                 Smoke: </div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q8')}>   
-                                                        <input type="radio" value="Yes" name="q8" checked={exteriorValues.q8 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q8" checked={exteriorValues.q8 === "No"}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q8" checked={interiorValues.q8 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q8" checked={interiorValues.q8 === "No"}/> No &emsp;
                                                 </div>
                                                 
                                                 &emsp;&emsp; 
                                                 <div className="ques">8a. Do they work when tested? Co: </div>&emsp;      
                                                 <div className="radioOptions" onChange={handleChange('q8a')}>
-                                                        <input type="radio" value="Yes" name="q8a"checked={exteriorValues.q8a === "Yes"} />Yes &emsp;
-                                                        <input type="radio" value="No" name="q8a" checked={exteriorValues.q8a === "No"}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q8a"checked={interiorValues.q8a === "Yes"} />Yes &emsp;
+                                                        <input type="radio" value="No" name="q8a" checked={interiorValues.q8a === "No"}/> No &emsp;
                                                 </div>      
                                                 <p/>
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q8Comments} onChange={handleChange('q8Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -54,13 +54,13 @@ class InteriorDetails extends React.Component{
                                                 <div className="ques">9. Is there a minimum of 1 fire 
                                                 extinguisher on each floor? </div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q9')}>   
-                                                        <input type="radio" value="Yes" name="q9" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q9" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q9" checked={interiorValues.q9 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q9" checked={interiorValues.q9 === "No"}/> No &emsp;
                                                 </div>
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q9Comments} onChange={handleChange('q9Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -80,8 +80,8 @@ class InteriorDetails extends React.Component{
                                                 <div className="ques">10. Are all doors and windows clear 
                                                 of obstructions and do they open? </div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q10')}>   
-                                                        <input type="radio" value="Yes" name="q10" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q10" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q10" checked={interiorValues.q10 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q10" checked={interiorValues.q10 === "No"}/> No &emsp;
                                                 </div>
                                                 
                                                 <p/>    
@@ -90,14 +90,14 @@ class InteriorDetails extends React.Component{
                                                 or any evidence of water leaking or seeping in? <br/><br/>
                                                 If no, EHO / Remediation Contact advised?</div>&emsp;      
                                                 <div className="radioOptions" onChange={handleChange('q11')}>   
-                                                        <input type="radio" value="Yes" name="q11" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q11" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q11" checked={interiorValues.q11 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q11" checked={interiorValues.q11 === "No"}/> No &emsp;
                                                 </div>
                                                 <p/> 
-                                                Name:&emsp; <input type="text" placeholder="Enter Name"/>&emsp;<br/>
-                                                Phone Number:&emsp; <input type="text" placeholder="Enter Number"/><p/> 
+                                                Name:&emsp; <input type="text" placeholder="Enter Name" defaultValue={interiorValues.q11Name} onChange={handleChange('q11Name')}/>&emsp;<br/>
+                                                Phone Number:&emsp; <input type="text" placeholder="Enter Number" defaultValue={interiorValues.q11PhoneNum} onChange={handleChange('q11PhoneNum')}/><p/> 
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q11Comments} onChange={handleChange('q11Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -116,13 +116,13 @@ class InteriorDetails extends React.Component{
                                                 obstructions and are the stairs and handrails secure?</div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q12')}>      
-                                                        <input type="radio" value="Yes" name="q12" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q12" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q12" checked={exteriorValues.q8a === "Yes"}/> N/A
+                                                        <input type="radio" value="Yes" name="q12" checked={interiorValues.q12 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q12" checked={interiorValues.q12 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q12" checked={interiorValues.q12 === "N/A"}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q12Comments} onChange={handleChange('q12Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -141,12 +141,12 @@ class InteriorDetails extends React.Component{
                                                 laundry room sinks free of leaks?</div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q13')}>      
-                                                        <input type="radio" value="Yes" name="q13" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q13" checked={exteriorValues.q8a === "Yes"}/> No
+                                                        <input type="radio" value="Yes" name="q13" checked={interiorValues.q13 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q13" checked={interiorValues.q13 === "No"}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q13Comments} onChange={handleChange('q13Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -165,12 +165,12 @@ class InteriorDetails extends React.Component{
                                                 to access and free from clutter? </div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q14')}>      
-                                                        <input type="radio" value="Yes" name="q14" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q14" checked={exteriorValues.q8a === "Yes"}/> No
+                                                        <input type="radio" value="Yes" name="q14" checked={interiorValues.q14 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q14" checked={interiorValues.q14 === "No"}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -186,12 +186,12 @@ class InteriorDetails extends React.Component{
                                                 of sinks, baths or any other water source GFCI outlets? </div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q15')}>      
-                                                        <input type="radio" value="Yes" name="q15" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q15" checked={exteriorValues.q8a === "Yes"}/> No
+                                                        <input type="radio" value="Yes" name="q15" checked={interiorValues.q15 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q15" checked={interiorValues.q15 === "No"}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q15Comments} onChange={handleChange('q15Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -209,12 +209,12 @@ class InteriorDetails extends React.Component{
                                                 </div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q16')}>      
-                                                        <input type="radio" value="Yes" name="q16" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q16" checked={exteriorValues.q8a === "Yes"}/> No
+                                                        <input type="radio" value="Yes" name="q16" checked={interiorValues.q16 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q16" checked={interiorValues.q16 === "No"}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q16Comments} onChange={handleChange('q16Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -232,12 +232,12 @@ class InteriorDetails extends React.Component{
                                                 </div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q17')}>      
-                                                        <input type="radio" value="Yes" name="q17" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q17" checked={exteriorValues.q8a === "Yes"}/> No
+                                                        <input type="radio" value="Yes" name="q17" checked={interiorValues.q17 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q17" checked={interiorValues.q17 === "No"}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q17Comments} onChange={handleChange('q17Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -256,13 +256,13 @@ class InteriorDetails extends React.Component{
                                                 and combustible materials?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q18')}>      
-                                                        <input type="radio" value="Yes" name="q18" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q18" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q18" checked={exteriorValues.q8a === "Yes"}/> N/A
+                                                        <input type="radio" value="Yes" name="q18" checked={interiorValues.q18 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q18" checked={interiorValues.q18 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q18" checked={interiorValues.q18 === "N/A"}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -280,13 +280,13 @@ class InteriorDetails extends React.Component{
                                                 venting?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q19')}>      
-                                                        <input type="radio" value="Yes" name="q19" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q19" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q19" checked={exteriorValues.q8a === "Yes"}/> N/A
+                                                        <input type="radio" value="Yes" name="q19" checked={interiorValues.q19 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q19" checked={interiorValues.q19 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q19" checked={interiorValues.q19 === "N/A"}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q19Comments} onChange={handleChange('q19Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -305,13 +305,13 @@ class InteriorDetails extends React.Component{
                                                 is turned up? </div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q20')}>    
-                                                        <input type="radio" value="Yes" name="q20" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q20" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q20" checked={exteriorValues.q8a === "Yes"}/> N/A
+                                                        <input type="radio" value="Yes" name="q20" checked={interiorValues.q20 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q20" checked={interiorValues.q20 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q20" checked={interiorValues.q20 === "N/A"}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q20Comments} onChange={handleChange('q20Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -330,13 +330,13 @@ class InteriorDetails extends React.Component{
                                                 obstructions?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q21')}>      
-                                                        <input type="radio" value="Yes" name="q21" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q21" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q21" checked={exteriorValues.q8a === "Yes"}/> N/A
+                                                        <input type="radio" value="Yes" name="q21" checked={interiorValues.q21 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q21" checked={interiorValues.q21 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q21" checked={interiorValues.q21 === "N/A"}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q21Comments} onChange={handleChange('q21Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -353,13 +353,13 @@ class InteriorDetails extends React.Component{
                                                 properly? When you turn up the thermostat do, they heat up?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q22')}> 
-                                                        <input type="radio" value="Yes" name="q22" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q22" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q22" checked={exteriorValues.q8a === "Yes"}/> N/A 
+                                                        <input type="radio" value="Yes" name="q22" checked={interiorValues.q22 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q22" checked={interiorValues.q22 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q22" checked={interiorValues.q22 === "N/A"}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -376,13 +376,13 @@ class InteriorDetails extends React.Component{
                                                 they free from dust and discoloration?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q23')}>    
-                                                        <input type="radio" value="Yes" name="q23" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q23" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q23" checked={exteriorValues.q8a === "Yes"}/> N/A 
+                                                        <input type="radio" value="Yes" name="q23" checked={interiorValues.q23 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q23" checked={interiorValues.q23 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q23" checked={interiorValues.q23 === "N/A"}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q23Comments} onChange={handleChange('q23Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -399,13 +399,13 @@ class InteriorDetails extends React.Component{
                                                 or chimney cap, or black creosote buildup?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q24')}>   
-                                                        <input type="radio" value="Yes" name="q24" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q24" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q24" checked={exteriorValues.q8a === "Yes"}/> N/A 
+                                                        <input type="radio" value="Yes" name="q24" checked={interiorValues.q24 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q24" checked={interiorValues.q24 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q24" checked={interiorValues.q24 === "N/A"}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q24Comments} onChange={handleChange('q24Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -422,13 +422,13 @@ class InteriorDetails extends React.Component{
                                                 good condition? Is the glass door free from cracks and black discolouration?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q25')}>
-                                                        <input type="radio" value="Yes" name="q25" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q25" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q25" checked={exteriorValues.q8a === "Yes"}/> N/A 
+                                                        <input type="radio" value="Yes" name="q25" checked={interiorValues.q25 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q25" checked={interiorValues.q25 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q25" checked={interiorValues.q25 === "N/A"}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q25Comments} onChange={handleChange('q25Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -446,13 +446,13 @@ class InteriorDetails extends React.Component{
                                                 fireplace?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q26')}>
-                                                        <input type="radio" value="Yes" name="q26" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q26" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q26" checked={exteriorValues.q8a === "Yes"}/> N/A 
+                                                        <input type="radio" value="Yes" name="q26" checked={interiorValues.q26 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q26" checked={interiorValues.q26 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q26" checked={interiorValues.q26 === "N/A"}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q26Comments} onChange={handleChange('q26Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -470,13 +470,13 @@ class InteriorDetails extends React.Component{
                                                 or fireplace but not closer than 10 feet?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q27')}>
-                                                        <input type="radio" value="Yes" name="q27" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q27" checked={exteriorValues.q8a === "Yes"}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q27" checked={exteriorValues.q8a === "Yes"}/> N/A 
+                                                        <input type="radio" value="Yes" name="q27" checked={interiorValues.q27 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q27" checked={interiorValues.q27 === "No"}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q27" checked={interiorValues.q27 === "N/A"}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q27Comments} onChange={handleChange('q27Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -494,12 +494,12 @@ class InteriorDetails extends React.Component{
                                                 location in place?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q28')}>
-                                                        <input type="radio" value="Yes" name="q28" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q28" checked={exteriorValues.q8a === "Yes"}/> No 
+                                                        <input type="radio" value="Yes" name="q28" checked={interiorValues.q28 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q28" checked={interiorValues.q28 === "No"}/> No 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q28Comments} onChange={handleChange('q28Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -518,12 +518,12 @@ class InteriorDetails extends React.Component{
                                                 <div className="ques">29. Is there a list of emergency numbers and contacts?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q29')}>
-                                                        <input type="radio" value="Yes" name="q29" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q29" checked={exteriorValues.q8a === "Yes"}/> No
+                                                        <input type="radio" value="Yes" name="q29" checked={interiorValues.q29 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q29" checked={interiorValues.q29 === "No"}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q29Comments} onChange={handleChange('q29Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -538,12 +538,12 @@ class InteriorDetails extends React.Component{
                                                 <div className="ques">30. Is there a phone that works without power?</div>&emsp;
                                         
                                                 <div className="radioOptions" onChange={handleChange('q30')}> 
-                                                        <input type="radio" value="Yes" name="q30" checked={exteriorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q30" checked={exteriorValues.q8a === "Yes"}/> No
+                                                        <input type="radio" value="Yes" name="q30" checked={interiorValues.q30 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q30" checked={interiorValues.q30 === "No"}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q30Comments} onChange={handleChange('q30Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">

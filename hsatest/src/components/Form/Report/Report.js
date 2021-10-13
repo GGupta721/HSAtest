@@ -3,8 +3,11 @@ import "./Report.css";
 
 
 class Report extends Component {
-    render()
-    {
+    previous = (eve) => {
+        eve.preventDefault();
+        this.props.prevPage();
+}
+    render(){
         return(
             <div className="pageContent">
             <table >
@@ -52,6 +55,7 @@ class Report extends Component {
                     <td style={{ border:"2px solid black"}}></td>
                 </tr>
             </table>
+            <button onClick={this.previous}>Previous</button>
             </div>
         );
     }

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Territory() {
+const Territory = () => {
     return(
         <select type="dropdown" >
             <option value="NT">Northwest Territories</option>

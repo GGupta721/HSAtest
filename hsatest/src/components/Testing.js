@@ -2,6 +2,10 @@ import React from 'react'
 
 function Testing() {
 
+    const onSubmit = (event) => {
+        
+    }
+
     return (
         <div>
             <form>

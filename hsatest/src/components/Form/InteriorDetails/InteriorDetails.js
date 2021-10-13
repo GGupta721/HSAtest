@@ -555,8 +555,15 @@ class InteriorDetails extends React.Component{
                                         </div>
                                 </div>
                                 <br/>
-                                <button onClick={this.previous}>Previous</button>
-                                <button onClick={this.continue}>Continue</button>
+                                <button class="ui left labeled icon button previous blue" onClick={this.previous}>
+                                        <i class="left arrow icon"></i>
+                                        Previous
+                                </button>
+                                        {/* <button onClick={this.continue}>Continue</button> */}
+                                <button class="ui right labeled icon button next blue" onClick={this.continue}>
+                                        <i class="right arrow icon"></i>
+                                        Continue
+                                </button>
                         </div>
                 );
         }

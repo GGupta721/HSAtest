@@ -18,6 +18,10 @@
   color: #00a5b8;
 }
 
+.btnColor {
+  color: rgb(188, 241, 239);
+}
+
 .left {
   margin-left: 60px;
   margin-right: 60px;

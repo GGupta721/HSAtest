@@ -72,7 +72,7 @@ input[type="radio"] {
 } */
 
 .NavLinks {
-  color: lightseagreen;
+  color: rgb(188, 241, 239);
   font-size: 24px;
   /* font-weight: bold; */
 }
@@ -81,7 +81,7 @@ input[type="radio"] {
   float: right;
   /* padding: 10px; */
   margin-top: 20px;
-  margin-right: 25px;
+  /* margin-right: 10px; */
   margin-bottom: 20px;
   /* margin-bottom: 5px; */
 }

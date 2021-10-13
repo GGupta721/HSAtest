@@ -112,9 +112,9 @@ class OccupantDetails extends React.Component{
                 
                 </div>
                 <br/><br/>    
-                <button class="ui right labeled icon button next NavLinks" onClick={this.continue}>
+                <button class="ui right labeled icon button next blue" onClick={this.continue}>
                     <i class="right arrow icon"></i>
-                    Next
+                    Continue
                 </button>
                 {/* <button onClick={this.continue}>continue</button> */}
           

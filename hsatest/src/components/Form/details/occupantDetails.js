@@ -1,34 +1,11 @@
-import React, {useState} from "react";
-import Province from "./province"
+import React from "react";
+// import Province from "./province"
 import Territory from "./territory";
 import "./OccupantDetails.css"
 
 
 class OccupantDetails extends React.Component{
-// const OccupantDetails = () => {
-    // state = {
-    //     firstName: "",
-    //     lastName:"",
-    //     numOccupants:null,
-    //     numBedrooms:null,
-    //     numFloors:null,
-    //     approxSF:null,
-    //     houseType:"",
-    //     street:"",
-    //     unitNum:"",
-    //     postalCode:"",
-    //     province:null,
-    //     territory:null,
 
-    // }
-
-    // provinceHandler = () => {
-
-    // }
-
-    // territoryHandler = () => {
-
-    // }
     continue = (eve) => {
         eve.preventDefault();
         this.props.nextPage();
@@ -41,7 +18,7 @@ class OccupantDetails extends React.Component{
         return (
             <div className="occupant-card center">
                 <div className="oc-details ">
-                    <div class="grid-OccupantDetails">
+                    <div className="grid-OccupantDetails">
                         <div className="card grid-child">
                             Occupant's First Name:&emsp; <input type="text" placeholder= " Enter First Name" className="inputV3" defaultValue={occupantValues.firstName} onChange={handleChange('firstName')} /><p/>
                             Number of Occupants:&emsp; <input type="number" placeholder= " Number of Occupants" step="1" defaultValue={occupantValues.numOccupants} onChange={handleChange('numOccupants')}/><p/>
@@ -65,7 +42,7 @@ class OccupantDetails extends React.Component{
                         
                     </div>
                     <div className="address-card grid-child ">                    
-                                <div class="grid-AddressDetails">
+                                <div className="grid-AddressDetails">
                                     <div className="cell-1">
                                     Street:&emsp; <input type="value" placeholder=" Enter Street" defaultValue={occupantValues.street} onChange={handleChange('street')}/><p/> 
                                     </div>
@@ -112,11 +89,10 @@ class OccupantDetails extends React.Component{
                 
                 </div>
                 <br/><br/>    
-                <button class="ui right labeled icon button next blue" onClick={this.continue}>
-                    <i class="right arrow icon"></i>
+                <button className="ui right labeled icon button next blue" onClick={this.continue}>
+                    <i className="right arrow icon"></i>
                     Continue
                 </button>
-                {/* <button onClick={this.continue}>continue</button> */}
           
                 
             </div>

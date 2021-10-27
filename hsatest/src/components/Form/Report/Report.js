@@ -6,8 +6,15 @@ class Report extends Component {
     previous = (eve) => {
         eve.preventDefault();
         this.props.prevPage();
-}
+    }
+
+    componentDidMount(){
+        
+    }
+
+
     render(){
+
         return(
             <div className="pageContent">
                 <table >
@@ -20,7 +27,7 @@ class Report extends Component {
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Building Safety Report</td>
-                        <td></td>
+                        <td>tada!!</td>
                         <td></td>
                         <td></td>
                         <td></td>

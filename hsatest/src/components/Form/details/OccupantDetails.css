@@ -7,14 +7,6 @@
   /* padding: 20px; */
 }
 
-/* .grid-CommunityDetails {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-auto-rows: 1fr !important;
-  grid-gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-} */
-
 .cell-8.input {
   width: 20cm;
 }
@@ -28,20 +20,9 @@
   margin-right: 65px;
 }
 
-/* .cell-1 {
-    grid-row: 1;
-    grid-column: 1/4;
-} */
-
 .grid-AddressDetails {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 20px;
   grid-template-columns: repeat(2, 1fr);
-}
-
-.address-card {
-  /* text-align: right; */
-  /* margin-left: 90px;
-  margin-right: 170px; */
 }

@@ -4,15 +4,11 @@ import OccupantDetails from "./details/occupantDetails";
 import CommunityDetails from "./details/communityDetails";
 import Exterior from "./Exterior/Exterior";
 import InteriorDetails from "./InteriorDetails/InteriorDetails";
-import Router from "../Router";
+// import Router from "../Router";
 import Report from "./Report/Report";
-import NavigationLink from "../NavigationLink";
-import {
-    Responsive,
-    isMobileDevice,
-    isTabletDevice,
-    isLaptopDevice
-  } from "responsive-react";
+import { FNAddress } from "./details/communityDetails";
+
+// import NavigationLink from "../NavigationLink";
 
 class Form extends Component {
 
@@ -31,8 +27,7 @@ class Form extends Component {
     
     //   handleChange(event) {
     //     this.setState({value: event.target.value});
-    //   }
-    
+    //   }    
     //   handleSubmit(event) {
     //     alert('An essay was submitted: ' + this.state.value);
     //     event.preventDefault();
@@ -52,6 +47,7 @@ class Form extends Component {
         street:'',
         unitNum:'',
         postalCode:'',
+        province:'',
     
         community:'',
         bandNum:null,
@@ -140,11 +136,27 @@ class Form extends Component {
 
     handleChange = input => e => {
         this.setState({ [input]: e.target.value });
+
         // this.setState({testing:this.state([input])});
-        // console.log(input);
+        console.log(input);
         // console.log(this.state.testing);
 
     };
+
+    bandNumHandlerChange = (FNAddress) => {
+        // eve.preventDefault();
+        //console.log(this.state.searchText);
+        console.log(FNAddress);
+        this.setState({community: FNAddress.Name});
+        this.setState({postalCode: FNAddress.PostalCode});
+        this.setState({street: FNAddress.City});
+        this.setState({province: FNAddress.Province});
+        this.setState({bandNum: FNAddress.BandNum});
+        this.setState({unitNum: FNAddress.Address});
+        
+        
+        // this.props.handleChange(eve.target.value, eve);
+    }
     
 
     render() {
@@ -180,7 +192,7 @@ class Form extends Component {
                         <p/>
                         <div className="details db">
                             <h1 className="blue"> Community Details</h1><p/>
-                            <CommunityDetails territory="NU" province="British Columbia" handleChange ={this.handleChange} testCase={test} communityValues = {communityValues} nextPage= {this.nextPage}/>
+                            <CommunityDetails territory="NU" province="British Columbia" handleChange ={this.handleChange} bandNumHandlerChange={this.bandNumHandlerChange} testCase={test} communityValues = {communityValues} nextPage= {this.nextPage}/>
                         </div><p/>
                         <div className="details db">
                             <h1 className="blue"> Occupant's Details</h1><p/>
@@ -215,10 +227,13 @@ class Form extends Component {
                 return(
                     <div className="report db">
                         <h1 className="blue">Report</h1>
-                        <Report prevPage={this.prevPage}/>
+                        <Report prevPage={this.prevPage} interiorValues = {interiorValues} exteriorValues = {exteriorValues}/>
                     </div>
 
                 );
+            
+            default:
+                return(null);
 
     
         }

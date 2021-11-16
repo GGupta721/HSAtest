@@ -8,10 +8,13 @@ import InteriorDetails from "./InteriorDetails/InteriorDetails";
 import Report from "./Report/Report";
 import { FNAddress } from "./details/communityDetails";
 
+import {result} from "./test";
+
+
 // import NavigationLink from "../NavigationLink";
 
 class Form extends Component {
-
+    
     // constructor(props) {
     //     super(props);
     //     this.state = {
@@ -161,6 +164,45 @@ class Form extends Component {
 
     render() {
 
+        // var result = [];
+        // function csvJSON(Comprehensivedata){
+
+        //     var lines=Comprehensivedata.split("\n");
+          
+            
+          
+        //     // NOTE: If your columns contain commas in their values, you'll need
+        //     // to deal with those before doing the next step 
+        //     // (you might convert them to &&& or something, then covert them back later)
+        //     // jsfiddle showing the issue https://jsfiddle.net/
+        //     var headers=lines[0].split(",");
+          
+        //     for(var i=1;i<lines.length;i++){
+          
+        //         var obj = {};
+        //         var currentline=lines[i].split(",");
+          
+        //         for(var j=0;j<headers.length;j++){
+        //             obj[headers[j]] = currentline[j];
+        //         }
+          
+        //         result.push(obj);
+          
+        //     }
+          
+        //     return result; //JavaScript object
+        //     //return JSON.stringify(result); //JSON
+        //   }
+        
+        // const fs= require('fs');
+        // const csv= require('csvtojson');
+        // const {Parser}= require('json2csv');
+
+        // // (async()=>{
+        //     const bandinfo=  csv().fromFile("Comprehensivedata.csv");
+        //     // console.log(bandinfo);
+        // // })();
+
         //Test cases
         const {testing} = this.state;
         const test = {testing};
@@ -238,83 +280,7 @@ class Form extends Component {
     
         }
 
-        // return (
-        //     <div className="form-div">
-        //     <p/>
-        //         <div className="form">
-        //             <form  onSubmit={this.handleSubmit}>
-                        
-        //                 <Router pathName = "/">
-        //                     <div className="rightIndent">
-        //                         &nbsp;<input type="checkbox" className="inputV5"/>
-        //                         I Acknowledge Reading This Instruction; <br/><br/>&emsp;&nbsp;&nbsp;&nbsp;
-        //                         Assessor's First Name: <input type="text" name="fname" className="inputV1"/>&nbsp;&emsp; 
-        //                         Assessor's Last Name: <input type="text" name="lname" className="inputV1" />&nbsp;&emsp;
-        //                         Date: <input type="Date" className="inputV4"/>
-        //                     </div>
-        //                     <p/>
-        //                     <div className="details db">
-        //                         <h1 className="blue"> Community Details</h1><p/>
-        //                         <CommunityDetails territory="NU" province="British Columbia" handleChange ={this.handleChange} communityValues = {communityValues}/>
-        //                     </div><p/>
-        //                     <div className="details db">
-        //                         <h1 className="blue"> Occupant's Details</h1><p/>
-        //                         <OccupantDetails handleChange ={this.handleChange} occupantValues = {occupantValues}/>
-        //                     </div>
-                            
-        //                     <div className="NavLinks next blue">
-        //                         <NavigationLink href="/exterior">Next <i class="arrow right icon"/></NavigationLink>
-        //                         {/* <NavigationLink href="/exterior"></NavigationLink> */}
-        //                     </div>
-                            
-
-        //                 </Router>
-                        
-        //                 <Router pathName = "/exterior">
-        //                     <div className="exterior db">
-        //                         <h1 className="blue"> Exterior Details</h1><p/>
-        //                         <Exterior/>
-        //                     </div>
-        //                     <div className="NavLinks previous">
-        //                         <NavigationLink href="/"> <i class="arrow left icon"/> Previous</NavigationLink>
-        //                     </div>
-        //                     <div className="NavLinks next">
-        //                         <NavigationLink href="/interior">Next <i class="arrow right icon"/></NavigationLink>
-        //                     </div>
-        //                 </Router>
-        //                 <br/>
-
-        //                 <Router pathName = "/interior">
-        //                     <div className="interior db">
-        //                         <h1 className="blue"> Interior Details</h1><p/>
-        //                         <InteriorDetails/>
-        //                     </div>
-
-        //                     <div className="NavLinks previous">
-        //                         <NavigationLink href="/exterior">  <i class="arrow left icon"/> Previous</NavigationLink>
-        //                     </div>
-        //                     <div className="NavLinks next">
-        //                         <NavigationLink href="/report" className="ui primary button submitButton">Submit</NavigationLink>
-        //                     </div>
-        //                     <br/>
-        //                 </Router>
-        //                 <br/>
-
-        //                 {/* <input type="submit" value="submit"></input> */}
-        //             </form>
-        //             <Router pathName = "/report">      
-        //                 <div className="report db">
-        //                     <h1 className="blue">Report</h1>
-        //                     <Report/>
-        //                 </div>
-                        
-        //                 <div className="NavLinks previous">
-        //                     <NavigationLink href="/interior"> <i class="arrow left icon"/> Previous</NavigationLink>
-        //                 </div>
-        //             </Router>
-        //         </div>
-        //     </div>
-        // );
+       
     }
 }
 

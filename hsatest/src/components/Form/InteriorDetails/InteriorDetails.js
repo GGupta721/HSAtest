@@ -5,6 +5,53 @@ import { toast } from 'react-toastify';
 
 class InteriorDetails extends React.Component{
 
+        state= {
+                disabled: true,
+                disabledq27: true,
+                disabledq28:true
+        }
+
+
+        alternateChange=(e) =>{
+
+                if (e.target.value==="No"){
+                        this.setState({
+                                disabled:false
+                        });
+                }
+
+                if (e.target.value==="Yes"){
+                        this.setState({
+                                disabled:true,
+  
+                        }); 
+                }
+
+                if(e.target.value==="Other"){
+                        this.setState({
+                                disabledq27:! this.state.disabledq27
+                        });
+                }
+
+                if(e.target.value==="Other1"){
+                        this.setState({
+                                disabledq28:! this.state.disabledq28
+                        });
+                }
+
+
+               
+        }
+
+ 
+
+        handleChange2=(e) =>{
+                
+        }
+
+
+
+
         continue = (eve) => {
                 eve.preventDefault();
                 this.props.nextPage();
@@ -26,40 +73,104 @@ class InteriorDetails extends React.Component{
         render(){
                 const {interiorValues, handleChange} = this.props;
 
+                
+
                 return(
                         <div class="form-header">
                                 <div class="grid-container">
                                         <div className="questions grid-child">
                                                 <h3 >SMOKE / CO DETECTORS</h3>
-                                                <div className="ques">8a. Are there Smoke Detectors installed in the home?</div>&emsp;
-                                                <div className="radioOptions" onChange={handleChange('q8a')}>   
-                                                        <input type="radio" value="Yes" name="q8a" defaultChecked={interiorValues.q8a === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q8a" defaultChecked={interiorValues.q8a === "No"} onClick={this.notify}/> No &emsp;
+                                                <div className="ques">11. Are there Smoke Detectors installed in the home?</div>&emsp;
+                                                <div className="radioOptions" onChange={handleChange('q11')}>   
+                                                        <input type="radio" value="Yes" name="q11" defaultChecked={interiorValues.q11 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q11" defaultChecked={interiorValues.q11 === "No"} onClick={this.notify}/> No &emsp;
                                                 </div>
                                                 <br/>
-                                                <div>Looking a the base of the detector(s) expired date is:&emsp;<input type="Date" className="inputV6"/></div>
-                                                
-                                                &emsp;&emsp; 
-                                                <div className="ques">8b. Are there Carbon Monoxide detectors installed in the home? </div>&emsp;      
-                                                <div className="radioOptions" onChange={handleChange('q8b')}>
-                                                        <input type="radio" value="Yes" name="q8b" defaultChecked={interiorValues.q8b === "Yes"} />Yes &emsp;
-                                                        <input type="radio" value="No" name="q8b" defaultChecked={interiorValues.q8b === "No"} onClick={this.notify}/> No &emsp;
-                                                </div>
-                                                <br/>
-                                                <div>Looking a the base of the detector(s) expired date is:&emsp;<input type="Date" className="inputV6"/></div>      
+                                                <div className="ques">12. How many smoke detectors on site?<p/>
+                                                <input type="number" placeholder= " Number of Smoke Detectors" step="1" defaultValue={interiorValues.q12} onChange={handleChange('q12')}/>
+                                                </div><p/>
+                                                <div className="ques">13. What is the expiry date for Smoke detector?<p/>
+                                                <input type="Date" className="inputV4"/>
+                                                </div><p/>
+                                                <div className="ques">14. Do they work when tested? </div>&emsp;      
+                                                <div className="radioOptions" onChange={handleChange('q14')}>
+                                                        <input type="radio" value="Yes" name="q14"checked={interiorValues.q14 === "Yes"} />Yes &emsp;
+                                                        <input type="radio" value="No" name="q14" checked={interiorValues.q14 === "No"} onClick={this.notify}/> No &emsp;
+                                                </div>      
                                                 <p/>
-                                                
-                                                <div className="ques">8c. Are there combination Smoke / Carbon Monoxide detectors installed: </div>&emsp;      
-                                                <div className="radioOptions" onChange={handleChange('q8c')}>
-                                                        <input type="radio" value="Yes" name="q8c" defaultChecked={interiorValues.q8c === "Yes"} />Yes &emsp;
-                                                        <input type="radio" value="No" name="q8c" defaultChecked={interiorValues.q8c === "No"} onClick={this.notify}/> No &emsp;
+                                                <div>       
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
+                                                </div><p/>
+
+                                        </div>
+                                        <div className="info grid-child">
+                                                <p>
+                                                        <b>Consideration:</b> Smoke detectors alert the occupants in the house of the danger of a fire or elevated carbon monoxide levels.<br/><br/>
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend installation where needed, 
+                                                        change batteries and check expiration dates. Recommend a minimum of 1 smoke detector on each floor.
+                                                </p>
+
+                                        </div>
+
+                                        <div className="questions grid-child">
+                                                <h3 >CARBON MONOXIDE(CO) DETECTORS </h3>
+                                                <div className="ques">15. Are there CO detectors installed in the home?</div>&emsp;
+                                                <div className="radioOptions" onChange={handleChange('q15')}>   
+                                                        <input type="radio" value="Yes" name="q15" checked={interiorValues.q15 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q15" checked={interiorValues.q125=== "No"}/> No &emsp;
+                                                </div><p/>
+                                                <div className="ques">16. How many CO detectors are on site?<p/>
+                                                <input type="number" placeholder= " Number of Co Detectors" step="1" defaultValue={interiorValues.q16} onChange={handleChange('q16')}/>
+                                                </div><p/>
+                                                <div className="ques">17. What is the expiry date for the CO detector?<p/>
+                                                <input type="Date" className="inputV4"/>
+                                                </div><p/>
+                                                &emsp;&emsp; 
+                                                <div className="ques">18. Do they work when tested? </div>&emsp;      
+                                                <div className="radioOptions" onChange={handleChange('q18')}>
+                                                        <input type="radio" value="Yes" name="q18"checked={interiorValues.q18 === "Yes"} />Yes &emsp;
+                                                        <input type="radio" value="No" name="q18" checked={interiorValues.q18 === "No"}/> No &emsp;
+                                                </div>      
+                                                <p/>
+                                                <div>       
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
+                                                </div><p/>
+                                        </div>
+                                        <div className="info grid-child">
+                                                <p>
+                                                        <b>Consideration:</b> Carbon monoxide detectors alert the occupants in the house of the danger of a fire or elevated carbon monoxide levels.<br/><br/>
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend installation where needed, 
+                                                        change batteries and check expiration dates. Recommend a minimum of 1 Carbon monoxide detector on each floor.
+                                                </p>
+
+                                        </div>                                        
+
+                                        <div className="questions grid-child">
+                                                <h3 >SMOKE / CARBON MONOXIDE(CO) DETECTORS</h3>
+                                                <div className="ques">19. Are there Smoke/CO detectors installed in the home?
+                                                 </div>&emsp;
+                                                <div className="radioOptions" onChange={handleChange('q19')}>   
+                                                        <input type="radio" value="Yes" name="q19" checked={interiorValues.q19 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q19" checked={interiorValues.q19 === "No"}/> No &emsp;
                                                 </div>
                                                 <br/>
-                                                <div>Looking a the base of the detector(s) expired date is:&emsp;<input type="Date" className="inputV6"/></div>
-                                                      
+                      
+                                                <p/>
+                                                <div className="ques">20. How many Smoke/CO detectors are on site?<p/>
+                                                <input type="number" placeholder= " Number of Smoke/Co Detectors" step="1" defaultValue={interiorValues.q20} onChange={handleChange('q20')}/>
+                                                </div><p/>
+                                                <div className="ques">21. What is the expiry date for the Smoke/CO detector?<p/>
+                                                <input type="Date" className="inputV4"/>
+                                                </div><p/>
+                                                &emsp;&emsp; 
+                                                <div className="ques">22. Do they work when tested?  </div>&emsp;      
+                                                <div className="radioOptions" onChange={handleChange('q22')}>
+                                                        <input type="radio" value="Yes" name="q22"checked={interiorValues.q22 === "Yes"} />Yes &emsp;
+                                                        <input type="radio" value="No" name="q22" checked={interiorValues.q22 === "No"}/> No &emsp;
+                                                </div>      
                                                 <p/>
                                                 <div>        
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q8Comments} onChange={handleChange('q8Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -72,12 +183,12 @@ class InteriorDetails extends React.Component{
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <h3>FIRE EXTINGUISHERS:</h3>
-                                                <div className="ques">9. Is there a minimum of 1 fire 
+                                                <h3>FIRE EXTINGUISHERS</h3>
+                                                <div className="ques">23. Is there a minimum of one fire 
                                                 extinguisher on each floor? </div>&emsp;
-                                                <div className="radioOptions" onChange={handleChange('q9')}>   
-                                                        <input type="radio" value="Yes" name="q9" defaultChecked={interiorValues.q9 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q9" defaultChecked={interiorValues.q9 === "No"} onClick={this.notify}/> No &emsp;
+                                                <div className="radioOptions" onChange={handleChange('q23')}>   
+                                                        <input type="radio" value="Yes" name="q23" defaultChecked={interiorValues.q23 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q23" defaultChecked={interiorValues.q23 === "No"} onClick={this.notify}/> No &emsp;
                                                 </div>
                                                 
                                                 <p/>       
@@ -98,53 +209,108 @@ class InteriorDetails extends React.Component{
                                         </div> 
 
                                         <div className="questions grid-child">
-                                                <h3>DOORS AND WINDOWS:</h3>
-                                                <div className="ques">10. Are all doors and windows clear 
+                                                <h3>DOORS AND WINDOWS</h3>
+                                                <div className="ques">24. Are all doors clear 
                                                 of obstructions and do they open? </div>&emsp;
-                                                <div className="radioOptions" onChange={handleChange('q10')}>   
-                                                        <input type="radio" value="Yes" name="q10" defaultChecked={interiorValues.q10 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q10" defaultChecked={interiorValues.q10 === "No"} onClick={this.notify}/> No &emsp;
-                                                </div>
-                                                
-                                                <p/>    
-
-                                                <div className="ques">11. Is the home free of mould-like stains, a musty scent
-                                                or any evidence of water leaking or seeping in? <br/><br/>
-                                                If no, EHO / Remediation Contact advised?</div>&emsp;      
-                                                <div className="radioOptions" onChange={handleChange('q11')}>   
-                                                        <input type="radio" value="Yes" name="q11" defaultChecked={interiorValues.q11 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q11" defaultChecked={interiorValues.q11 === "No"} onClick={this.notify}/> No &emsp;
-                                                </div>
-                                                <p/> 
-                                                Name:&emsp; <input type="text" placeholder="Enter Name" defaultValue={interiorValues.q11Name} onChange={handleChange('q11Name')}/>&emsp;<br/>
-                                                Phone Number:&emsp; <input type="text" placeholder="Enter Number" defaultValue={interiorValues.q11PhoneNum} onChange={handleChange('q11PhoneNum')}/><p/> 
-                                                <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q11Comments} onChange={handleChange('q11Comments')}></textarea>
+                                                <div className="radioOptions" onChange={handleChange('q24')}>   
+                                                        <input type="radio" value="Yes" name="q24" defaultChecked={interiorValues.q24 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q24" defaultChecked={interiorValues.q24 === "No"} onClick={this.notify}/> No &emsp;
                                                 </div><p/>
+                                                <div>       
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q24Comments} onChange={handleChange('q24Comments')}></textarea>
+                                                </div><p/>
+
+                                                <div className="ques">25. Are all windows clear 
+                                                of obstructions and do they open? </div>&emsp;
+                                                <div className="radioOptions" onChange={handleChange('q25')}>   
+                                                        <input type="radio" value="Yes" name="q25" defaultChecked={interiorValues.q25 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q25" defaultChecked={interiorValues.q25 === "No"} onClick={this.notify}/> No &emsp;
+                                                </div><br/>
+                                                <div>       
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q25Comments} onChange={handleChange('q25Comments')}></textarea>
+                                                </div><p/>
+                                                </div>
+
+                                                <div className="info grid-child">
+                                                <p>
+                                                        
+                                                        <b>Consideration:</b>  Doors/windows must be clear of obstructions to facilitate
+                                                        rapid evacuation to prevent falling down or limiting access to your home.<br/><br/>
+                                                        <b>Recommendation:</b> Recommend keeping the doors/windows free of objects in case
+                                                        there is a need to exit in an emergency situation.<br/><br/>
+
+                                                      
+                                                </p>
+
+                                        </div> 
+
+                                        <div className="questions grid-child">
+                                                <h3>ENVIRONMENTAL</h3>
+                                                <p/>    
+                                                <div className="ques">26. Is the home free of any environmental issues?</div><p/>
+                                                <div className="radioOptions" onChange={handleChange('q26')}>   
+                                                        <input type="radio" value="Yes" name="q26" defaultChecked={interiorValues.q26 === "Yes"} onClick={this.alternateChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q26" defaultChecked={interiorValues.q26 === "No"} onClick={this.alternateChange}/> No &emsp;
+                                                </div><p/>
+
+                                                <div className="ques">27. If No, What environmental issue does the home have?
+                                                </div><p/>
+                                               
+                                                <div className="multiChoice" >
+                                                <input type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27a === "Mould"} id="Mould" value="Mould"/><label for ="Mould">Mould</label><br/>
+                                                <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27b === "Musty-Scent"} value="Musty-Scent"/>Musty-Scent<br/>
+                                                <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27c === "WaterLeak"} value="WaterLeak"/>WaterLeak<br/>
+                                                <input  type="checkbox" disabled={this.state.disabled} value="Other" defaultChecked={interiorValues.q27d === "Other"} onClick={this.alternateChange}/>Other<br/>
+                                                </div><p/>
+
+                                                <div className="ques">28. If others enter location in the comment box:</div><p/>
+                                                <div>       
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." disabled={this.state.disabledq27} defaultValue={interiorValues.q28Comments} onChange={handleChange('q28Comments')}></textarea>
+                                                </div><p/>
+    
+                                                <p/> 
+                                                <div className="ques">29. Where can the environmental issue be found?</div><p/>
+                                                <div className="multiChoice" >        
+                                                        <label><input type="checkbox" disabled={this.state.disabled} value="Laundry"/>Laundry</label><br/>
+                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29a === "Kitchen"}  value="Kitchen"/> Kitchen<br/>
+                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29b === "Door"} value="Door"/>Door<br/>
+                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29c === "Window"} value="Window"/> Window<br/>
+                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29d === "Other1"} value="Other1"  onClick={this.alternateChange}/>Other<br/>                                            
+                                                </div><p/>
+                                                <div className="ques">30. If others enter location in the comment box:</div><p/>
+                                                <div>       
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." disabled={this.state.disabledq30} defaultValue={interiorValues.q30Comments} onChange={handleChange('q30Comments')}></textarea>
+                                                </div><p/>
+                                                
+                                                <div className="ques">
+                                                31. If No, EHO / Remediation Contact advised?</div>&emsp;  
+                                                Full Name:&emsp;&emsp;&emsp; <input type="text" disabled={this.state.disabled} placeholder="First Name, Last Name" defaultValue={interiorValues.q31Name} onChange={handleChange('q31Name')}/>&emsp;<br/><br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number:&emsp; <input type="text"  disabled={this.state.disabled} placeholder="Enter Number" defaultValue={interiorValues.q31PhoneNum} onChange={handleChange('q31PhoneNum')}/><p/> 
+                                               
                                         </div>
                                         <div className="info grid-child">
                                                 <p>
-                                                        <b>Consideration:</b> The presence of mould indicates an underlying issue. 
+                                                        <b>Consideration:</b> The presence of environmental issues such as mould indicates an underlying issue. 
                                                         Mould and dampconditions can cause a variety of health issues.<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend the cause of the mould / dampness be identified and fixed. 
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend the cause of the environmental issues such as mould/dampness be identified and fixed. 
                                                         A qualified person should perform a mould test and recommend mitigation.
                                                 </p>
 
                                         </div>  
 
                                         <div className="questions grid-child">
-                                                <h3>STAIRCASE AND HANDRAILS:</h3>
-                                                <div className="ques">12. Is the staircase clear of 
+                                                <h3>STAIRCASE AND HANDRAILS</h3>
+                                                <div className="ques">32. Is the staircase clear of 
                                                 obstructions and are the stairs and handrails secure?</div>&emsp;
                                                 
-                                                <div className="radioOptions" onChange={handleChange('q12')}>      
-                                                        <input type="radio" value="Yes" name="q12" defaultChecked={interiorValues.q12 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q12" defaultChecked={interiorValues.q12 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q12" defaultChecked={interiorValues.q12 === "N/A"} onClick={this.notify}/> N/A
+                                                <div className="radioOptions" onChange={handleChange('q32')}>      
+                                                        <input type="radio" value="Yes" name="q32" defaultChecked={interiorValues.q32 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q32" defaultChecked={interiorValues.q32 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q32" defaultChecked={interiorValues.q32 === "N/A"} onClick={this.notify}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q12Comments} onChange={handleChange('q12Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q32Comments} onChange={handleChange('q32Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -159,16 +325,16 @@ class InteriorDetails extends React.Component{
 
                                         <div className="questions grid-child">
                                                 <h3>PLUMBING:</h3>
-                                                <div className="ques">13. Are the bathroom, kitchen and/or 
+                                                <div className="ques">33. Are the bathroom, kitchen and/or 
                                                 laundry room sinks free of leaks?</div>&emsp;
                                                 
-                                                <div className="radioOptions" onChange={handleChange('q13')}>      
-                                                        <input type="radio" value="Yes" name="q13" defaultChecked={interiorValues.q13 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q13" defaultChecked={interiorValues.q13 === "No"} onClick={this.notify}/> No
+                                                <div className="radioOptions" onChange={handleChange('q33')}>      
+                                                        <input type="radio" value="Yes" name="q33" defaultChecked={interiorValues.q33 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q33" defaultChecked={interiorValues.q33 === "No"} onClick={this.notify}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q13Comments} onChange={handleChange('q13Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q33Comments} onChange={handleChange('q33Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -182,17 +348,17 @@ class InteriorDetails extends React.Component{
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <h3>ELECTRICAL:</h3>
-                                                <div className="ques">14. Is the electrical panel easy 
+                                                <h3>ELECTRICAL</h3>
+                                                <div className="ques">34. Is the electrical panel easy 
                                                 to access and free from clutter? </div>&emsp;
                                                 
-                                                <div className="radioOptions" onChange={handleChange('q14')}>      
-                                                        <input type="radio" value="Yes" name="q14" defaultChecked={interiorValues.q14 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q14" defaultChecked={interiorValues.q14 === "No"} onClick={this.notify}/> No
+                                                <div className="radioOptions" onChange={handleChange('q34')}>      
+                                                        <input type="radio" value="Yes" name="q34" defaultChecked={interiorValues.q34 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q34" defaultChecked={interiorValues.q34 === "No"} onClick={this.notify}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q34Comments} onChange={handleChange('q34Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -204,16 +370,16 @@ class InteriorDetails extends React.Component{
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <div className="ques">15. Are outlets installed within 6 feet 
+                                                <div className="ques">35. Are outlets installed within 6 feet 
                                                 of sinks, baths or any other water source GFCI outlets? </div>&emsp;
                                                 
-                                                <div className="radioOptions" onChange={handleChange('q15')}>      
-                                                        <input type="radio" value="Yes" name="q15" defaultChecked={interiorValues.q15 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q15" defaultChecked={interiorValues.q15 === "No"} onClick={this.notify}/> No
+                                                <div className="radioOptions" onChange={handleChange('q35')}>      
+                                                        <input type="radio" value="Yes" name="q35" defaultChecked={interiorValues.q35 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q35" defaultChecked={interiorValues.q35 === "No"} onClick={this.notify}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q15Comments} onChange={handleChange('q15Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q35Comments} onChange={handleChange('q35Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -226,17 +392,17 @@ class InteriorDetails extends React.Component{
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <div className="ques">16. Are electrical outlets in all rooms in the house functioning
+                                                <div className="ques">36. Are electrical outlets in all rooms in the house functioning
                                                 and there have been no problems with any of the outlets?
                                                 </div>&emsp;
                                                 
-                                                <div className="radioOptions" onChange={handleChange('q16')}>      
-                                                        <input type="radio" value="Yes" name="q16" defaultChecked={interiorValues.q16 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q16" defaultChecked={interiorValues.q16 === "No"} onClick={this.notify}/> No
+                                                <div className="radioOptions" onChange={handleChange('q36')}>      
+                                                        <input type="radio" value="Yes" name="q36" defaultChecked={interiorValues.q36 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q36" defaultChecked={interiorValues.q36 === "No"} onClick={this.notify}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q16Comments} onChange={handleChange('q16Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q36Comments} onChange={handleChange('q36Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -249,22 +415,22 @@ class InteriorDetails extends React.Component{
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <div className="ques">17. Do all light switches and outlets have covers and are they
+                                                <div className="ques">37. Do all light switches and outlets have covers and are they
                                                 free from discolouration?
                                                 </div>&emsp;
                                                 
-                                                <div className="radioOptions" onChange={handleChange('q17')}>      
-                                                        <input type="radio" value="Yes" name="q17" defaultChecked={interiorValues.q17 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q17" defaultChecked={interiorValues.q17 === "No"} onClick={this.notify}/> No
+                                                <div className="radioOptions" onChange={handleChange('q37')}>      
+                                                        <input type="radio" value="Yes" name="q37" defaultChecked={interiorValues.q37 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q37" defaultChecked={interiorValues.q37 === "No"} onClick={this.notify}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q17Comments} onChange={handleChange('q17Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q37Comments} onChange={handleChange('q37Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
                                                 <p>
-                                                        <b>Consideration:</b> : PLight switch and outlet covers are there to prevent any possible shock hazards. 
+                                                        <b>Consideration:</b> : Light switch and outlet covers are there to prevent any possible shock hazards. 
                                                         If the covers are discoloured, this is a sign that there may be a problem with the electrical current flow<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend any damaged covers be replaced.
 
@@ -273,18 +439,18 @@ class InteriorDetails extends React.Component{
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <h3>HEATING SYSTEMS:</h3>
-                                                <div className="ques">18. Is the furnace clear of obstructions 
+                                                <h3>HEATING SYSTEMS</h3>
+                                                <div className="ques">38. Is the furnace clear of obstructions 
                                                 and combustible materials?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q18')}>      
-                                                        <input type="radio" value="Yes" name="q18" defaultChecked={interiorValues.q18 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q18" defaultChecked={interiorValues.q18 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q18" defaultChecked={interiorValues.q18 === "N/A"} onClick={this.notify}/> N/A
+                                                <div className="radioOptions" onChange={handleChange('q38')}>      
+                                                        <input type="radio" value="Yes" name="q38" defaultChecked={interiorValues.q38 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q38" defaultChecked={interiorValues.q38 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q38" defaultChecked={interiorValues.q38 === "N/A"} onClick={this.notify}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q38Comments} onChange={handleChange('q38Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -297,18 +463,18 @@ class InteriorDetails extends React.Component{
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <div className="ques">19. Does the furnace appear to be in good condition? 
+                                                <div className="ques">39. Does the furnace appear to be in good condition? 
                                                 Is it clean and free from dust and discoloration on the main body and
                                                 venting?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q19')}>      
-                                                        <input type="radio" value="Yes" name="q19" defaultChecked={interiorValues.q19 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q19" defaultChecked={interiorValues.q19 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q19" defaultChecked={interiorValues.q19 === "N/A"} onClick={this.notify}/> N/A
+                                                <div className="radioOptions" onChange={handleChange('q39')}>      
+                                                        <input type="radio" value="Yes" name="q39" defaultChecked={interiorValues.q39 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q39" defaultChecked={interiorValues.q39 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q38" defaultChecked={interiorValues.q39 === "N/A"} onClick={this.notify}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q19Comments} onChange={handleChange('q19Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q39Comments} onChange={handleChange('q39Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -321,19 +487,19 @@ class InteriorDetails extends React.Component{
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <h3>HEATING SYSTEMS:</h3>
-                                                <div className="ques">20. Is there a shutoff valve on or near 
+                                                <h3>HEATING SYSTEMS</h3>
+                                                <div className="ques">40. Is there a shutoff valve on or near 
                                                 the furnace and does the furnace turn on right away when the thermostat 
                                                 is turned up? </div>&emsp;
                                                 
-                                                <div className="radioOptions" onChange={handleChange('q20')}>    
-                                                        <input type="radio" value="Yes" name="q20" defaultChecked={interiorValues.q20 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q20" defaultChecked={interiorValues.q20 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q20" defaultChecked={interiorValues.q20 === "N/A"} onClick={this.notify}/> N/A
+                                                <div className="radioOptions" onChange={handleChange('q40')}>    
+                                                        <input type="radio" value="Yes" name="q40" defaultChecked={interiorValues.q40 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q40" defaultChecked={interiorValues.q40 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q40" defaultChecked={interiorValues.q40 === "N/A"} onClick={this.notify}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q20Comments} onChange={handleChange('q20Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q40Comments} onChange={handleChange('q40Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -347,18 +513,18 @@ class InteriorDetails extends React.Component{
                                         </div>  
 
                                         <div className="questions grid-child">
-                                                <h3>BASEBOARDS AND SPACE HEATERS:</h3>
-                                                <div className="ques">21. Are the baseboards and space heaters clear of
+                                                <h3>BASEBOARDS AND SPACE HEATERS</h3>
+                                                <div className="ques">41. Are the baseboards and space heaters clear of
                                                 obstructions?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q21')}>      
-                                                        <input type="radio" value="Yes" name="q21" defaultChecked={interiorValues.q21 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q21" defaultChecked={interiorValues.q21 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q21" defaultChecked={interiorValues.q21 === "N/A"} onClick={this.notify}/> N/A
+                                                <div className="radioOptions" onChange={handleChange('q41')}>      
+                                                        <input type="radio" value="Yes" name="q41" defaultChecked={interiorValues.q41 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q41" defaultChecked={interiorValues.q41 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q41" defaultChecked={interiorValues.q41 === "N/A"} onClick={this.notify}/> N/A
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q21Comments} onChange={handleChange('q21Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q41Comments} onChange={handleChange('q41Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -371,17 +537,17 @@ class InteriorDetails extends React.Component{
                                         </div>
                                         
                                         <div className="questions grid-child">
-                                                <div className="ques">22. Are the baseboards and space heaters functioning
-                                                properly? When you turn up the thermostat do, they heat up?</div>&emsp;
+                                                <div className="ques">42. Are the baseboards and space heaters functioning
+                                                properly? When you turn up the thermostat, do they heat up?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q22')}> 
-                                                        <input type="radio" value="Yes" name="q22" defaultChecked={interiorValues.q22 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q22" defaultChecked={interiorValues.q22 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q22" defaultChecked={interiorValues.q22 === "N/A"} onClick={this.notify}/> N/A 
+                                                <div className="radioOptions" onChange={handleChange('q42')}> 
+                                                        <input type="radio" value="Yes" name="q42" defaultChecked={interiorValues.q42 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q42" defaultChecked={interiorValues.q42 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q42" defaultChecked={interiorValues.q42 === "N/A"} onClick={this.notify}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q42Comments} onChange={handleChange('q42Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -394,17 +560,17 @@ class InteriorDetails extends React.Component{
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <div className="ques">23. Do the baseboards appear to be in good condition? Are
+                                                <div className="ques">43. Do the baseboards appear to be in good condition? Are
                                                 they free from dust and discoloration?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q23')}>    
-                                                        <input type="radio" value="Yes" name="q23" defaultChecked={interiorValues.q23 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q23" defaultChecked={interiorValues.q23 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q23" defaultChecked={interiorValues.q23 === "N/A"} onClick={this.notify}/> N/A 
+                                                <div className="radioOptions" onChange={handleChange('q43')}>    
+                                                        <input type="radio" value="Yes" name="q43" defaultChecked={interiorValues.q43 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q43" defaultChecked={interiorValues.q43 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q43" defaultChecked={interiorValues.q43 === "N/A"} onClick={this.notify}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q23Comments} onChange={handleChange('q23Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q43Comments} onChange={handleChange('q43Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -416,18 +582,18 @@ class InteriorDetails extends React.Component{
                                         </div>  
 
                                         <div className="questions grid-child">
-                                                <h3>WOOD STOVE:</h3>
-                                                <div className="ques">24. Is the Exterior chimney free of any cracks, missing bricks
+                                                <h3>WOOD STOVE</h3>
+                                                <div className="ques">44. Is the exterior chimney free of any cracks, missing bricks
                                                 or chimney cap, or black creosote buildup?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q24')}>   
-                                                        <input type="radio" value="Yes" name="q24" defaultChecked={interiorValues.q24 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q24" defaultChecked={interiorValues.q24 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q24" defaultChecked={interiorValues.q24 === "N/A"} onClick={this.notify}/> N/A 
+                                                <div className="radioOptions" onChange={handleChange('q44')}>   
+                                                        <input type="radio" value="Yes" name="q44" defaultChecked={interiorValues.q44 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q44" defaultChecked={interiorValues.q44 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q44" defaultChecked={interiorValues.q44 === "N/A"} onClick={this.notify}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q24Comments} onChange={handleChange('q24Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q44Comments} onChange={handleChange('q44Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -440,17 +606,17 @@ class InteriorDetails extends React.Component{
                                         </div>   
 
                                         <div className="questions grid-child">
-                                                <div className="ques">25. Does the wood stove and interior chimney appear to be in
+                                                <div className="ques">45. Does the wood stove and interior chimney appear to be in
                                                 good condition? Is the glass door free from cracks and black discolouration?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q25')}>
-                                                        <input type="radio" value="Yes" name="q25" defaultChecked={interiorValues.q25 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q25" defaultChecked={interiorValues.q25 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q25" defaultChecked={interiorValues.q25 === "N/A"} onClick={this.notify}/> N/A 
+                                                <div className="radioOptions" onChange={handleChange('q45')}>
+                                                        <input type="radio" value="Yes" name="q45" defaultChecked={interiorValues.q45 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q45" defaultChecked={interiorValues.q45 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q45" defaultChecked={interiorValues.q45 === "N/A"} onClick={this.notify}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q25Comments} onChange={handleChange('q25Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q45Comments} onChange={handleChange('q45Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -463,18 +629,18 @@ class InteriorDetails extends React.Component{
                                         </div> 
 
                                         <div className="questions grid-child">
-                                                <div className="ques">26. Is there a working smoke/CO detector centrally located on
+                                                <div className="ques">46. Is there a working Smoke/CO detector centrally located on
                                                 the ceiling but not closer than 20 feet of the wood stove or
                                                 fireplace?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q26')}>
-                                                        <input type="radio" value="Yes" name="q26" defaultChecked={interiorValues.q26 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q26" defaultChecked={interiorValues.q26 === "No"}onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q26" defaultChecked={interiorValues.q26 === "N/A"}onClick={this.notify}/> N/A 
+                                                <div className="radioOptions" onChange={handleChange('q46')}>
+                                                        <input type="radio" value="Yes" name="q46" defaultChecked={interiorValues.q46 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q46" defaultChecked={interiorValues.q46 === "No"}onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q46" defaultChecked={interiorValues.q46 === "N/A"}onClick={this.notify}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q26Comments} onChange={handleChange('q26Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q46Comments} onChange={handleChange('q46Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -488,17 +654,17 @@ class InteriorDetails extends React.Component{
                                         </div>  
 
                                         <div className="questions grid-child">
-                                                <div className="ques">27. Is there a fire extinguisher within 20 feet of the wood stove
+                                                <div className="ques">47. Is there a fire extinguisher within 20 feet of the wood stove
                                                 or fireplace but not closer than 10 feet?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q27')}>
-                                                        <input type="radio" value="Yes" name="q27" defaultChecked={interiorValues.q27 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q27" defaultChecked={interiorValues.q27 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q27" defaultChecked={interiorValues.q27 === "N/A"} onClick={this.notify}/> N/A 
+                                                <div className="radioOptions" onChange={handleChange('q47')}>
+                                                        <input type="radio" value="Yes" name="q47" defaultChecked={interiorValues.q47 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q47" defaultChecked={interiorValues.q47 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q47" defaultChecked={interiorValues.q47 === "N/A"} onClick={this.notify}/> N/A 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q27Comments} onChange={handleChange('q27Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q47Comments} onChange={handleChange('q47Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -511,41 +677,43 @@ class InteriorDetails extends React.Component{
                                         </div>   
 
                                         <div className="questions grid-child">
-                                                <h3>HOME SAFETY PLAN:</h3>
-                                                <div className="ques">28. Does the household have a safety plan and a meeting
+                                                <h3>HOME SAFETY PLAN</h3>
+                                                <div className="ques">48. Does the household have a safety plan and a meeting
                                                 location in place?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q28')}>
-                                                        <input type="radio" value="Yes" name="q28" defaultChecked={interiorValues.q28 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q28" defaultChecked={interiorValues.q28 === "No"} onClick={this.notify}/> No 
+                                                <div className="radioOptions" onChange={handleChange('q48')}>
+                                                        <input type="radio" value="Yes" name="q48" defaultChecked={interiorValues.q48 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q48" defaultChecked={interiorValues.q48 === "No"} onClick={this.notify}/> No 
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q28Comments} onChange={handleChange('q28Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q48Comments} onChange={handleChange('q48Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
                                                 <p>
                                                         <b>Consideration:</b> A safety plan will let everyone in the home know how to escape and get to a safe meeting location. 
                                                         This will also be very helpful when responders arrive if anyone is missing.<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend create, modify and review a plan that consists of: 
-                                                        all escape routes using doors and windows., a determined meeting place. Do these escape routes work, during all seasons?<br/>
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend create, modify and review a plan that consists of: <br/>
+                                                        • all escape routes using doors and windows.<br/> 
+                                                        • a determined meeting place.<br/> 
+                                                        • do these escape routes work, during all seasons?<br/>
                                                         • are the occupants aware that they should not re-enter the home under any circumstance?<br/>
-                                                        • Review the safety plan and practice it annually.
+                                                        • review the safety plan and practice it annually.
                                                 </p>
 
                                         </div>
 
                                         <div className="questions grid-child">
-                                                <div className="ques">29. Is there a list of emergency numbers and contacts?</div>&emsp;
+                                                <div className="ques">49. Is there a list of emergency numbers and contacts?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q29')}>
-                                                        <input type="radio" value="Yes" name="q29" defaultChecked={interiorValues.q29 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q29" defaultChecked={interiorValues.q29 === "No"} onClick={this.notify}/> No
+                                                <div className="radioOptions" onChange={handleChange('q49')}>
+                                                        <input type="radio" value="Yes" name="q49" defaultChecked={interiorValues.q49 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q49" defaultChecked={interiorValues.q49 === "No"} onClick={this.notify}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q29Comments} onChange={handleChange('q29Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q49Comments} onChange={handleChange('q49Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -557,15 +725,15 @@ class InteriorDetails extends React.Component{
                                         </div> 
 
                                         <div className="questions grid-child">
-                                                <div className="ques">30. Is there a phone that works without power?</div>&emsp;
+                                                <div className="ques">50. Is there a phone that works without power?</div>&emsp;
                                         
-                                                <div className="radioOptions" onChange={handleChange('q30')}> 
-                                                        <input type="radio" value="Yes" name="q30" defaultChecked={interiorValues.q30 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q30" defaultChecked={interiorValues.q30 === "No"} onClick={this.notify}/> No
+                                                <div className="radioOptions" onChange={handleChange('q50')}> 
+                                                        <input type="radio" value="Yes" name="q50" defaultChecked={interiorValues.q50 === "Yes"}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q50" defaultChecked={interiorValues.q50 === "No"} onClick={this.notify}/> No
                                                 </div>
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q30Comments} onChange={handleChange('q30Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q50Comments} onChange={handleChange('q50Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">

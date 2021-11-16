@@ -42,50 +42,24 @@ class OccupantDetails extends React.Component{
                         
                     </div>
                     <div className="address-card grid-child ">                    
-                                <div className="grid-AddressDetails">
-                                    <div className="cell-1">
-                                    Street:&emsp; <input type="value" placeholder=" Enter Street" defaultValue={occupantValues.street} onChange={handleChange('street')}/><p/> 
-                                    </div>
-                                    <div className="cell-1">
-                                        Unit/Suite Number:&emsp; <input type="value" placeholder=" Enter Unit Number" defaultValue={occupantValues.unitNum} onChange={handleChange('unitNum')}/>
-                                    </div>
-                                    <div className="cell-9">
-                                     Province/Territory:&emsp; <Territory />
-                                    {/* <input type= "text" value={this.state.territory} readonly/> */}
-                                    </div> 
-                                    <div className="cell-2">
-                                        Postal Code:&emsp; <input type="text" placeholder=" Enter Postal Code" defaultValue={occupantValues.postalCode} onChange={handleChange('postalCode')}/>
-                                    </div>
-                                    {/* <div className="cell-3">
-                                        Province:&emsp; 
-                                        <select type="dropdown" value={this.state.province} onChange={eve => {this.setState({province: eve.target.value}); this.props.provincehandler(eve.target.value)} } >
-                                            <option value="Alberta">Alberta</option>
-                                            <option value="British Columbia">British Columbia</option>
-                                            <option value="Manitoba">Manitoba</option>
-                                            <option value="New Brunswick">New Brunswick</option>
-                                            <option value="New Foundaland and Labrador">New Foundaland and Labrador</option>
-                                            <option value="Nova Scotia">Nova Scotia</option>
-                                            <option value="Ontario">Ontario</option>
-                                            <option value="Prince Edward Island">Prince Edward Island</option>
-                                            <option value="Quebec">Quebec</option>
-                                            <option value="Sasketchewan">Sasketchewan</option>
-                                            <option value="NT">Northwest Territories</option>
-                                            <option value="NU">Nunavut</option>
-                                            <option value="YK">Yukon</option>
-
-                                        </select>
-                                    </div>                         */}
-                                    {/* <div className="cell-4">
-                                        Territory:&emsp; 
-                                        <select type="dropdown" value={this.state.territory} onChange={eve => this.setState({territory: eve.target.value})}>
-                                            <option value="Northwest Territories">Northwest Territories</option>
-                                            <option value="Nunavut">Nunavut</option>
-                                            <option value="Yukon">Yukon</option>
-                                        </select>
-                                    </div>                       */}
-                                </div>
-                                
+                        <div className="grid-AddressDetails">
+                            <div className="cell-1">
+                            Street:&emsp; <input type="value" placeholder=" Enter Street" defaultValue={occupantValues.street} onChange={handleChange('street')}/><p/> 
+                            </div>
+                            <div className="cell-1">
+                                Unit/Suite Number:&emsp; <input type="value" placeholder=" Enter Unit Number" defaultValue={occupantValues.unitNum} onChange={handleChange('unitNum')}/>
+                            </div>
+                            <div className="cell-9">
+                                Province/Territory:&emsp; <Territory />
+                            {/* <input type= "text" value={this.state.territory} readonly/> */}
+                            </div> 
+                            <div className="cell-2">
+                                Postal Code:&emsp; <input type="text" placeholder=" Enter Postal Code" defaultValue={occupantValues.postalCode} onChange={handleChange('postalCode')}/>
+                            </div>
+                            
                         </div>
+                                
+                    </div>
                 
                 </div>
                 <br/><br/>    

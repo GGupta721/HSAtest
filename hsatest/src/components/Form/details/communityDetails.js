@@ -26,7 +26,7 @@ class CommunityDetails extends React.Component{
         // this.handleClick = this.handleClick.bind(this);
         this.state = {
             FNAddressDB: [],
-            BandNumList: []
+            BandNumList: ['Select Band Number']
         }
     
     }
@@ -52,7 +52,9 @@ class CommunityDetails extends React.Component{
 
     bandNumInputHandler = (eve) => {
         // eve.preventDefault();
-        //console.log(this.state.searchText);
+        console.log("testing 123  ")
+        console.log(this.state.searchText);
+
         // console.log("bandNumInputHandler")
         this.state.FNAddressDB.map(FNAdd => {
             if (FNAdd.BandNum === eve.target.value){
@@ -544,9 +546,6 @@ class CommunityDetails extends React.Component{
         // console.log(tempFNDB[0])
         this.setState({BandNumList:this.state.BandNumList.concat(tempFNDB)});
 
-
-
-    
     }
 
     updateBNL = () => {
@@ -583,9 +582,9 @@ class CommunityDetails extends React.Component{
 
                         <div className="search_select_box">
                         <div className="cell-7">
-                           <label> Band Number:&emsp;<input list="browsers" name="myBrowser" /> </label> <datalist id= "browsers" maxLength="3"  placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler} data-live-search="true" data-live-search-style="startsWith" class="selectpicker">
+                           <label> Band Number:&emsp;<input list="browsers" name="myBrowser" maxLength="3" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler}/> </label> <datalist id= "browsers" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler} data-live-search="true" data-live-search-style="startsWith" class="selectpicker">
                                 {this.state.BandNumList.map(lst => (
-                                    <option>{lst}</option>
+                                    <option key={lst}>{lst}</option>
                                 ))}                              
                             </datalist>
                         </div>

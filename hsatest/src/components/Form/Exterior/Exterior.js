@@ -5,9 +5,46 @@ import "./Exterior.css"
 toast.configure();
 class Exterior extends React.Component{
 
+        authenticateResponses = () => {
+                const noRespArr = [];
+               
+                Object.entries(this.props.exteriorValues).map((ques) =>{
+                                if ( ques[1] === 'No' ||  ques[1] === 'N/A'){
+                                        noRespArr.push(ques[0]);
+                                }   
+                        })
+                console.log(noRespArr);
+                Object.entries(this.props.exteriorValues).map((ques) =>{
+                        //Getting Comment state
+                        if (noRespArr.includes(ques[0].slice(0,2)) && ques[0].length > 4){
+                                // if ( ques[1] === 'No' ||  ques[1] === 'N/A'){
+                                //         tempArr.push(ques[0]);
+                                // } 
+                                // console.log("LOL", ques[0])  ;
+                                if (ques[1].length <= 1 ){
+                                        this.valdateQues(ques[0]);
+                                        // return false;
+                                }
+                                console.log(ques[1].length, ques[1]);
+
+                                return true;
+
+                        }
+                })
+                // return true;
+
+
+        }
+
         continue = (eve) => {
-                eve.preventDefault();
-                this.props.nextPage();
+                console.log(this.authenticateResponses())
+                // if(this.authenticateResponses()== true){
+                //         eve.preventDefault();
+                //         this.props.nextPage();
+                // }
+
+
+               
         }
 
         previous = (eve) => {
@@ -29,6 +66,15 @@ class Exterior extends React.Component{
                 toast.warn(`You selected ${e.target.value},
                 please provide comments`, {
                         position: toast.POSITION.TOP_CENTER,
+                        autoClose: false
+                });
+        }
+
+        valdateQues = (quesNum) => {
+
+                toast.error(`Please provide a comment for Question ${quesNum}`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        autoClose: false
                 });
         }
 
@@ -39,7 +85,7 @@ class Exterior extends React.Component{
 
                 return(
                         <div>
-                                <div class="grid-container">
+                                <div className="grid-container">
                                         <div className="questions grid-child">
                                                 
                                                 <h3>House Details</h3>
@@ -53,7 +99,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q1Comments} onChange={this.update} ></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q1Comments} onChange={handleChange('q1Comments')} ></textarea>
                                                 </div><p/>
                                                 
                                                 
@@ -189,11 +235,21 @@ class Exterior extends React.Component{
                                                         <input type="radio" value="No"  name="q6" defaultChecked={exteriorValues.q6 === "No"} /> No &emsp;
                                                         <input type="radio" value="N/A" name="q6" defaultChecked={exteriorValues.q6 === "N/A"} /> N/A
                                                 </div>
+
+                                                
                                                 
                                                 <p/>       
                                                 <div>       
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q6Comments} onChange={handleChange('q6Comments')}></textarea>
                                                 </div><p/>
+                                                {/* <div className="info grid-child">
+                                                <p>
+                                                        <b>Consideration:</b> There is a high chance that someone using an item that is plugged in near water could suffer an electric shock if
+                                                        the item comes into contact with water and the outlet is not a GFCI outlet.<br/><br/>
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend replacing any outlets within 6 feet of a water source with GFCI outlets.
+                                                </p>
+
+                                                </div> */}
                                                 <div className="ques">8. Is there proper current flow to the outlets?</div>&emsp;    
                                                 <div className="radioOptions" onChange={handleChange('q8')}>   
                                                         <input type="radio" value="Yes" name="q6" defaultChecked={exteriorValues.q6 === "Yes"} /> Yes &emsp;
@@ -227,7 +283,7 @@ class Exterior extends React.Component{
 
                                         <div className="questions grid-child">
                                                 <h3 >Exterior Door</h3>
-                                                <div className="ques">7. Are all exterior doors clear of obstructions
+                                                <div className="ques">10. Are all exterior doors clear of obstructions
                                                 and in good working order so they can be used in case of an emergency? </div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q7')}>   
                                                         <input type="radio" value="Yes" name="q7" defaultChecked={exteriorValues.q7 === "Yes"} /> Yes &emsp;
@@ -249,13 +305,13 @@ class Exterior extends React.Component{
                                         </div>  
                                        
                                 </div>
-                                <button class="ui left labeled icon button previous blue" onClick={this.previous}>
-                                        <i class="left arrow icon"></i>
+                                <button className="ui left labeled icon button previous blue" onClick={this.previous}>
+                                        <i className="left arrow icon"></i>
                                         Previous
                                 </button>
                                         {/* <button onClick={this.continue}>Continue</button> */}
-                                <button class="ui right labeled icon button next blue" onClick={this.continue}>
-                                        <i class="right arrow icon"></i>
+                                <button className="ui right labeled icon button next blue" onClick={this.continue}>
+                                        <i className="right arrow icon"></i>
                                         Continue
                                 </button>
                         </div>

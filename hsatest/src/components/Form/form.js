@@ -4,41 +4,20 @@ import OccupantDetails from "./details/occupantDetails";
 import CommunityDetails from "./details/communityDetails";
 import Exterior from "./Exterior/Exterior";
 import InteriorDetails from "./InteriorDetails/InteriorDetails";
-// import Router from "../Router";
 import Report from "./Report/Report";
 import { FNAddress } from "./details/communityDetails";
-
-import {result} from "./test";
-
-
+import Router from "../Router";
+import PolicyModal from "../assessment/PolicyModal";
+import Acknowledge from "../acknowledgement/Acknowledge";
 // import NavigationLink from "../NavigationLink";
 
 class Form extends Component {
     
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //       value: 'Your filled form has been submitted.',
-    //       territory: null,
-    //       province: null
-
-    //     };
     
-    //     this.handleChange = this.handleChange.bind(this);
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    //   }
-    
-    //   handleChange(event) {
-    //     this.setState({value: event.target.value});
-    //   }    
-    //   handleSubmit(event) {
-    //     alert('An essay was submitted: ' + this.state.value);
-    //     event.preventDefault();
-    //   }
-
     state = {
         page: 1,
         testing: 'test',
+        privacyPolicy: false,
         
         firstName:'',
         lastName:'',
@@ -161,47 +140,12 @@ class Form extends Component {
         // this.props.handleChange(eve.target.value, eve);
     }
     
+    submitHandler = {
+        
+    }
 
     render() {
 
-        // var result = [];
-        // function csvJSON(Comprehensivedata){
-
-        //     var lines=Comprehensivedata.split("\n");
-          
-            
-          
-        //     // NOTE: If your columns contain commas in their values, you'll need
-        //     // to deal with those before doing the next step 
-        //     // (you might convert them to &&& or something, then covert them back later)
-        //     // jsfiddle showing the issue https://jsfiddle.net/
-        //     var headers=lines[0].split(",");
-          
-        //     for(var i=1;i<lines.length;i++){
-          
-        //         var obj = {};
-        //         var currentline=lines[i].split(",");
-          
-        //         for(var j=0;j<headers.length;j++){
-        //             obj[headers[j]] = currentline[j];
-        //         }
-          
-        //         result.push(obj);
-          
-        //     }
-          
-        //     return result; //JavaScript object
-        //     //return JSON.stringify(result); //JSON
-        //   }
-        
-        // const fs= require('fs');
-        // const csv= require('csvtojson');
-        // const {Parser}= require('json2csv');
-
-        // // (async()=>{
-        //     const bandinfo=  csv().fromFile("Comprehensivedata.csv");
-        //     // console.log(bandinfo);
-        // // })();
 
         //Test cases
         const {testing} = this.state;
@@ -209,6 +153,8 @@ class Form extends Component {
 
 
         const {page} = this.state;
+        let {privacyPolicy} = this.state;
+
         const { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode} = this.state;
         const { community, bandNum} = this.state;
         const {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments} = this.state;
@@ -221,15 +167,33 @@ class Form extends Component {
 
         switch (page){
 
+            // case privacyPolicy:
+            //     return(
+            //         <Router pathName = "/policy">
+            //                  <div className="exterior db">
+            //                      <h1 className="blue"> Privacy Policy</h1><p/>
+            //                      <PolicyModal/>
+            //                  </div>
+                             
+            //         </Router>
+            // );
+
             case 1:
                 return(
                     <div>
+                        <div className="acknowledge db">
+                            <Acknowledge/>
+                        </div>
                         <div className="rightIndent">
-                        &nbsp;<input type="checkbox" className="inputV5"/>
-                        I Acknowledge Reading This Instruction; <br/><br/>&emsp;&nbsp;&nbsp;&nbsp;
-                        Assessor's First Name: <input type="text" name="fname" className="inputV1"/>&nbsp;&emsp; 
-                        Assessor's Last Name: <input type="text" name="lname" className="inputV1" />&nbsp;&emsp;
-                        Date: <input type="Date" className="inputV4"/>
+                            {/* &nbsp;<input type="checkbox" className="inputV5"/>
+                            I Acknowledge Reading This Instruction; &nbsp;
+                            <a href="https://indigenousfiresafety.ca/nirs-privacy-policy/" target="_blank">Click to read*</a>
+                                                
+                            <br/><br/>&emsp;&nbsp;&nbsp;&nbsp; */}
+                            <br/> &emsp;&nbsp;&nbsp;&nbsp; &emsp;&nbsp;&nbsp;&nbsp; &emsp;&nbsp;&nbsp;&nbsp;
+                            Assessor's First Name: <input type="text" name="fname" className="inputV7"/>&nbsp;&emsp; 
+                            Assessor's Last Name: <input type="text" name="lname" className="inputV7" />&nbsp;&emsp;
+                            Date: <input type="Date" className="inputV4"/>
                         </div>
                         <p/>
                         <div className="details db">
@@ -240,7 +204,9 @@ class Form extends Component {
                             <h1 className="blue"> Occupant's Details</h1><p/>
                             <OccupantDetails handleChange ={this.handleChange} occupantValues = {occupantValues} nextPage= {this.nextPage}/>
                         </div>
+                        
                     </div>
+                    
                     
 
                 );
@@ -273,6 +239,9 @@ class Form extends Component {
                     </div>
 
                 );
+            
+            
+            
             
             default:
                 return(null);

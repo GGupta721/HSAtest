@@ -44,13 +44,15 @@ class OccupantDetails extends React.Component{
                     <div className="address-card grid-child ">                    
                         <div className="grid-AddressDetails">
                             <div className="cell-1">
-                            Street:&emsp; <input type="value" placeholder=" Enter Street" defaultValue={occupantValues.street} onChange={handleChange('street')}/><p/> 
+                                Address:&emsp; <input type="value" placeholder=" Enter Unit Number" defaultValue={occupantValues.unitNum} onChange={handleChange('unitNum')}/>
+
                             </div>
                             <div className="cell-1">
-                                Unit/Suite Number:&emsp; <input type="value" placeholder=" Enter Unit Number" defaultValue={occupantValues.unitNum} onChange={handleChange('unitNum')}/>
+                                Province/Territory:&emsp; <Territory />
                             </div>
                             <div className="cell-9">
-                                Province/Territory:&emsp; <Territory />
+                                City:&emsp; <input type="value" placeholder=" Enter Street" defaultValue={occupantValues.street} onChange={handleChange('street')}/><p/> 
+
                             {/* <input type= "text" value={this.state.territory} readonly/> */}
                             </div> 
                             <div className="cell-2">

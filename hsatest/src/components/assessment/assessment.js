@@ -1,20 +1,30 @@
-import { Component } from  "react"
+import React from "react";
 import "./assessment.css"
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Example from "./PolicyModal"
+import PolicyModal from "./PolicyModal";
+import Router from "../Router";
+import NavigationLink from "../NavigationLink";
 
-class Assessment extends Component {
-    render() {
-        return(
-            <div className="assessment-div">
-                <h3>Assessment Instructions</h3>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.<p/> 
-                It has survived not only five centuries, but also the leap into electronic typesetting, 
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </div>
-        )
-    }
+
+function Assessment () {
+
+    const [modalShow, setModalShow] = React.useState(false);    
+    
+    return(
+        <div className="assessment-div">
+            <h1>Home Safety Assessment</h1>
+            {/* <div>
+                A Home Safety Assessment identifies potential safety and security issues. In completing this form, ensure that all fields are completed accurately. If the response to any question is ‘No’ or “Not Applicable (N/A)”, please include additional details in the comment box.<br/>
+                <p className="blueText fv2"><b>Need help? Call 1-888-444-6811</b></p>
+                If you require assistance in completing this form, please call our office. An IFMS Program Delivery Specialist will be happy to assist you. For additional information, please email programs@indigenousfiresafety.ca
+            </div> */}
+            
+                   
+        </div>
+    );
+    
 }
 
 export default Assessment;

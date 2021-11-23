@@ -67,6 +67,7 @@ class InteriorDetails extends React.Component{
                 toast.warn(`You selected ${e.target.value},
                 please provide comments`, {
                         position: toast.POSITION.TOP_CENTER,
+                        autoClose: false
                 });
         }
 

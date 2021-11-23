@@ -37,11 +37,17 @@ class Exterior extends React.Component{
         }
 
         continue = (eve) => {
-                console.log(this.authenticateResponses())
+                // console.log(this.authenticateResponses())
+                // // if(this.authenticateResponses()== true){
+                // //         eve.preventDefault();
+                // //         this.props.nextPage();
+                // // }
                 // if(this.authenticateResponses()== true){
                 //         eve.preventDefault();
                 //         this.props.nextPage();
                 // }
+                eve.preventDefault();
+                this.props.nextPage();
 
 
                
@@ -152,8 +158,8 @@ class Exterior extends React.Component{
                                                 attached to the building, and free from tree limbs?</div>&emsp;      
                                                 <div className="radioOptions" onChange={handleChange('q3')}>   
                                                         <input type="radio" value="Yes" name="q3" defaultChecked={exteriorValues.q3 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q3" defaultChecked={exteriorValues.q3 === "No"} /> No &emsp;
-                                                        <input type="radio" value="N/A" name="q3" defaultChecked={exteriorValues.q3 === "N/A"} /> N/A
+                                                        <input type="radio" value="No"  name="q3" defaultChecked={exteriorValues.q3 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q3" defaultChecked={exteriorValues.q3 === "N/A"} onClick={this.notify}/> N/A
                                                 </div>
                                                 
                                                 <p/>       
@@ -176,8 +182,8 @@ class Exterior extends React.Component{
                                                 free of rot and cracks? Are the stairs and handrails secure?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q4')}>   
                                                         <input type="radio" value="Yes" name="q4" defaultChecked={exteriorValues.q4 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q4" defaultChecked={exteriorValues.q4 === "No"} /> No &emsp;
-                                                        <input type="radio" value="N/A" name="q4" defaultChecked={exteriorValues.q4 === "N/A"} /> N/A
+                                                        <input type="radio" value="No"  name="q4" defaultChecked={exteriorValues.q4 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q4" defaultChecked={exteriorValues.q4 === "N/A"} onClick={this.notify}/> N/A
                                                 </div>
                                                 
                                                 <p/>       
@@ -199,7 +205,7 @@ class Exterior extends React.Component{
                                                 from trip hazards?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q5')}>   
                                                         <input type="radio" value="Yes" name="q5" defaultChecked={exteriorValues.q5 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q5" defaultChecked={exteriorValues.q5 === "No"} /> No &emsp;
+                                                        <input type="radio" value="No"  name="q5" defaultChecked={exteriorValues.q5 === "No"} onClick={this.notify}/> No &emsp;
                                                 </div> 
                                                 
                                                 <p/>       
@@ -221,26 +227,27 @@ class Exterior extends React.Component{
                                                 <div className="ques">6. Do the exterior outlets have working covers?</div>&emsp;    
                                                 <div className="radioOptions" onChange={handleChange('q6')}>   
                                                         <input type="radio" value="Yes" name="q6" defaultChecked={exteriorValues.q6 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q6" defaultChecked={exteriorValues.q6 === "No"} /> No &emsp;
-                                                        <input type="radio" value="N/A" name="q6" defaultChecked={exteriorValues.q6 === "N/A"} /> N/A
+                                                        <input type="radio" value="No"  name="q6" defaultChecked={exteriorValues.q6 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q6" defaultChecked={exteriorValues.q6 === "N/A"} onClick={this.notify}/> N/A
                                                 </div>
                                                 
                                                 <p/>       
                                                 <div>       
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q6Comments} onChange={handleChange('q6Comments')}></textarea>
                                                 </div><p/>
+
                                                 <div className="ques">7. Are the exterior outlets GFCI outlets?</div>&emsp;    
                                                 <div className="radioOptions" onChange={handleChange('q7')}>   
-                                                        <input type="radio" value="Yes" name="q6" defaultChecked={exteriorValues.q6 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q6" defaultChecked={exteriorValues.q6 === "No"} /> No &emsp;
-                                                        <input type="radio" value="N/A" name="q6" defaultChecked={exteriorValues.q6 === "N/A"} /> N/A
+                                                        <input type="radio" value="Yes" name="q7" defaultChecked={exteriorValues.q7 === "Yes"} /> Yes &emsp;
+                                                        <input type="radio" value="No"  name="q7" defaultChecked={exteriorValues.q7 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q7" defaultChecked={exteriorValues.q7 === "N/A"} onClick={this.notify}/> N/A
                                                 </div>
 
                                                 
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q6Comments} onChange={handleChange('q6Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q7Comments} onChange={handleChange('q7Comments')}></textarea>
                                                 </div><p/>
                                                 {/* <div className="info grid-child">
                                                 <p>
@@ -252,25 +259,25 @@ class Exterior extends React.Component{
                                                 </div> */}
                                                 <div className="ques">8. Is there proper current flow to the outlets?</div>&emsp;    
                                                 <div className="radioOptions" onChange={handleChange('q8')}>   
-                                                        <input type="radio" value="Yes" name="q6" defaultChecked={exteriorValues.q6 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q6" defaultChecked={exteriorValues.q6 === "No"} /> No &emsp;
-                                                        <input type="radio" value="N/A" name="q6" defaultChecked={exteriorValues.q6 === "N/A"} /> N/A
+                                                        <input type="radio" value="Yes" name="q8" defaultChecked={exteriorValues.q8 === "Yes"} /> Yes &emsp;
+                                                        <input type="radio" value="No"  name="q8" defaultChecked={exteriorValues.q8 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q8" defaultChecked={exteriorValues.q8 === "N/A"} onClick={this.notify}/> N/A
                                                 </div>
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q6Comments} onChange={handleChange('q6Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q8Comments} onChange={handleChange('q8Comments')}></textarea>
                                                 </div><p/>
                                                 <div className="ques">9. Does the outlet breaker work? </div>&emsp;    
                                                 <div className="radioOptions" onChange={handleChange('q9')}>   
-                                                        <input type="radio" value="Yes" name="q6" defaultChecked={exteriorValues.q6 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No" name="q6" defaultChecked={exteriorValues.q6 === "No"} /> No &emsp;
-                                                        <input type="radio" value="N/A" name="q6" defaultChecked={exteriorValues.q6 === "N/A"} /> N/A
+                                                        <input type="radio" value="Yes" name="q9" defaultChecked={exteriorValues.q9 === "Yes"} /> Yes &emsp;
+                                                        <input type="radio" value="No" name="q9" defaultChecked={exteriorValues.q9 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q9" defaultChecked={exteriorValues.q9 === "N/A"} onClick={this.notify}/> N/A
                                                 </div>
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q6Comments} onChange={handleChange('q6Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q9Comments} onChange={handleChange('q9Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -285,14 +292,14 @@ class Exterior extends React.Component{
                                                 <h3 >Exterior Door</h3>
                                                 <div className="ques">10. Are all exterior doors clear of obstructions
                                                 and in good working order so they can be used in case of an emergency? </div>&emsp;
-                                                <div className="radioOptions" onChange={handleChange('q7')}>   
-                                                        <input type="radio" value="Yes" name="q7" defaultChecked={exteriorValues.q7 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q7" defaultChecked={exteriorValues.q7 === "No"} /> No &emsp;
+                                                <div className="radioOptions" onChange={handleChange('q10')}>   
+                                                        <input type="radio" value="Yes" name="q10" defaultChecked={exteriorValues.q10 === "Yes"} /> Yes &emsp;
+                                                        <input type="radio" value="No"  name="q10" defaultChecked={exteriorValues.q10 === "No"} onClick={this.notify}/> No &emsp;
                                                 </div>
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q7Comments} onChange={handleChange('q7Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q10Comments} onChange={handleChange('q10Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">

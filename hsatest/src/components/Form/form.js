@@ -48,38 +48,27 @@ class Form extends Component {
         q6Comments:'',
         q7:null,
         q7Comments:'',
-
         q8:null,
-        q8a:null,
         q8Comments:'',
         q9:null,
         q9Comments:'',
         q10:null,
         q10Comments:'',
+
+
         q11:null,
-        q11Comments:'',
-        q11Name:'',
-        q11PhoneNum:null,
-        q12:null,
-        q12Comments:'',
+        q12:'',
         q13:null,
-        q13Comments:'',
         q14:null,
         q14Comments:'',
         q15:null,
-        q15Comments:'',
-        q16:null,
-        q16Comments:'',
+        q16:'',
         q17:null,
-        q17Comments:'',
         q18:null,
         q18Comments:'',
         q19:null,
-        q19Comments:'',
-        q20:null,
-        q20Comments:'',
+        q20:'',
         q21:null,
-        q21Comments:'',
         q22:null,
         q22Comments:'',
         q23:null,
@@ -91,13 +80,53 @@ class Form extends Component {
         q26:null,
         q26Comments:'',
         q27:null,
-        q27Comments:'',
         q28:null,
         q28Comments:'',
         q29:null,
-        q29Comments:'',
         q30:null,
         q30Comments:'',
+
+        q31Name:'',
+        q31PhoneNum:null,
+        
+        q32:null,
+        q32Comments:'',
+        q33:null,
+        q33Comments:'',
+        q34:null,
+        q34Comments:'',
+        q35:null,
+        q35Comments:'',
+        q36:null,
+        q36Comments:'',
+        q37:null,
+        q37Comments:'',
+        q38:null,
+        q38Comments:'',
+        q39:null,
+        q39Comments:'',
+        q40:null,
+        q40Comments:'',
+        q41:null,
+        q41Comments:'',
+        q42:null,
+        q42Comments:'',
+        q43:null,
+        q43Comments:'',
+        q44:null,
+        q44Comments:'',
+        q45:null,
+        q45Comments:'',
+        q46:null,
+        q46Comments:'',
+        q47:null,
+        q47Comments:'',
+        q48:null,
+        q48Comments:'',
+        q49:null,
+        q49Comments:'',
+        q50:null,
+        q50Comments:'',
     }
 
     // Proceed to next step
@@ -157,12 +186,13 @@ class Form extends Component {
 
         const { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode} = this.state;
         const { community, bandNum} = this.state;
-        const {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments} = this.state;
-        const {q8, q8a, q8Comments, q9, q9Comments, q10, q10Comments, q11, q11Comments, q11Name, q11PhoneNum, q12, q12Comments, q13, q13Comments, q14, q14Comments, q15, q15Comments, q16, q16Comments, q17, q17Comments, q18, q18Comments, q19, q19Comments, q20, q20Comments, q21, q21Comments, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27, q27Comments, q28, q28Comments, q29, q29Comments, q30, q30Comments} = this.state;
+        const {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments} = this.state;
+        const {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27, q28, q28Comments, q29, q30, q30Comments, q31Name, q31PhoneNum, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments} = this.state;
+        
         const occupantValues = { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode};
         const communityValues = {community, bandNum};
-        const exteriorValues = {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments};
-        const interiorValues = {q8, q8a, q8Comments, q9, q9Comments, q10, q10Comments, q11, q11Comments, q11Name, q11PhoneNum, q12, q12Comments, q13, q13Comments, q14, q14Comments, q15, q15Comments, q16, q16Comments, q17, q17Comments, q18, q18Comments, q19, q19Comments, q20, q20Comments, q21, q21Comments, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27, q27Comments, q28, q28Comments, q29, q29Comments, q30, q30Comments};
+        const exteriorValues = {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments};
+        const interiorValues = {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27, q28, q28Comments, q29, q30, q30Comments, q31Name, q31PhoneNum, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments};
         
 
         switch (page){

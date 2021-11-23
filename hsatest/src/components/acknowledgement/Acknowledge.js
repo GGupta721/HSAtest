@@ -31,7 +31,6 @@ class Acknowledge extends React.Component{
 
                 <div className="box1">
                     <div className="p1">
-                       {/* <p className="blueText fv2"><b>Need help? Call 1-888-444-6811</b></p> */}
                         If you require assistance in completing this form, please call our office. An IFMS Program Delivery Specialist will be happy to assist you. For additional information, please email <a href = "mailto: programs@indigenousfiresafety.ca">programs@indigenousfiresafety.ca</a>
                         <br/><br/><p className="blueText fv2"><b>Need help? Call 1-888-444-6811</b></p>
                     </div>

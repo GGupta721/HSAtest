@@ -194,7 +194,7 @@ class InteriorDetails extends React.Component{
                                                
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q9Comments} onChange={handleChange('q9Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q23Comments} onChange={handleChange('q23Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -258,10 +258,10 @@ class InteriorDetails extends React.Component{
                                                 </div><p/>
                                                
                                                 <div className="multiChoice" >
-                                                <input type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27a === "Mould"} id="Mould" value="Mould"/><label for ="Mould">Mould</label><br/>
-                                                <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27b === "Musty-Scent"} value="Musty-Scent"/>Musty-Scent<br/>
-                                                <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27c === "WaterLeak"} value="WaterLeak"/>WaterLeak<br/>
-                                                <input  type="checkbox" disabled={this.state.disabled} value="Other" defaultChecked={interiorValues.q27d === "Other"} onClick={this.alternateChange}/>Other<br/>
+                                                <input type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27a === "Mould"} onChange={handleChange('q27a')} id="Mould" value="Mould" /><label for ="Mould">Mould</label><br/>
+                                                <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27b === "Musty-Scent"} onChange={handleChange('q27b')} value="Musty-Scent"/>Musty-Scent<br/>
+                                                <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27c === "WaterLeak"} onChange={handleChange('q27c')} value="WaterLeak"/>WaterLeak<br/>
+                                                <input  type="checkbox" disabled={this.state.disabled} value="Other" defaultChecked={interiorValues.q27d === "Other"} onChange={handleChange('q27d')} onClick={this.alternateChange}/>Other<br/>
                                                 </div><p/>
 
                                                 <div className="ques">28. If others enter location in the comment box:</div><p/>
@@ -272,11 +272,11 @@ class InteriorDetails extends React.Component{
                                                 <p/>
                                                 <div className="ques">29. Where can the environmental issue be found?</div><p/>
                                                 <div className="multiChoice" >        
-                                                        <label><input type="checkbox" disabled={this.state.disabled} value="Laundry"/>Laundry</label><br/>
-                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29a === "Kitchen"}  value="Kitchen"/> Kitchen<br/>
-                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29b === "Door"} value="Door"/>Door<br/>
-                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29c === "Window"} value="Window"/> Window<br/>
-                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29d === "Other1"} value="Other1"  onClick={this.alternateChange}/>Other<br/>                                            
+                                                        <label><input type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29a === "Kitchen"} onChange={handleChange('q29a')} value="Laundry"/>Laundry</label><br/>
+                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29b === "Kitchen"} onChange={handleChange('q29b')} value="Kitchen"/> Kitchen<br/>
+                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29c === "Door"} onChange={handleChange('q29c')} value="Door"/>Door<br/>
+                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29d === "Window"} onChange={handleChange('q29d')} value="Window"/> Window<br/>
+                                                        <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29e === "Other1"} onChange={handleChange('q29e')} value="Other1"  onClick={this.alternateChange}/>Other<br/>                                            
                                                 </div><p/>
                                                 <div className="ques">30. If others enter location in the comment box:</div><p/>
                                                 <div>      

@@ -8,8 +8,12 @@ class InteriorDetails extends React.Component{
         state= {
                 disabled: true,
                 disabledq27: true,
-                disabledq28:true
+                disabledq28:true,
+               
+                
+
         }
+       
 
 
         alternateChange=(e) =>{
@@ -43,6 +47,8 @@ class InteriorDetails extends React.Component{
                
         }
 
+
+
  
 
         handleChange2=(e) =>{
@@ -72,7 +78,7 @@ class InteriorDetails extends React.Component{
         }
 
         render(){
-                const {interiorValues, handleChange} = this.props;
+                const {interiorValues, handleChange, BuildingSafetyChange, LifeSafetyChange,HealthSafetyChange} = this.props;
 
                
 
@@ -213,9 +219,9 @@ class InteriorDetails extends React.Component{
                                                 <h3>DOORS AND WINDOWS</h3>
                                                 <div className="ques">24. Are all doors clear
                                                 of obstructions and do they open? </div>&emsp;
-                                                <div className="radioOptions" onChange={handleChange('q24')}>  
-                                                        <input type="radio" value="Yes" name="q24" defaultChecked={interiorValues.q24 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q24" defaultChecked={interiorValues.q24 === "No"} onClick={this.notify}/> No &emsp;
+                                                <div className="radioOptions" onChange={handleChange('q24')}>   
+                                                        <input type="radio" value="Yes" name="q24" defaultChecked={interiorValues.q24 === "Yes"} onClick={LifeSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q24" defaultChecked={interiorValues.q24 === "No"} onClick={this.notify}  onClick={LifeSafetyChange}/> No &emsp;
                                                 </div><p/>
                                                 <div>      
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q24Comments} onChange={handleChange('q24Comments')}></textarea>
@@ -223,9 +229,9 @@ class InteriorDetails extends React.Component{
 
                                                 <div className="ques">25. Are all windows clear
                                                 of obstructions and do they open? </div>&emsp;
-                                                <div className="radioOptions" onChange={handleChange('q25')}>  
-                                                        <input type="radio" value="Yes" name="q25" defaultChecked={interiorValues.q25 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q25" defaultChecked={interiorValues.q25 === "No"} onClick={this.notify}/> No &emsp;
+                                                <div className="radioOptions" onChange={handleChange('q25')}>   
+                                                        <input type="radio" value="Yes" name="q25" defaultChecked={interiorValues.q25 === "Yes"}  onClick={LifeSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q25" defaultChecked={interiorValues.q25 === "No"} onClick={this.notify}  onClick={LifeSafetyChange}/> No &emsp;
                                                 </div><br/>
                                                 <div>      
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q25Comments} onChange={handleChange('q25Comments')}></textarea>
@@ -248,10 +254,10 @@ class InteriorDetails extends React.Component{
                                         <div className="questions grid-child">
                                                 <h3>ENVIRONMENTAL</h3>
                                                 <p/>    
-                                                <div className="ques">26. Is the home free of any environmental issues?</div><p/>
+                                                <div className="ques">26. Is the home free of any environmental issues?{interiorValues.InteriorHealthSafety}</div><p/>
                                                 <div className="radioOptions" onChange={handleChange('q26')}>  
-                                                        <input type="radio" value="Yes" name="q26" defaultChecked={interiorValues.q26 === "Yes"} onClick={this.alternateChange}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q26" defaultChecked={interiorValues.q26 === "No"} onClick={this.alternateChange}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q26" defaultChecked={interiorValues.q26 === "Yes"} onClick={this.alternateChange} onClick={HealthSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q26" defaultChecked={interiorValues.q26 === "No"} onClick={this.alternateChange} onClick={HealthSafetyChange}/> No &emsp;
                                                 </div><p/>
 
                                                 <div className="ques">27. If No, What environmental issue does the home have?
@@ -305,12 +311,12 @@ class InteriorDetails extends React.Component{
                                                 obstructions and are the stairs and handrails secure?</div>&emsp;
                                                
                                                 <div className="radioOptions" onChange={handleChange('q32')}>      
-                                                        <input type="radio" value="Yes" name="q32" defaultChecked={interiorValues.q32 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q32" defaultChecked={interiorValues.q32 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q32" defaultChecked={interiorValues.q32 === "N/A"} onClick={this.notify}/> N/A
-                                                </div>
-                                                <p/>      
-                                                <div>      
+                                                        <input type="radio" value="Yes" name="q32" defaultChecked={interiorValues.q32 === "Yes"} onClick={LifeSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q32" defaultChecked={interiorValues.q32 === "No"} onClick={this.notify} onClick={LifeSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q32" defaultChecked={interiorValues.q32 === "N/A"} onClick={this.notify} onClick={LifeSafetyChange}/> N/A
+                                                </div> 
+                                                <p/>       
+                                                <div>       
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q32Comments} onChange={handleChange('q32Comments')}></textarea>
                                                 </div><p/>
                                         </div>
@@ -326,12 +332,12 @@ class InteriorDetails extends React.Component{
 
                                         <div className="questions grid-child">
                                                 <h3>PLUMBING:</h3>
-                                                <div className="ques">33. Are the bathroom, kitchen and/or
-                                                laundry room sinks free of leaks?</div>&emsp;
-                                               
+                                                <div className="ques">33. Are the bathroom, kitchen and/or 
+                                                laundry room sinks free of leaks? {interiorValues.InteriorBuildingSafety}</div>&emsp;
+                                                
                                                 <div className="radioOptions" onChange={handleChange('q33')}>      
-                                                        <input type="radio" value="Yes" name="q33" defaultChecked={interiorValues.q33 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q33" defaultChecked={interiorValues.q33 === "No"} onClick={this.notify}/> No
+                                                        <input type="radio" value="Yes" name="q33" defaultChecked={interiorValues.q33 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q33" defaultChecked={interiorValues.q33 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -350,12 +356,12 @@ class InteriorDetails extends React.Component{
 
                                         <div className="questions grid-child">
                                                 <h3>ELECTRICAL</h3>
-                                                <div className="ques">34. Is the electrical panel easy
-                                                to access and free from clutter? </div>&emsp;
-                                               
+                                                <div className="ques">34. Is the electrical panel easy 
+                                                to access and free from clutter?{interiorValues.InteriorLifeSafety} </div>&emsp;
+                                                
                                                 <div className="radioOptions" onChange={handleChange('q34')}>      
-                                                        <input type="radio" value="Yes" name="q34" defaultChecked={interiorValues.q34 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q34" defaultChecked={interiorValues.q34 === "No"} onClick={this.notify}/> No
+                                                        <input type="radio" value="Yes" name="q34" defaultChecked={interiorValues.q34 === "Yes"} onClick={LifeSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q34" defaultChecked={interiorValues.q34 === "No"} onClick={this.notify} onClick={LifeSafetyChange}/> No
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -398,8 +404,8 @@ class InteriorDetails extends React.Component{
                                                 </div>&emsp;
                                                
                                                 <div className="radioOptions" onChange={handleChange('q36')}>      
-                                                        <input type="radio" value="Yes" name="q36" defaultChecked={interiorValues.q36 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q36" defaultChecked={interiorValues.q36 === "No"} onClick={this.notify}/> No
+                                                        <input type="radio" value="Yes" name="q36" defaultChecked={interiorValues.q36 === "Yes"}  onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q36" defaultChecked={interiorValues.q36 === "No"} onClick={this.notify} onClick={BuildingSafetyChange} /> No
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -421,8 +427,8 @@ class InteriorDetails extends React.Component{
                                                 </div>&emsp;
                                                
                                                 <div className="radioOptions" onChange={handleChange('q37')}>      
-                                                        <input type="radio" value="Yes" name="q37" defaultChecked={interiorValues.q37 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q37" defaultChecked={interiorValues.q37 === "No"} onClick={this.notify}/> No
+                                                        <input type="radio" value="Yes" name="q37" defaultChecked={interiorValues.q37 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q37" defaultChecked={interiorValues.q37 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -445,12 +451,12 @@ class InteriorDetails extends React.Component{
                                                 and combustible materials?</div>&emsp;
                                        
                                                 <div className="radioOptions" onChange={handleChange('q38')}>      
-                                                        <input type="radio" value="Yes" name="q38" defaultChecked={interiorValues.q38 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q38" defaultChecked={interiorValues.q38 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q38" defaultChecked={interiorValues.q38 === "N/A"} onClick={this.notify}/> N/A
-                                                </div>
-                                                <p/>      
-                                                <div>      
+                                                        <input type="radio" value="Yes" name="q38" defaultChecked={interiorValues.q38 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q38" defaultChecked={interiorValues.q38 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q38" defaultChecked={interiorValues.q38 === "N/A"} onClick={this.notify} onClick={BuildingSafetyChange}/> N/A
+                                                </div> 
+                                                <p/>       
+                                                <div>       
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q38Comments} onChange={handleChange('q38Comments')}></textarea>
                                                 </div><p/>
                                         </div>
@@ -469,12 +475,12 @@ class InteriorDetails extends React.Component{
                                                 venting?</div>&emsp;
                                        
                                                 <div className="radioOptions" onChange={handleChange('q39')}>      
-                                                        <input type="radio" value="Yes" name="q39" defaultChecked={interiorValues.q39 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q39" defaultChecked={interiorValues.q39 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q38" defaultChecked={interiorValues.q39 === "N/A"} onClick={this.notify}/> N/A
-                                                </div>
-                                                <p/>      
-                                                <div>      
+                                                        <input type="radio" value="Yes" name="q39" defaultChecked={interiorValues.q39 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q39" defaultChecked={interiorValues.q39 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q38" defaultChecked={interiorValues.q39 === "N/A"} onClick={this.notify} onClick={BuildingSafetyChange}/> N/A
+                                                </div> 
+                                                <p/>       
+                                                <div>       
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q39Comments} onChange={handleChange('q39Comments')}></textarea>
                                                 </div><p/>
                                         </div>
@@ -494,12 +500,12 @@ class InteriorDetails extends React.Component{
                                                 is turned up? </div>&emsp;
                                                
                                                 <div className="radioOptions" onChange={handleChange('q40')}>    
-                                                        <input type="radio" value="Yes" name="q40" defaultChecked={interiorValues.q40 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q40" defaultChecked={interiorValues.q40 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q40" defaultChecked={interiorValues.q40 === "N/A"} onClick={this.notify}/> N/A
-                                                </div>
-                                                <p/>      
-                                                <div>      
+                                                        <input type="radio" value="Yes" name="q40" defaultChecked={interiorValues.q40 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q40" defaultChecked={interiorValues.q40 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q40" defaultChecked={interiorValues.q40 === "N/A"} onClick={this.notify} onClick={BuildingSafetyChange}/> N/A
+                                                </div> 
+                                                <p/>       
+                                                <div>       
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q40Comments} onChange={handleChange('q40Comments')}></textarea>
                                                 </div><p/>
                                         </div>
@@ -519,12 +525,12 @@ class InteriorDetails extends React.Component{
                                                 obstructions?</div>&emsp;
                                        
                                                 <div className="radioOptions" onChange={handleChange('q41')}>      
-                                                        <input type="radio" value="Yes" name="q41" defaultChecked={interiorValues.q41 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q41" defaultChecked={interiorValues.q41 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q41" defaultChecked={interiorValues.q41 === "N/A"} onClick={this.notify}/> N/A
-                                                </div>
-                                                <p/>      
-                                                <div>      
+                                                        <input type="radio" value="Yes" name="q41" defaultChecked={interiorValues.q41 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q41" defaultChecked={interiorValues.q41 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q41" defaultChecked={interiorValues.q41 === "N/A"} onClick={this.notify} onClick={BuildingSafetyChange}/> N/A
+                                                </div> 
+                                                <p/>       
+                                                <div>       
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q41Comments} onChange={handleChange('q41Comments')}></textarea>
                                                 </div><p/>
                                         </div>
@@ -540,11 +546,11 @@ class InteriorDetails extends React.Component{
                                         <div className="questions grid-child">
                                                 <div className="ques">42. Are the baseboards and space heaters functioning
                                                 properly? When you turn up the thermostat, do they heat up?</div>&emsp;
-                                       
-                                                <div className="radioOptions" onChange={handleChange('q42')}>
-                                                        <input type="radio" value="Yes" name="q42" defaultChecked={interiorValues.q42 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q42" defaultChecked={interiorValues.q42 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q42" defaultChecked={interiorValues.q42 === "N/A"} onClick={this.notify}/> N/A
+                                        
+                                                <div className="radioOptions" onChange={handleChange('q42')}> 
+                                                        <input type="radio" value="Yes" name="q42" defaultChecked={interiorValues.q42 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q42" defaultChecked={interiorValues.q42 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q42" defaultChecked={interiorValues.q42 === "N/A"} onClick={this.notify} onClick={BuildingSafetyChange}/> N/A 
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -565,9 +571,9 @@ class InteriorDetails extends React.Component{
                                                 they free from dust and discoloration?</div>&emsp;
                                        
                                                 <div className="radioOptions" onChange={handleChange('q43')}>    
-                                                        <input type="radio" value="Yes" name="q43" defaultChecked={interiorValues.q43 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q43" defaultChecked={interiorValues.q43 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q43" defaultChecked={interiorValues.q43 === "N/A"} onClick={this.notify}/> N/A
+                                                        <input type="radio" value="Yes" name="q43" defaultChecked={interiorValues.q43 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q43" defaultChecked={interiorValues.q43 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q43" defaultChecked={interiorValues.q43 === "N/A"} onClick={this.notify} onClick={BuildingSafetyChange}/> N/A 
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -586,11 +592,11 @@ class InteriorDetails extends React.Component{
                                                 <h3>WOOD STOVE</h3>
                                                 <div className="ques">44. Is the exterior chimney free of any cracks, missing bricks
                                                 or chimney cap, or black creosote buildup?</div>&emsp;
-                                       
-                                                <div className="radioOptions" onChange={handleChange('q44')}>  
-                                                        <input type="radio" value="Yes" name="q44" defaultChecked={interiorValues.q44 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q44" defaultChecked={interiorValues.q44 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q44" defaultChecked={interiorValues.q44 === "N/A"} onClick={this.notify}/> N/A
+                                        
+                                                <div className="radioOptions" onChange={handleChange('q44')}>   
+                                                        <input type="radio" value="Yes" name="q44" defaultChecked={interiorValues.q44 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q44" defaultChecked={interiorValues.q44 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q44" defaultChecked={interiorValues.q44 === "N/A"} onClick={this.notify} onClick={BuildingSafetyChange}/> N/A 
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -611,9 +617,9 @@ class InteriorDetails extends React.Component{
                                                 good condition? Is the glass door free from cracks and black discolouration?</div>&emsp;
                                        
                                                 <div className="radioOptions" onChange={handleChange('q45')}>
-                                                        <input type="radio" value="Yes" name="q45" defaultChecked={interiorValues.q45 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q45" defaultChecked={interiorValues.q45 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q45" defaultChecked={interiorValues.q45 === "N/A"} onClick={this.notify}/> N/A
+                                                        <input type="radio" value="Yes" name="q45" defaultChecked={interiorValues.q45 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q45" defaultChecked={interiorValues.q45 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q45" defaultChecked={interiorValues.q45 === "N/A"} onClick={this.notify} onClick={BuildingSafetyChange}/> N/A 
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -635,9 +641,9 @@ class InteriorDetails extends React.Component{
                                                 fireplace?</div>&emsp;
                                        
                                                 <div className="radioOptions" onChange={handleChange('q46')}>
-                                                        <input type="radio" value="Yes" name="q46" defaultChecked={interiorValues.q46 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q46" defaultChecked={interiorValues.q46 === "No"}onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q46" defaultChecked={interiorValues.q46 === "N/A"}onClick={this.notify}/> N/A
+                                                        <input type="radio" value="Yes" name="q46" defaultChecked={interiorValues.q46 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q46" defaultChecked={interiorValues.q46 === "No"}onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q46" defaultChecked={interiorValues.q46 === "N/A"}onClick={this.notify} onClick={BuildingSafetyChange}/> N/A 
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -659,9 +665,9 @@ class InteriorDetails extends React.Component{
                                                 or fireplace but not closer than 10 feet?</div>&emsp;
                                        
                                                 <div className="radioOptions" onChange={handleChange('q47')}>
-                                                        <input type="radio" value="Yes" name="q47" defaultChecked={interiorValues.q47 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q47" defaultChecked={interiorValues.q47 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q47" defaultChecked={interiorValues.q47 === "N/A"} onClick={this.notify}/> N/A
+                                                        <input type="radio" value="Yes" name="q47" defaultChecked={interiorValues.q47 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q47" defaultChecked={interiorValues.q47 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q47" defaultChecked={interiorValues.q47 === "N/A"} onClick={this.notify} onClick={BuildingSafetyChange}/> N/A 
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -683,8 +689,8 @@ class InteriorDetails extends React.Component{
                                                 location in place?</div>&emsp;
                                        
                                                 <div className="radioOptions" onChange={handleChange('q48')}>
-                                                        <input type="radio" value="Yes" name="q48" defaultChecked={interiorValues.q48 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q48" defaultChecked={interiorValues.q48 === "No"} onClick={this.notify}/> No
+                                                        <input type="radio" value="Yes" name="q48" defaultChecked={interiorValues.q48 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q48" defaultChecked={interiorValues.q48 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No 
                                                 </div>
                                                 <p/>      
                                                 <div>      
@@ -709,8 +715,8 @@ class InteriorDetails extends React.Component{
                                                 <div className="ques">49. Is there a list of emergency numbers and contacts?</div>&emsp;
                                        
                                                 <div className="radioOptions" onChange={handleChange('q49')}>
-                                                        <input type="radio" value="Yes" name="q49" defaultChecked={interiorValues.q49 === "Yes"}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q49" defaultChecked={interiorValues.q49 === "No"} onClick={this.notify}/> No
+                                                        <input type="radio" value="Yes" name="q49" defaultChecked={interiorValues.q49 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q49" defaultChecked={interiorValues.q49 === "No"} onClick={this.notify} onClick={BuildingSafetyChange}/> No
                                                 </div>
                                                 <p/>      
                                                 <div>      

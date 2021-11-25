@@ -144,11 +144,18 @@ class Form extends Component {
         ExteriorLifeSafety:0,
         ExteriorInjurySafety:0,
         ExteriorHealthSafety:0,
+        Counter1:0,
+        Counter2:0,
+        Counter3:0,
+        Counter4:0,
+        Counter5:0,
         Counter24:0,
         Counter25:0,
+        Counter26:0,
         Counter32:0,
         Counter33:0,
         Counter34:0,
+        Counter35:0,
         Counter36:0,
         Counter37:0,
         Counter38:0,
@@ -166,7 +173,70 @@ class Form extends Component {
     }
 
     BuildingSafetyChange=(e)=>{
-        const { InteriorBuildingSafety,Counter33,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49}= this.state;
+        const { InteriorBuildingSafety,ExteriorBuildingSafety,Counter1,Counter2,Counter3,Counter33,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49}= this.state;
+        if(e.target.name==="q1"){
+            if(e.target.value==="Yes"){
+                    if(Counter1===0){
+                        this.setState({
+                            ExteriorBuildingSafety:ExteriorBuildingSafety+1,
+                            Counter1:1
+                            
+                        })
+                        
+                    }
+
+            }
+            else {
+                    if(Counter1===1){
+                        this.setState({
+                            ExteriorBuildingSafety:ExteriorBuildingSafety-1,
+                            Counter1:0
+                        })
+                    }
+            }
+        }
+        if(e.target.name==="q2"){
+            if(e.target.value==="Yes"){
+                    if(Counter2===0){
+                        this.setState({
+                            ExteriorBuildingSafety:ExteriorBuildingSafety+1,
+                            Counter2:1
+                            
+                        })
+                        
+                    }
+
+            }
+            else {
+                    if(Counter2===1){
+                        this.setState({
+                            ExteriorBuildingSafety:ExteriorBuildingSafety-1,
+                            Counter2:0
+                        })
+                    }
+            }
+        }
+        if(e.target.name==="q3"){
+            if(e.target.value==="Yes"){
+                    if(Counter3===0){
+                        this.setState({
+                            ExteriorBuildingSafety:ExteriorBuildingSafety+1,
+                            Counter3:1
+                            
+                        })
+                        
+                    }
+
+            }
+            else {
+                    if(Counter3===1){
+                        this.setState({
+                            ExteriorBuildingSafety:ExteriorBuildingSafety-1,
+                            Counter3:0
+                        })
+                    }
+            }
+        }
         if(e.target.name==="q33"){
                 if(e.target.value==="Yes"){
                         if(Counter33===0){
@@ -558,7 +628,46 @@ LifeSafetyChange=(e)=>{
 }
 
 InjurySafetyChange=(e)=>{
-    const { InteriorInjurySafety,Counter35}= this.state;
+    const { InteriorInjurySafety,ExteriorInjurySafety,Counter4,Counter5,Counter35}= this.state;
+    if(e.target.name==="q4"){
+        if(e.target.value==="Yes"){
+                if(Counter4===0){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety+1,
+                        Counter4:1
+                    })
+                }
+
+        }
+        else {
+                if(Counter4===1){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety-1,
+                        Counter4:0
+                    })
+                }
+        }
+    }
+
+    if(e.target.name==="q5"){
+        if(e.target.value==="Yes"){
+                if(Counter5===0){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety+1,
+                        Counter5:1
+                    })
+                }
+
+        }
+        else {
+                if(Counter4===5){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety-1,
+                        Counter5:0
+                    })
+                }
+        }
+    }
         if(e.target.name==="q35"){
                 if(e.target.value==="Yes"){
                         if(Counter35===0){
@@ -672,16 +781,16 @@ InjurySafetyChange=(e)=>{
 
         const { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode, province} = this.state;
         const { community, bandNum} = this.state;
-        const {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments} = this.state;
+        const {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments,ExteriorBuildingSafety,ExteriorInjurySafety} = this.state;
         const {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27a, q27b, q27c, q27d, q28, q28Comments, q29a, q29b, q29c, q29d, q30, q30Comments, q31Name, q31PhoneNum, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments,
-            InteriorBuildingSafety,InteriorLifeSafety,InteriorHealthSafety,Counter24,Counter25,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49} = this.state;
+            InteriorBuildingSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,Counter24,Counter25,Counter26,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49} = this.state;
         
         const occupantValues = { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode, province};
         const communityValues = {community, bandNum};
-        const exteriorValues = {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments};
+        const exteriorValues = {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments,ExteriorBuildingSafety,ExteriorInjurySafety};
         const interiorValues = {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27a, q27b, q27c, q27d, q28, q28Comments, q29a, q29b, q29c, q29d, q30, q30Comments, q31Name, q31PhoneNum, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments,
-            InteriorBuildingSafety,InteriorLifeSafety,InteriorHealthSafety,Counter24,Counter25,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49};
-        
+            InteriorBuildingSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,Counter24,Counter25,Counter26,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49};
+        const reportValues ={ InteriorBuildingSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,ExteriorBuildingSafety,ExteriorInjurySafety};
 
         switch (page){
 
@@ -752,8 +861,8 @@ InjurySafetyChange=(e)=>{
             case 4:
                 return(
                     <div className="report db">
-                        <h1 className="blue">Report</h1>
-                        <Report prevPage={this.prevPage} interiorValues = {interiorValues} exteriorValues = {exteriorValues}/>
+                        <h1 className="blueReport">Report</h1>
+                        <Report prevPage={this.prevPage} reportValues = {reportValues} exteriorValues = {exteriorValues}/>
                     </div>
 
                 );

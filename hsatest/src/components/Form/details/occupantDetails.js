@@ -21,15 +21,15 @@ class OccupantDetails extends React.Component{
                     <div className="grid-OccupantDetails">
                         <div className="card grid-child">
                             Occupant's First Name:&emsp; <input type="text" placeholder= " Enter First Name" className="inputV3" defaultValue={occupantValues.firstName} onChange={handleChange('firstName')} /><p/>
-                            Number of Occupants:&emsp; <input type="number" placeholder= " Number of Occupants" step="1" defaultValue={occupantValues.numOccupants} onChange={handleChange('numOccupants')}/><p/>
-                            Number of Bedrooms:&emsp; <input type="number" placeholder= " Number of Bedrooms" step="1" defaultValue={occupantValues.numBedrooms} onChange={handleChange('numBedrooms')}/><p/>
-                            Number of Floors:&emsp; <input type="number" placeholder= " Number of Floors" step="1" defaultValue={occupantValues.numFloors} onChange={handleChange('numFloors')}/><p/>
+                            Number of Occupants:&emsp; <input type="number" min="0" placeholder= " Number of Occupants" step="1" defaultValue={occupantValues.numOccupants} onChange={handleChange('numOccupants')}/><p/>
+                            Number of Bedrooms:&emsp; <input type="number" min="0" placeholder= " Number of Bedrooms" step="1" defaultValue={occupantValues.numBedrooms} onChange={handleChange('numBedrooms')}/><p/>
+                            Number of Floors:&emsp; <input type="number" min="0" placeholder= " Number of Floors" step="1" defaultValue={occupantValues.numFloors} onChange={handleChange('numFloors')}/><p/>
                             <br/><p/>
 
                         </div>
                         <div className="card grid-child">
                             Occupant's Last Name:&emsp; <input type="text" placeholder= " Enter Last Name" className="inputV3" defaultValue={occupantValues.lastName} onChange={handleChange('lastName')}/><p/>
-                            Approximate Square Footage:&emsp; <input type="number" placeholder= " Enter value" step="0.1" defaultValue={occupantValues.approxSF} onChange={handleChange('approxSF')}/><p/>
+                            Approximate Square Footage:&emsp; <input type="number" placeholder= " Enter value" min="0" step="0.1" defaultValue={occupantValues.approxSF} onChange={handleChange('approxSF')}/><p/>
                             House Type: &emsp;
                             <select type="dropdown" defaultValue={occupantValues.houseType} onChange={handleChange('houseType')}>
                                 <option value="Owned">Private Owned</option>

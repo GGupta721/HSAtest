@@ -47,8 +47,10 @@
 .multiChoice
 {
   font-size: 20px;
-  inline-size: 700px;
+  /* inline-size: 700px; */
   line-height: 25px;
+  margin-left: 30px;
+
 
   font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
 

@@ -44,28 +44,25 @@ class Report extends Component {
 
     constructor(props) {
         super(props);
-        this.maxBuildingSafety=18;
-        this.maxLifeSafety=3;
-        this.maxInjurySafety=3;
+        this.maxBuildingSafety=15;
+        this.maxLifeSafety=4;
+        this.maxInjurySafety=1;
         this.maxHealthSafety=1;
         this.total=this.maxBuildingSafety+this.maxHealthSafety+this.maxLifeSafety+this.maxInjurySafety;
 
-        this.maxBuildingSafetyPercent=(18/this.total)*100;
-        this.maxLifeSafetyPercent=(3/this.total)*100;
-        this.maxInjurySafetyPercent=(3/this.total)*100;
-        this.maxHealthSafetyPercent=(1/this.total)*100;
-        this.totalPercent=100;
-        this.state= 
-        {
-            ChartData:{
-                labels: ['BuildingSafety','LifeSafety','InjurySafety','HealthSafety'],
-                datesets:[{label:'Percentage',
-                            data:[this.maxBuildingSafetyPercent,this.maxHealthSafetyPercent,this.maxInjurySafetyPercent,
-                                   this.maxLifeSafetyPercent ],
-                            backgroundcolor:['#e0f7fa','#e0f7fa','#e0f7fa','#e0f7fa']
-            }]
-            }
-        }
+        this.ExteriorBuildingSafetyPercent=((this.props.reportValues.ExteriorBuildingSafety/5)*100).toFixed(2);
+        this.ExteriorLifeSafetyPercent=((this.props.reportValues.ExteriorLifeSafety/5)*100).toFixed(2);
+        this.ExteriorInjurySafetyPercent=((this.props.reportValues.ExteriorInjurySafety/5)*100).toFixed(2);
+        this.ExteriorHealthSafetyPercent=((this.props.reportValues.ExteriorHealthSafety/5)*100).toFixed(2);
+        this.totalExterior=this.props.reportValues.ExteriorBuildingSafety+this.props.reportValues.ExteriorInjurySafety;
+        this.totalExteriorPercent= ((this.totalExterior/5)*100).toFixed(2);
+
+        this.InteriorBuildingSafetyPercent=((this.props.reportValues.InteriorBuildingSafety/5)*100).toFixed(2);
+        this.InteriorLifeSafetyPercent=((this.props.reportValues.InteriorLifeSafety/5)*100).toFixed(2);
+        this.InteriorInjurySafetyPercent=((this.props.reportValues.InteriorInjurySafety/5)*100).toFixed(2);
+        this.InteriorHealthSafetyPercent=((this.props.reportValues.InteriorHealthSafety/5)*100).toFixed(2);
+        this.totalInterior=this.props.reportValues.InteriorBuildingSafety+this.props.reportValues.InteriorInjurySafety+ this.props.reportValues.InteriorHealthSafety+this.props.reportValues.InteriorLifeSafety;
+        this.totalInteriorPercent= ((this.totalInterior/21)*100).toFixed(2);
 
         
 
@@ -78,7 +75,7 @@ class Report extends Component {
 
 
     render(){
-
+        const{reportValues}=this.props;
         return(
             <div className="pageContent">
                 <h1>Exterior Details</h1>
@@ -92,39 +89,39 @@ class Report extends Component {
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Building Safety Report</td>
-                        <td>{this.maxBuildingSafety}</td>
-                        <td>{this.maxBuildingSafetyPercent}%</td>
-                        <td>{this.BuildingSafety}</td>
-                        <td></td>
+                        <td>3</td>
+                        <td>60%</td>
+                        <td>{reportValues.ExteriorBuildingSafety}</td>
+                        <td>{this.ExteriorBuildingSafetyPercent}</td>
                     
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Life Safety Report</td>
-                        <td>{this.maxLifeSafety}</td>
-                        <td>{this.maxLifeSafetyPercent}%</td>
-                        <td></td>
-                        <td></td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td>0</td>
+                        <td>0</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Injury Safety Report</td>
-                        <td>{this.maxInjurySafety}</td>
-                        <td>{this.maxInjurySafetyPercent}%</td>
-                        <td></td>
-                        <td></td>
+                        <td>2</td>
+                        <td>40%</td>
+                        <td>{reportValues.ExteriorInjurySafety}</td>
+                        <td>{this.ExteriorInjurySafetyPercent}</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Health Safety Report</td>
-                        <td>{this.maxHealthSafety}</td>
-                        <td>{this.maxHealthSafetyPercent}%</td>
-                        <td></td>
-                        <td></td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td>0</td>
+                        <td>0</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightslategrey", border:"2px solid black"}}>Total Assesment Score</td>
-                        <td style={{ border:"2px solid black"}}>{this.total}</td>
-                        <td style={{ border:"2px solid black"}}>{this.totalPercent}%</td>
-                        <td style={{ border:"2px solid black"}}></td>
-                        <td style={{ border:"2px solid black"}}></td>
+                        <td style={{ border:"2px solid black"}}>5</td>
+                        <td style={{ border:"2px solid black"}}>100%</td>
+                        <td style={{ border:"2px solid black"}}>{this.totalExterior}</td>
+                        <td style={{ border:"2px solid black"}}>{this.totalExteriorPercent}</td>
                     </tr>
                 </table>
                 {/* <Bar
@@ -171,38 +168,38 @@ class Report extends Component {
                     <tr>
                         <td style={{color:"lightseagreen"}}>Building Safety Report</td>
                         <td>{this.maxBuildingSafety}</td>
-                        <td>{this.maxBuildingSafetyPercent}%</td>
-                        <td>{this.BuildingSafety}</td>
-                        <td></td>
+                        <td>71.43%</td>
+                        <td>{reportValues.InteriorBuildingSafety}</td>
+                        <td>{this.InteriorBuildingSafetyPercent}</td>
                     
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Life Safety Report</td>
                         <td>{this.maxLifeSafety}</td>
-                        <td>{this.maxLifeSafetyPercent}%</td>
-                        <td></td>
-                        <td></td>
+                        <td>19.05%</td>
+                        <td>{reportValues.InteriorLifeSafety}</td>
+                        <td>{this.InteriorLifeSafetyPercent}</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Injury Safety Report</td>
                         <td>{this.maxInjurySafety}</td>
-                        <td>{this.maxInjurySafetyPercent}%</td>
-                        <td></td>
-                        <td></td>
+                        <td>4.76%</td>
+                        <td>{reportValues.InteriorInjurySafety}</td>
+                        <td>{this.InteriorInjurySafetyPercent}</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Health Safety Report</td>
                         <td>{this.maxHealthSafety}</td>
-                        <td>{this.maxHealthSafetyPercent}%</td>
-                        <td></td>
-                        <td></td>
+                        <td>4.76%</td>
+                        <td>{reportValues.InteriorHealthSafety}</td>
+                        <td>{this.InteriorHealthSafetyPercent}</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightslategrey", border:"2px solid black"}}>Total Assesment Score</td>
                         <td style={{ border:"2px solid black"}}>{this.total}</td>
-                        <td style={{ border:"2px solid black"}}>{this.totalPercent}%</td>
-                        <td style={{ border:"2px solid black"}}></td>
-                        <td style={{ border:"2px solid black"}}></td>
+                        <td style={{ border:"2px solid black"}}>100%</td>
+                        <td style={{ border:"2px solid black"}}>{this.totalInterior}</td>
+                        <td style={{ border:"2px solid black"}}>{this.totalInteriorPercent}</td>
                     </tr>
                 </table>
                 <br/>

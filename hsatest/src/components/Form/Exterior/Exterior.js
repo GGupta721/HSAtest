@@ -66,7 +66,15 @@ class Exterior extends React.Component{
                  
         //  })
         // }
-
+    
+        buildingNotify =(e)=> {
+                this.props.BuildingSafetyChange(e);
+                this.notify(e)
+        }
+        injuryNotify =(e)=> {
+               this.props.InjurySafetyChange(e);
+                this.notify(e)
+        }
         notify = (e) => {
 
                 toast.warn(`You selected ${e.target.value},
@@ -87,8 +95,8 @@ class Exterior extends React.Component{
         update = () => toast.update({ type: toast.TYPE.INFO, autoClose: 5000 });
 
         render(){
-                const {exteriorValues, handleChange} = this.props;
-
+                const {exteriorValues, handleChange,BuildingSafetyChange,InjurySafetyChange} = this.props;
+               
                 return(
                         <div>
                                 <div className="grid-container">
@@ -98,9 +106,9 @@ class Exterior extends React.Component{
                                                 
                                                 <div className="ques">1. Is the house address visible ?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q1')}>   
-                                                        <input type="radio" value="Yes" name="q1" defaultChecked={exteriorValues.q1 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q1" defaultChecked={exteriorValues.q1 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q1" defaultChecked={exteriorValues.q1 === "N/A"} onClick={this.notify}/> N/A
+                                                        <input type="radio" value="Yes" name="q1" defaultChecked={exteriorValues.q1 === "Yes"} onClick={BuildingSafetyChange} /> Yes &emsp;
+                                                        <input type="radio" value="No"  name="q1" defaultChecked={exteriorValues.q1 === "No"} onClick={this.buildingNotify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q1" defaultChecked={exteriorValues.q1 === "N/A"} onClick={this.buildingNotify}/> N/A
                                                 </div>
                                                 
                                                 <p/>
@@ -130,9 +138,9 @@ class Exterior extends React.Component{
                                                 <div className="ques">2. Do they have visible shutoff valves ?</div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q2')}>   
-                                                        <input type="radio" value="Yes" name="q2" defaultChecked={exteriorValues.q2 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q2" defaultChecked={exteriorValues.q2 === "No" } onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q2" defaultChecked={exteriorValues.q2 === "N/A"} onClick={this.notify}/> N/A
+                                                        <input type="radio" value="Yes" name="q2" defaultChecked={exteriorValues.q2 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No"  name="q2" defaultChecked={exteriorValues.q2 === "No" } onClick={this.buildingNotify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q2" defaultChecked={exteriorValues.q2 === "N/A"} onClick={this.buildingNotify}/> N/A
                                                 </div>
                                                 
                                                 <p/>       
@@ -157,9 +165,9 @@ class Exterior extends React.Component{
                                                 <div className="ques">3. Are the electrical wires securely
                                                 attached to the building, and free from tree limbs?</div>&emsp;      
                                                 <div className="radioOptions" onChange={handleChange('q3')}>   
-                                                        <input type="radio" value="Yes" name="q3" defaultChecked={exteriorValues.q3 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q3" defaultChecked={exteriorValues.q3 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q3" defaultChecked={exteriorValues.q3 === "N/A"} onClick={this.notify}/> N/A
+                                                        <input type="radio" value="Yes" name="q3" defaultChecked={exteriorValues.q3 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No"  name="q3" defaultChecked={exteriorValues.q3 === "No"} onClick={this.buildingNotify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q3" defaultChecked={exteriorValues.q3 === "N/A"} onClick={this.buildingNotify}/> N/A
                                                 </div>
                                                 
                                                 <p/>       
@@ -181,9 +189,9 @@ class Exterior extends React.Component{
                                                 <div className="ques">4. Are the steps and handrails 
                                                 free of rot and cracks? Are the stairs and handrails secure?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q4')}>   
-                                                        <input type="radio" value="Yes" name="q4" defaultChecked={exteriorValues.q4 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q4" defaultChecked={exteriorValues.q4 === "No"} onClick={this.notify}/> No &emsp;
-                                                        <input type="radio" value="N/A" name="q4" defaultChecked={exteriorValues.q4 === "N/A"} onClick={this.notify}/> N/A
+                                                        <input type="radio" value="Yes" name="q4" defaultChecked={exteriorValues.q4 === "Yes"} onClick={InjurySafetyChange} /> Yes &emsp;
+                                                        <input type="radio" value="No"  name="q4" defaultChecked={exteriorValues.q4 === "No"} onClick={this.buildingNotify}/> No &emsp;
+                                                        <input type="radio" value="N/A" name="q4" defaultChecked={exteriorValues.q4 === "N/A"} onClick={this.injuryNotify}/> N/A
                                                 </div>
                                                 
                                                 <p/>       
@@ -204,13 +212,13 @@ class Exterior extends React.Component{
                                                 <div className="ques">5. Is the walkway and stairs free
                                                 from trip hazards?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q5')}>   
-                                                        <input type="radio" value="Yes" name="q5" defaultChecked={exteriorValues.q5 === "Yes"} /> Yes &emsp;
-                                                        <input type="radio" value="No"  name="q5" defaultChecked={exteriorValues.q5 === "No"} onClick={this.notify}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q5" defaultChecked={exteriorValues.q5 === "Yes"} onClick={InjurySafetyChange}/> Yes &emsp;
+                                                        <input type="radio" value="No"  name="q5" defaultChecked={exteriorValues.q5 === "No"} onClick={this.buildingNotify}/> No &emsp;
                                                 </div> 
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q5Comments} onChange={handleChange('q5Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" placeholder="Enter Comments.." defaultValue={exteriorValues.q5Comments} onChange={handleChange('q5Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">

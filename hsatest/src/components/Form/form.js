@@ -11,6 +11,7 @@ import PolicyModal from "../assessment/PolicyModal";
 import Acknowledge from "../acknowledgement/Acknowledge";
 import * as XLSX from 'xlsx';
 import axios from 'axios';
+import emailjs from 'emailjs-com';
 
 // import NavigationLink from "../NavigationLink";
 
@@ -51,7 +52,7 @@ class Form extends Component {
         // const data = JSON.stringify(this.state);
         const data = 
         {
-            'emailID':'112',   
+            'emailID':'442',   
             'firstName':this.state.firstName,
             'lastName':this.state.lastName,
             'numOccupants':this.state.numOccupants,
@@ -192,6 +193,25 @@ class Form extends Component {
         .catch((error) => {
             console.log(error);
         });
+
+        var templateParams = {
+            to_name: 'James',
+            from_name: 'GG',
+            message: 'Wassssup!!'
+        };
+
+        const serviceID = 'service_6qd4iln';
+        const templateID = 'template_88tatta';
+        const userID = 'user_jOczu1og4rtveJixUCF5X';
+        
+
+         
+        emailjs.send(serviceID, templateID, this.state, userID)
+            .then(function(response) {
+               console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+               console.log('FAILED...', error);
+            })
 
         // const response = await fetch(`${RESTAPIurl}spellcheck`, {
         //     method: 'POST', // *GET, POST, PUT, DELETE, etc.

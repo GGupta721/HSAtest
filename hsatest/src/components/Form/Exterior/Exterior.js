@@ -119,7 +119,7 @@ class Exterior extends React.Component{
                                                 
                                         </div>
 
-                                        <div className="info grid-child">
+                                        <div className="infotop grid-child"  >
                                                 
                                                 <p><b>Consideration:</b> If outside safety or rescue personnel respond, 
                                                 they will need an address to find the home.</p>
@@ -310,7 +310,7 @@ class Exterior extends React.Component{
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q10Comments} onChange={handleChange('q10Comments')}></textarea>
                                                 </div><p/>
                                         </div>
-                                        <div className="info grid-child">
+                                        <div className="infobottom grid-child">
                                                 <p>
                                                         <b>Consideration:</b> In an emergency, if any of the exits are blocked, 
                                                         there is a chance people will not be able to escape.<br/><br/>

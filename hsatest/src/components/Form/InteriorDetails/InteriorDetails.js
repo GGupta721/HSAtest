@@ -79,6 +79,8 @@ class InteriorDetails extends React.Component{
         continue = (eve) => {
                 eve.preventDefault();
                 this.props.nextPage();
+                this.props.submitHandler();
+
         }
 
         previous = (eve) => {
@@ -128,7 +130,7 @@ class InteriorDetails extends React.Component{
                                                 </div><p/>
 
                                         </div>
-                                        <div className="info grid-child">
+                                        <div className="infotop grid-child">
                                                 <p>
                                                         <b>Consideration:</b> Smoke detectors alert the occupants in the house of the danger of a fire or elevated carbon monoxide levels.<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend installation where needed,
@@ -272,7 +274,7 @@ class InteriorDetails extends React.Component{
                                         <div className="questions grid-child">
                                                 <h3>ENVIRONMENTAL</h3>
                                                 <p/>    
-                                                <div className="ques">26. Is the home free of any environmental issues?{interiorValues.InteriorHealthSafety}</div><p/>
+                                                <div className="ques">26. Is the home free of any environmental issues?</div><p/>
                                                 <div className="radioOptions" onChange={handleChange('q26')}>  
                                                         <input type="radio" value="Yes" name="q26" defaultChecked={interiorValues.q26 === "Yes"} onClick={this.healthNotify} /> Yes &emsp;
                                                         <input type="radio" value="No" name="q26" defaultChecked={interiorValues.q26 === "No"} onClick={this.healthNotify} /> No &emsp;
@@ -282,7 +284,7 @@ class InteriorDetails extends React.Component{
                                                 </div><p/>
                                                
                                                 <div className="multiChoice" >
-                                                        <input type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27a === "Mould"} onChange={handleChange('q27a')} id="Mould" value="Mould" /><label for ="Mould">Mould</label><br/>
+                                                        <input type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27a === "Mould"} onChange={handleChange('q27a')} value="Mould" />Mould<br/>
                                                         <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27b === "Musty-Scent"} onChange={handleChange('q27b')} value="Musty-Scent"/>Musty-Scent<br/>
                                                         <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q27c === "WaterLeak"} onChange={handleChange('q27c')} value="WaterLeak"/>WaterLeak<br/>
                                                         <input  type="checkbox" disabled={this.state.disabled} value="Other" defaultChecked={interiorValues.q27d === "Other"} onChange={handleChange('q27d')} onClick={this.alternateChange}/>Other<br/>
@@ -351,7 +353,7 @@ class InteriorDetails extends React.Component{
                                         <div className="questions grid-child">
                                                 <h3>PLUMBING:</h3>
                                                 <div className="ques">33. Are the bathroom, kitchen and/or 
-                                                laundry room sinks free of leaks? {interiorValues.InteriorBuildingSafety}</div>&emsp;
+                                                laundry room sinks free of leaks? </div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q33')}>      
                                                         <input type="radio" value="Yes" name="q33" defaultChecked={interiorValues.q33 === "Yes"} onClick={BuildingSafetyChange}/> Yes &emsp;
@@ -375,7 +377,7 @@ class InteriorDetails extends React.Component{
                                         <div className="questions grid-child">
                                                 <h3>ELECTRICAL</h3>
                                                 <div className="ques">34. Is the electrical panel easy 
-                                                to access and free from clutter?{interiorValues.InteriorLifeSafety} </div>&emsp;
+                                                to access and free from clutter?</div>&emsp;
                                                 
                                                 <div className="radioOptions" onChange={handleChange('q34')}>      
                                                         <input type="radio" value="Yes" name="q34" defaultChecked={interiorValues.q34 === "Yes"} onClick={LifeSafetyChange}/> Yes &emsp;
@@ -761,7 +763,7 @@ class InteriorDetails extends React.Component{
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q50Comments} onChange={handleChange('q50Comments')}></textarea>
                                                 </div><p/>
                                         </div>
-                                        <div className="info grid-child">
+                                        <div className="infobottom grid-child">
                                                 <p>
                                                         <b>Consideration:</b> If there is a power outage, any house phones that operate on electricity will not work.<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend that the house have a phone that works without power.

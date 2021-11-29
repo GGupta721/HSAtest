@@ -57,10 +57,10 @@ class Report extends Component {
         this.totalExterior=this.props.reportValues.ExteriorBuildingSafety+this.props.reportValues.ExteriorInjurySafety;
         this.totalExteriorPercent= ((this.totalExterior/5)*100).toFixed(2);
 
-        this.InteriorBuildingSafetyPercent=((this.props.reportValues.InteriorBuildingSafety/5)*100).toFixed(2);
-        this.InteriorLifeSafetyPercent=((this.props.reportValues.InteriorLifeSafety/5)*100).toFixed(2);
-        this.InteriorInjurySafetyPercent=((this.props.reportValues.InteriorInjurySafety/5)*100).toFixed(2);
-        this.InteriorHealthSafetyPercent=((this.props.reportValues.InteriorHealthSafety/5)*100).toFixed(2);
+        this.InteriorBuildingSafetyPercent=((this.props.reportValues.InteriorBuildingSafety/21)*100).toFixed(2);
+        this.InteriorLifeSafetyPercent=((this.props.reportValues.InteriorLifeSafety/21)*100).toFixed(2);
+        this.InteriorInjurySafetyPercent=((this.props.reportValues.InteriorInjurySafety/21)*100).toFixed(2);
+        this.InteriorHealthSafetyPercent=((this.props.reportValues.InteriorHealthSafety/21)*100).toFixed(2);
         this.totalInterior=this.props.reportValues.InteriorBuildingSafety+this.props.reportValues.InteriorInjurySafety+ this.props.reportValues.InteriorHealthSafety+this.props.reportValues.InteriorLifeSafety;
         this.totalInteriorPercent= ((this.totalInterior/21)*100).toFixed(2);
 

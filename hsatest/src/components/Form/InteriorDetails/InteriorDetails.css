@@ -44,12 +44,13 @@
   margin-right: 250px;
 }
 
-.multiChoice
+.multiChoice.checkbox
 {
   font-size: 20px;
   /* inline-size: 700px; */
+  text-align:left !important;
   line-height: 25px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
 
 
   font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;

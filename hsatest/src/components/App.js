@@ -8,7 +8,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 class App extends Component {
+  // cors = require('cors');
+  // App.use(cors())
+  
   render() {
+    
     // const filePath = "./ListFirstNations.xlsx";
     // handleFile(filePath);
 

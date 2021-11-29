@@ -4,6 +4,9 @@ import "./Exterior.css"
 
 toast.configure();
 class Exterior extends React.Component{
+        state = {
+                continue: false
+        }
 
         authenticateResponses = () => {
                 const noRespArr = [];
@@ -20,14 +23,14 @@ class Exterior extends React.Component{
                                 // if ( ques[1] === 'No' ||  ques[1] === 'N/A'){
                                 //         tempArr.push(ques[0]);
                                 // } 
-                                // console.log("LOL", ques[0])  ;
-                                if (ques[1].length <= 1 ){
+                                // console.log("OK", ques[0])  ;
+                                if (ques[1].length < 1 ){
                                         this.valdateQues(ques[0]);
                                         // return false;
                                 }
                                 console.log(ques[1].length, ques[1]);
 
-                                return true;
+                                this.setState({continue: true});
 
                         }
                 })
@@ -38,16 +41,21 @@ class Exterior extends React.Component{
 
         continue = (eve) => {
                 // console.log(this.authenticateResponses())
-                // // if(this.authenticateResponses()== true){
-                // //         eve.preventDefault();
-                // //         this.props.nextPage();
-                // // }
-                // if(this.authenticateResponses()== true){
+                // this.authenticateResponses();
+                // if(this.state.continue === true){
+                //         this.setState({continue: false});
                 //         eve.preventDefault();
                 //         this.props.nextPage();
                 // }
                 eve.preventDefault();
                 this.props.nextPage();
+                // else
+                // if(this.authenticateResponses()== true){
+                //         eve.preventDefault();
+                //         this.props.nextPage();
+                // }
+                // eve.preventDefault();
+                // this.props.nextPage();
 
 
                
@@ -78,7 +86,7 @@ class Exterior extends React.Component{
 
         valdateQues = (quesNum) => {
 
-                toast.error(`Please provide a comment for Question ${quesNum}`, {
+                toast.error(`Please provide a comment for ${quesNum}`, {
                         position: toast.POSITION.TOP_CENTER,
                         autoClose: false
                 });

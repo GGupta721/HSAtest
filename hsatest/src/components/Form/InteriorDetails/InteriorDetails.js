@@ -61,6 +61,7 @@ class InteriorDetails extends React.Component{
         continue = (eve) => {
                 eve.preventDefault();
                 this.props.nextPage();
+                this.props.submitHandler();
         }
 
         previous = (eve) => {
@@ -78,7 +79,7 @@ class InteriorDetails extends React.Component{
         }
 
         render(){
-                const {interiorValues, handleChange, BuildingSafetyChange, LifeSafetyChange,HealthSafetyChange} = this.props;
+                const {interiorValues, handleChange, BuildingSafetyChange, LifeSafetyChange, HealthSafetyChange, submitHandler} = this.props;
 
                
 

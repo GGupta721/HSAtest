@@ -9,9 +9,62 @@ class InteriorDetails extends React.Component{
                 disabled: true,
                 disabledq27: true,
                 disabledq28:true,
-               
-                
+                AllowContinue : true
 
+        }
+
+        authenticateResponses = () => {
+                const noRespArr = [];
+                const noCommArr = [];
+                this.setState({AllowContinue: true});
+               
+                Object.entries(this.props.interiorValues).map((ques) =>{
+                        if(ques[0].includes("q") && !ques[0].includes("Comments") ){
+                                if (ques[1] === 'No' ||  ques[1] === 'N/A'){
+                                        noRespArr.push(ques[0]);
+                                }  
+                        }
+
+                        })
+                console.log(noRespArr);
+                Object.entries(this.props.interiorValues).map((ques) =>{
+                        noRespArr.map((entry)=>{
+                                // console.log(entry)
+                                if (ques[0].includes(entry) && ques[0].includes("Comments")){
+                                        if(ques[1].length < 1 || ques[1] === ''){
+                                                // console.log("bad!", ques)
+                                                noCommArr.push(entry);
+                                                this.setState({AllowContinue: false});
+                                        }
+                                }
+                        })
+                })
+                noCommArr.map((entry)=>{
+                        this.valdateQues(entry.slice(1))
+
+                })
+                // return true;
+
+
+        }
+        
+        valdateQues = (quesNum) => {
+
+                toast.error(`Please provide a comment for Question ${quesNum}`, {
+                        position: toast.POSITION.TOP_CENTER,
+                        autoClose: false
+                });
+        }
+
+        continue = async (eve) => {
+                const result = await this.authenticateResponses();
+                if(this.state.AllowContinue){
+                        console.log('once')
+                        eve.preventDefault();
+                        this.props.nextPage();
+                        this.props.submitHandler();
+
+                }
         }
        
         buildingNotify =(e)=> {
@@ -73,15 +126,6 @@ class InteriorDetails extends React.Component{
                
         }
 
-
-
-
-        continue = (eve) => {
-                eve.preventDefault();
-                this.props.nextPage();
-                this.props.submitHandler();
-
-        }
 
         previous = (eve) => {
                 eve.preventDefault();

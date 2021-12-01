@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css';
-import Assessment from "./assessment/assessment"
+import Assessment from "./Assessment/assessment"
 import Form from "./Form/form"
 // import Footer from './Footer/Footer.js'
 
@@ -18,7 +18,7 @@ class App extends Component {
         <div className="page-body">
           <Assessment /><br/>
           <Form/><br/>
-          <ToastContainer style={{ width: "500px" }} limit={2}/>
+          <ToastContainer style={{ width: "500px" }} />
           
           {/* <Footer/> */}
         </div>

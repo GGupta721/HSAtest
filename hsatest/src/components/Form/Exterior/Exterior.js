@@ -4,69 +4,60 @@ import "./Exterior.css"
 
 toast.configure();
 class Exterior extends React.Component{
+        state = {
+                AllowContinue : true
+        }
 
         authenticateResponses = () => {
                 const noRespArr = [];
+                const noCommArr = [];
+                this.setState({AllowContinue: true});
                
                 Object.entries(this.props.exteriorValues).map((ques) =>{
-                                if ( ques[1] === 'No' ||  ques[1] === 'N/A'){
+                        if(ques[0].includes("q") && !ques[0].includes("Comments") ){
+                                if (ques[1] === 'No' ||  ques[1] === 'N/A'){
                                         noRespArr.push(ques[0]);
-                                }   
+                                }  
+                        }
+
                         })
                 console.log(noRespArr);
                 Object.entries(this.props.exteriorValues).map((ques) =>{
-                        //Getting Comment state
-                        if (noRespArr.includes(ques[0].slice(0,2)) && ques[0].length > 4){
-                                // if ( ques[1] === 'No' ||  ques[1] === 'N/A'){
-                                //         tempArr.push(ques[0]);
-                                // } 
-                                // console.log("LOL", ques[0])  ;
-                                if (ques[1].length <= 1 ){
-                                        this.valdateQues(ques[0]);
-                                        // return false;
+                        noRespArr.map((entry)=>{
+                                // console.log(entry)
+                                if (ques[0].includes(entry) && ques[0].includes("Comments")){
+                                        if(ques[1].length < 1 || ques[1] === ''){
+                                                // console.log("bad!", ques)
+                                                noCommArr.push(entry);
+                                                this.setState({AllowContinue: false});
+                                        }
                                 }
-                                console.log(ques[1].length, ques[1]);
+                        })
+                })
+                noCommArr.map((entry)=>{
+                        this.valdateQues(entry.slice(1))
 
-                                return true;
-
-                        }
                 })
                 // return true;
 
 
         }
 
-        continue = (eve) => {
-                // console.log(this.authenticateResponses())
-                // // if(this.authenticateResponses()== true){
-                // //         eve.preventDefault();
-                // //         this.props.nextPage();
-                // // }
-                // if(this.authenticateResponses()== true){
-                //         eve.preventDefault();
-                //         this.props.nextPage();
-                // }
-                eve.preventDefault();
-                this.props.nextPage();
-
-
-               
+        continue = async (eve) => {
+                const result = await this.authenticateResponses();
+                if(this.state.AllowContinue){
+                        console.log('once')
+                        eve.preventDefault();
+                        this.props.nextPage();
+                }
         }
-
+   
         previous = (eve) => {
                 eve.preventDefault();
                 this.props.prevPage();
         }
-        // state = {
-        //         visible:false
-        // }
-        // toggle(){
-        //         this.setState({
-        //                 visible: ! this.state.visible
-                 
-        //  })
-        // }
-    
+
+ 
         buildingNotify =(e)=> {
                 this.props.BuildingSafetyChange(e);
                 this.notify(e)

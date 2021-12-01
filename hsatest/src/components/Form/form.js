@@ -7,8 +7,8 @@ import InteriorDetails from "./InteriorDetails/InteriorDetails";
 import Report from "./Report/Report";
 import { FNAddress } from "./details/communityDetails";
 import Router from "../Router";
-import PolicyModal from "../assessment/PolicyModal";
-import Acknowledge from "../acknowledgement/Acknowledge";
+import PolicyModal from "../Assessment/PolicyModal";
+import Acknowledge from "../Acknowledge/Acknowledge"
 import axios from 'axios';
 import emailjs from 'emailjs-com';
 
@@ -450,7 +450,7 @@ class Form extends Component {
                             })
                         }
                 }
-                console.log(this.state.BuildingSafety)
+                // console.log(this.state.BuildingSafety)
         }
         if(e.target.name==="q36"){
                 if(e.target.value==="Yes"){
@@ -926,7 +926,7 @@ InjurySafetyChange=(e)=>{
         this.setState({ [input]: e.target.value });
 
         // this.setState({testing:this.state([input])});
-        console.log(input);
+        // console.log(input);
         // console.log(this.state.testing);
 
     };
@@ -934,7 +934,7 @@ InjurySafetyChange=(e)=>{
     bandNumHandlerChange = (FNAddress) => {
         // eve.preventDefault();
         //console.log(this.state.searchText);
-        console.log(FNAddress);
+        // console.log(FNAddress);
         this.setState({community: FNAddress.Name});
         this.setState({postalCode: FNAddress.PostalCode});
         this.setState({street: FNAddress.City});

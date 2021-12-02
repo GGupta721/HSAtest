@@ -46,7 +46,7 @@ class Exterior extends React.Component{
         continue = async (eve) => {
                 const result = await this.authenticateResponses();
                 if(this.state.AllowContinue){
-                        console.log('once')
+                        // console.log('once')
                         eve.preventDefault();
                         this.props.nextPage();
                 }

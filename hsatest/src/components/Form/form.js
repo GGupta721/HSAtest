@@ -45,13 +45,14 @@ class Form extends Component {
 
        
         console.log("working!!");
-        const methodAPI = 'https://ja8k38z2s3.execute-api.ca-central-1.amazonaws.com/dev/data-handler';
+        const methodAPI = `https://${process.env.REACT_APP_AWS_API_KEY}.execute-api.ca-central-1.amazonaws.com/dev/data-handler`;
+        // console.log(methodAPI);
         const altAPI = "https://l83up4h02f.execute-api.ca-central-1.amazonaws.com/dev/formdata";
         // const api = `${methodAPI}/formdata`;
         // const data = JSON.stringify(this.state);
         const data = 
         {
-            'emailID':'443',   
+            'emailID':'7777',   
             'firstName':this.state.firstName,
             'lastName':this.state.lastName,
             'numOccupants':this.state.numOccupants,
@@ -1022,7 +1023,7 @@ InjurySafetyChange=(e)=>{
                         </div><p/>
                         <div className="details db">
                             <h1 className="blue"> Occupant's Details</h1><p/>
-                            <OccupantDetails handleChange ={this.handleChange} occupantValues = {occupantValues} nextPage= {this.nextPage}/>
+                            <OccupantDetails handleChange ={this.handleChange} occupantValues = {occupantValues} communityValues = {communityValues} nextPage= {this.nextPage}/>
                         </div>
                         
                     </div>

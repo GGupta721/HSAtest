@@ -47,7 +47,7 @@ class InteriorDetails extends React.Component{
 
 
         }
-        
+
         valdateQues = (quesNum) => {
 
                 toast.error(`Please provide a comment for Question ${quesNum}`, {
@@ -59,7 +59,7 @@ class InteriorDetails extends React.Component{
         continue = async (eve) => {
                 const result = await this.authenticateResponses();
                 if(this.state.AllowContinue){
-                        console.log('once')
+                        // console.log('once')
                         eve.preventDefault();
                         this.props.nextPage();
                         this.props.submitHandler();

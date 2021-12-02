@@ -2,6 +2,7 @@ import React from "react";
 import "./CommunityDetails.css";
 // import FNAddress from "../../FirstNationDB";
 import FirstNationDB from "../../FirstNationDB";
+import { toast } from 'react-toastify';
 
 
 export class FNAddress {
@@ -24,9 +25,50 @@ class CommunityDetails extends React.Component{
         // this.handleClick = this.handleClick.bind(this);
         this.state = {
             FNAddressDB: [],
-            BandNumList: ['Select Band Number']
+            BandNumList: ['Select Band Number'],
+            AllowContinue : true
         }
     
+
+        // state = {
+        //     AllowContinue : true
+        // }
+    
+        
+    }
+
+    authenticateResponses = () => {
+        this.setState({AllowContinue: true});
+    
+        Object.entries(this.props.communityValues).map((inputField) =>{
+            // console.log(inputField);
+                if(inputField[1].length < 1 || inputField[1] === ''){
+                    this.setState({AllowContinue: false});
+                    
+                }
+
+
+                })
+        
+    }
+
+    continue = async (eve) => {
+            const result = await this.authenticateResponses();
+            if(this.state.AllowContinue){
+                    // console.log('once')
+                    eve.preventDefault();
+                    this.props.nextPage();
+            }
+            else if(this.state.AllowContinue===false){
+                this.valdateQues("")
+            }
+    }
+
+    valdateQues = (quesNum) => {
+        toast.error(`Please provide an input for all the fields`, {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: false
+        });
     }
 
     
@@ -50,8 +92,8 @@ class CommunityDetails extends React.Component{
 
     bandNumInputHandler = (eve) => {
         // eve.preventDefault();
-        console.log("testing 123  ")
-        console.log(this.state.searchText);
+        // console.log("testing 123  ")
+        // console.log(this.state.searchText);
 
         // console.log("bandNumInputHandler")
         this.state.FNAddressDB.map(FNAdd => {

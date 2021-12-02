@@ -2,18 +2,61 @@ import React from "react";
 // import Province from "./province"
 import Territory from "./territory";
 import "./OccupantDetails.css"
+import { toast } from 'react-toastify';
 
 
 class OccupantDetails extends React.Component{
 
-    continue = (eve) => {
-        eve.preventDefault();
-        this.props.nextPage();
+
+    state = {
+        AllowContinue : true
+    }
+
+    authenticateResponses = () => {
+            this.setState({AllowContinue: true});
+        
+            Object.entries(this.props.occupantValues).map((inputField) =>{
+                // console.log(inputField);
+                    if(inputField[1].length < 1 || inputField[1] === '' ){
+                        this.setState({AllowContinue: false});
+                    }
+
+
+                })
+            Object.entries(this.props.communityValues).map((inputField) =>{
+                // console.log(inputField);
+                    if(inputField[1].length < 1 || inputField[1] === '' ){
+                        this.setState({AllowContinue: false});
+                    }
+
+
+                })
+            
+    }
+
+    continue = async (eve) => {
+            const result = await this.authenticateResponses();
+            if(this.state.AllowContinue){
+                    // console.log('once')
+                    eve.preventDefault();
+                    this.props.nextPage();
+            }
+            else if(this.state.AllowContinue===false){
+                this.valdateQues("")
+            }
+    }
+
+    valdateQues = (quesNum) => {
+
+        toast.error(`Please provide an input for all the fields`, {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: false
+        });
     }
 
     
     render(){
-        const {occupantValues, handleChange} = this.props;
+        const {occupantValues,communityValues, handleChange} = this.props;
 
         return (
             <div className="occupant-card center">

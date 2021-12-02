@@ -3,6 +3,7 @@ import './App.css';
 import Assessment from "./Assessment/assessment"
 import Form from "./Form/form"
 // import Footer from './Footer/Footer.js'
+import Signup from './Signup/Signup';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,6 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="page-body">
+          
           <Assessment /><br/>
           <Form/><br/>
           <ToastContainer style={{ width: "500px" }} />

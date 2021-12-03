@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css';
-import Assessment from "./Assessment/assessment"
+import Assessment from "./assessment/assessment"
 import Form from "./Form/form"
 // import Footer from './Footer/Footer.js'
 import Authentication from './Authentication/Authentication';

@@ -765,6 +765,7 @@ class CommunityDetails extends React.Component{
     }
 
     
+    
     render(){
         const {communityValues, handleChange} = this.props;
 

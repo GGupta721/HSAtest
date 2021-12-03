@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import "./OccupantDetails.css"
 import { toast } from 'react-toastify';
 

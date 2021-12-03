@@ -13,6 +13,9 @@
     "@types/node": "^16.11.7",
     "axios": "^0.24.0",
     "bootstrap-select": "^1.13.18",
+    "canvasjs": "^1.8.3",
+    "canvasjs-react-charts": "^1.0.5",
+    "chart.js": "^3.6.0",
     "csv-parser": "^3.0.0",
     "csvtojson": "^2.0.10",
     "dotenv": "^10.0.0",
@@ -24,6 +27,7 @@
     "neat-csv": "^7.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.1",
+    "react-chartjs-2": "^4.0.0",
     "react-dom": "^17.0.2",
     "react-expanding-textarea": "^2.3.2",
     "react-icons": "^4.2.0",
@@ -60,5 +64,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.16.0"
   }
 }

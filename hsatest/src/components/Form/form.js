@@ -5,40 +5,18 @@ import CommunityDetails from "./details/communityDetails";
 import Exterior from "./Exterior/Exterior";
 import InteriorDetails from "./InteriorDetails/InteriorDetails";
 import Report from "./Report/Report";
+import { FNAddress } from "./details/communityDetails";
+import Router from "../Router";
+// import PolicyModal from "../Assessment/PolicyModal";
 import Acknowledge from "../Acknowledge/Acknowledge"
 import axios from 'axios';
 import emailjs from 'emailjs-com';
 
-// import NavigationLink from "../NavigationLink";
 
 class Form extends Component {
     
     submitHandler = () => {
-        // var wb = XLSX.utils.book_new();
-        // wb.Props = {
-        //         Title: "SheetJS Tutorial",
-        //         Subject: "Test",
-        //         Author: "Red Stapler",
-        //         CreatedDate: new Date(2017,12,19)
-        // };
         
-        // wb.SheetNames.push("Test Sheet");
-        // var ws_data = [['hello' , 'world']];
-        // var ws = XLSX.utils.aoa_to_sheet(ws_data);
-        // wb.Sheets["Test Sheet"] = ws;
-        // var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
-        // function s2ab(s) {
-  
-        //         var buf = new ArrayBuffer(s.length);
-        //         var view = new Uint8Array(buf);
-        //         for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-        //         return buf;
-                
-        // }
-        // // $("#button-a").click(function(){
-        // //         saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'test.xlsx');
-        // // });
-        // saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'test.xlsx');
 
        
         console.log("working!!");
@@ -327,11 +305,11 @@ class Form extends Component {
         q49Comments:'',
         q50: '',
         q50Comments:'',
-        InteriorBuildingSafety:0,
+        InteriorHomeSafety:0,
         InteriorLifeSafety:0,
         InteriorInjurySafety:0,
         InteriorHealthSafety:0,
-        ExteriorBuildingSafety:0,
+        ExteriorHomeSafety:0,
         ExteriorLifeSafety:0,
         ExteriorInjurySafety:0,
         ExteriorHealthSafety:0,
@@ -340,6 +318,18 @@ class Form extends Component {
         Counter3:0,
         Counter4:0,
         Counter5:0,
+        Counter6:0,
+        Counter7:0,
+        Counter8:0,
+        Counter9:0,
+        Counter10:0,
+        Counter11:0,
+        Counter14:0,
+        Counter15:0,
+        Counter18:0,
+        Counter19:0,
+        Counter22:0,
+        Counter23:0,
         Counter24:0,
         Counter25:0,
         Counter26:0,
@@ -361,15 +351,16 @@ class Form extends Component {
         Counter47:0,
         Counter48:0,
         Counter49:0,
+        Counter50:0
     }
 
-    BuildingSafetyChange=(e)=>{
-        const { InteriorBuildingSafety,ExteriorBuildingSafety,Counter1,Counter2,Counter3,Counter33,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49}= this.state;
+    HomeSafetyChange=(e)=>{
+        const { InteriorHomeSafety,ExteriorHomeSafety,Counter1,Counter2,Counter3,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49}= this.state;
         if(e.target.name==="q1"){
             if(e.target.value==="Yes"){
                     if(Counter1===0){
                         this.setState({
-                            ExteriorBuildingSafety:ExteriorBuildingSafety+1,
+                            ExteriorHomeSafety:ExteriorHomeSafety+1,
                             Counter1:1
                             
                         })
@@ -380,7 +371,7 @@ class Form extends Component {
             else {
                     if(Counter1===1){
                         this.setState({
-                            ExteriorBuildingSafety:ExteriorBuildingSafety-1,
+                            ExteriorHomeSafety:ExteriorHomeSafety-1,
                             Counter1:0
                         })
                     }
@@ -390,7 +381,7 @@ class Form extends Component {
             if(e.target.value==="Yes"){
                     if(Counter2===0){
                         this.setState({
-                            ExteriorBuildingSafety:ExteriorBuildingSafety+1,
+                            ExteriorHomeSafety:ExteriorHomeSafety+1,
                             Counter2:1
                             
                         })
@@ -401,7 +392,7 @@ class Form extends Component {
             else {
                     if(Counter2===1){
                         this.setState({
-                            ExteriorBuildingSafety:ExteriorBuildingSafety-1,
+                            ExteriorHomeSafety:ExteriorHomeSafety-1,
                             Counter2:0
                         })
                     }
@@ -411,7 +402,7 @@ class Form extends Component {
             if(e.target.value==="Yes"){
                     if(Counter3===0){
                         this.setState({
-                            ExteriorBuildingSafety:ExteriorBuildingSafety+1,
+                            ExteriorHomeSafety:ExteriorHomeSafety+1,
                             Counter3:1
                             
                         })
@@ -422,18 +413,18 @@ class Form extends Component {
             else {
                     if(Counter3===1){
                         this.setState({
-                            ExteriorBuildingSafety:ExteriorBuildingSafety-1,
+                            ExteriorHomeSafety:ExteriorHomeSafety-1,
                             Counter3:0
                         })
                     }
             }
         }
-        if(e.target.name==="q33"){
+        if(e.target.name==="q34"){
                 if(e.target.value==="Yes"){
-                        if(Counter33===0){
+                        if(Counter34===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
-                                Counter33:1
+                                InteriorHomeSafety:InteriorHomeSafety+1,
+                                Counter34:1
                                 
                             })
                             
@@ -441,10 +432,10 @@ class Form extends Component {
 
                 }
                 else {
-                        if(Counter33===1){
+                        if(Counter34===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
-                                Counter33:0
+                                InteriorHomeSafety:InteriorHomeSafety-1,
+                                Counter34:0
                             })
                         }
                 }
@@ -454,7 +445,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter36===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter36:1
                             })
                         }
@@ -463,7 +454,7 @@ class Form extends Component {
                 else {
                         if(Counter36===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter36:0
                             })
                         }
@@ -474,7 +465,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter37===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter37:1
                             })
                         }
@@ -483,7 +474,7 @@ class Form extends Component {
                 else {
                         if(Counter37===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter37:0
                             })
                         }
@@ -495,7 +486,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter38===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter38:1
                             })
                         }
@@ -504,7 +495,7 @@ class Form extends Component {
                 else {
                         if(Counter38===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter38:0
                             })
                         }
@@ -515,7 +506,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter39===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter39:1
                             })
                         }
@@ -524,7 +515,7 @@ class Form extends Component {
                 else {
                         if(Counter39===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter39:0
                             })
                         }
@@ -535,7 +526,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter40===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter40:1
                             })
                         }
@@ -544,7 +535,7 @@ class Form extends Component {
                 else {
                         if(Counter40===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter40:0
                             })
                         }
@@ -555,7 +546,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter41===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter41:1
                             })
                         }
@@ -564,7 +555,7 @@ class Form extends Component {
                 else {
                         if(Counter41===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter41:0
                             })
                         }
@@ -575,7 +566,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter42===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter42:1
                             })
                         }
@@ -584,7 +575,7 @@ class Form extends Component {
                 else {
                         if(Counter42===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter42:0
                             })
                         }
@@ -595,7 +586,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter43===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter43:1
                             })
                         }
@@ -604,7 +595,7 @@ class Form extends Component {
                 else {
                         if(Counter43===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter43:0
                             })
                         }
@@ -615,7 +606,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter44===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter44:1
                             })
                         }
@@ -624,7 +615,7 @@ class Form extends Component {
                 else {
                         if(Counter44===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter44:0
                             })
                         }
@@ -635,7 +626,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter45===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter45:1
                             })
                         }
@@ -644,7 +635,7 @@ class Form extends Component {
                 else {
                         if(Counter45===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter45:0
                             })
                         }
@@ -655,7 +646,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter46===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter46:1
                             })
                         }
@@ -664,7 +655,7 @@ class Form extends Component {
                 else {
                         if(Counter46===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter46:0
                             })
                         }
@@ -675,7 +666,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter47===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter47:1
                             })
                         }
@@ -684,7 +675,7 @@ class Form extends Component {
                 else {
                         if(Counter47===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter47:0
                             })
                         }
@@ -695,7 +686,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter48===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter48:1
                             })
                         }
@@ -704,7 +695,7 @@ class Form extends Component {
                 else {
                         if(Counter48===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter48:0
                             })
                         }
@@ -715,7 +706,7 @@ class Form extends Component {
                 if(e.target.value==="Yes"){
                         if(Counter49===0){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety+1,
+                                InteriorHomeSafety:InteriorHomeSafety+1,
                                 Counter49:1
                             })
                         }
@@ -724,7 +715,7 @@ class Form extends Component {
                 else {
                         if(Counter49===1){
                             this.setState({
-                                InteriorBuildingSafety:InteriorBuildingSafety-1,
+                                InteriorHomeSafety:InteriorHomeSafety-1,
                                 Counter49:0
                             })
                         }
@@ -734,8 +725,141 @@ class Form extends Component {
 }
 
 LifeSafetyChange=(e)=>{
-    const { InteriorLifeSafety,Counter24,Counter25,Counter32,Counter34}= this.state;
-        if(e.target.name==="q24"){
+    const { InteriorLifeSafety,ExteriorLifeSafety, Counter11, Counter14, Counter15, Counter18,Counter19,Counter22, Counter23,Counter24,Counter9,Counter10,Counter25,Counter32,Counter50}= this.state;
+             if(e.target.name==="q11"){
+                if(e.target.value==="Yes"){
+                        if(Counter11===0){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety+1,
+                                Counter11:1
+                            })
+                        }
+
+                }
+                else {
+                        if(Counter11===1){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety-1,
+                                Counter11:0
+                            })
+                        }
+                }
+        }              
+    if(e.target.name==="q14"){
+                if(e.target.value==="Yes"){
+                        if(Counter14===0){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety+1,
+                                Counter14:1
+                            })
+                        }
+
+                }
+                else {
+                        if(Counter14===1){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety-1,
+                                Counter14:0
+                            })
+                        }
+                }
+        }
+    if(e.target.name==="q15"){
+                if(e.target.value==="Yes"){
+                        if(Counter15===0){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety+1,
+                                Counter15:1
+                            })
+                        }
+
+                }
+                else {
+                        if(Counter15===1){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety-1,
+                                Counter15:0
+                            })
+                        }
+                }
+        }            
+    if(e.target.name==="q18"){
+                if(e.target.value==="Yes"){
+                        if(Counter18===0){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety+1,
+                                Counter18:1
+                            })
+                        }
+
+                }
+                else {
+                        if(Counter18===1){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety-1,
+                                Counter18:0
+                            })
+                        }
+                }
+        }       
+    if(e.target.name==="q19"){
+                if(e.target.value==="Yes"){
+                        if(Counter19===0){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety+1,
+                                Counter19:1
+                            })
+                        }
+
+                }
+                else {
+                        if(Counter19===1){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety-1,
+                                Counter19:0
+                            })
+                        }
+                }
+        }     
+    if(e.target.name==="q22"){
+                if(e.target.value==="Yes"){
+                        if(Counter22===0){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety+1,
+                                Counter22:1
+                            })
+                        }
+
+                }
+                else {
+                        if(Counter22===1){
+                            this.setState({
+                                InteriorLifeSafety:InteriorLifeSafety-1,
+                                Counter22:0
+                            })
+                        }
+                }
+        }    
+    if(e.target.name==="q23"){
+            if(e.target.value==="Yes"){
+                    if(Counter23===0){
+                        this.setState({
+                            InteriorLifeSafety:InteriorLifeSafety+1,
+                            Counter23:1
+                        })
+                    }
+
+            }
+            else {
+                    if(Counter23===1){
+                        this.setState({
+                            InteriorLifeSafety:InteriorLifeSafety-1,
+                            Counter23:0
+                        })
+                    }
+            }
+    }   
+    if(e.target.name==="q24"){
                 if(e.target.value==="Yes"){
                         if(Counter24===0){
                             this.setState({
@@ -754,6 +878,48 @@ LifeSafetyChange=(e)=>{
                         }
                 }
         }
+
+        if(e.target.name==="q9"){
+            if(e.target.value==="Yes"){
+                    if(Counter9===0){
+                        this.setState({
+                            ExteriorLifeSafety:ExteriorLifeSafety+1,
+                            Counter9:1
+                        })
+                    }
+
+            }
+            else {
+                    if(Counter9===1){
+                        this.setState({
+                            ExteriorLifeSafety:ExteriorLifeSafety-1,
+                            Counter9:0
+                        })
+                    }
+            }
+
+            
+    }
+
+        if(e.target.name==="q10"){
+            if(e.target.value==="Yes"){
+                    if(Counter10===0){
+                        this.setState({
+                            ExteriorLifeSafety:ExteriorLifeSafety+1,
+                            Counter10:1
+                        })
+                    }
+
+            }
+            else {
+                    if(Counter10===1){
+                        this.setState({
+                            ExteriorLifeSafety:ExteriorLifeSafety-1,
+                            Counter10:0
+                        })
+                    }
+            }
+    }
 
         if(e.target.name==="q25"){
                 if(e.target.value==="Yes"){
@@ -797,21 +963,21 @@ LifeSafetyChange=(e)=>{
 
         }
 
-        if(e.target.name==="q34"){
+        if(e.target.name==="q50"){
                 if(e.target.value==="Yes"){
-                        if(Counter34===0){
+                        if(Counter50===0){
                             this.setState({
                                 InteriorLifeSafety:InteriorLifeSafety+1,
-                                Counter34:1
+                                Counter50:1
                             })
                         }
 
                 }
                 else {
-                        if(Counter34===1){
+                        if(Counter50===1){
                             this.setState({
                                 InteriorLifeSafety:InteriorLifeSafety-1,
-                                Counter34:0
+                                Counter50:0
                             })
                         }
                 }
@@ -819,7 +985,7 @@ LifeSafetyChange=(e)=>{
 }
 
 InjurySafetyChange=(e)=>{
-    const { InteriorInjurySafety,ExteriorInjurySafety,Counter4,Counter5,Counter35}= this.state;
+    const { InteriorInjurySafety,ExteriorInjurySafety,Counter4,Counter5,Counter6,Counter7,Counter8,Counter35}= this.state;
     if(e.target.name==="q4"){
         if(e.target.value==="Yes"){
                 if(Counter4===0){
@@ -840,6 +1006,8 @@ InjurySafetyChange=(e)=>{
         }
     }
 
+    
+
     if(e.target.name==="q5"){
         if(e.target.value==="Yes"){
                 if(Counter5===0){
@@ -855,6 +1023,66 @@ InjurySafetyChange=(e)=>{
                     this.setState({
                         ExteriorInjurySafety:ExteriorInjurySafety-1,
                         Counter5:0
+                    })
+                }
+        }
+    }
+
+    if(e.target.name==="q6"){
+        if(e.target.value==="Yes"){
+                if(Counter6===0){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety+1,
+                        Counter6:1
+                    })
+                }
+
+        }
+        else {
+                if(Counter6===1){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety-1,
+                        Counter6:0
+                    })
+                }
+        }
+    }
+
+    if(e.target.name==="q7"){
+        if(e.target.value==="Yes"){
+                if(Counter7===0){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety+1,
+                        Counter7:1
+                    })
+                }
+
+        }
+        else {
+                if(Counter7===1){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety-1,
+                        Counter7:0
+                    })
+                }
+        }
+    }
+
+    if(e.target.name==="q8"){
+        if(e.target.value==="Yes"){
+                if(Counter8===0){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety+1,
+                        Counter8:1
+                    })
+                }
+
+        }
+        else {
+                if(Counter8===1){
+                    this.setState({
+                        ExteriorInjurySafety:ExteriorInjurySafety-1,
+                        Counter8:0
                     })
                 }
         }
@@ -878,10 +1106,12 @@ InjurySafetyChange=(e)=>{
                         }
                 }
         }
+
+       
     }
 
     HealthSafetyChange=(e)=>{
-        const { InteriorHealthSafety,Counter26}= this.state;
+        const { InteriorHealthSafety,Counter26,Counter33}= this.state;
             if(e.target.name==="q26"){
                     if(e.target.value==="Yes"){
                             if(Counter26===0){
@@ -901,6 +1131,26 @@ InjurySafetyChange=(e)=>{
                             }
                     }
             }
+
+            if(e.target.name==="q33"){
+                if(e.target.value==="Yes"){
+                        if(Counter33===0){
+                            this.setState({
+                                InteriorHealthSafety:InteriorHealthSafety+1,
+                                Counter33:1
+                            })
+                        }
+
+                }
+                else {
+                        if(Counter33===1){
+                            this.setState({
+                                InteriorHealthSafety:InteriorHealthSafety-1,
+                                Counter33:0
+                            })
+                        }
+                }
+        }
     }
     
 
@@ -952,16 +1202,16 @@ InjurySafetyChange=(e)=>{
         const {page} = this.state;
         const { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode, province} = this.state;
         const { community, bandNum} = this.state;
-        const {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments,ExteriorBuildingSafety,ExteriorInjurySafety} = this.state;
+        const {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments,ExteriorHomeSafety,ExteriorInjurySafety,ExteriorLifeSafety} = this.state;
         const {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27a, q27b, q27c, q27d, q28, q28Comments, q29a, q29b, q29c, q29d, q30, q30Comments, q31Name, q31PhoneNum, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments,
-            InteriorBuildingSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,Counter24,Counter25,Counter26,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49} = this.state;
+            InteriorHomeSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,Counter24,Counter25,Counter26,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49} = this.state;
         
         const occupantValues = { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode, province};
         const communityValues = {community, bandNum};
-        const exteriorValues = {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments,ExteriorBuildingSafety,ExteriorInjurySafety};
+        const exteriorValues = {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments,ExteriorHomeSafety,ExteriorInjurySafety,ExteriorLifeSafety};
         const interiorValues = {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27a, q27b, q27c, q27d, q28, q28Comments, q29a, q29b, q29c, q29d, q30, q30Comments, q31Name, q31PhoneNum, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments,
-            InteriorBuildingSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,Counter24,Counter25,Counter26,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49};
-        const reportValues ={ InteriorBuildingSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,ExteriorBuildingSafety,ExteriorInjurySafety};
+            InteriorHomeSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,Counter24,Counter25,Counter26,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49};
+        const reportValues ={ InteriorHomeSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,ExteriorHomeSafety,ExteriorInjurySafety,ExteriorLifeSafety};
 
         switch (page){
 
@@ -1013,7 +1263,7 @@ InjurySafetyChange=(e)=>{
                 return(
                     <div className="exterior db">
                         <h1 className="blue"> Exterior Details</h1><p/>
-                        <Exterior handleChange ={this.handleChange} exteriorValues = {exteriorValues} nextPage= {this.nextPage} BuildingSafetyChange={this.BuildingSafetyChange} LifeSafetyChange={this.LifeSafetyChange} InjurySafetyChange={this.InjurySafetyChange} HealthSafetyChange={this.HealthSafetyChange} prevPage={this.prevPage}/>
+                        <Exterior handleChange ={this.handleChange} exteriorValues = {exteriorValues} nextPage= {this.nextPage} HomeSafetyChange={this.HomeSafetyChange} LifeSafetyChange={this.LifeSafetyChange} InjurySafetyChange={this.InjurySafetyChange} HealthSafetyChange={this.HealthSafetyChange} prevPage={this.prevPage}/>
                     </div>
 
                 );
@@ -1023,7 +1273,7 @@ InjurySafetyChange=(e)=>{
                     <div>
                         <div className="interior db">
                             <h1 className="blue"> Interior Details</h1><p/>
-                            <InteriorDetails handleChange ={this.handleChange} submitHandler={this.submitHandler} interiorValues = {interiorValues} nextPage= {this.nextPage} BuildingSafetyChange={this.BuildingSafetyChange} SuLifeSafetyChange={this.LifeSafetyChange} InjurySafetyChange={this.InjurySafetyChange} HealthSafetyChange={this.HealthSafetyChange} prevPage={this.prevPage}/>
+                            <InteriorDetails handleChange ={this.handleChange} submitHandler={this.submitHandler} interiorValues = {interiorValues} nextPage= {this.nextPage} HomeSafetyChange={this.HomeSafetyChange} LifeSafetyChange={this.LifeSafetyChange} InjurySafetyChange={this.InjurySafetyChange} HealthSafetyChange={this.HealthSafetyChange} prevPage={this.prevPage}/>
                         </div>
                     </div>
 

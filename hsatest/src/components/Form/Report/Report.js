@@ -1,35 +1,11 @@
 import {Component} from "react";
 import "./Report.css";
 import "../InteriorDetails/InteriorDetails.js";
-//import { PieChart} from 'react-minimal-pie-chart';
-//import Paper from '@material-ui/core/Paper';
-//import { Chart, ArgumentAxis, ValueAxis, BarSeries, Title, Legend,} from '@devexpress/dx-react-chart';
-//import { withStyles } from '@material-ui/core/styles';
-//import { Stack, Animation } from '@devexpress/dx-react-chart';
-//import {Bar,Pie,Line} from 'react-chartjs-2';
-//import { threadId } from "worker_threads";
+import {CanvasJSChart} from 'canvasjs-react-charts';
+import { maxHeight } from "@mui/system";
+// import { threadId } from "worker_threads";
 
 
-// const legendStyles = () => ({
-//     root: {
-//       display: 'flex',
-//       margin: 'auto',
-//       flexDirection: 'row',
-//     },
-//   });
-//   const legendRootBase = ({ classes, ...restProps }) => (
-//     <Legend.Root {...restProps} className={classes.root} />
-//   );
-//   const Root = withStyles(legendStyles, { name: 'LegendRoot' })(legendRootBase);
-//   const legendLabelStyles = () => ({
-//     label: {
-//       whiteSpace: 'nowrap',
-//     },
-//   });
-//   const legendLabelBase = ({ classes, ...restProps }) => (
-//     <Legend.Label className={classes.label} {...restProps} />
-//   );
-//   const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(legendLabelBase);
 
 
 class Report extends Component {
@@ -44,25 +20,23 @@ class Report extends Component {
 
     constructor(props) {
         super(props);
-        this.maxBuildingSafety=15;
-        this.maxLifeSafety=4;
-        this.maxInjurySafety=1;
-        this.maxHealthSafety=1;
-        this.total=this.maxBuildingSafety+this.maxHealthSafety+this.maxLifeSafety+this.maxInjurySafety;
+     
 
-        this.ExteriorBuildingSafetyPercent=((this.props.reportValues.ExteriorBuildingSafety/5)*100).toFixed(2);
-        this.ExteriorLifeSafetyPercent=((this.props.reportValues.ExteriorLifeSafety/5)*100).toFixed(2);
-        this.ExteriorInjurySafetyPercent=((this.props.reportValues.ExteriorInjurySafety/5)*100).toFixed(2);
-        this.ExteriorHealthSafetyPercent=((this.props.reportValues.ExteriorHealthSafety/5)*100).toFixed(2);
-        this.totalExterior=this.props.reportValues.ExteriorBuildingSafety+this.props.reportValues.ExteriorInjurySafety;
-        this.totalExteriorPercent= ((this.totalExterior/5)*100).toFixed(2);
+        this.ExteriorHomeSafetyPercent=((this.props.reportValues.ExteriorHomeSafety/10)*100).toFixed(2);
+        this.ExteriorLifeSafetyPercent=((this.props.reportValues.ExteriorLifeSafety/10)*100).toFixed(2);
+        this.ExteriorInjurySafetyPercent=((this.props.reportValues.ExteriorInjurySafety/10)*100).toFixed(2);
+        this.ExteriorHealthSafetyPercent=((this.props.reportValues.ExteriorHealthSafety/10)*100).toFixed(2);
+        this.totalExterior=this.props.reportValues.ExteriorHomeSafety+this.props.reportValues.ExteriorInjurySafety+this.props.reportValues.ExteriorLifeSafety;
+        this.totalExteriorPercent= ((this.totalExterior/10)*100).toFixed(2);
 
-        this.InteriorBuildingSafetyPercent=((this.props.reportValues.InteriorBuildingSafety/21)*100).toFixed(2);
-        this.InteriorLifeSafetyPercent=((this.props.reportValues.InteriorLifeSafety/21)*100).toFixed(2);
-        this.InteriorInjurySafetyPercent=((this.props.reportValues.InteriorInjurySafety/21)*100).toFixed(2);
-        this.InteriorHealthSafetyPercent=((this.props.reportValues.InteriorHealthSafety/21)*100).toFixed(2);
-        this.totalInterior=this.props.reportValues.InteriorBuildingSafety+this.props.reportValues.InteriorInjurySafety+ this.props.reportValues.InteriorHealthSafety+this.props.reportValues.InteriorLifeSafety;
-        this.totalInteriorPercent= ((this.totalInterior/21)*100).toFixed(2);
+        this.InteriorHomeSafetyPercent=((this.props.reportValues.InteriorHomeSafety/29)*100).toFixed(2);
+        this.InteriorLifeSafetyPercent=((this.props.reportValues.InteriorLifeSafety/29)*100).toFixed(2);
+        this.InteriorInjurySafetyPercent=((this.props.reportValues.InteriorInjurySafety/29)*100).toFixed(2);
+        this.InteriorHealthSafetyPercent=((this.props.reportValues.InteriorHealthSafety/29)*100).toFixed(2);
+        this.totalInterior=this.props.reportValues.InteriorHomeSafety+this.props.reportValues.InteriorInjurySafety+ this.props.reportValues.InteriorHealthSafety+this.props.reportValues.InteriorLifeSafety;
+        this.totalInteriorPercent= ((this.totalInterior/29)*100).toFixed(2);
+
+        
 
         
 
@@ -70,12 +44,125 @@ class Report extends Component {
      
     }
 
-    
-   
 
 
     render(){
         const{reportValues}=this.props;
+        const ExteriorChart = {
+            
+			title: {
+				text: ""
+			},
+            axisY: {
+                title: "Actual Finding",
+                titleFontColor: "#4F81BC",
+                lineColor: "#4F81BC",
+                labelFontColor: "#4F81BC",
+                tickColor: "#4F81BC",
+                maximum:10
+                
+            },
+            axisY2: {
+                title: "Maximum Findings",
+                titleFontColor: "#C0504E",
+                lineColor: "#C0504E",
+                labelFontColor: "#C0504E",
+                tickColor: "#C0504E",
+                maximum:10
+            },	
+            height: 400,
+            width:900,
+            toolTip: {
+                shared: true
+            },
+            legend: {
+                cursor:"pointer",
+            },
+			data: [
+			{
+				// Change type to "doughnut", "line", "splineArea", etc.
+				type: "column",
+                legendText: "Actual Number of Findings",
+		        showInLegend: true, 
+				dataPoints: [
+					{ label: "Home Safety",  y: this.props.reportValues.ExteriorHomeSafety },
+					{ label: "Life Safety", y: this.props.reportValues.ExteriorLifeSafety },
+					{ label: "Injury Safety", y: this.props.reportValues.ExteriorInjurySafety  },
+					{ label: "Health Safety",  y: this.props.reportValues.ExteriorHealthSafety  }
+					
+				]
+			},
+            {
+				// Change type to "doughnut", "line", "splineArea", etc.
+				type: "column",
+                axisYType: "secondary",
+                legendText: "Maximum Number of Findings",
+		        showInLegend: true, 
+				dataPoints: [
+					{ label: "Home Safety",  y: 3 },
+					{ label: "Life Safety", y: 2 },
+					{ label: "Injury Safety", y: 5  },
+					{ label: "Health Safety",  y: 0  }
+					
+				]
+			}
+			]
+        }
+        
+        const InteriorChart = {
+			title: {
+				text: ""
+			},
+            axisY: {
+                title: "Actual Finding",
+                titleFontColor: "#4F81BC",
+                lineColor: "#4F81BC",
+                labelFontColor: "#4F81BC",
+                tickColor: "#4F81BC",
+                maximum:18
+            },
+            axisY2: {
+                title: "Maximum Findings",
+                titleFontColor: "#C0504E",
+                lineColor: "#C0504E",
+                labelFontColor: "#C0504E",
+                tickColor: "#C0504E",
+                maximum:18
+            },	
+            height: 400,
+            width:900,
+            
+			data: [
+			{
+				// Change type to "doughnut", "line", "splineArea", etc.
+				type: "column",
+                legendText: "Actual Number of Findings",
+		        showInLegend: true, 
+				dataPoints: [
+					{ label: "Home Safety",  y: this.props.reportValues.InteriorHomeSafety },
+					{ label: "Life Safety", y: this.props.reportValues.InteriorLifeSafety },
+					{ label: "Injury Safety", y: this.props.reportValues.InteriorInjurySafety  },
+					{ label: "Health Safety",  y: this.props.reportValues.InteriorHealthSafety  }
+					
+				]
+			},
+            {
+				// Change type to "doughnut", "line", "splineArea", etc.
+				type: "column",
+                axisYType: "secondary",
+                legendText: "Maximum Number of Findings",
+		        showInLegend: true, 
+				dataPoints: [
+					{ label: "Home Safety",  y: 15 },
+					{ label: "Life Safety", y: 11 },
+					{ label: "Injury Safety", y: 1  },
+					{ label: "Health Safety",  y: 2  }
+					
+				]
+			}
+			]
+        }
+        
         return(
             <div className="pageContent">
                 <h1>Exterior Details</h1>
@@ -88,74 +175,49 @@ class Report extends Component {
                         <th style={{width:150}}>Actual Percentage of Findings</th>
                     </tr>
                     <tr>
-                        <td style={{color:"lightseagreen"}}>Building Safety Report</td>
+                        <td style={{color:"lightseagreen"}}>Home Safety Report</td>
                         <td>3</td>
-                        <td>60%</td>
-                        <td>{reportValues.ExteriorBuildingSafety}</td>
-                        <td>{this.ExteriorBuildingSafetyPercent}</td>
+                        <td>30%</td>
+                        <td>{reportValues.ExteriorHomeSafety}</td>
+                        <td>{this.ExteriorHomeSafetyPercent}%</td>
                     
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Life Safety Report</td>
-                        <td>0</td>
-                        <td>0%</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>2</td>
+                        <td>20%</td>
+                        <td>{reportValues.ExteriorLifeSafety}</td>
+                        <td>{this.ExteriorLifeSafetyPercent}%</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Injury Safety Report</td>
-                        <td>2</td>
-                        <td>40%</td>
+                        <td>5</td>
+                        <td>50%</td>
                         <td>{reportValues.ExteriorInjurySafety}</td>
-                        <td>{this.ExteriorInjurySafetyPercent}</td>
+                        <td>{this.ExteriorInjurySafetyPercent}%</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Health Safety Report</td>
                         <td>0</td>
                         <td>0%</td>
                         <td>0</td>
-                        <td>0</td>
+                        <td>0%</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightslategrey", border:"2px solid black"}}>Total Assesment Score</td>
-                        <td style={{ border:"2px solid black"}}>5</td>
+                        <td style={{ border:"2px solid black"}}>10</td>
                         <td style={{ border:"2px solid black"}}>100%</td>
                         <td style={{ border:"2px solid black"}}>{this.totalExterior}</td>
-                        <td style={{ border:"2px solid black"}}>{this.totalExteriorPercent}</td>
+                        <td style={{ border:"2px solid black"}}>{this.totalExteriorPercent}%</td>
                     </tr>
-                </table>
-                {/* <Bar
-                    data={this.state.ChartData}
-                    options={{
-                        maintainAspectRatio:false 
-                    }}
-
-                
-                
-                /> */}
-{/* 
-                            <Chart
-            width={'500px'}
-            height={'300px'}
-            chartType="Bar"
-            loader={<div>Loading Chart</div>}
-            data={[
-                ['Year', 'Sales', 'Expenses', 'Profit'],
-                ['2014', 1000, 400, 200],
-                ['2015', 1170, 460, 250],
-                ['2016', 660, 1120, 300],
-                ['2017', 1030, 540, 350],
-            ]}
-            options={{
-                // Material design options
-                chart: {
-                title: 'Company Performance',
-                subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-                },
-            }}
-            // For tests
-            rootProps={{ 'data-testid': '2' }}
-            /> */}
+                </table><br/><br/>
+                <div>
+			<CanvasJSChart options = {ExteriorChart}
+				/* onRef={ref => this.chart = ref} */
+			/>
+			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+		</div>
+                            
                 <h1>Interior Details</h1>
                 <table >
                     <tr>
@@ -166,83 +228,51 @@ class Report extends Component {
                         <th style={{width:150}}>Actual Percentage of Findings</th>
                     </tr>
                     <tr>
-                        <td style={{color:"lightseagreen"}}>Building Safety Report</td>
-                        <td>{this.maxBuildingSafety}</td>
-                        <td>71.43%</td>
-                        <td>{reportValues.InteriorBuildingSafety}</td>
-                        <td>{this.InteriorBuildingSafetyPercent}</td>
+                        <td style={{color:"lightseagreen"}}>Home Safety Report</td>
+                        <td>15</td>
+                        <td>51.72%</td>
+                        <td>{reportValues.InteriorHomeSafety}</td>
+                        <td>{this.InteriorHomeSafetyPercent}%</td>
                     
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Life Safety Report</td>
-                        <td>{this.maxLifeSafety}</td>
-                        <td>19.05%</td>
+                        <td>11</td>
+                        <td>37.93%</td>
                         <td>{reportValues.InteriorLifeSafety}</td>
-                        <td>{this.InteriorLifeSafetyPercent}</td>
+                        <td>{this.InteriorLifeSafetyPercent}%</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Injury Safety Report</td>
-                        <td>{this.maxInjurySafety}</td>
-                        <td>4.76%</td>
+                        <td>1</td>
+                        <td>3.45%</td>
                         <td>{reportValues.InteriorInjurySafety}</td>
-                        <td>{this.InteriorInjurySafetyPercent}</td>
+                        <td>{this.InteriorInjurySafetyPercent}%</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Health Safety Report</td>
-                        <td>{this.maxHealthSafety}</td>
-                        <td>4.76%</td>
+                        <td>1</td>
+                        <td>6.90%</td>
                         <td>{reportValues.InteriorHealthSafety}</td>
-                        <td>{this.InteriorHealthSafetyPercent}</td>
+                        <td>{this.InteriorHealthSafetyPercent}%</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightslategrey", border:"2px solid black"}}>Total Assesment Score</td>
-                        <td style={{ border:"2px solid black"}}>{this.total}</td>
+                        <td style={{ border:"2px solid black"}}>29</td>
                         <td style={{ border:"2px solid black"}}>100%</td>
                         <td style={{ border:"2px solid black"}}>{this.totalInterior}</td>
-                        <td style={{ border:"2px solid black"}}>{this.totalInteriorPercent}</td>
+                        <td style={{ border:"2px solid black"}}>{this.totalInteriorPercent}%</td>
                     </tr>
                 </table>
-                <br/>
+                <br/><br/>
+                <div>
+			<CanvasJSChart options = {InteriorChart}
+				/* onRef={ref => this.chart = ref} */
+			/>
+			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+		</div>
 
-                {/* <Paper>
-        <Chart
-           data={this.maxBuildingSafetyPercent,this.maxHealthSafetyPercent,this.maxInjurySafetyPercent,this.maxLifeSafetyPercent}
-        >
-          <ArgumentAxis />
-          <ValueAxis />
 
-          <BarSeries
-            name="Gold Medals"
-            valueField="gold"
-            argumentField="country"
-            color="#ffd700"
-          />
-          <BarSeries
-            name="Silver Medals"
-            valueField="silver"
-            argumentField="country"
-            color="#c0c0c0"
-          />
-          <BarSeries
-            name="Bronze Medals"
-            valueField="bronze"
-            argumentField="country"
-            color="#cd7f32"
-          />
-          <Animation />
-          <Legend position="bottom" rootComponent={Root} labelComponent={Label} />
-          <Title text="Olimpic Medals in 2008" />
-          <Stack />
-        </Chart>
-      </Paper> */}
-                {/* <PieChart
-                    data={[
-                        { title: 'One', value: this.maxBuildingSafetyPercent, color: '#E38627' },
-                        { title: 'Two', value: this.maxHealthSafetyPercent, color: '#C13C37' },
-                        { title: 'Three', value: this.maxInjurySafetyPercent, color: '#6A2135' },
-                        { title: 'Four', value: this.maxLifeSafetyPercent, color: '#00bcd4' },
-                    ]}
-                    />; */}
                 <button class="ui left labeled icon button previous blue" onClick={this.previous}>
                     <i class="left arrow icon"></i>
                     Previous

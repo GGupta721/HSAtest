@@ -27,7 +27,10 @@ class Form extends Component {
         // const data = JSON.stringify(this.state);
         const data = 
         {
-            'emailID':'7777',   
+            'emailID':'199990',
+            'AccessorFirstName':this.state.AccessorFirstName,
+            'AccessorLastName':this.state.AccessorLastName,
+            'AccessorDate':this.state.AccessorDate,
             'firstName':this.state.firstName,
             'lastName':this.state.lastName,
             'numOccupants':this.state.numOccupants,
@@ -63,7 +66,6 @@ class Form extends Component {
             'q9Comments':this.state.q9Comments,
             'q10':this.state.q10,
             'q10Comments':this.state.q10Comments,
-
 
             'q11':this.state.q11,
             'q12':this.state.q12,
@@ -107,44 +109,44 @@ class Form extends Component {
             'q31Name':this.state.q31Name,
             'q31PhoneNum':this.state.q31PhoneNum,
             
-            'q32':this.state.emailID,
-            'q32Comments':this.state.emailID,
-            'q33':this.state.emailID,
-            'q33Comments':this.state.emailID,
-            'q34':this.state.emailID,
-            'q34Comments':this.state.emailID,
-            'q35':this.state.emailID,
-            'q35Comments':this.state.emailID,
-            'q36':this.state.emailID,
-            'q36Comments':this.state.emailID,
-            'q37':this.state.emailID,
-            'q37Comments':this.state.emailID,
-            'q38':this.state.emailID,
-            'q38Comments':this.state.emailID,
-            'q39':this.state.emailID,
-            'q39Comments':this.state.emailID,
-            'q40':this.state.emailID,
-            'q40Comments':this.state.emailID,
-            'q41':null,
-            q41Comments:'',
-            q42:null,
-            q42Comments:'',
-            q43:null,
-            q43Comments:'',
-            q44:null,
-            q44Comments:'',
-            q45:null,
-            q45Comments:'',
-            q46:null,
-            q46Comments:'',
-            q47:null,
-            q47Comments:'',
-            q48:null,
-            q48Comments:'',
-            q49:null,
-            q49Comments:'',
-            q50:null,
-            q50Comments:'',
+            'q32':this.state.q32,
+            'q32Comments':this.state.q32Comments,
+            'q33':this.state.q33,
+            'q33Comments':this.state.q33Comments,
+            'q34':this.state.q34,
+            'q34Comments':this.state.q34Comments,
+            'q35':this.state.q35,
+            'q35Comments':this.state.q35Comments,
+            'q36':this.state.q36,
+            'q36Comments':this.state.q36Comments,
+            'q37':this.state.q37,
+            'q37Comments':this.state.q37Comments,
+            'q38':this.state.q38,
+            'q38Comments':this.state.q38Comments,
+            'q39':this.state.q39,
+            'q39Comments':this.state.q39Comments,
+            'q40':this.state.q40,
+            'q40Comments':this.state.q40Comments,
+            'q41':this.state.q41,
+            'q41Comments':this.state.q41Comments,
+            'q42':this.state.q42,
+            'q42Comments':this.state.q42Comments,
+            'q43':this.state.q43,
+            'q43Comments':this.state.q43Comments,
+            'q44':this.state.q44,
+            'q44Comments':this.state.q44Comments,
+            'q45':this.state.q45,
+            'q45Comments':this.state.q45Comments,
+            'q46':this.state.q46,
+            'q46Comments':this.state.q46Comments,
+            'q47':this.state.q47,
+            'q47Comments':this.state.q47Comments,
+            'q48':this.state.q48,
+            'q48Comments':this.state.q48Comments,
+            'q49':this.state.q49,
+            'q49Comments':this.state.q49Comments,
+            'q50':this.state.q50,
+            'q50Comments':this.state.q50Comments,
         }
         
         // const headers = { 
@@ -161,24 +163,16 @@ class Form extends Component {
             console.log(error);
         });
 
-        // var templateParams = {
-        //     to_name: 'James',
-        //     from_name: 'GG',
-        //     message: 'Wassssup!!'
-        // };
-
-        const serviceID = 'service_6qd4iln';
-        const templateID = 'template_88tatta';
-        const userID = 'user_jOczu1og4rtveJixUCF5X';
+        // const serviceID = 'service_6qd4iln';
+        // const templateID = 'template_88tatta';
+        // const userID = 'user_jOczu1og4rtveJixUCF5X';
         
-
-         
-        emailjs.send(serviceID, templateID, this.state, userID)
-            .then(function(response) {
-               console.log('SUCCESS!', response.status, response.text);
-            }, function(error) {
-               console.log('FAILED...', error);
-            })
+        // emailjs.send(serviceID, templateID, this.state, userID)
+        //     .then(function(response) {
+        //        console.log('SUCCESS!', response.status, response.text);
+        //     }, function(error) {
+        //        console.log('FAILED...', error);
+        //     })
 
               
     }
@@ -187,11 +181,15 @@ class Form extends Component {
         page: 1,
         testing: 'test',
         privacyPolicy: false,
+
+        AccessorFirstName:'',
+        AccessorLastName:'',
+        AccessorDate:'',
         
         firstName:'',
         lastName:'',
-        numOccupants: ' ',
-        numBedrooms: ' ',
+        numOccupants:'',
+        numBedrooms:'',
         numFloors: '',
         approxSF: '',
         houseType:'',
@@ -305,6 +303,8 @@ class Form extends Component {
         q49Comments:'',
         q50: '',
         q50Comments:'',
+
+        
         InteriorHomeSafety:0,
         InteriorLifeSafety:0,
         InteriorInjurySafety:0,
@@ -1239,9 +1239,9 @@ InjurySafetyChange=(e)=>{
                                                 
                             <br/><br/>&emsp;&nbsp;&nbsp;&nbsp; */}
                             <br/> &emsp;&nbsp;&nbsp;&nbsp; &emsp;&nbsp;&nbsp;&nbsp; &emsp;&nbsp;&nbsp;&nbsp;
-                            Assessor's First Name: <input type="text" name="fname" className="inputV7"/>&nbsp;&emsp; 
-                            Assessor's Last Name: <input type="text" name="lname" className="inputV7" />&nbsp;&emsp;
-                            Date: <input type="Date" className="inputV4"/>
+                            Assessor's First Name: <input type="text" name="fname" defaultValue={this.state.AccessorFirstName} className="inputV7" onChange={(e) => this.setState({AccessorFirstName: e.target.value})}/>&nbsp;&emsp; 
+                            Assessor's Last Name: <input type="text" name="lname" defaultValue={this.state.AccessorLastName} className="inputV7" onChange={(e) => this.setState({AccessorLastName: e.target.value})} />&nbsp;&emsp;
+                            Date: <input type="Date" className="inputV4" defaultValue={this.state.AccessorDate} onChange={(e) => this.setState({AccessorDate: e.target.value})}/>
                         </div>
                         <p/>
                         <div className="details db">

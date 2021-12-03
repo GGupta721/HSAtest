@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 // import UserPool from "../UserPool";
+import { toast } from 'react-toastify';
 import './Login.css'
 
 const Login = (props) => {
@@ -8,13 +9,33 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    props.goSignupPage();
+  }
+
+  const valdateAuthenticationError = (msg) => {
+    toast.error(msg, {
+            position: toast.POSITION.TOP_CENTER,
+    });
+  }
+
+  const valdateAuthenticationSuccess = (msg) => {
+    toast.success(msg, {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 4000
+    });
+  }
+
   const onSubmit = (event) => {
     event.preventDefault();
     if(email===credentials.email && password===credentials.password ){
       props.nextPage();
+      valdateAuthenticationSuccess('Login Successfull')
+
     }
     else{
-
+      valdateAuthenticationError('Login Failed: Incorrect Credentials')
     }
     
     
@@ -43,15 +64,20 @@ const Login = (props) => {
     // });
   };
 
+  
+
   return (
     <div className="center">
-      <h3>Login</h3><br/>
+      <h3 className="blue">Login</h3><br/>
       <form onSubmit={onSubmit}>
-        <label htmlFor="email">Email:&emsp; </label>
-        <input value={email} onChange={(event) => setEmail(event.target.value)}></input><br/><br/>
-        <label htmlFor="password">Password:&emsp; </label>
-        <input value={password} onChange={(event) => setPassword(event.target.value)}></input><br/><br/>
-        <button type="submit" className="loginBtn">Login</button>
+        <label htmlFor="email">Enter Email:&emsp; </label>
+        <input value={email} placeholder="Enter Email" onChange={(event) => setEmail(event.target.value)}></input><br/><br/>
+        <label htmlFor="password">Enter Password:&emsp; </label>
+        <input value={password} type="password" placeholder="Enter Password" onChange={(event) => setPassword(event.target.value)}></input><br/><br/>
+        <div className="btnGrid">
+          <button type="submit" className="loginBtn">Login</button>
+          <button className="SignUpBtn" onClick={handleSignUp}>Sign Up</button>
+        </div>
       </form>
     </div>
   );

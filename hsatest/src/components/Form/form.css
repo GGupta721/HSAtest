@@ -1,31 +1,62 @@
-.details,
-.c-details {
-  border-style: solid;
+.details {
+  border-style: none;
+  margin-left: 100px;
+  margin-right: 100px;
+  /* z-index: 2; */
+}
+
+.db {
+  background-color: rgb(255, 255, 255);
+}
+
+.form {
+  font-size: 20px;
+  font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
+}
+
+.blue {
+  color: #00a5b8;
+}
+
+.blueReport {
+  color: #00a5b8;
+  margin-right: 300px;
+  margin-left: 200px;
+
+}
+
+.btnColor {
+  color: rgb(188, 241, 239);
+}
+
+.left {
   margin-left: 60px;
   margin-right: 60px;
 }
 
-.details h2,
-.c-details h2 {
+.right {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.block {
+  display: inline-block;
+}
+
+.details h1 {
   text-align: center;
 }
 
-.oc-details,
-.co-details {
-  margin-right: 20px;
-  margin-left: 20px;
-  display: flex;
-  padding-bottom: 20px;
-}
-
-.form {
-  font-size: 15px;
-}
-
 .block input {
-  width: 8cm;
+  display: inline;
+  width: 7cm;
 }
 
-.block select {
-  width: 8cm;
+.block input[type="number"] {
+  display: inline;
+  /* width: 6cm; */
+}
+
+.container {
+  text-align: center;
 }

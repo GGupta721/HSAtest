@@ -1,0 +1,28 @@
+.grid-OccupantDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-auto-rows: 1fr !important; */
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  /* padding: 20px; */
+}
+
+.cell-8.input {
+  width: 20cm;
+}
+
+.occupant-card {
+  width: 95%;
+}
+
+.oc-details {
+  text-align: right;
+  margin-right: 65px;
+}
+
+.grid-AddressDetails {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}

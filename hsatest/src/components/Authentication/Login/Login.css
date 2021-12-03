@@ -1,0 +1,35 @@
+.center form {
+  /* margin: auto; */
+  /* width: 30%; */
+  /* border: 3px solid green; */
+  /* padding: 10px; */
+  margin-left: 40%;
+  margin-right: 40%;
+  line-height: 24pt;
+}
+
+.center h3 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.loginBtn {
+  font-size: 24px;
+  width: 120px;
+}
+
+.SignUpBtn {
+  font-size: 24px;
+  margin-right: 15px;
+  width: 120px;
+}
+
+.btnGrid {
+  display: flex;
+  padding: 10px;
+  /* gap: 30px; */
+  justify-content: space-between;
+}
+/* . loginBtn {
+  text-align: center;
+} */

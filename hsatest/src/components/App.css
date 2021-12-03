@@ -1,4 +1,104 @@
 .page-body {
-    margin-left: 40px;
-    margin-right: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: rgba(138, 191, 196, 0.2) !important;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+input {
+  background-color: #eee !important;
+  color: rgb(0, 0, 0) !important;
+  width: 8cm;
+}
+
+textarea {
+  background-color: #eee !important;
+  color: rgb(0, 0, 0) !important;
+  font-size: 18px !important;
+  width: 17cm;
+}
+
+select {
+  background-color: #eee !important;
+  color: black !important;
+  width: 8cm;
+}
+
+.center {
+  margin: auto;
+  width: 99%;
+}
+
+.inputV1 {
+  width: 10cm;
+}
+
+.inputV2 {
+  width: 24.6cm !important;
+}
+
+.inputV3 {
+  width: 8cm !important;
+}
+
+.inputV4 {
+  width: 5cm !important;
+}
+
+.inputV5 {
+  width: 2cm !important;
+}
+
+.inputV6 {
+  width: 4cm !important;
+  font-size: 16px !important;
+}
+
+.inputV7 {
+  width: 9cm;
+}
+
+input[type="radio"] {
+  border: 0px;
+  width: 1em;
+  height: 0.8em;
+}
+
+/* .submitButton {
+} */
+
+.NavLinks {
+  color: rgb(188, 241, 239);
+  font-size: 24px;
+  /* font-weight: bold; */
+}
+
+.next {
+  float: right;
+  /* padding: 10px; */
+  margin-top: 20px;
+  /* margin-right: 10px; */
+  margin-bottom: 20px;
+  /* margin-bottom: 5px; */
+}
+
+.previous {
+  float: left;
+  /* padding: 10px; */
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

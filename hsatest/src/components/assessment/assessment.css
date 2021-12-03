@@ -1,11 +1,20 @@
 .assessment-div {
-    border-style: solid;
-    background-color: cyan;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 30px;
+  border-style: solid;
+  background-color: #f18140 !important;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
 }
 
 .assessment-div h3 {
-    text-align: center;
+  text-align: center;
+}
+
+.blueText {
+  color: #00a5b8;
+}
+
+.fv2 {
+  font-size: 24px;
 }

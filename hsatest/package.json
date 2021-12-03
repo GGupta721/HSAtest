@@ -3,17 +3,43 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.2",
+    "@react-icons/all-files": "^4.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/node": "^16.11.7",
+    "axios": "^0.24.0",
+    "bootstrap-select": "^1.13.18",
+    "canvasjs": "^1.8.3",
+    "canvasjs-react-charts": "^1.0.5",
+    "chart.js": "^3.6.0",
+    "csv-parser": "^3.0.0",
+    "csvtojson": "^2.0.10",
     "dotenv": "^10.0.0",
+    "emailjs": "^3.7.0",
+    "emailjs-com": "^3.2.0",
+    "fs": "0.0.1-security",
     "google-maps-react": "^2.0.6",
+    "json2csv": "^5.0.6",
+    "neat-csv": "^7.0.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.0.1",
+    "react-chartjs-2": "^4.0.0",
     "react-dom": "^17.0.2",
-    "react-google-maps": "^9.4.5",
-    "react-places-autocomplete": "^7.3.0",
+    "react-expanding-textarea": "^2.3.2",
+    "react-icons": "^4.2.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "react-select": "^5.1.0",
+    "react-toastify": "^8.0.3",
+    "reactstrap": "^8.10.0",
+    "read-excel-file": "^5.2.20",
+    "responsive-react": "^5.0.0",
+    "semantic-ui-css": "^2.4.1",
+    "web-vitals": "^1.1.2",
+    "xlsx": "^0.17.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,5 +64,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.16.0"
   }
 }

@@ -5,9 +5,6 @@ import CommunityDetails from "./details/communityDetails";
 import Exterior from "./Exterior/Exterior";
 import InteriorDetails from "./InteriorDetails/InteriorDetails";
 import Report from "./Report/Report";
-import { FNAddress } from "./details/communityDetails";
-import Router from "../Router";
-import PolicyModal from "../Assessment/PolicyModal";
 import Acknowledge from "../Acknowledge/Acknowledge"
 import axios from 'axios';
 import emailjs from 'emailjs-com';
@@ -47,7 +44,7 @@ class Form extends Component {
         console.log("working!!");
         const methodAPI = `https://${process.env.REACT_APP_AWS_API_KEY}.execute-api.ca-central-1.amazonaws.com/dev/data-handler`;
         // console.log(methodAPI);
-        const altAPI = "https://l83up4h02f.execute-api.ca-central-1.amazonaws.com/dev/formdata";
+        // const altAPI = "https://l83up4h02f.execute-api.ca-central-1.amazonaws.com/dev/formdata";
         // const api = `${methodAPI}/formdata`;
         // const data = JSON.stringify(this.state);
         const data = 
@@ -132,51 +129,51 @@ class Form extends Component {
             'q31Name':this.state.q31Name,
             'q31PhoneNum':this.state.q31PhoneNum,
             
-            // 'q32':this.state.emailID,
-            // 'q32Comments':this.state.emailID,
-            // 'q33':this.state.emailID,
-            // 'q33Comments':this.state.emailID,
-            // 'q34':this.state.emailID,
-            // 'q34Comments':this.state.emailID,
-            // 'q35':this.state.emailID,
-            // 'q35Comments':this.state.emailID,
-            // 'q36':this.state.emailID,
-            // 'q36Comments':this.state.emailID,
-            // 'q37':this.state.emailID,
-            // 'q37Comments':this.state.emailID,
-            // 'q38':this.state.emailID,
-            // 'q38Comments':this.state.emailID,
-            // 'q39':this.state.emailID,
-            // 'q39Comments':this.state.emailID,
-            // 'q40':this.state.emailID,
-            // 'q40Comments':this.state.emailID,
-            // q41:null,
-            // q41Comments:'',
-            // q42:null,
-            // q42Comments:'',
-            // q43:null,
-            // q43Comments:'',
-            // q44:null,
-            // q44Comments:'',
-            // q45:null,
-            // q45Comments:'',
-            // q46:null,
-            // q46Comments:'',
-            // q47:null,
-            // q47Comments:'',
-            // q48:null,
-            // q48Comments:'',
-            // q49:null,
-            // q49Comments:'',
-            // q50:null,
-            // q50Comments:'',
+            'q32':this.state.emailID,
+            'q32Comments':this.state.emailID,
+            'q33':this.state.emailID,
+            'q33Comments':this.state.emailID,
+            'q34':this.state.emailID,
+            'q34Comments':this.state.emailID,
+            'q35':this.state.emailID,
+            'q35Comments':this.state.emailID,
+            'q36':this.state.emailID,
+            'q36Comments':this.state.emailID,
+            'q37':this.state.emailID,
+            'q37Comments':this.state.emailID,
+            'q38':this.state.emailID,
+            'q38Comments':this.state.emailID,
+            'q39':this.state.emailID,
+            'q39Comments':this.state.emailID,
+            'q40':this.state.emailID,
+            'q40Comments':this.state.emailID,
+            'q41':null,
+            q41Comments:'',
+            q42:null,
+            q42Comments:'',
+            q43:null,
+            q43Comments:'',
+            q44:null,
+            q44Comments:'',
+            q45:null,
+            q45Comments:'',
+            q46:null,
+            q46Comments:'',
+            q47:null,
+            q47Comments:'',
+            q48:null,
+            q48Comments:'',
+            q49:null,
+            q49Comments:'',
+            q50:null,
+            q50Comments:'',
         }
         
-        const headers = { 
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': "GET,POST,OPTIONS,DELETE,PUT"
-        };
+        // const headers = { 
+        //     'Content-Type': 'application/json',
+        //     'Access-Control-Allow-Origin': '*',
+        //     'Access-Control-Allow-Methods': "GET,POST,OPTIONS,DELETE,PUT"
+        // };
 
         axios.post(methodAPI, data)
         .then((response) => {
@@ -186,11 +183,11 @@ class Form extends Component {
             console.log(error);
         });
 
-        var templateParams = {
-            to_name: 'James',
-            from_name: 'GG',
-            message: 'Wassssup!!'
-        };
+        // var templateParams = {
+        //     to_name: 'James',
+        //     from_name: 'GG',
+        //     message: 'Wassssup!!'
+        // };
 
         const serviceID = 'service_6qd4iln';
         const templateID = 'template_88tatta';
@@ -943,36 +940,16 @@ InjurySafetyChange=(e)=>{
         this.setState({bandNum: FNAddress.BandNum});
         this.setState({unitNum: FNAddress.Address});
         this.setState({province: FNAddress.Region});
-        
-        
-        // console.log(FNAddress.Region);
-        // if(FNAddress.Region === 'BC'){
-        //     this.setState({province: "British Columbia"});
-
-        // }
-
-        
-        
-        
-        // this.props.handleChange(eve.target.value, eve);
+       
     }
-    
-    // submitHandler = () => {
-    //     console.log("working!!");
-        
-    // }
+   
 
     render() {
-
-
         //Test cases
         const {testing} = this.state;
         const test = {testing};
 
-
         const {page} = this.state;
-        let {privacyPolicy} = this.state;
-
         const { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode, province} = this.state;
         const { community, bandNum} = this.state;
         const {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments,ExteriorBuildingSafety,ExteriorInjurySafety} = this.state;

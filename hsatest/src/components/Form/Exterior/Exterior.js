@@ -34,6 +34,15 @@ class Exterior extends React.Component{
                                 }
                         })
                 })
+                Object.entries(this.props.exteriorValues).map((inputField) =>{
+                        // console.log(inputField);
+                            if(inputField[1].length < 1 || inputField[1] === '' ){
+                                this.setState({AllowContinue: false});
+                            }
+        
+        
+                })
+                
                 noCommArr.map((entry)=>{
                         this.valdateQues(entry.slice(1))
 

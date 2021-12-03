@@ -1,0 +1,21 @@
+.center form {
+  /* margin: auto; */
+  /* width: 30%; */
+  /* border: 3px solid green; */
+  /* padding: 10px; */
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.center h3 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.loginBtn {
+  font-size: 24px;
+}
+
+/* . loginBtn {
+  text-align: center;
+} */

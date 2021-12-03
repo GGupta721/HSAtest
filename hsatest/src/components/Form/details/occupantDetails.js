@@ -1,12 +1,9 @@
 import React from "react";
-// import Province from "./province"
-import Territory from "./territory";
 import "./OccupantDetails.css"
 import { toast } from 'react-toastify';
 
 
 class OccupantDetails extends React.Component{
-
 
     state = {
         AllowContinue : true

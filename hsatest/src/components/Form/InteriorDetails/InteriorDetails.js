@@ -9,7 +9,9 @@ class InteriorDetails extends React.Component{
                 disabled: true,
                 disabledq27: true,
                 disabledq28:true,
-                AllowContinue : true
+                AllowContinue : true,
+                emptyFlag: false
+
 
         }
 
@@ -17,6 +19,8 @@ class InteriorDetails extends React.Component{
                 const noRespArr = [];
                 const noCommArr = [];
                 this.setState({AllowContinue: true});
+                this.setState({emptyFlag: false});
+
                
                 Object.entries(this.props.interiorValues).map((ques) =>{
                         if(ques[0].includes("q") && !ques[0].includes("Comments") ){
@@ -26,7 +30,6 @@ class InteriorDetails extends React.Component{
                         }
 
                         })
-                console.log(noRespArr);
                 Object.entries(this.props.interiorValues).map((ques) =>{
                         noRespArr.map((entry)=>{
                                 // console.log(entry)
@@ -39,6 +42,20 @@ class InteriorDetails extends React.Component{
                                 }
                         })
                 })
+
+                Object.entries(this.props.interiorValues).map((inputField) =>{
+                        
+                        if (inputField[0].includes("q") && !inputField[0].includes("Comments") ){
+                        // console.log(inputField);
+                            if(inputField[1].length < 1 || inputField[1] === '' ){
+                                this.setState({AllowContinue: false});
+                                this.setState({emptyFlag: true});
+                            }
+                        }
+        
+        
+                })
+
                 noCommArr.map((entry)=>{
                         this.valdateQues(entry.slice(1))
 
@@ -56,6 +73,14 @@ class InteriorDetails extends React.Component{
                 });
         }
 
+        valdateEmptyInput = () => {
+
+                toast.error(`Please provide an input for all the questions before proceeding`, {
+                        position: toast.POSITION.TOP_CENTER,
+                });
+        }
+
+
         continue = async (eve) => {
                 const result = await this.authenticateResponses();
                 if(this.state.AllowContinue){
@@ -64,6 +89,9 @@ class InteriorDetails extends React.Component{
                         this.props.nextPage();
                         this.props.submitHandler();
 
+                }
+                else if(this.state.emptyFlag){
+                        this.valdateEmptyInput();
                 }
         }
        
@@ -85,7 +113,7 @@ class InteriorDetails extends React.Component{
                  this.notifyYes(e)
          }
 
-         notifyYes = (e) => {
+        notifyYes = (e) => {
 
                 toast.warn(`You selected ${e.target.value},
                 please provide number of detectors and their expiry date`, {
@@ -134,8 +162,7 @@ class InteriorDetails extends React.Component{
                
         }
 
-
-
+        
  
 
         handleChange2=(e) =>{
@@ -156,6 +183,8 @@ class InteriorDetails extends React.Component{
                         autoClose: false
                 });
         }
+
+
 
         render(){
                 const {interiorValues, handleChange, HomeSafetyChange, LifeSafetyChange,HealthSafetyChange,InjurySafetyChange} = this.props;

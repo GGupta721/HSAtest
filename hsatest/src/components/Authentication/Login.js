@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 // import UserPool from "../UserPool";
 import { toast } from 'react-toastify';
-import './Login.css'
+import './Authentication.css'
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({email:'Nifsc@test.com', password:'Nifsc2021.'})
@@ -68,11 +68,12 @@ const Login = (props) => {
 
   return (
     <div className="center">
-      <h3 className="blue">Login</h3><br/>
+      <h1 className="blue">Sign In Page</h1><br/>
       <form onSubmit={onSubmit}>
-        <label htmlFor="email">Enter Email:&emsp; </label>
+        
+        <label htmlFor="email">Enter Email:&emsp; </label><br/>
         <input value={email} placeholder="Enter Email" onChange={(event) => setEmail(event.target.value)}></input><br/><br/>
-        <label htmlFor="password">Enter Password:&emsp; </label>
+        <label htmlFor="password">Enter Password:&emsp; </label><br/>
         <input value={password} type="password" placeholder="Enter Password" onChange={(event) => setPassword(event.target.value)}></input><br/><br/>
         <div className="btnGrid">
           <button type="submit" className="loginBtn">Login</button>

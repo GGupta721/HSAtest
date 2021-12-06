@@ -4,6 +4,7 @@ import "./Acknowledge.css"
 
 class Acknowledge extends React.Component{
     render(){
+        const {handleAcknowledgeCheck} = this.props;
         return (
             <div className="flex-container">
                 <div className="box1">
@@ -17,7 +18,7 @@ class Acknowledge extends React.Component{
                         </div>
                         
                         <div>
-                            <input type="checkbox" className="inputV5"/>
+                            <input type="checkbox" value="Acknowledged" className="inputV5" onChange={handleAcknowledgeCheck}/>
                             I agree to Privacy Policy. &nbsp;
                             <a href="https://indigenousfiresafety.ca/nirs-privacy-policy/" target="_blank">Click to read <bdi className="redColor">*</bdi></a>
                         </div>

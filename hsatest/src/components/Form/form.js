@@ -182,6 +182,7 @@ class Form extends Component {
         testing: 'test',
         privacyPolicy: false,
 
+        Acknowledgement:'',
         AccessorFirstName:'',
         AccessorLastName:'',
         AccessorDate:'',
@@ -192,7 +193,7 @@ class Form extends Component {
         numBedrooms:'',
         numFloors: '',
         approxSF: '',
-        houseType:'',
+        houseType:'Owned',
         street:'',
         unitNum:'',
         postalCode:'',
@@ -221,7 +222,6 @@ class Form extends Component {
         q9Comments:'',
         q10: '',
         q10Comments:'',
-
 
         q11: '',
         q12:'',
@@ -1179,6 +1179,11 @@ InjurySafetyChange=(e)=>{
 
     };
 
+    handleAcknowledgeCheck = e => {
+        this.setState({ Acknowledgement: e.target.value });
+        console.log(this.state.Acknowledgement);
+    }
+
     bandNumHandlerChange = (FNAddress) => {
         // eve.preventDefault();
         //console.log(this.state.searchText);
@@ -1230,15 +1235,9 @@ InjurySafetyChange=(e)=>{
                 return(
                     <div>
                         <div className="acknowledge db">
-                            <Acknowledge/>
+                            <Acknowledge handleAcknowledgeCheck={this.handleAcknowledgeCheck}/>
                         </div>
-                        <div className="rightIndent">
-                            {/* &nbsp;<input type="checkbox" className="inputV5"/>
-                            I Acknowledge Reading This Instruction; &nbsp;
-                            <a href="https://indigenousfiresafety.ca/nirs-privacy-policy/" target="_blank">Click to read*</a>
-                                                
-                            <br/><br/>&emsp;&nbsp;&nbsp;&nbsp; */}
-                            <br/> &emsp;&nbsp;&nbsp;&nbsp; &emsp;&nbsp;&nbsp;&nbsp; &emsp;&nbsp;&nbsp;&nbsp;
+                        <div className="AccessorDetails">
                             Assessor's First Name: <input type="text" name="fname" defaultValue={this.state.AccessorFirstName} className="inputV7" onChange={(e) => this.setState({AccessorFirstName: e.target.value})}/>&nbsp;&emsp; 
                             Assessor's Last Name: <input type="text" name="lname" defaultValue={this.state.AccessorLastName} className="inputV7" onChange={(e) => this.setState({AccessorLastName: e.target.value})} />&nbsp;&emsp;
                             Date: <input type="Date" className="inputV4" defaultValue={this.state.AccessorDate} onChange={(e) => this.setState({AccessorDate: e.target.value})}/>
@@ -1288,11 +1287,8 @@ InjurySafetyChange=(e)=>{
 
                 );
             
-            
-            
-            
             default:
-                return( '');
+                return('');
 
     
         }

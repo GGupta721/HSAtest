@@ -8,9 +8,9 @@
 h1 {
   font-size: 40px;
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   font-weight: bold;
-  text-align: center;
+  text-align: center !important;
 }
 
 h3 {
@@ -39,7 +39,7 @@ select {
 
 .center {
   margin: auto;
-  width: 99%;
+  width: 100%;
 }
 
 .inputV1 {
@@ -47,7 +47,7 @@ select {
 }
 
 .inputV2 {
-  width: 24.6cm !important;
+  width: 24.9cm !important;
 }
 
 .inputV3 {
@@ -68,7 +68,7 @@ select {
 }
 
 .inputV7 {
-  width: 9cm;
+  width: 8cm;
 }
 
 input[type="radio"] {

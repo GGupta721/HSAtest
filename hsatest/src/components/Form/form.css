@@ -22,7 +22,6 @@
   color: #00a5b8;
   margin-right: 300px;
   margin-left: 200px;
-
 }
 
 .btnColor {
@@ -43,8 +42,9 @@
   display: inline-block;
 }
 
-.details h1 {
+h1 {
   text-align: center;
+  width: 100%;
 }
 
 .block input {
@@ -59,4 +59,10 @@
 
 .container {
   text-align: center;
+}
+
+.AccessorDetails {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
 }

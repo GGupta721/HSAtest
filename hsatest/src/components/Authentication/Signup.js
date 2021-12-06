@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 // import UserPool from "../UserPool";
 import { toast } from 'react-toastify';
-import './Signup.css'
+import './Authentication.css'
+
 
 const Signup = (props) => {
   const [email, setEmail] = useState("");
@@ -53,13 +54,13 @@ const Signup = (props) => {
 
   return (
     <div className="center">
-      <h3 className="blue">Sign Up</h3><br/>
+      <h1 className="blue">Create an Account</h1><br/>
       <form onSubmit={onSubmit}>
-        <label htmlFor="email">Enter Email:&emsp; </label>
+        <label htmlFor="email">Enter Email:&emsp; </label><br/>
         <input value={email} placeholder="Enter Email" onChange={(event) => setEmail(event.target.value)}></input><br/><br/>
-        <label htmlFor="password">Set Password (7 characters min):&emsp; </label>
+        <label htmlFor="password">Set Password (7 characters min):&emsp; </label><br/>
         <input value={password}  type="password" placeholder="Set Password" minlength="7" required onChange={(event) => setPassword(event.target.value)}></input><br/><br/>
-        <label htmlFor="password">Confirm Password:&emsp; </label>
+        <label htmlFor="password">Confirm Password:&emsp; </label><br/>
         <input value={confirmPassword} type="password" placeholder="Confirm Password" minlength="7" required onChange={(event) => setConfirmPassword(event.target.value)}></input><br/><br/>
         <div className="btnGrid">
           <button type="submit" className="SignUpBtn">Sign Up</button>

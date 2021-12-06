@@ -773,20 +773,11 @@ class CommunityDetails extends React.Component{
             
             <div className="community-card center">
                 <div className="co-details">
-                    {/* <FirstNationDB getFirstNationData = {this.getFirstNationData}/> */}
                     <div className="cell-1">
-                        Community:&emsp; <input type="text" placeholder=" Enter Community Name" className="inputV2" defaultValue={communityValues.community} onChange={handleChange('community')} />
-                        {/* <b>{this.state.Db[0].Region}</b> */}
+                    &emsp;Community:&emsp;<input type="text" placeholder=" Enter Community Name" className="inputV2" defaultValue={communityValues.community} onChange={handleChange('community')} />
                     </div><br/>
                     
                     <div className="grid-CommunityDetails">
-                        {/* <div className="cell-7">
-                            Band Number:&emsp; <input type="value" maxLength="3" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler}/>
-                        </div>      */}
-                        {/* <div className="cell-8">
-                            <h1>{this.state.FNAddressDB.map((FNAdd) => (FNAdd.Region))}</h1>
-                        </div>                   */}
-
                         <div className="search_select_box">
                         <div className="cell-7">
                            <label> Band Number:&emsp;<input list="browsers" name="myBrowser" maxLength="3" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler}/> </label> <datalist id= "browsers" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler} data-live-search="true" data-live-search-style="startsWith" class="selectpicker">

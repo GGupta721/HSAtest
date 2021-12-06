@@ -5,13 +5,15 @@ import "./Exterior.css"
 toast.configure();
 class Exterior extends React.Component{
         state = {
-                AllowContinue : true
+                AllowContinue : true,
+                emptyFlag: false
         }
 
         authenticateResponses = () => {
                 const noRespArr = [];
                 const noCommArr = [];
                 this.setState({AllowContinue: true});
+                this.setState({emptyFlag: false});
                
                 Object.entries(this.props.exteriorValues).map((ques) =>{
                         if(ques[0].includes("q") && !ques[0].includes("Comments") ){
@@ -34,14 +36,18 @@ class Exterior extends React.Component{
                                 }
                         })
                 })
-                // Object.entries(this.props.exteriorValues).map((inputField) =>{
-                //         // console.log(inputField);
-                //             if(inputField[1].length < 1 || inputField[1] === '' ){
-                //                 this.setState({AllowContinue: false});
-                //             }
+                Object.entries(this.props.exteriorValues).map((inputField) =>{
+                        
+                        if (inputField[0].includes("q") && !inputField[0].includes("Comments") ){
+                        // console.log(inputField);
+                            if(inputField[1].length < 1 || inputField[1] === '' ){
+                                this.setState({AllowContinue: false});
+                                this.setState({emptyFlag: true});
+                            }
+                        }
         
         
-                // })
+                })
                 
                 noCommArr.map((entry)=>{
                         this.valdateQues(entry.slice(1))
@@ -58,6 +64,9 @@ class Exterior extends React.Component{
                         // console.log('once')
                         eve.preventDefault();
                         this.props.nextPage();
+                }
+                else if(this.state.emptyFlag){
+                        this.valdateEmptyInput();
                 }
         }
    
@@ -101,6 +110,13 @@ class Exterior extends React.Component{
                 toast.error(`Please provide a comment for Question ${quesNum}`, {
                         position: toast.POSITION.TOP_CENTER,
                         autoClose: false
+                });
+        }
+
+        valdateEmptyInput = () => {
+
+                toast.error(`Please provide an input for all the questions before proceeding`, {
+                        position: toast.POSITION.TOP_CENTER,
                 });
         }
 
@@ -329,7 +345,7 @@ class Exterior extends React.Component{
 
                                         </div>  
                                        
-                                </div>
+                                </div><br/>
                                 <button className="ui left labeled icon button previous blue" onClick={this.previous}>
                                         <i className="left arrow icon"></i>
                                         Previous

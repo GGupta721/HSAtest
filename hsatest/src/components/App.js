@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css';
-import Assessment from "./assessment/assessment"
+import Assessment from "./Assessment/assessment"
 import Form from "./Form/form"
 // import Footer from './Footer/Footer.js'
 import Authentication from './Authentication/Authentication';
@@ -40,7 +40,7 @@ class App extends Component {
             <div className="page-body">
               <Assessment /><br/>
               <Authentication nextPage={this.nextPage}></Authentication>
-              <ToastContainer style={{ width: "500px" }} />
+              <ToastContainer style={{width: "600px"}} />
             </div>
           </div>
         )
@@ -52,7 +52,7 @@ class App extends Component {
               
               <Assessment /><br/>
               <Form/><br/>
-              <ToastContainer style={{ width: "500px" }} />
+              <ToastContainer style={{ width: "600px" }} />
               
               {/* <Footer/> */}
             </div>

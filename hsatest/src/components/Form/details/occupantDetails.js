@@ -6,11 +6,14 @@ import { toast } from 'react-toastify';
 class OccupantDetails extends React.Component{
 
     state = {
-        AllowContinue : true
+        AllowContinue : true,
+        AcknowledgeFalse : true
     }
 
     authenticateResponses = () => {
             this.setState({AllowContinue: true});
+            this.setState({AcknowledgeFalse: true});
+            
         
             Object.entries(this.props.occupantValues).map((inputField) =>{
                 // console.log(inputField);
@@ -23,7 +26,20 @@ class OccupantDetails extends React.Component{
             Object.entries(this.props.communityValues).map((inputField) =>{
                 // console.log(inputField);
                     if(inputField[1].length < 1 || inputField[1] === '' ){
+
                         this.setState({AllowContinue: false});
+                    }
+
+
+                })
+            Object.entries(this.props.AccessorValues).map((inputField) =>{
+                // console.log(inputField);
+                    if(inputField[1].length < 1 || inputField[1] === '' ){
+                        this.setState({AllowContinue: false});
+                        if(inputField[0] === 'Acknowledgement'){
+                            this.setState({AcknowledgeFalse: false});
+                        }
+
                     }
 
 
@@ -38,14 +54,30 @@ class OccupantDetails extends React.Component{
                     eve.preventDefault();
                     this.props.nextPage();
             }
-            else if(this.state.AllowContinue===false){
-                this.valdateQues("")
+            else if(this.state.AllowContinue===false ){
+                if( this.state.AcknowledgeFalse===false){
+                    this.valdateAcknowledgement();
+                }
+                this.valdateQues("");
+
             }
+            // else if(){
+            //     this.valdateAcknowledgement();
+
+            // }
     }
 
     valdateQues = (quesNum) => {
 
         toast.error(`Please provide an input for all the fields`, {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: false
+        });
+    }
+
+    valdateAcknowledgement = () => {
+
+        toast.error(`Please Acknowledge the privacy policy`, {
                 position: toast.POSITION.TOP_CENTER,
                 autoClose: false
         });

@@ -11,13 +11,14 @@
 }
 
 .community-card {
-  width: 95%;
+  width: 100%;
 }
 
 .co-details {
   text-align: left;
   /* margin-right: 65px; */
-  margin-left: 170px;
+  /* margin-right: ; */
+  margin-left: 15%;
 }
 
 /* .cell-1 {

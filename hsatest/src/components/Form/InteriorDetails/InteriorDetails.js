@@ -53,6 +53,7 @@ class InteriorDetails extends React.Component{
                         // console.log(inputField);
                             if(inputField[1].length < 1 || inputField[1] === '' ){
                                 this.setState({AllowContinue: false});
+                                console.log(inputField)
                                 this.setState({emptyFlag: true});
                             }
                         }
@@ -276,7 +277,7 @@ class InteriorDetails extends React.Component{
                                                 <input type="number" min="0" disabled={this.state.disabledSmoke} placeholder= " Number of Smoke Detectors" step="1" defaultValue={interiorValues.q12} onChange={handleChange('q12')}/>
                                                 </div><p/>
                                                 <div className="ques">13. What is the expiry date for Smoke detector?<p/>
-                                                <input disabled={this.state.disabledSmoke} type="Date" className="inputV4"/>
+                                                <input disabled={this.state.disabledSmoke} type="Date" onChange={handleChange('q13')} className="inputV4"/>
                                                 </div><p/>
                                                 <div className="ques">14. Do they work when tested? </div>&emsp;      
                                                 <div className="radioOptions" onChange={handleChange('q14')}>
@@ -309,7 +310,7 @@ class InteriorDetails extends React.Component{
                                                 <input type="number" disabled={this.state.disabledCO} min="0" placeholder= " Number of Co Detectors" step="1" defaultValue={interiorValues.q16} onChange={handleChange('q16')}/>
                                                 </div><p/>
                                                 <div className="ques">17. What is the expiry date for the CO detector?<p/>
-                                                <input type="Date" disabled={this.state.disabledCO} className="inputV4"/>
+                                                <input type="Date" disabled={this.state.disabledCO} onChange={handleChange('q17')} className="inputV4"/>
                                                 </div><p/>
                                                 &emsp;&emsp;
                                                 <div className="ques">18. Do they work when tested? </div>&emsp;      
@@ -346,7 +347,7 @@ class InteriorDetails extends React.Component{
                                                 <input type="number" min="0" disabled={this.state.disabledSmokeCO} placeholder= " Number of Smoke/Co Detectors" step="1" defaultValue={interiorValues.q20} onChange={handleChange('q20')}/>
                                                 </div><p/>
                                                 <div className="ques">21. What is the expiry date for the Smoke/CO detector?<p/>
-                                                <input type="Date" disabled={this.state.disabledSmokeCO} className="inputV4"/>
+                                                <input type="Date" disabled={this.state.disabledSmokeCO} onChange={handleChange('q21')} className="inputV4"/>
                                                 </div><p/>
                                                 &emsp;&emsp;
                                                 <div className="ques">22. Do they work when tested?  </div>&emsp;      
@@ -462,7 +463,7 @@ class InteriorDetails extends React.Component{
                                                 <p/>
                                                 <div className="ques">29. Where can the environmental issue be found?</div><p/>
                                                 <div className="multiChoice" >        
-                                                        <label><input type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29a === "Kitchen"} onChange={handleChange('q29a')} value="Laundry"/>Laundry</label><br/>
+                                                        <label><input type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29a === "Laundry"} onChange={handleChange('q29a')} value="Laundry"/>Laundry</label><br/>
                                                         <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29b === "Kitchen"} onChange={handleChange('q29b')} value="Kitchen"/> Kitchen<br/>
                                                         <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29c === "Door"} onChange={handleChange('q29c')} value="Door"/>Door<br/>
                                                         <input  type="checkbox" disabled={this.state.disabled} defaultChecked={interiorValues.q29d === "Window"} onChange={handleChange('q29d')} value="Window"/> Window<br/>

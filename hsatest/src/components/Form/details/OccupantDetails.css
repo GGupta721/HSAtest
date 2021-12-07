@@ -12,12 +12,15 @@
 }
 
 .occupant-card {
-  width: 95%;
+  width: 100%;
 }
 
 .oc-details {
   text-align: right;
-  margin-right: 65px;
+  margin-right: 5%;
+  margin-left: 5%;
+
+  /* margin: auto; */
 }
 
 .grid-AddressDetails {

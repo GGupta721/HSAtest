@@ -37,7 +37,7 @@ class Acknowledge extends React.Component{
                         </div>
                         
                         <div>
-                            <input type="checkbox" value="Acknowledged" className="inputV5" onChange={handleAcknowledgeCheck}/>
+                            <input type="checkbox" value="Acknowledged" className="inputV5" defaultChecked={handleAcknowledgeCheck.Acknowledgement === "Acknowledged"} onChange={handleAcknowledgeCheck}/>
                             I agree to Privacy Policy. &nbsp;
                             <a href="https://indigenousfiresafety.ca/nirs-privacy-policy/" target="_blank">Click to read <bdi className="redColor">*</bdi></a>
                         </div>
@@ -45,9 +45,6 @@ class Acknowledge extends React.Component{
                     </div>
 
                 </div>
-
-
-
 
                 <div className="box1">
                     <div className="p1">

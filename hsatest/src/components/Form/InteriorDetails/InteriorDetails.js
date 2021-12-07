@@ -128,7 +128,7 @@ class InteriorDetails extends React.Component{
 
                 }
                 if (e.target.value==="No"){
-                        this.lifeNotify(e);
+                     
                         this.setState({
                                 
                                 disabledSmoke:true
@@ -149,7 +149,7 @@ class InteriorDetails extends React.Component{
 
                 }
                 if (e.target.value==="No"){
-                        this.lifeNotify(e);
+                       
                         this.setState({
                                 
                                 disabledCO:true
@@ -170,7 +170,7 @@ class InteriorDetails extends React.Component{
 
                 }
                 if (e.target.value==="No"){
-                        this.lifeNotify(e);
+                      
                         this.setState({
                                 
                                 disabledSmokeCO:true
@@ -269,7 +269,7 @@ class InteriorDetails extends React.Component{
                                                 <div className="ques">11. Are there Smoke Detectors installed in the home?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q11')}>  
                                                         <input type="radio" value="Yes" name="q11" defaultChecked={interiorValues.q11 === "Yes"} onClick={this.alternateSmokeDetectors}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q11" defaultChecked={interiorValues.q11 === "No"} onClick={this.alternateSmokeDetectors}/> No &emsp;
+                                                        <input type="radio" value="No" name="q11" defaultChecked={interiorValues.q11 === "No"} onClick={LifeSafetyChange}/> No &emsp;
                                                 </div>
                                                 <br/>
                                                 <div className="ques">12. How many smoke detectors on site?<p/>

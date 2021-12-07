@@ -1,4 +1,4 @@
-import {Component} from "react";
+import {Component, useState} from "react";
 import "./form.css";
 import OccupantDetails from "./details/occupantDetails";
 import CommunityDetails from "./details/communityDetails";
@@ -11,6 +11,7 @@ import Router from "../Router";
 import Acknowledge from "../Acknowledge/Acknowledge"
 import axios from 'axios';
 import emailjs from 'emailjs-com';
+import { checkServerIdentity } from "tls";
 
 
 class Form extends Component {
@@ -1182,6 +1183,9 @@ InjurySafetyChange=(e)=>{
     handleAcknowledgeCheck = e => {
         this.setState({ Acknowledgement: e.target.value });
         console.log(this.state.Acknowledgement);
+    }
+    handleReset  = input => e => {
+        this.setState({[input]:!e.target.checked })
     }
 
     bandNumHandlerChange = (FNAddress) => {

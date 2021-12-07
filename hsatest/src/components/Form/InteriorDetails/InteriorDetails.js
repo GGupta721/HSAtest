@@ -10,8 +10,12 @@ class InteriorDetails extends React.Component{
                 disabledq27: true,
                 disabledq28:true,
                 AllowContinue : true,
-                emptyFlag: false
+                emptyFlag: false,
 
+                disabledSmoke:true,
+                disabledCO:true,
+                disabledSmokeCO:true,
+                AllowContinue : true
 
         }
 
@@ -113,7 +117,70 @@ class InteriorDetails extends React.Component{
                  this.notifyYes(e)
          }
 
-        notifyYes = (e) => {
+        alternateSmokeDetectors =(e)=>{
+                 
+                if (e.target.value==="Yes"){
+                        this.lifeYesNotify(e);
+                        this.setState({
+                                disabledSmoke:false
+                                
+                        });
+
+                }
+                if (e.target.value==="No"){
+                        this.lifeNotify(e);
+                        this.setState({
+                                
+                                disabledSmoke:true
+                        });
+                }
+                
+
+        }
+
+        alternateCODetectors =(e)=>{
+                 
+                if (e.target.value==="Yes"){
+                        this.lifeYesNotify(e);
+                        this.setState({
+                                disabledCO:false
+                                
+                        });
+
+                }
+                if (e.target.value==="No"){
+                        this.lifeNotify(e);
+                        this.setState({
+                                
+                                disabledCO:true
+                        });
+                }
+                
+
+        }
+
+        alternateSmokeCODetectors =(e)=>{
+                 
+                if (e.target.value==="Yes"){
+                        this.lifeYesNotify(e);
+                        this.setState({
+                                disabledSmokeCO:false
+                                
+                        });
+
+                }
+                if (e.target.value==="No"){
+                        this.lifeNotify(e);
+                        this.setState({
+                                
+                                disabledSmokeCO:true
+                        });
+                }
+                
+
+        }
+
+         notifyYes = (e) => {
 
                 toast.warn(`You selected ${e.target.value},
                 please provide number of detectors and their expiry date`, {
@@ -127,23 +194,26 @@ class InteriorDetails extends React.Component{
          healthNotify =(e)=> {
                 this.props.HealthSafetyChange(e);
                 
-                 this.alternateChange(e)
+                 this.alternateChange(e);
          }
 
 
         alternateChange=(e) =>{
 
                 if (e.target.value==="No"){
+                        // this.props.handleReset('q27');
                         this.setState({
                                 disabled:false
                         });
                 }
 
                 if (e.target.value==="Yes"){
+                        // this.props.handleReset('q27');
                         this.setState({
                                 disabled:true,
- 
+                                
                         });
+
                 }
 
                 if(e.target.value==="Other"){
@@ -187,7 +257,7 @@ class InteriorDetails extends React.Component{
 
 
         render(){
-                const {interiorValues, handleChange, HomeSafetyChange, LifeSafetyChange,HealthSafetyChange,InjurySafetyChange} = this.props;
+                const {interiorValues,handleReset, handleChange, HomeSafetyChange, LifeSafetyChange,HealthSafetyChange,InjurySafetyChange} = this.props;
 
                
 
@@ -198,24 +268,24 @@ class InteriorDetails extends React.Component{
                                                 <h3 >SMOKE / CO DETECTORS</h3>
                                                 <div className="ques">11. Are there Smoke Detectors installed in the home?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q11')}>  
-                                                        <input type="radio" value="Yes" name="q11" defaultChecked={interiorValues.q11 === "Yes"} onClick={this.lifeYesNotify}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q11" defaultChecked={interiorValues.q11 === "No"} onClick={this.lifeNotify}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q11" defaultChecked={interiorValues.q11 === "Yes"} onClick={this.alternateSmokeDetectors}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q11" defaultChecked={interiorValues.q11 === "No"} onClick={this.alternateSmokeDetectors}/> No &emsp;
                                                 </div>
                                                 <br/>
                                                 <div className="ques">12. How many smoke detectors on site?<p/>
-                                                <input type="number" placeholder= " Number of Smoke Detectors" step="1" defaultValue={interiorValues.q12} onChange={handleChange('q12')}/>
+                                                <input type="number" min="0" disabled={this.state.disabledSmoke} placeholder= " Number of Smoke Detectors" step="1" defaultValue={interiorValues.q12} onChange={handleChange('q12')}/>
                                                 </div><p/>
                                                 <div className="ques">13. What is the expiry date for Smoke detector?<p/>
-                                                <input type="Date" className="inputV4"/>
+                                                <input disabled={this.state.disabledSmoke} type="Date" className="inputV4"/>
                                                 </div><p/>
                                                 <div className="ques">14. Do they work when tested? </div>&emsp;      
                                                 <div className="radioOptions" onChange={handleChange('q14')}>
-                                                        <input type="radio" value="Yes" name="q14"checked={interiorValues.q14 === "Yes"}   onClick={LifeSafetyChange}/>Yes &emsp;
-                                                        <input type="radio" value="No" name="q14" checked={interiorValues.q14 === "No"} onClick={this.lifeNotify}/> No &emsp;
+                                                        <input type="radio" disabled={this.state.disabledSmoke} value="Yes" name="q14"checked={interiorValues.q14 === "Yes"}   onClick={LifeSafetyChange}/>Yes &emsp;
+                                                        <input type="radio" disabled={this.state.disabledSmoke} value="No" name="q14" checked={interiorValues.q14 === "No"} onClick={this.lifeNotify}/> No &emsp;
                                                 </div>      
                                                 <p/>
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
+                                                        <textarea disabled={this.state.disabledSmoke} rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
                                                 </div><p/>
 
                                         </div>
@@ -232,24 +302,24 @@ class InteriorDetails extends React.Component{
                                                 <h3 >CARBON MONOXIDE(CO) DETECTORS </h3>
                                                 <div className="ques">15. Are there CO detectors installed in the home?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q15')}>  
-                                                        <input type="radio" value="Yes" name="q15" checked={interiorValues.q15 === "Yes"}  onClick={this.lifeYesNotify}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q15" checked={interiorValues.q15=== "No"} onClick={LifeSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q15" checked={interiorValues.q15 === "Yes"}  onClick={this.alternateCODetectors}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q15" checked={interiorValues.q15=== "No"} onClick={this.alternateCODetectors}/> No &emsp;
                                                 </div><p/>
                                                 <div className="ques">16. How many CO detectors are on site?<p/>
-                                                <input type="number" placeholder= " Number of Co Detectors" step="1" defaultValue={interiorValues.q16} onChange={handleChange('q16')}/>
+                                                <input type="number" disabled={this.state.disabledCO} min="0" placeholder= " Number of Co Detectors" step="1" defaultValue={interiorValues.q16} onChange={handleChange('q16')}/>
                                                 </div><p/>
                                                 <div className="ques">17. What is the expiry date for the CO detector?<p/>
-                                                <input type="Date" className="inputV4"/>
+                                                <input type="Date" disabled={this.state.disabledCO} className="inputV4"/>
                                                 </div><p/>
                                                 &emsp;&emsp;
                                                 <div className="ques">18. Do they work when tested? </div>&emsp;      
                                                 <div className="radioOptions" onChange={handleChange('q18')}>
-                                                        <input type="radio" value="Yes" name="q18"checked={interiorValues.q18 === "Yes"}  onClick={LifeSafetyChange}/>Yes &emsp;
-                                                        <input type="radio" value="No" name="q18" checked={interiorValues.q18 === "No"} onClick={this.lifeNotify}/> No &emsp;
+                                                        <input type="radio" disabled={this.state.disabledCO} value="Yes" name="q18"checked={interiorValues.q18 === "Yes"}  onClick={LifeSafetyChange}/>Yes &emsp;
+                                                        <input type="radio" disabled={this.state.disabledCO} value="No" name="q18" checked={interiorValues.q18 === "No"} onClick={this.lifeNotify}/> No &emsp;
                                                 </div>      
                                                 <p/>
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
+                                                        <textarea rows="3" disabled={this.state.disabledCO} cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -266,27 +336,27 @@ class InteriorDetails extends React.Component{
                                                 <div className="ques">19. Are there Smoke/CO detectors installed in the home?
                                                  </div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q19')}>  
-                                                        <input type="radio" value="Yes" name="q19" checked={interiorValues.q19 === "Yes"}  onClick={this.lifeYesNotify}/> Yes &emsp;
-                                                        <input type="radio" value="No" name="q19" checked={interiorValues.q19 === "No"} onClick={LifeSafetyChange}/> No &emsp;
+                                                        <input type="radio" value="Yes" name="q19" checked={interiorValues.q19 === "Yes"}  onClick={this.alternateSmokeCODetectors}/> Yes &emsp;
+                                                        <input type="radio" value="No" name="q19" checked={interiorValues.q19 === "No"} onClick={this.alternateSmokeCODetectors}/> No &emsp;
                                                 </div>
                                                 <br/>
                      
                                                 <p/>
                                                 <div className="ques">20. How many Smoke/CO detectors are on site?<p/>
-                                                <input type="number" placeholder= " Number of Smoke/Co Detectors" step="1" defaultValue={interiorValues.q20} onChange={handleChange('q20')}/>
+                                                <input type="number" min="0" disabled={this.state.disabledSmokeCO} placeholder= " Number of Smoke/Co Detectors" step="1" defaultValue={interiorValues.q20} onChange={handleChange('q20')}/>
                                                 </div><p/>
                                                 <div className="ques">21. What is the expiry date for the Smoke/CO detector?<p/>
-                                                <input type="Date" className="inputV4"/>
+                                                <input type="Date" disabled={this.state.disabledSmokeCO} className="inputV4"/>
                                                 </div><p/>
                                                 &emsp;&emsp;
                                                 <div className="ques">22. Do they work when tested?  </div>&emsp;      
                                                 <div className="radioOptions" onChange={handleChange('q22')}>
-                                                        <input type="radio" value="Yes" name="q22"checked={interiorValues.q22 === "Yes"}  onClick={LifeSafetyChange}/>Yes &emsp;
-                                                        <input type="radio" value="No" name="q22" checked={interiorValues.q22 === "No"} onClick={this.lifeNotify}/> No &emsp;
+                                                        <input type="radio" disabled={this.state.disabledSmokeCO} value="Yes" name="q22"checked={interiorValues.q22 === "Yes"}  onClick={LifeSafetyChange}/>Yes &emsp;
+                                                        <input type="radio" disabled={this.state.disabledSmokeCO} value="No" name="q22" checked={interiorValues.q22 === "No"} onClick={this.lifeNotify}/> No &emsp;
                                                 </div>      
                                                 <p/>
                                                 <div>        
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
+                                                        <textarea rows="3" cols="60" disabled={this.state.disabledSmokeCO} placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -341,6 +411,7 @@ class InteriorDetails extends React.Component{
                                                 <div className="radioOptions" onChange={handleChange('q25')}>   
                                                         <input type="radio" value="Yes" name="q25" defaultChecked={interiorValues.q25 === "Yes"}  onClick={LifeSafetyChange}/> Yes &emsp;
                                                         <input type="radio" value="No" name="q25" defaultChecked={interiorValues.q25 === "No"} onClick={this.lifeNotify}  /> No &emsp;
+                                                        <input type="radio" value="N/A" name="q25" defaultChecked={interiorValues.q25 === "N/A"} onClick={this.lifeNotify}/> N/A
                                                 </div><br/>
                                                 <div>      
                                                         <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q25Comments} onChange={handleChange('q25Comments')}></textarea>
@@ -367,6 +438,10 @@ class InteriorDetails extends React.Component{
                                                 <div className="radioOptions" onChange={handleChange('q26')}>  
                                                         <input type="radio" value="Yes" name="q26" defaultChecked={interiorValues.q26 === "Yes"} onClick={this.healthNotify} /> Yes &emsp;
                                                         <input type="radio" value="No" name="q26" defaultChecked={interiorValues.q26 === "No"} onClick={this.healthNotify} /> No &emsp;
+                                                </div><p/>
+
+                                                <div>      
+                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q26Comments} onChange={handleChange('q26Comments')}></textarea>
                                                 </div><p/>
 
                                                 <div className="ques">27. If No, What environmental issue does the home have?

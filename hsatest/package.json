@@ -21,6 +21,7 @@
     "dotenv": "^10.0.0",
     "emailjs": "^3.7.0",
     "emailjs-com": "^3.2.0",
+    "file-saver": "^2.0.5",
     "fs": "0.0.1-security",
     "google-maps-react": "^2.0.6",
     "json2csv": "^5.0.6",

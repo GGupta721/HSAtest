@@ -1,8 +1,25 @@
-import React from 'react'
-import "./Acknowledge.css"
+import React from 'react';
+import "./Acknowledge.css";
+import fileSaver from 'file-saver';
+// import { Link } from 'react-router-dom';
 // import 
-
+class DownloadLink {
+    render() {
+        return (
+            <form method="get" action={this.props.src}>
+                <button type="submit">{this.props.children}</button>
+            </form>
+        );
+    }
+}
 class Acknowledge extends React.Component{
+     download=() =>{
+        fileSaver.saveAs(
+            process.env.REACT_APP_CLIENT_URL + "./HSAForm.pdf",
+            "HSAForm.pdf"
+          );
+     }
+   
     render(){
         const {handleAcknowledgeCheck} = this.props;
         return (
@@ -11,6 +28,8 @@ class Acknowledge extends React.Component{
                     
                     <div className="flex-container2">
                         <div className="box3">
+                        <button className="pdfdownload" onClick={this.download}>Download File</button>
+                        
                             <h3 className="p2">Assessment Instructions</h3>
                             <div className="p3">
                                 A Home Safety Assessment identifies potential safety and security issues. In completing this form, ensure that all fields are completed accurately. If the response to any question is ‘No’ or “Not Applicable (N/A)”, please include additional details in the comment box.<br/>
@@ -34,6 +53,10 @@ class Acknowledge extends React.Component{
                     <div className="p1">
                         If you require assistance in completing this form, please call our office. An IFMS Program Delivery Specialist will be happy to assist you. For additional information, please email <a href = "mailto: programs@indigenousfiresafety.ca">programs@indigenousfiresafety.ca</a>
                         <br/><br/><p className="blueText fv2"><b>Need help? Call 1-888-444-6811</b></p>
+                        {/* <a href="./HSAForm.pdf" download> Click here to download PDF version.</a> */}
+                        {/* <button  onClick={this.download}>
+                            Download File
+                        </button> */}
                     </div>
                 </div>
                 

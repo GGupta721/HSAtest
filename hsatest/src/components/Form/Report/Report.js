@@ -34,7 +34,7 @@ class Report extends Component {
         this.InteriorInjurySafetyPercent=((this.props.reportValues.InteriorInjurySafety/29)*100).toFixed(2);
         this.InteriorHealthSafetyPercent=((this.props.reportValues.InteriorHealthSafety/29)*100).toFixed(2);
         this.totalInterior=this.props.reportValues.InteriorHomeSafety+this.props.reportValues.InteriorInjurySafety+ this.props.reportValues.InteriorHealthSafety+this.props.reportValues.InteriorLifeSafety;
-        this.totalInteriorPercent= ((this.totalInterior/29)*100).toFixed(2);
+        this.totalInteriorPercent= ((this.totalInterior/29)*100).toFixed(0);
 
         
 
@@ -177,7 +177,7 @@ class Report extends Component {
                     <tr>
                         <td style={{color:"lightseagreen"}}>Home Safety Report</td>
                         <td>3</td>
-                        <td>30%</td>
+                        <td>30.00%</td>
                         <td>{reportValues.ExteriorHomeSafety}</td>
                         <td>{this.ExteriorHomeSafetyPercent}%</td>
                     
@@ -185,23 +185,23 @@ class Report extends Component {
                     <tr>
                         <td style={{color:"lightseagreen"}}>Life Safety Report</td>
                         <td>2</td>
-                        <td>20%</td>
+                        <td>20.00%</td>
                         <td>{reportValues.ExteriorLifeSafety}</td>
                         <td>{this.ExteriorLifeSafetyPercent}%</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Injury Safety Report</td>
                         <td>5</td>
-                        <td>50%</td>
+                        <td>50.00%</td>
                         <td>{reportValues.ExteriorInjurySafety}</td>
                         <td>{this.ExteriorInjurySafetyPercent}%</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Health Safety Report</td>
                         <td>0</td>
-                        <td>0%</td>
+                        <td>0.00%</td>
                         <td>0</td>
-                        <td>0%</td>
+                        <td>0.00%</td>
                     </tr>
                     <tr>
                         <td style={{color:"lightslategrey", border:"2px solid black"}}>Total Assesment Score</td>

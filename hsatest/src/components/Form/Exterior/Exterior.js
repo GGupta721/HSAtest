@@ -241,6 +241,8 @@ class Exterior extends React.Component{
                                                 <div className="radioOptions" onChange={handleChange('q5')}>   
                                                         <input type="radio" value="Yes" name="q5" defaultChecked={exteriorValues.q5 === "Yes"} onClick={InjurySafetyChange}/> Yes &emsp;
                                                         <input type="radio" value="No"  name="q5" defaultChecked={exteriorValues.q5 === "No"} onClick={this.injuryNotify}/> No &emsp;
+                                                        <input type="radio" value="No"  name="q5" defaultChecked={exteriorValues.q5 === "N/A"} onClick={this.injuryNotify}/> No &emsp;
+
                                                 </div> 
                                                 
                                                 <p/>       

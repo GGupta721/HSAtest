@@ -88,5 +88,8 @@
 
 .pdfdownload{
   width: 650px;
-  height: 25px;
+  height: 50px;
+  /* background-color: rgb(253, 240, 222);
+  border: solid  rgb(235, 186, 122);
+  */
 }

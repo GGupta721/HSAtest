@@ -1,9 +1,14 @@
 import React from 'react';
 import "./Acknowledge.css";
-import fileSaver from 'file-saver';
+import fileSaver, { saveAs } from 'file-saver';
 // import { Link } from 'react-router-dom';
 // import 
 class DownloadLink {
+    constructor(props){
+        this.super(props);
+        this.download=this.download.bind(this);
+        this.downloadFile=this.downloadFile.bind(this);
+    }
     render() {
         return (
             <form method="get" action={this.props.src}>
@@ -15,9 +20,13 @@ class DownloadLink {
 class Acknowledge extends React.Component{
      download=() =>{
         fileSaver.saveAs(
-            process.env.REACT_APP_CLIENT_URL + "./HSAForm.pdf",
+            process.env.REACT_APP_CLIENT_URL + "https://drive.google.com/file/d/143AqnokQX3ZibQAqtGDo96FIzdAl7u-I/view?usp=sharing",
             "HSAForm.pdf"
           );
+     }
+
+     downloadFile = (event) => {
+         saveAs("https://drive.google.com/file/d/143AqnokQX3ZibQAqtGDo96FIzdAl7u-I/view?usp=sharing")
      }
    
     render(){
@@ -28,7 +37,7 @@ class Acknowledge extends React.Component{
                     
                     <div className="flex-container2">
                         <div className="box3">
-                        <button className="pdfdownload" onClick={this.download}>Download File</button>
+                       
                         
                             <h3 className="p2">Assessment Instructions</h3>
                             <div className="p3">
@@ -50,7 +59,8 @@ class Acknowledge extends React.Component{
                     <div className="p1">
                         If you require assistance in completing this form, please call our office. An IFMS Program Delivery Specialist will be happy to assist you. For additional information, please email <a href = "mailto: programs@indigenousfiresafety.ca">programs@indigenousfiresafety.ca</a>
                         <br/><br/><p className="blueText fv2"><b>Need help? Call 1-888-444-6811</b></p>
-                        {/* <a href="./HSAForm.pdf" download> Click here to download PDF version.</a> */}
+                        <button className="pdfdownload" onClick={this.downloadFile}>Download HSA Form PDF format.</button>
+                        {/* <a href="https://drive.google.com/file/d/143AqnokQX3ZibQAqtGDo96FIzdAl7u-I/view?usp=sharing" download> Click here to download PDF version.</a> */}
                         {/* <button  onClick={this.download}>
                             Download File
                         </button> */}

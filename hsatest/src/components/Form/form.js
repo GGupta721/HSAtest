@@ -1288,7 +1288,7 @@ InjurySafetyChange=(e)=>{
             case 4:
                 return(
                     <div className="report db">
-                        <h1 className="blueReport">Report</h1>
+                        <h1 className="blue">Report</h1>
                         <Report prevPage={this.prevPage} reportValues = {reportValues} exteriorValues = {exteriorValues}/>
                     </div>
 

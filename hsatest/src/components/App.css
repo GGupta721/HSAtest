@@ -51,7 +51,7 @@ select {
 }
 
 .inputV2 {
-  width: 24.9cm !important;
+  width: 20cm !important;
 }
 
 .inputV3 {
@@ -105,4 +105,51 @@ input[type="radio"] {
   margin-left: 15px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+/* @media screen and (max-width: 992px) {
+  
+} */
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 1200px) {
+  .inputV1 {
+    width: 10cm;
+  }
+
+  .inputV2 {
+    width: 12cm !important;
+  }
+
+  .inputV3 {
+    width: 6cm !important;
+  }
+
+  .inputV4 {
+    width: 5cm !important;
+  }
+
+  .inputV5 {
+    width: 2cm !important;
+  }
+
+  .inputV6 {
+    width: 4cm !important;
+    font-size: 16px !important;
+  }
+
+  .inputV7 {
+    width: 6cm;
+  }
+
+  input {
+    background-color: #eee !important;
+    color: rgb(0, 0, 0) !important;
+    width: 6cm;
+  }
+  select {
+    background-color: #eee !important;
+    color: black !important;
+    width: 6cm;
+  }
 }

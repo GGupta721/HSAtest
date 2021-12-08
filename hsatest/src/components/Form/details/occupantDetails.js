@@ -8,6 +8,7 @@ class OccupantDetails extends React.Component{
     state = {
         AllowContinue : true,
         AcknowledgeFalse : true
+
     }
 
     authenticateResponses = () => {
@@ -92,18 +93,24 @@ class OccupantDetails extends React.Component{
                 <div className="oc-details ">
                     <div className="grid-OccupantDetails">
                         <div className="card grid-child">
-                            Occupant's First Name:&emsp; <input type="text" placeholder= " Enter First Name" className="inputV3" defaultValue={occupantValues.firstName} onChange={handleChange('firstName')} /><p/>
-                            Number of Occupants:&emsp; <input type="number" min="0" placeholder= " Number of Occupants" step="1" defaultValue={occupantValues.numOccupants} onChange={handleChange('numOccupants')}/><p/>
-                            Number of Bedrooms:&emsp; <input type="number" min="0" placeholder= " Number of Bedrooms" step="1" defaultValue={occupantValues.numBedrooms} onChange={handleChange('numBedrooms')}/><p/>
-                            Number of Floors:&emsp; <input type="number" min="0" placeholder= " Number of Floors" step="1" defaultValue={occupantValues.numFloors} onChange={handleChange('numFloors')}/><p/>
+                            <label for="OccupantFirstName">Occupant's First Name:&emsp;</label>
+                            <input type="text" id="OccupantFirstName" name="OccupantFirstName" placeholder= " Enter First Name" className="inputV3" defaultValue={occupantValues.firstName} onChange={handleChange('firstName')} /><p/>
+                            <label for="NumberOccupants">Number of Occupants:&emsp;</label>
+                            <input type="number" id="NumberOccupants" name="NumberOccupants" min="0" placeholder= " Number of Occupants" step="1" defaultValue={occupantValues.numOccupants} onChange={handleChange('numOccupants')}/><p/>
+                            <label for="NumberBedrooms">Number of Bedrooms:&emsp;</label>
+                            <input type="number" id="NumberBedrooms" name="NumberBedrooms" min="0" placeholder= " Number of Bedrooms" step="1" defaultValue={occupantValues.numBedrooms} onChange={handleChange('numBedrooms')}/><p/>
+                            <label for="NumberFloors">Number of Floors:&emsp;</label>
+                            <input type="number" id="NumberFloors" name="NumberFloors" min="0" placeholder= " Number of Floors" step="1" defaultValue={occupantValues.numFloors} onChange={handleChange('numFloors')}/><p/>
                             <br/><p/>
 
                         </div>
                         <div className="card grid-child">
-                            Occupant's Last Name:&emsp; <input type="text" placeholder= " Enter Last Name" className="inputV3" defaultValue={occupantValues.lastName} onChange={handleChange('lastName')}/><p/>
-                            Approximate Square Footage:&emsp; <input type="number" placeholder= " Enter value" min="0" step="0.1" defaultValue={occupantValues.approxSF} onChange={handleChange('approxSF')}/><p/>
-                            House Type: &emsp;
-                            <select type="dropdown" defaultValue={occupantValues.houseType} onChange={handleChange('houseType')}>
+                            <label for="OccupantLastName">Occupant's Last Name:&emsp;</label>
+                            <input type="text" id="OccupantLastName" name="OccupantLastName" placeholder= " Enter Last Name" className="inputV3" defaultValue={occupantValues.lastName} onChange={handleChange('lastName')}/><p/>
+                            <label for="ApproximateSquareFootage">Approx Square foot:&emsp;</label>
+                            <input type="number" id="ApproximateSquareFootage" name="ApproximateSquareFootage" placeholder= " Enter value" min="0" step="0.1" defaultValue={occupantValues.approxSF} onChange={handleChange('approxSF')}/><p/>
+                            <label for="HouseType">House Type:&emsp;</label>
+                            <select type="dropdown" id="HouseType" name="HouseType" defaultValue={occupantValues.houseType} onChange={handleChange('houseType')}>
                                 <option value="Owned">Private Owned</option>
                                 <option value="Rented">Rental</option>
                                 <option value="Band Housing">Social House</option>
@@ -116,19 +123,23 @@ class OccupantDetails extends React.Component{
                     <div className="address-card grid-child ">                    
                         <div className="grid-AddressDetails">
                             <div className="cell-1">
-                                Address:&emsp; <input type="text" placeholder=" Enter Unit Number" defaultValue={occupantValues.unitNum} onChange={handleChange('unitNum')}/>
+                                <label for="Address">Address:&emsp;</label>
+                                <input type="text" id="Address" name="Address" placeholder=" Enter Unit Number" defaultValue={occupantValues.unitNum} onChange={handleChange('unitNum')}/>
 
                             </div>
                             <div className="cell-1">
-                                Province/Territory:&emsp; <input type="text" placeholder=" Enter Province/Territory" defaultValue={occupantValues.province} onChange={handleChange('province')}/>
+                                <label for="Province/Territory">Province/Territory:&emsp;</label>
+                                <input type="text" id="Province/Territory" name="Province/Territory" placeholder=" Enter Province/Territory" defaultValue={occupantValues.province} onChange={handleChange('province')}/>
 
                             </div>
                             <div className="cell-9">
-                                City:&emsp; <input type="text" placeholder=" Enter Street" defaultValue={occupantValues.street} onChange={handleChange('street')}/><p/> 
+                                <label for="City">City:&emsp;</label>
+                               <input type="text" id="City" name="City" placeholder=" Enter Street" defaultValue={occupantValues.street} onChange={handleChange('street')}/><p/> 
 
                             </div> 
                             <div className="cell-2">
-                                Postal Code:&emsp; <input type="text" placeholder=" Enter Postal Code" defaultValue={occupantValues.postalCode} onChange={handleChange('postalCode')}/>
+                                <label for="Postal Code">Postal Code:&emsp;</label>
+                                <input type="text" id="Postal Code" name="Postal Code" placeholder=" Enter Postal Code" defaultValue={occupantValues.postalCode} onChange={handleChange('postalCode')}/>
                             </div>
                             
                         </div>

@@ -476,7 +476,7 @@ class InteriorDetails extends React.Component{
                                                 <div className="ques">
                                                 31. If No, Environmental Health Officer (EHO) / Remediation Contact advised?</div>&emsp;  
                                                 Full Name:&emsp;&emsp;&emsp; <input type="text" disabled={this.state.disabled} placeholder="First Name, Last Name" defaultValue={interiorValues.q31Name} onChange={handleChange('q31Name')}/>&emsp;<br/><br/>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number:&emsp; <input type="text"  disabled={this.state.disabled} placeholder="Enter Number" defaultValue={interiorValues.q31PhoneNum} onChange={handleChange('q31PhoneNum')}/><p/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number:&emsp; <input type="number" disabled={this.state.disabled} placeholder="Enter Number" defaultValue={interiorValues.q31PhoneNum} onChange={handleChange('q31PhoneNum')}/><p/>
                                                
                                         </div>
                                         <div className="info grid-child">

@@ -7,7 +7,6 @@ import InteriorDetails from "./InteriorDetails/InteriorDetails";
 import Report from "./Report/Report";
 import { FNAddress } from "./details/communityDetails";
 import Router from "../Router";
-// import PolicyModal from "../Assessment/PolicyModal";
 import Acknowledge from "../Acknowledge/Acknowledge"
 import axios from 'axios';
 import emailjs from 'emailjs-com';
@@ -1173,11 +1172,6 @@ InjurySafetyChange=(e)=>{
 
     handleChange = input => e => {
         this.setState({ [input]: e.target.value });
-        
-
-        // this.setState({testing:this.state([input])});
-        // console.log(input);
-        // console.log(this.state.q13);
 
     };
 
@@ -1190,9 +1184,7 @@ InjurySafetyChange=(e)=>{
     }
 
     bandNumHandlerChange = (FNAddress) => {
-        // eve.preventDefault();
-        //console.log(this.state.searchText);
-        // console.log(FNAddress);
+  
         this.setState({community: FNAddress.Name});
         this.setState({postalCode: FNAddress.PostalCode});
         this.setState({street: FNAddress.City});
@@ -1227,16 +1219,6 @@ InjurySafetyChange=(e)=>{
 
         switch (page){
 
-            // case privacyPolicy:
-            //     return(
-            //         <Router pathName = "/policy">
-            //                  <div className="exterior db">
-            //                      <h1 className="blue"> Privacy Policy</h1><p/>
-            //                      <PolicyModal/>
-            //                  </div>
-                             
-            //         </Router>
-            // );
 
             case 1:
                 return(

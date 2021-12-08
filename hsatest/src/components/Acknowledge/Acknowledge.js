@@ -35,7 +35,7 @@ class Acknowledge extends React.Component{
             <div className="flex-container">
                 <div className="box1">
                     
-                    <div className="flex-container2">
+                    
                         <div className="box3">
                        
                         
@@ -44,6 +44,7 @@ class Acknowledge extends React.Component{
                                 A Home Safety Assessment identifies potential safety and security issues. In completing this form, ensure that all fields are completed accurately. If the response to any question is ‘No’ or “Not Applicable (N/A)”, please include additional details in the comment box.<br/>
                             </div>
                         </div>
+                        <br/>
                         
                         <div>
                             <input type="checkbox" value="Acknowledged" className="inputV5" defaultChecked={handleAcknowledgeCheck.Acknowledgement === "Acknowledged"} onChange={handleAcknowledgeCheck}/>
@@ -51,7 +52,7 @@ class Acknowledge extends React.Component{
                             <a href="https://indigenousfiresafety.ca/nirs-privacy-policy/" target="_blank">Click to read <bdi className="redColor">*</bdi></a>
                         </div>
                                                 
-                    </div>
+                    {/* </div> */}
 
                 </div>
 
@@ -59,11 +60,14 @@ class Acknowledge extends React.Component{
                     <div className="p1">
                         If you require assistance in completing this form, please call our office. An IFMS Program Delivery Specialist will be happy to assist you. For additional information, please email <a href = "mailto: programs@indigenousfiresafety.ca">programs@indigenousfiresafety.ca</a>
                         <br/><br/><p className="blueText fv2"><b>Need help? Call 1-888-444-6811</b></p>
-                        <button className="pdfdownload" onClick={this.downloadFile}>Download HSA Form PDF format.</button>
+                        
                         {/* <a href="https://drive.google.com/file/d/143AqnokQX3ZibQAqtGDo96FIzdAl7u-I/view?usp=sharing" download> Click here to download PDF version.</a> */}
                         {/* <button  onClick={this.download}>
                             Download File
                         </button> */}
+                    </div><br/>
+                    <div className="downloaddiv">
+                        <button className="pdfdownload" onClick={this.downloadFile}>Download HSA Form PDF format</button>
                     </div>
                 </div>
                 

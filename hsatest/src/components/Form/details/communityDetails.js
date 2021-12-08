@@ -774,7 +774,8 @@ class CommunityDetails extends React.Component{
             <div className="community-card center">
                 <div className="co-details">
                     <div className="cell-1">
-                    &emsp;Community:&emsp;<input type="text" placeholder=" Enter Community Name" className="inputV2" defaultValue={communityValues.community} onChange={handleChange('community')} />
+                    <label for="Community">&emsp;Community:&emsp;</label>
+                    <input type="text" placeholder=" Enter Community Name" id="Community" name="Community" className="inputV2" defaultValue={communityValues.community} onChange={handleChange('community')} />
                     </div><br/>
                     
                     <div className="grid-CommunityDetails">

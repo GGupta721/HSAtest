@@ -165,7 +165,7 @@ class Report extends Component {
         
         return(
             <div className="pageContent">
-                <h1>Exterior Details</h1>
+                <h3>Exterior Details</h3>
                 <table >
                     <tr>
                         <th style={{width:300}}>Safety</th>
@@ -218,7 +218,7 @@ class Report extends Component {
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>
                             
-                <h1>Interior Details</h1>
+                <h3>Interior Details</h3>
                 <table >
                     <tr>
                         <th style={{width:300}}>Safety</th>
@@ -271,6 +271,7 @@ class Report extends Component {
 			/>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>
+        <br/>
 
 
                 <button class="ui left labeled icon button previous blue" onClick={this.previous}>

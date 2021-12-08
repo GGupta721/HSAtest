@@ -23,11 +23,14 @@ class Exterior extends React.Component{
                         }
 
                         })
-                console.log(noRespArr);
+                // console.log(noRespArr);
+                // const temStr = 'sgr2332redb';
+                // console.log(temStr.match(/(\d+)/)[0]);
+
                 Object.entries(this.props.exteriorValues).map((ques) =>{
                         noRespArr.map((entry)=>{
-                                // console.log(entry)
-                                if (ques[0].includes(entry) && ques[0].includes("Comments")){
+                                // console.log(entry.match(/(\d+)/))
+                                if (ques[0].includes(entry) && ques[0].includes("Comments") && ques[0].match(/(\d+)/)[0] === entry.match(/(\d+)/)[0] ){
                                         if(ques[1].length < 1 || ques[1] === ''){
                                                 // console.log("bad!", ques)
                                                 noCommArr.push(entry);
@@ -141,7 +144,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q1Comments} onChange={handleChange('q1Comments')} ></textarea>
+                                                        <textarea className="CommentSetting"  placeholder=" Enter Comments.." defaultValue={exteriorValues.q1Comments} onChange={handleChange('q1Comments')} ></textarea>
                                                 </div><p/>
                                                 
                                                 
@@ -173,7 +176,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q2Comments} onChange={handleChange('q2Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={exteriorValues.q2Comments} onChange={handleChange('q2Comments')}></textarea>
                                                 </div><p/>
 
                                         </div>
@@ -200,7 +203,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q3Comments} onChange={handleChange('q3Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={exteriorValues.q3Comments} onChange={handleChange('q3Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="infoE grid-child">
@@ -223,7 +226,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q4Comments} onChange={handleChange('q4Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={exteriorValues.q4Comments} onChange={handleChange('q4Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="infoE grid-child">
@@ -247,7 +250,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder="Enter Comments.." defaultValue={exteriorValues.q5Comments} onChange={handleChange('q5Comments')}></textarea>
+                                                        <textarea className="CommentSetting"  placeholder="Enter Comments.." defaultValue={exteriorValues.q5Comments} onChange={handleChange('q5Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="infoE grid-child">
@@ -270,7 +273,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q6Comments} onChange={handleChange('q6Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={exteriorValues.q6Comments} onChange={handleChange('q6Comments')}></textarea>
                                                 </div><p/>
 
                                                 <div className="quesE">7. Are the exterior outlets GFCI outlets?</div>&emsp;    
@@ -284,7 +287,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q7Comments} onChange={handleChange('q7Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={exteriorValues.q7Comments} onChange={handleChange('q7Comments')}></textarea>
                                                 </div><p/>
                                                 {/* <div className="infoE grid-child">
                                                 <p>
@@ -303,7 +306,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q8Comments} onChange={handleChange('q8Comments')}></textarea>
+                                                        <textarea className="CommentSetting"  placeholder=" Enter Comments.." defaultValue={exteriorValues.q8Comments} onChange={handleChange('q8Comments')}></textarea>
                                                 </div><p/>
                                                 <div className="quesE">9. Does the outlet breaker work? </div>&emsp;    
                                                 <div className="radioOptions" onChange={handleChange('q9')}>   
@@ -314,7 +317,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q9Comments} onChange={handleChange('q9Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={exteriorValues.q9Comments} onChange={handleChange('q9Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="infoE grid-child">
@@ -335,7 +338,7 @@ class Exterior extends React.Component{
                                                 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={exteriorValues.q10Comments} onChange={handleChange('q10Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={exteriorValues.q10Comments} onChange={handleChange('q10Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="infobottomE grid-child">

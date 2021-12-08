@@ -37,8 +37,6 @@ class Acknowledge extends React.Component{
                     
                     
                         <div className="box3">
-                       
-                        
                             <h3 className="p2">Assessment Instructions</h3>
                             <div className="p3">
                                 A Home Safety Assessment identifies potential safety and security issues. In completing this form, ensure that all fields are completed accurately. If the response to any question is ‘No’ or “Not Applicable (N/A)”, please include additional details in the comment box.<br/>

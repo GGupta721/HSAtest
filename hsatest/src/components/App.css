@@ -32,7 +32,6 @@ textarea {
   background-color: #eee !important;
   color: rgb(0, 0, 0) !important;
   font-size: 18px !important;
-  width: 17cm;
 }
 
 select {
@@ -151,5 +150,22 @@ input[type="radio"] {
     background-color: #eee !important;
     color: black !important;
     width: 6cm;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  input[type="radio"] {
+    border: 0px;
+    width: 0.7em;
+    height: 0.8em;
+  }
+
+  .page-body {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(138, 191, 196, 0.2) !important;
+    font-size: 18px;
   }
 }

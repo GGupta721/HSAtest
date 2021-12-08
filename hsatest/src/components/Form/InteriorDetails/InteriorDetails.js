@@ -37,7 +37,7 @@ class InteriorDetails extends React.Component{
                 Object.entries(this.props.interiorValues).map((ques) =>{
                         noRespArr.map((entry)=>{
                                 // console.log(entry)
-                                if (ques[0].includes(entry) && ques[0].includes("Comments")){
+                                if (ques[0].includes(entry) && ques[0].includes("Comments") && ques[0].match(/(\d+)/)[0] === entry.match(/(\d+)/)[0] ){
                                         if(ques[1].length < 1 || ques[1] === ''){
                                                 // console.log("bad!", ques)
                                                 noCommArr.push(entry);
@@ -285,7 +285,7 @@ class InteriorDetails extends React.Component{
                                                 </div>      
                                                 <p/>
                                                 <div>      
-                                                        <textarea disabled={this.state.disabledSmoke} rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
+                                                        <textarea disabled={this.state.disabledSmoke} className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
                                                 </div><p/>
 
                                         </div>
@@ -319,7 +319,7 @@ class InteriorDetails extends React.Component{
                                                 </div>      
                                                 <p/>
                                                 <div>      
-                                                        <textarea rows="3" disabled={this.state.disabledCO} cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
+                                                        <textarea className="CommentSetting" disabled={this.state.disabledCO} placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -356,7 +356,7 @@ class InteriorDetails extends React.Component{
                                                 </div>      
                                                 <p/>
                                                 <div>        
-                                                        <textarea rows="3" cols="60" disabled={this.state.disabledSmokeCO} placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
+                                                        <textarea  className="CommentSetting" disabled={this.state.disabledSmokeCO} placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -379,7 +379,7 @@ class InteriorDetails extends React.Component{
                                                
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q23Comments} onChange={handleChange('q23Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q23Comments} onChange={handleChange('q23Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -403,7 +403,7 @@ class InteriorDetails extends React.Component{
                                                         <input type="radio" value="No" name="q24" defaultChecked={interiorValues.q24 === "No"} onClick={this.lifeNotify}  onClick={LifeSafetyChange}/> No &emsp;
                                                 </div><p/>
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q24Comments} onChange={handleChange('q24Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q24Comments} onChange={handleChange('q24Comments')}></textarea>
                                                 </div><p/>
 
                                                 <div className="ques">25. Are all windows clear
@@ -414,7 +414,7 @@ class InteriorDetails extends React.Component{
                                                         <input type="radio" value="N/A" name="q25" defaultChecked={interiorValues.q25 === "N/A"} onClick={this.lifeNotify}/> N/A
                                                 </div><br/>
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q25Comments} onChange={handleChange('q25Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q25Comments} onChange={handleChange('q25Comments')}></textarea>
                                                 </div><p/>
                                                 </div>
 
@@ -441,7 +441,7 @@ class InteriorDetails extends React.Component{
                                                 </div><p/>
 
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q26Comments} onChange={handleChange('q26Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q26Comments} onChange={handleChange('q26Comments')}></textarea>
                                                 </div><p/>
 
                                                 <div className="ques">27. If No, What environmental issue does the home have?
@@ -456,7 +456,7 @@ class InteriorDetails extends React.Component{
 
                                                 <div className="ques">28. If others enter location in the comment box:</div><p/>
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." disabled={this.state.disabledq27} defaultValue={interiorValues.q28Comments} onChange={handleChange('q28Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." disabled={this.state.disabledq27} defaultValue={interiorValues.q28Comments} onChange={handleChange('q28Comments')}></textarea>
                                                 </div><p/>
    
                                                 <p/>
@@ -470,7 +470,7 @@ class InteriorDetails extends React.Component{
                                                 </div><p/>
                                                 <div className="ques">30. If others enter location in the comment box:</div><p/>
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." disabled={this.state.disabledq30} defaultValue={interiorValues.q30Comments} onChange={handleChange('q30Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." disabled={this.state.disabledq30} defaultValue={interiorValues.q30Comments} onChange={handleChange('q30Comments')}></textarea>
                                                 </div><p/>
                                                
                                                 <div className="ques">
@@ -501,7 +501,7 @@ class InteriorDetails extends React.Component{
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q32Comments} onChange={handleChange('q32Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q32Comments} onChange={handleChange('q32Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -525,7 +525,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q33Comments} onChange={handleChange('q33Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q33Comments} onChange={handleChange('q33Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -549,7 +549,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q34Comments} onChange={handleChange('q34Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q34Comments} onChange={handleChange('q34Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -570,7 +570,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q35Comments} onChange={handleChange('q35Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q35Comments} onChange={handleChange('q35Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -593,7 +593,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q36Comments} onChange={handleChange('q36Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q36Comments} onChange={handleChange('q36Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -616,7 +616,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q37Comments} onChange={handleChange('q37Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q37Comments} onChange={handleChange('q37Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -641,7 +641,7 @@ class InteriorDetails extends React.Component{
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q38Comments} onChange={handleChange('q38Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q38Comments} onChange={handleChange('q38Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -665,7 +665,7 @@ class InteriorDetails extends React.Component{
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q39Comments} onChange={handleChange('q39Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q39Comments} onChange={handleChange('q39Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -690,7 +690,7 @@ class InteriorDetails extends React.Component{
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q40Comments} onChange={handleChange('q40Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q40Comments} onChange={handleChange('q40Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -715,7 +715,7 @@ class InteriorDetails extends React.Component{
                                                 </div> 
                                                 <p/>       
                                                 <div>       
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q41Comments} onChange={handleChange('q41Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q41Comments} onChange={handleChange('q41Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -738,7 +738,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q42Comments} onChange={handleChange('q42Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q42Comments} onChange={handleChange('q42Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -761,7 +761,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q43Comments} onChange={handleChange('q43Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q43Comments} onChange={handleChange('q43Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -784,7 +784,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q44Comments} onChange={handleChange('q44Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q44Comments} onChange={handleChange('q44Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -807,7 +807,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q45Comments} onChange={handleChange('q45Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q45Comments} onChange={handleChange('q45Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -831,7 +831,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q46Comments} onChange={handleChange('q46Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q46Comments} onChange={handleChange('q46Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -855,7 +855,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q47Comments} onChange={handleChange('q47Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q47Comments} onChange={handleChange('q47Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -878,7 +878,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q48Comments} onChange={handleChange('q48Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q48Comments} onChange={handleChange('q48Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -904,7 +904,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q49Comments} onChange={handleChange('q49Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q49Comments} onChange={handleChange('q49Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -924,7 +924,7 @@ class InteriorDetails extends React.Component{
                                                 </div>
                                                 <p/>      
                                                 <div>      
-                                                        <textarea rows="3" cols="60" placeholder=" Enter Comments.." defaultValue={interiorValues.q50Comments} onChange={handleChange('q50Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q50Comments} onChange={handleChange('q50Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="infobottom grid-child">

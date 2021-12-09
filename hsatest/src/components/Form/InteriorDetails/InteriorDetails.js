@@ -2,6 +2,7 @@
 import React from "react"
 import "./InteriorDetails.css"
 import { toast } from 'react-toastify';
+import NumberFormat from 'react-number-format';
 
 class InteriorDetails extends React.Component{
 
@@ -11,17 +12,18 @@ class InteriorDetails extends React.Component{
                 disabledq28:true,
                 AllowContinue : true,
                 emptyFlag: false,
+                
 
-                disabledSmoke: false,
-                disabledCO:false,
-                disabledSmokeCO: false,
-                AllowContinue : true
+                disabledSmoke: true,
+                disabledCO:true,
+                disabledSmokeCO: true,
 
         }
 
         authenticateResponses = () => {
                 const noRespArr = [];
                 const noCommArr = [];
+                const emptyRespArr = [];
                 this.setState({AllowContinue: true});
                 this.setState({emptyFlag: false});
 
@@ -48,13 +50,72 @@ class InteriorDetails extends React.Component{
                 })
 
                 Object.entries(this.props.interiorValues).map((inputField) =>{
+                        let flag = false;
                         
-                        if (inputField[0].includes("q") && !inputField[0].includes("Comments") ){
-                        // console.log(inputField);
-                            if(inputField[1].length < 1 || inputField[1] === '' ){
-                                this.setState({AllowContinue: false});
-                                this.setState({emptyFlag: true});
-                            }
+                        const inputName = inputField[0];
+                        const inputValue = inputField[1];
+
+                        if (inputName.includes("q") && !inputName.includes("Comments")){
+                                
+                                if(inputName==="q12" || inputName==="q13" || inputName==="q14"){
+                                        flag = true;
+                                        if(!this.state.disabledSmoke){
+                                                
+                                                if(inputValue.length < 1 || inputValue === '' ){
+                                                        this.setState({AllowContinue: false});
+                                                        this.setState({emptyFlag: true});
+                                                        emptyRespArr.push(inputName);
+                                                }
+                                        }
+
+
+                                }
+                                if(inputName==="q16" || inputName==="q17" || inputName==="q18"){
+                                        flag = true;
+                                        if(!this.state.disabledCO){
+                                                if(inputValue.length < 1 || inputValue === '' ){
+                                                        this.setState({AllowContinue: false});
+                                                        this.setState({emptyFlag: true});
+                                                        emptyRespArr.push(inputName);
+                                                }
+                                        }
+                                        
+
+                                }
+                                if( inputName ==="q20" || inputName ==="q21" || inputName ==="q22"){
+                                        flag = true;
+                                        if(!this.state.disabledSmokeCO){
+                                                if(inputValue.length < 1 || inputValue === '' ){
+                                                        this.setState({AllowContinue: false});
+                                                        this.setState({emptyFlag: true});
+                                                        emptyRespArr.push(inputName);
+                                                }
+                                        }
+     
+                                }
+
+                                // if(inputName ==="q31Name" ||  inputName ==="q31PhoneNum"){
+                                //         flag = true;
+                                //         if(!this.state.disabled){
+                                //                 if(inputValue.length < 1 ||inputValue === '' ){
+                                //                         this.setState({AllowContinue: false});
+                                //                         this.setState({emptyFlag: true});
+                                //                         emptyRespArr.push(inputName);
+                                //                 }
+                                //         }
+     
+                                // }
+
+                                if(!flag){
+                                        if(inputValue.length < 1 || inputValue === '' ){
+                                                this.setState({AllowContinue: false});
+                                                this.setState({emptyFlag: true});
+                                                emptyRespArr.push(inputName);
+                                        }
+
+                                }
+                        
+                                
                         }
         
         
@@ -64,7 +125,13 @@ class InteriorDetails extends React.Component{
                         this.valdateQues(entry.slice(1))
 
                 })
-                // return true;
+
+                emptyRespArr.map((entry)=>{
+                        // this.valdateEmptyInput(entry.match(/(\d+)/)[0])
+                        this.valdateEmptyInput(entry.slice(1))
+
+                })
+                
 
 
         }
@@ -77,10 +144,11 @@ class InteriorDetails extends React.Component{
                 });
         }
 
-        valdateEmptyInput = () => {
+        valdateEmptyInput = (quesNum) => {
 
-                toast.error(`Please provide an input for all the questions before proceeding`, {
+                toast.error(`Please provide an input for Question ${quesNum} before proceeding`, {
                         position: toast.POSITION.TOP_CENTER,
+                        autoClose: false
                 });
         }
 
@@ -94,9 +162,7 @@ class InteriorDetails extends React.Component{
                         this.props.submitHandler();
 
                 }
-                else if(this.state.emptyFlag){
-                        this.valdateEmptyInput();
-                }
+                
         }
        
         HomeNotify =(e)=> {
@@ -185,7 +251,7 @@ class InteriorDetails extends React.Component{
                 toast.warn(`You selected ${e.target.value},
                 please provide number of detectors and their expiry date`, {
                         position: toast.POSITION.TOP_CENTER,
-                        autoClose: false
+                        autoClose: 5000
                 });
         }
 
@@ -250,7 +316,7 @@ class InteriorDetails extends React.Component{
                 toast.warn(`You selected ${e.target.value},
                 please provide comments`, {
                         position: toast.POSITION.TOP_CENTER,
-                        autoClose: false
+                        autoClose: 5000
                 });
         }
 
@@ -322,6 +388,7 @@ class InteriorDetails extends React.Component{
                                                         <textarea className="CommentSetting" disabled={this.state.disabledCO} placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
                                                 </div><p/>
                                         </div>
+
                                         <div className="info grid-child">
                                                 <p>
                                                         <b>Consideration:</b> Carbon monoxide detectors alert the occupants in the house of the danger of a fire or elevated carbon monoxide levels.<br/><br/>
@@ -475,8 +542,10 @@ class InteriorDetails extends React.Component{
                                                
                                                 <div className="ques">
                                                 31. If No, Environmental Health Officer (EHO) / Remediation Contact advised?</div>&emsp;  
-                                                Full Name:&emsp;&emsp;&emsp; <input type="text" disabled={this.state.disabled} placeholder="First Name, Last Name" defaultValue={interiorValues.q31Name} onChange={handleChange('q31Name')}/>&emsp;<br/><br/>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number:&emsp; <input type="number" disabled={this.state.disabled} placeholder="Enter Number" defaultValue={interiorValues.q31PhoneNum} onChange={handleChange('q31PhoneNum')}/><p/>
+                                                Full Name:&emsp;&emsp;&emsp;<input type="text"  placeholder="First Name, Last Name" defaultValue={interiorValues.q31Name} onChange={handleChange('q31Name')}/>&emsp;<br/><br/>
+                                                {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number:&emsp;<input type="tel"  placeholder="Enter Number" defaultValue={interiorValues.q31PhoneNum} onChange={handleChange('q31PhoneNum')}/><br/><br/> */}
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number:&emsp;<NumberFormat format="+1 (###) ###-####" allowEmptyFormatting mask="_" defaultValue={interiorValues.q31PhoneNum} onChange={handleChange('q31PhoneNum')}/>
+                                                <p/>
                                                
                                         </div>
                                         <div className="info grid-child">

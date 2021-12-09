@@ -27,7 +27,7 @@ class Form extends Component {
         // const data = JSON.stringify(this.state);
         const data = 
         {
-            'emailID':'199990',
+            'emailID':this.state.firstName+" "+this.state.lastName,
             'AccessorFirstName':this.state.AccessorFirstName,
             'AccessorLastName':this.state.AccessorLastName,
             'AccessorDate':this.state.AccessorDate,
@@ -246,18 +246,18 @@ class Form extends Component {
         q25Comments:'',
         q26: '',
         q26Comments:'',
-        q27a: 'No',
-        q27b: 'No',
-        q27c: 'No',
-        q27d: 'No',
+        q27a: 'Null',
+        q27b: 'Null',
+        q27c: 'Null',
+        q27d: 'Null',
         
         // q28: '',
         q28Comments:'',
-        q29a: 'No',
-        q29b: 'No',
-        q29c: 'No',
-        q29d: 'No',
-        q29e: 'No',
+        q29a: 'Null',
+        q29b: 'Null',
+        q29c: 'Null',
+        q29d: 'Null',
+        q29e: 'Null',
 
         // q30: '',
         q30Comments:'',

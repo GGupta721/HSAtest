@@ -124,22 +124,22 @@ class OccupantDetails extends React.Component{
                         <div className="grid-AddressDetails">
                             <div className="cell-1">
                                 <label for="Address">Address:&emsp;</label>
-                                <input type="text" id="Address" name="Address" placeholder=" Enter Unit Number" defaultValue={occupantValues.unitNum} onChange={handleChange('unitNum')}/>
+                                <input type="text" id="Address" name="Address" autoComplete="No" placeholder=" Enter Unit Number" defaultValue={occupantValues.unitNum} onChange={handleChange('unitNum')}/>
 
                             </div>
                             <div className="cell-1">
                                 <label for="Province/Territory">Province/Territory:&emsp;</label>
-                                <input type="text" id="Province/Territory" name="Province/Territory" placeholder=" Enter Province/Territory" defaultValue={occupantValues.province} onChange={handleChange('province')}/>
+                                <input type="text" id="Province/Territory" name="Province/Territory" autoComplete="No" placeholder=" Enter Province/Territory" defaultValue={occupantValues.province} onChange={handleChange('province')}/>
 
                             </div>
                             <div className="cell-9">
                                 <label for="City">City:&emsp;</label>
-                               <input type="text" id="City" name="City" placeholder=" Enter Street" defaultValue={occupantValues.street} onChange={handleChange('street')}/><p/> 
+                               <input type="text" id="City" name="City" placeholder=" Enter Street" autoComplete="No" defaultValue={occupantValues.street} onChange={handleChange('street')}/><p/> 
 
                             </div> 
                             <div className="cell-2">
                                 <label for="Postal Code">Postal Code:&emsp;</label>
-                                <input type="text" id="Postal Code" name="Postal Code" placeholder=" Enter Postal Code" defaultValue={occupantValues.postalCode} onChange={handleChange('postalCode')}/>
+                                <input type="text" id="Postal Code" name="Postal Code" placeholder=" Enter Postal Code" autoComplete="No" defaultValue={occupantValues.postalCode} onChange={handleChange('postalCode')}/>
                             </div>
                             
                         </div>

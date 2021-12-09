@@ -12,6 +12,7 @@ class Exterior extends React.Component{
         authenticateResponses = () => {
                 const noRespArr = [];
                 const noCommArr = [];
+                const emptyRespArr = [];
                 this.setState({AllowContinue: true});
                 this.setState({emptyFlag: false});
                
@@ -46,6 +47,7 @@ class Exterior extends React.Component{
                             if(inputField[1].length < 1 || inputField[1] === '' ){
                                 this.setState({AllowContinue: false});
                                 this.setState({emptyFlag: true});
+                                emptyRespArr.push(inputField[0]);
                             }
                         }
         
@@ -54,6 +56,12 @@ class Exterior extends React.Component{
                 
                 noCommArr.map((entry)=>{
                         this.valdateQues(entry.slice(1))
+
+                })
+
+                emptyRespArr.map((entry)=>{
+                        // this.valdateEmptyInput(entry.match(/(\d+)/)[0])
+                        this.valdateEmptyInput(entry.slice(1))
 
                 })
                 // return true;
@@ -104,7 +112,7 @@ class Exterior extends React.Component{
                 toast.warn(`You selected ${e.target.value},
                 please provide comments`, {
                         position: toast.POSITION.TOP_CENTER,
-                        autoClose: false
+                        autoClose: 5000
                 });
         }
 
@@ -116,10 +124,11 @@ class Exterior extends React.Component{
                 });
         }
 
-        valdateEmptyInput = () => {
+        valdateEmptyInput = (quesNum) => {
 
-                toast.error(`Please provide an input for all the questions before proceeding`, {
+                toast.error(`Please provide an input for Question ${quesNum} before proceeding`, {
                         position: toast.POSITION.TOP_CENTER,
+                        autoClose: false
                 });
         }
 
@@ -244,7 +253,7 @@ class Exterior extends React.Component{
                                                 <div className="radioOptions" onChange={handleChange('q5')}>   
                                                         <input type="radio" value="Yes" name="q5" defaultChecked={exteriorValues.q5 === "Yes"} onClick={InjurySafetyChange}/> Yes &emsp;
                                                         <input type="radio" value="No"  name="q5" defaultChecked={exteriorValues.q5 === "No"} onClick={this.injuryNotify}/> No &emsp;
-                                                        <input type="radio" value="No"  name="q5" defaultChecked={exteriorValues.q5 === "N/A"} onClick={this.injuryNotify}/> No &emsp;
+                                                        <input type="radio" value="No"  name="q5" defaultChecked={exteriorValues.q5 === "N/A"} onClick={this.injuryNotify}/> N/A &emsp;
 
                                                 </div> 
                                                 

@@ -70,6 +70,7 @@ class InteriorDetails extends React.Component{
 
 
                                 }
+
                                 if(inputName==="q16" || inputName==="q17" || inputName==="q18"){
                                         flag = true;
                                         if(!this.state.disabledCO){
@@ -94,17 +95,21 @@ class InteriorDetails extends React.Component{
      
                                 }
 
-                                // if(inputName ==="q31Name" ||  inputName ==="q31PhoneNum"){
-                                //         flag = true;
-                                //         if(!this.state.disabled){
-                                //                 if(inputValue.length < 1 ||inputValue === '' ){
-                                //                         this.setState({AllowContinue: false});
-                                //                         this.setState({emptyFlag: true});
-                                //                         emptyRespArr.push(inputName);
-                                //                 }
-                                //         }
+                                if(inputName === "q31PhoneNumExtension"){
+                                        flag = true;                                        
+                                }
+
+                                if(inputName ==="q26" || inputName.includes("q27") || inputName.includes("q29") || inputName ==="q31Name" ||  inputName ==="q31PhoneNum"){
+                                        flag = true;
+                                        if(!this.state.disabled){
+                                                if(inputValue.length < 1 ||inputValue === '' ){
+                                                        this.setState({AllowContinue: false});
+                                                        this.setState({emptyFlag: true});
+                                                        emptyRespArr.push(inputName);
+                                                }
+                                        }
      
-                                // }
+                                }
 
                                 if(!flag){
                                         if(inputValue.length < 1 || inputValue === '' ){
@@ -120,6 +125,7 @@ class InteriorDetails extends React.Component{
         
         
                 })
+
 
                 noCommArr.map((entry)=>{
                         this.valdateQues(entry.slice(1))
@@ -537,14 +543,16 @@ class InteriorDetails extends React.Component{
                                                 </div><p/>
                                                 <div className="ques">30. If others enter location in the comment box:</div><p/>
                                                 <div>      
-                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." disabled={this.state.disabledq30} defaultValue={interiorValues.q30Comments} onChange={handleChange('q30Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." disabled={this.state.disabledq28} defaultValue={interiorValues.q30Comments} onChange={handleChange('q30Comments')}></textarea>
                                                 </div><p/>
                                                
                                                 <div className="ques">
-                                                31. If No, Environmental Health Officer (EHO) / Remediation Contact advised?</div>&emsp;  
-                                                Full Name:&emsp;&emsp;&emsp;<input type="text"  placeholder="First Name, Last Name" defaultValue={interiorValues.q31Name} onChange={handleChange('q31Name')}/>&emsp;<br/><br/>
+                                                31. If No, Environmental Health Officer (EHO) / Remediation Contact advised?</div><br/>
+                                                &emsp; Full Name:&emsp;&emsp;&emsp;<input type="text"  placeholder="First Name, Last Name" defaultValue={interiorValues.q31Name} onChange={handleChange('q31Name')}/>&emsp;<br/><br/>
                                                 {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number:&emsp;<input type="tel"  placeholder="Enter Number" defaultValue={interiorValues.q31PhoneNum} onChange={handleChange('q31PhoneNum')}/><br/><br/> */}
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number:&emsp;<NumberFormat format="+1 (###) ###-####" allowEmptyFormatting mask="_" defaultValue={interiorValues.q31PhoneNum} onChange={handleChange('q31PhoneNum')}/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number:&emsp;<NumberFormat className="inputV4" format="+1 (###) ###-####" allowEmptyFormatting mask="_" defaultValue={interiorValues.q31PhoneNum} onChange={handleChange('q31PhoneNum')}/>
+                                                &nbsp;&nbsp;Extension:&nbsp;<NumberFormat className="inputV5" maxLength="8" placeholder=" Optional" defaultValue={interiorValues.q31PhoneNumExtension} onChange={handleChange('q31PhoneNumExtension')}/>
+
                                                 <p/>
                                                
                                         </div>

@@ -53,7 +53,7 @@ class Exterior extends React.Component{
         
         
                 })
-                
+                console.log(emptyRespArr)
                 noCommArr.map((entry)=>{
                         this.valdateQues(entry.slice(1))
 
@@ -61,6 +61,7 @@ class Exterior extends React.Component{
 
                 emptyRespArr.map((entry)=>{
                         // this.valdateEmptyInput(entry.match(/(\d+)/)[0])
+
                         this.valdateEmptyInput(entry.slice(1))
 
                 })
@@ -75,9 +76,6 @@ class Exterior extends React.Component{
                         // console.log('once')
                         eve.preventDefault();
                         this.props.nextPage();
-                }
-                else if(this.state.emptyFlag){
-                        this.valdateEmptyInput();
                 }
         }
    
@@ -306,7 +304,7 @@ class Exterior extends React.Component{
                                                 </p>
 
                                                 </div> */}
-                                                <div className="quesE">8. Is there proper current flow to the outlets?</div>&emsp;    
+                                                <div className="quesE">8. Are all the outlets working?</div>&emsp;    
                                                 <div className="radioOptions" onChange={handleChange('q8')}>   
                                                         <input type="radio" value="Yes" name="q8" defaultChecked={exteriorValues.q8 === "Yes"} onClick={InjurySafetyChange}/> Yes &emsp;
                                                         <input type="radio" value="No"  name="q8" defaultChecked={exteriorValues.q8 === "No"} onClick={this.injuryNotify}/> No &emsp;
@@ -317,7 +315,7 @@ class Exterior extends React.Component{
                                                 <div>       
                                                         <textarea className="CommentSetting"  placeholder=" Enter Comments.." defaultValue={exteriorValues.q8Comments} onChange={handleChange('q8Comments')}></textarea>
                                                 </div><p/>
-                                                <div className="quesE">9. Does the outlet breaker work? </div>&emsp;    
+                                                <div className="quesE">9. Do all the electrical breakers work? </div>&emsp;    
                                                 <div className="radioOptions" onChange={handleChange('q9')}>   
                                                         <input type="radio" value="Yes" name="q9" defaultChecked={exteriorValues.q9 === "Yes"} onClick={LifeSafetyChange}/> Yes &emsp;
                                                         <input type="radio" value="No" name="q9" defaultChecked={exteriorValues.q9 === "No"} onClick={this.lifeNotify}/> No &emsp;

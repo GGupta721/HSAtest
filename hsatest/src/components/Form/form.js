@@ -27,7 +27,7 @@ class Form extends Component {
         // const data = JSON.stringify(this.state);
         const data = 
         {
-            'emailID':this.state.firstName+" "+this.state.lastName,
+            'emailID':this.state.AccessorFirstName+" "+this.state.AccessorLastName,
             'AccessorFirstName':this.state.AccessorFirstName,
             'AccessorLastName':this.state.AccessorLastName,
             'AccessorDate':this.state.AccessorDate,
@@ -108,6 +108,7 @@ class Form extends Component {
 
             'q31Name':this.state.q31Name,
             'q31PhoneNum':this.state.q31PhoneNum,
+            'q31PhoneNumExtension':this.state.q31PhoneNumExtension,
             
             'q32':this.state.q32,
             'q32Comments':this.state.q32Comments,
@@ -264,6 +265,7 @@ class Form extends Component {
 
         q31Name:'',
         q31PhoneNum: '',
+        q31PhoneNumExtension:'',
         
         q32: '',
         q32Comments:'',
@@ -1206,14 +1208,14 @@ InjurySafetyChange=(e)=>{
         const { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode, province} = this.state;
         const { community, bandNum} = this.state;
         const {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments,ExteriorHomeSafety,ExteriorInjurySafety,ExteriorLifeSafety} = this.state;
-        const {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27a, q27b, q27c, q27d, q28Comments, q29a, q29b, q29c, q29d, q30Comments, q31Name, q31PhoneNum, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments,
+        const {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27a, q27b, q27c, q27d, q28Comments, q29a, q29b, q29c, q29d, q30Comments, q31Name, q31PhoneNum, q31PhoneNumExtension, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments,
             InteriorHomeSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,Counter24,Counter25,Counter26,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49} = this.state;
         
         const AccessorValues = { Acknowledgement, AccessorFirstName, AccessorLastName, AccessorDate};
         const occupantValues = { firstName, lastName, numOccupants, numBedrooms, numFloors, approxSF, houseType, street, unitNum, postalCode, province};
         const communityValues = {community, bandNum};
         const exteriorValues = {q1, q1Comments, q2, q2Comments, q3, q3Comments, q4, q4Comments, q5, q5Comments, q6, q6Comments, q7, q7Comments, q8, q8Comments, q9, q9Comments, q10, q10Comments,ExteriorHomeSafety,ExteriorInjurySafety,ExteriorLifeSafety};
-        const interiorValues = {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27a, q27b, q27c, q27d, q28Comments, q29a, q29b, q29c, q29d, q30Comments, q31Name, q31PhoneNum, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments,
+        const interiorValues = {q11, q12, q13, q14, q14Comments, q15, q16, q17, q18, q18Comments, q19, q20, q21, q22, q22Comments, q23, q23Comments, q24, q24Comments, q25, q25Comments, q26, q26Comments, q27a, q27b, q27c, q27d, q28Comments, q29a, q29b, q29c, q29d, q30Comments, q31Name, q31PhoneNum, q31PhoneNumExtension, q32, q32Comments, q33, q33Comments, q34, q34Comments, q35, q35Comments, q36, q36Comments, q37, q37Comments, q38, q38Comments, q39, q39Comments, q40, q40Comments, q41, q41Comments, q42, q42Comments, q43, q43Comments, q44, q44Comments, q45, q45Comments, q46, q46Comments, q47, q47Comments, q48, q48Comments, q49, q49Comments, q50, q50Comments,
             InteriorHomeSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,Counter24,Counter25,Counter26,Counter32,Counter33,Counter34,Counter36,Counter37,Counter38,Counter39,Counter40,Counter41,Counter42,Counter43,Counter44,Counter45, Counter46,Counter47,Counter48,  Counter49};
         const reportValues ={ InteriorHomeSafety,InteriorLifeSafety,InteriorHealthSafety,InteriorInjurySafety,ExteriorHomeSafety,ExteriorInjurySafety,ExteriorLifeSafety};
 

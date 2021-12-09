@@ -775,13 +775,13 @@ class CommunityDetails extends React.Component{
                 <div className="co-details">
                     <div className="cell-1">
                     <label for="Community">&emsp;Community:&emsp;</label>
-                    <input type="text" placeholder=" Enter Community Name" id="Community" name="Community" className="inputV2" defaultValue={communityValues.community} onChange={handleChange('community')} />
+                    <input type="text" placeholder=" Enter Community Name" id="Community" name="Community" autoComplete="No" className="inputV2" defaultValue={communityValues.community} onChange={handleChange('community')} />
                     </div><br/>
                     
                     <div className="grid-CommunityDetails">
                         <div className="search_select_box">
                         <div className="cell-7">
-                           <label> Band Number:&emsp;<input list="browsers" name="myBrowser" maxLength="3" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler}/> </label> <datalist id= "browsers" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler} data-live-search="true" data-live-search-style="startsWith" class="selectpicker">
+                           <label> Band Number:&emsp;<input list="browsers" name="myBrowser" maxLength="3" autoComplete="No" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler}/> </label> <datalist id= "browsers" placeholder=" Enter Band Number" defaultValue={communityValues.bandNum} onChange={this.bandNumInputHandler} data-live-search="true" data-live-search-style="startsWith" class="selectpicker">
                                 {this.state.BandNumList.map(lst => (
                                     <option key={lst}>{lst}</option>
                                 ))}                              

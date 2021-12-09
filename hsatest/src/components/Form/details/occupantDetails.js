@@ -59,7 +59,9 @@ class OccupantDetails extends React.Component{
                 if( this.state.AcknowledgeFalse===false){
                     this.valdateAcknowledgement();
                 }
-                this.valdateQues("");
+                else{
+                    this.valdateQues("");
+                }
 
             }
             // else if(){
@@ -113,7 +115,7 @@ class OccupantDetails extends React.Component{
                             <select type="dropdown" id="HouseType" name="HouseType" defaultValue={occupantValues.houseType} onChange={handleChange('houseType')}>
                                 <option value="Owned">Private Owned</option>
                                 <option value="Rented">Rental</option>
-                                <option value="Band Housing">Social House</option>
+                                <option value="Band Housing">Band Housing</option>
                             </select><br/> 
                             
                         </div>

@@ -352,7 +352,7 @@ class Exterior extends React.Component{
                                                 <p>
                                                         <b>Consideration:</b> In an emergency, if any of the exits are blocked 
                                                         there is a chance occupants may not be able to escape.<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend obstructions be removed and doors fixed as required so they work properly.
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend obstructions be removed, and doors fixed as required so they work properly.
                                                 </p>
 
                                         </div>  

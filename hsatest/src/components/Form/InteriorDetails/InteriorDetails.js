@@ -344,6 +344,9 @@ class InteriorDetails extends React.Component{
                                                         <input type="radio" value="No" name="q11" defaultChecked={interiorValues.q11 === "No"} onClick={this.alternateSmokeDetectors}/> No &emsp;
                                                 </div>
                                                 <br/>
+                                                <div>      
+                                                        <textarea  className="CommentSetting"  placeholder=" Enter Comments.." defaultValue={interiorValues.q11Comments} onChange={handleChange('q11Comments')}></textarea>
+                                                </div><p/>
                                                 <div className="ques">12. How many smoke detectors on site?<p/>
                                                 <input type="number" min="0" disabled={this.state.disabledSmoke} placeholder= " Number of Smoke Detectors" step="1" defaultValue={interiorValues.q12} onChange={handleChange('q12')}/>
                                                 </div><p/>
@@ -357,7 +360,7 @@ class InteriorDetails extends React.Component{
                                                 </div>      
                                                 <p/>
                                                 <div>      
-                                                        <textarea  className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
+                                                        <textarea  className="CommentSetting" disabled={this.state.disabledSmoke} placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
                                                 </div><p/>
 
                                         </div>
@@ -377,6 +380,9 @@ class InteriorDetails extends React.Component{
                                                         <input type="radio" value="Yes" name="q15" checked={interiorValues.q15 === "Yes"}  onClick={this.alternateCODetectors}/> Yes &emsp;
                                                         <input type="radio" value="No" name="q15" checked={interiorValues.q15=== "No"} onClick={this.alternateCODetectors}/> No &emsp;
                                                 </div><p/>
+                                                <div>      
+                                                        <textarea  className="CommentSetting"  placeholder=" Enter Comments.." defaultValue={interiorValues.q15Comments} onChange={handleChange('q15Comments')}></textarea>
+                                                </div><p/>
                                                 <div className="ques">16. How many CO detectors are on site?<p/>
                                                 <input type="number" disabled={this.state.disabledCO} min="0" placeholder= " Number of Co Detectors" step="1" defaultValue={interiorValues.q16} onChange={handleChange('q16')}/>
                                                 </div><p/>
@@ -391,7 +397,7 @@ class InteriorDetails extends React.Component{
                                                 </div>      
                                                 <p/>
                                                 <div>      
-                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
+                                                        <textarea className="CommentSetting" disabled={this.state.disabledCO} placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
                                                 </div><p/>
                                         </div>
 
@@ -413,7 +419,9 @@ class InteriorDetails extends React.Component{
                                                         <input type="radio" value="No" name="q19" checked={interiorValues.q19 === "No"} onClick={this.alternateSmokeCODetectors}/> No &emsp;
                                                 </div>
                                                 <br/>
-                     
+                                                <div>      
+                                                        <textarea  className="CommentSetting"  placeholder=" Enter Comments.." defaultValue={interiorValues.q19Comments} onChange={handleChange('q19Comments')}></textarea>
+                                                </div><p/>
                                                 <p/>
                                                 <div className="ques">20. How many Smoke/CO detectors are on site?<p/>
                                                 <input type="number" min="0" disabled={this.state.disabledSmokeCO} placeholder= " Number of Smoke/Co Detectors" step="1" defaultValue={interiorValues.q20} onChange={handleChange('q20')}/>
@@ -429,7 +437,7 @@ class InteriorDetails extends React.Component{
                                                 </div>      
                                                 <p/>
                                                 <div>        
-                                                        <textarea  className="CommentSetting"  placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
+                                                        <textarea  className="CommentSetting"  disabled={this.state.disabledSmokeCO} placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -496,7 +504,7 @@ class InteriorDetails extends React.Component{
                                                        
                                                         <b>Consideration:</b>  Doors/windows must be clear of obstructions to facilitate
                                                         rapid evacuation from a home.<br/><br/>
-                                                        <b>Recommendation:</b> keep the doors/windows free of objects in case
+                                                        <b>Recommendation:</b> Keep the doors/windows free of objects in case
                                                         there is a need to exit in an emergency situation.<br/><br/>
 
                                                      
@@ -584,7 +592,7 @@ class InteriorDetails extends React.Component{
                                         <div className="info grid-child">
                                                 <p>
                                                         <b>Consideration:</b> : Obstructions on the stairs can be a trip hazard, and can make it hard for people to escape the building safely
-                                                        and/or for responders to get in to provide help. Unsecured steps and/ or handrails could cause someone to fall or become injured.<br/><br/>
+                                                        and/or for responders to get in to provide help. Unsecured steps and/or handrails could cause someone to fall or become injured.<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend removing obstructions so that stairs are clear in case of an emergency.
                                                         Repair steps and handrails as required.
                                                 </p>
@@ -698,7 +706,7 @@ class InteriorDetails extends React.Component{
                                         </div>
                                         <div className="info grid-child">
                                                 <p>
-                                                        <b>Consideration:</b>: Light switch and outlet covers are there to prevent any possible shock hazards.
+                                                        <b>Consideration:</b> Light switch and outlet covers are there to prevent any possible shock hazards.
                                                         If the covers are discoloured, this is a sign that there may be a problem with the electrical current flow<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend any damaged covers be replaced.
 
@@ -916,7 +924,7 @@ class InteriorDetails extends React.Component{
                                                         <b>Consideration:</b> It is important not to put the detector too close to the fireplace or woodstove because quite often smoke is released in the home while the
                                                         wood stove or fireplace is being lit or refuelled.
                                                         If the detector is too close, it will set off a false alarm .<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend a smoke/CO detector be installed (or moved) a minimum of 20 feet from the wood stove or fireplace.
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend a Smoke/CO detector be installed (or moved to) a minimum of 20 feet from the wood stove or fireplace.
                                                 </p>
 
                                         </div>  
@@ -962,7 +970,7 @@ class InteriorDetails extends React.Component{
                                                 <p>
                                                         <b>Consideration:</b> A safety plan will let everyone in the home know how to escape and get to a safe meeting location.
                                                         This will also be very helpful when responders arrive if anyone is missing.<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend occupants to create, modify and review a plan that consists of: <br/>
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend occupants to create, modify, and review a plan that consists of: <br/>
                                                         • all escape routes using doors and windows.<br/>
                                                         • a determined meeting place.<br/>
                                                         • do these escape routes work, during all seasons?<br/>

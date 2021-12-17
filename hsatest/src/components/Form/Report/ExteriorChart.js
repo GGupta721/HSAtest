@@ -25,10 +25,10 @@ class ExteriorChart extends Component {
 
      
     }
-    previous = (eve) => {
-        eve.preventDefault();
-        this.props.prevPage();
-    }
+    // previous = (eve) => {
+    //     eve.preventDefault();
+    //     this.props.prevPage();
+    // }
 
     continue = async (eve) => {
         eve.preventDefault();
@@ -164,10 +164,10 @@ class ExteriorChart extends Component {
                 
 			
 
-                <button class="ui left labeled icon button previous blue" onClick={this.previous}>
+                {/* <button class="ui left labeled icon button previous blue" onClick={this.previous}>
                     <i class="left arrow icon"></i>
                     Previous
-                </button>
+                </button> */}
 
                 <button class="ui right labeled icon button next blue" onClick={this.continue} >
                         <i class="right arrow icon"></i>

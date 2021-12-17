@@ -110,7 +110,7 @@ class OccupantDetails extends React.Component{
                             <label for="OccupantLastName">Occupant's Last Name:&emsp;</label>
                             <input type="text" id="OccupantLastName" name="OccupantLastName" placeholder= " Enter Last Name" className="inputV3" defaultValue={occupantValues.lastName} onChange={handleChange('lastName')}/><p/>
                             <label for="ApproximateSquareFootage">Approx Square foot:&emsp;</label>
-                            <input type="number" id="ApproximateSquareFootage" name="ApproximateSquareFootage" placeholder= " Enter value(Min. 500)" min="500" step="0.1" defaultValue={occupantValues.approxSF} onChange={handleChange('approxSF')}/><p/>
+                            <input type="number" id="ApproximateSquareFootage" name="ApproximateSquareFootage" placeholder= " Enter value(Min. 500)" min="500" step="1" defaultValue={occupantValues.approxSF} onChange={handleChange('approxSF')}/><p/>
                             <label for="HouseType">House Type:&emsp;</label>
                             <select type="dropdown" id="HouseType" name="HouseType" defaultValue={occupantValues.houseType} onChange={handleChange('houseType')}>
                                 <option value="Owned">Private Owned</option>

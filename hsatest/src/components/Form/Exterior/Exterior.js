@@ -159,11 +159,11 @@ class Exterior extends React.Component{
 
                                         <div className="infotopE grid-child"  >
                                                 
-                                                <p><b>Consideration:</b> If outside safety or rescue personnel respond, 
-                                                they will need an address to find the home.</p>
+                                                <p><b>Consideration:</b> If safety or rescue personnel from outside 
+                                                the community respond, they will need an address to find the home.</p>
                                                 <p><b>Recommendation:</b> If <u>No</u> - Recommend house numbers be a 
                                                 different colour than the background, illuminated and 
-                                                reflective, making it easy see from the street.</p>
+                                                reflective, and free from vegetation making it easy to see them from the street.</p>
                                                 
 
                                         </div>
@@ -238,7 +238,7 @@ class Exterior extends React.Component{
                                         </div>
                                         <div className="infoE grid-child">
                                                 <p>
-                                                        <b>Consideration:</b> Steps and handrails that are in poor shape may break when someone is using them. 
+                                                        <b>Consideration:</b> Steps and handrails that are in poor condition may break when someone is using them. 
                                                         This could cause someone to fall or become injured.<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend steps and/or handrails be repaired and secured.
                                                 </p>
@@ -246,7 +246,7 @@ class Exterior extends React.Component{
                                         </div> 
                                         
                                         <div className="questionsE grid-child">
-                                                <div className="quesE">5. Is the walkway and stairs free
+                                                <div className="quesE">5. Are the walkway and stairs free
                                                 from trip hazards?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q5')}>   
                                                         <input type="radio" value="Yes" name="q5" defaultChecked={exteriorValues.q5 === "Yes"} onClick={InjurySafetyChange}/> Yes &emsp;
@@ -336,7 +336,7 @@ class Exterior extends React.Component{
 
 
                                         <div className="questionsE grid-child">
-                                                <h3 >Exterior Door</h3>
+                                                <h3 >Exterior Doors</h3>
                                                 <div className="quesE">10. Are all of the electrical outlets able to function? </div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q10')}>   
                                                         <input type="radio" value="Yes" name="q10" defaultChecked={exteriorValues.q10 === "Yes"}  onClick={LifeSafetyChange} /> Yes &emsp;
@@ -350,9 +350,9 @@ class Exterior extends React.Component{
                                         </div>
                                         <div className="infobottomE grid-child">
                                                 <p>
-                                                        <b>Consideration:</b> In an emergency, if any of the exits are blocked, 
-                                                        there is a chance people will not be able to escape.<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend obstructions be removed and doors fixed if required so they work properly.
+                                                        <b>Consideration:</b> In an emergency, if any of the exits are blocked 
+                                                        there is a chance occupants may not be able to escape.<br/><br/>
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend obstructions be removed and doors fixed as required so they work properly.
                                                 </p>
 
                                         </div>  

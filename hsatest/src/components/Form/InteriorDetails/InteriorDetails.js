@@ -338,7 +338,7 @@ class InteriorDetails extends React.Component{
                                 <div class="grid-container">
                                         <div className="questions grid-child">
                                                 <h3 >SMOKE / CO DETECTORS</h3>
-                                                <div className="ques">11. Are there Smoke Detectors installed in the home?</div>&emsp;
+                                                <div className="ques">11. Are Smoke Detectors installed in the home?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q11')}>  
                                                         <input type="radio" value="Yes" name="q11" defaultChecked={interiorValues.q11 === "Yes"} onClick={this.alternateSmokeDetectors}/> Yes &emsp;
                                                         <input type="radio" value="No" name="q11" defaultChecked={interiorValues.q11 === "No"} onClick={this.alternateSmokeDetectors}/> No &emsp;
@@ -357,7 +357,7 @@ class InteriorDetails extends React.Component{
                                                 </div>      
                                                 <p/>
                                                 <div>      
-                                                        <textarea disabled={this.state.disabledSmoke} className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
+                                                        <textarea  className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q14Comments} onChange={handleChange('q14Comments')}></textarea>
                                                 </div><p/>
 
                                         </div>
@@ -372,7 +372,7 @@ class InteriorDetails extends React.Component{
 
                                         <div className="questions grid-child">
                                                 <h3 >CARBON MONOXIDE(CO) DETECTORS </h3>
-                                                <div className="ques">15. Are there CO detectors installed in the home?</div>&emsp;
+                                                <div className="ques">15. Are CO detectors installed in the home?</div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q15')}>  
                                                         <input type="radio" value="Yes" name="q15" checked={interiorValues.q15 === "Yes"}  onClick={this.alternateCODetectors}/> Yes &emsp;
                                                         <input type="radio" value="No" name="q15" checked={interiorValues.q15=== "No"} onClick={this.alternateCODetectors}/> No &emsp;
@@ -391,7 +391,7 @@ class InteriorDetails extends React.Component{
                                                 </div>      
                                                 <p/>
                                                 <div>      
-                                                        <textarea className="CommentSetting" disabled={this.state.disabledCO} placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
+                                                        <textarea className="CommentSetting" placeholder=" Enter Comments.." defaultValue={interiorValues.q18Comments} onChange={handleChange('q18Comments')}></textarea>
                                                 </div><p/>
                                         </div>
 
@@ -406,7 +406,7 @@ class InteriorDetails extends React.Component{
 
                                         <div className="questions grid-child">
                                                 <h3 >SMOKE / CARBON MONOXIDE(CO) DETECTORS</h3>
-                                                <div className="ques">19. Are there Smoke/CO detectors installed in the home?
+                                                <div className="ques">19. Are Smoke/CO detectors installed in the home?
                                                  </div>&emsp;
                                                 <div className="radioOptions" onChange={handleChange('q19')}>  
                                                         <input type="radio" value="Yes" name="q19" checked={interiorValues.q19 === "Yes"}  onClick={this.alternateSmokeCODetectors}/> Yes &emsp;
@@ -429,7 +429,7 @@ class InteriorDetails extends React.Component{
                                                 </div>      
                                                 <p/>
                                                 <div>        
-                                                        <textarea  className="CommentSetting" disabled={this.state.disabledSmokeCO} placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
+                                                        <textarea  className="CommentSetting"  placeholder=" Enter Comments.." defaultValue={interiorValues.q22Comments} onChange={handleChange('q22Comments')}></textarea>
                                                 </div><p/>
                                         </div>
                                         <div className="info grid-child">
@@ -495,8 +495,8 @@ class InteriorDetails extends React.Component{
                                                 <p>
                                                        
                                                         <b>Consideration:</b>  Doors/windows must be clear of obstructions to facilitate
-                                                        rapid evacuation to prevent falling down or limiting access to your home.<br/><br/>
-                                                        <b>Recommendation:</b> Recommend keeping the doors/windows free of objects in case
+                                                        rapid evacuation from a home.<br/><br/>
+                                                        <b>Recommendation:</b> keep the doors/windows free of objects in case
                                                         there is a need to exit in an emergency situation.<br/><br/>
 
                                                      
@@ -559,7 +559,7 @@ class InteriorDetails extends React.Component{
                                         <div className="info grid-child">
                                                 <p>
                                                         <b>Consideration:</b> The presence of environmental issues such as mould indicates an underlying issue.
-                                                        Mould and dampconditions can cause a variety of health issues.<br/><br/>
+                                                        Mould and damp conditions can cause a variety of health issues.<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend the cause of the environmental issues such as mould/dampness be identified and fixed.
                                                         A qualified person should perform a mould test and recommend mitigation.
                                                 </p>
@@ -583,8 +583,8 @@ class InteriorDetails extends React.Component{
                                         </div>
                                         <div className="info grid-child">
                                                 <p>
-                                                        <b>Consideration:</b> : Obstructions on the stairs can be a trip hazard and can make it hard for people to escape the building safely
-                                                        and for responders to get in to provide help. Unsecured steps and/ or handrails could cause someone to fall or become injured.<br/><br/>
+                                                        <b>Consideration:</b> : Obstructions on the stairs can be a trip hazard, and can make it hard for people to escape the building safely
+                                                        and/or for responders to get in to provide help. Unsecured steps and/ or handrails could cause someone to fall or become injured.<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend removing obstructions so that stairs are clear in case of an emergency.
                                                         Repair steps and handrails as required.
                                                 </p>
@@ -675,7 +675,7 @@ class InteriorDetails extends React.Component{
                                         </div>
                                         <div className="info grid-child">
                                                 <p>
-                                                        <b>Consideration:</b> Proper electrical current will keep the wires from overheating when used.
+                                                        <b>Consideration:</b> Proper electrical current will keep the home wiring from overheating when used.
                                                         If improper electrical current travels through the wiring, over time it could overheat and start a fire.<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend there may be a polarity issue. Have the electrical current flow tested.
                                                 </p>
@@ -698,7 +698,7 @@ class InteriorDetails extends React.Component{
                                         </div>
                                         <div className="info grid-child">
                                                 <p>
-                                                        <b>Consideration:</b> : Light switch and outlet covers are there to prevent any possible shock hazards.
+                                                        <b>Consideration:</b>: Light switch and outlet covers are there to prevent any possible shock hazards.
                                                         If the covers are discoloured, this is a sign that there may be a problem with the electrical current flow<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend any damaged covers be replaced.
 
@@ -724,7 +724,7 @@ class InteriorDetails extends React.Component{
                                         <div className="info grid-child">
                                                 <p>
                                                         <b>Consideration:</b> Furnaces require at least 2 feet of clearance around them to remain cool and not overheat.
-                                                        If the furnace was to overheat, it will not work properly, may breakdown or may even catch fire.<br/><br/>
+                                                        If the furnace was to overheat, it would not work properly, may breakdown or may even catch fire.<br/><br/>
                                                         <b>Recommendation:</b> If <u>No</u> - Recommend removing obstructions and combustible materials a minimum of 2 feet away from the furnace.
                                                 </p>
 
@@ -749,7 +749,7 @@ class InteriorDetails extends React.Component{
                                                 <p>
                                                         <b>Consideration:</b> A furnace is used to heat a home. It also exchanges the air in the home, meaning it freshens the air occupants breathe.
                                                         It is important to keep the filter and the area around the furnace clean for fresh air<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend a qualified technician service, and if necessary repair, the furnace.
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend a qualified technician service, and if necessary, repair the furnace.
                                                 </p>
 
                                         </div>
@@ -915,8 +915,8 @@ class InteriorDetails extends React.Component{
                                                 <p>
                                                         <b>Consideration:</b> It is important not to put the detector too close to the fireplace or woodstove because quite often smoke is released in the home while the
                                                         wood stove or fireplace is being lit or refuelled.
-                                                        If the detector is too close, it will set off a false alarm current flow.<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend a smoke/CO detector be installed (or moved) a minimum 20 feet from the wood stove or fireplace.
+                                                        If the detector is too close, it will set off a false alarm .<br/><br/>
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend a smoke/CO detector be installed (or moved) a minimum of 20 feet from the wood stove or fireplace.
                                                 </p>
 
                                         </div>  
@@ -962,7 +962,7 @@ class InteriorDetails extends React.Component{
                                                 <p>
                                                         <b>Consideration:</b> A safety plan will let everyone in the home know how to escape and get to a safe meeting location.
                                                         This will also be very helpful when responders arrive if anyone is missing.<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend create, modify and review a plan that consists of: <br/>
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend occupants to create, modify and review a plan that consists of: <br/>
                                                         • all escape routes using doors and windows.<br/>
                                                         • a determined meeting place.<br/>
                                                         • do these escape routes work, during all seasons?<br/>
@@ -987,7 +987,7 @@ class InteriorDetails extends React.Component{
                                         <div className="info grid-child">
                                                 <p>
                                                         <b>Consideration:</b> In the case of an emergency, there should be a list of emergency numbers close to the phone for anyone who is there to use.<br/><br/>
-                                                        <b>Recommendation:</b> If <u>No</u> - Recommend review or create a new list of numbers that include emergency services and at least 2 people that live close by.
+                                                        <b>Recommendation:</b> If <u>No</u> - Recommend occupants to review or create a new list of numbers that include emergency services and at least 2 people that live close by.
                                                 </p>
 
                                         </div>

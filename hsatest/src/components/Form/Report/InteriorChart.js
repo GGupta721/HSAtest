@@ -8,7 +8,7 @@ import { maxHeight } from "@mui/system";
 
 
 
-class Report extends Component {
+class InteriorChart extends Component {
   
     constructor(props) {
         super(props);
@@ -65,7 +65,7 @@ class Report extends Component {
 				text: ""
 			},
             axisY: {
-                title: "Actual Finding",
+                title: "Actual Scores",
                 titleFontColor: "#4F81BC",
                 lineColor: "#4F81BC",
                 labelFontColor: "#4F81BC",
@@ -73,7 +73,7 @@ class Report extends Component {
                 maximum:18
             },
             axisY2: {
-                title: "Maximum Findings",
+                title: "Maximum Scores",
                 titleFontColor: "#C0504E",
                 lineColor: "#C0504E",
                 labelFontColor: "#C0504E",
@@ -87,7 +87,7 @@ class Report extends Component {
 			{
 				// Change type to "doughnut", "line", "splineArea", etc.
 				type: "column",
-                legendText: "Actual Number of Findings",
+                legendText: "Actual Scores",
 		        showInLegend: true, 
 				dataPoints: [
 					{ label: "Home Safety",  y: this.props.reportValues.InteriorHomeSafety },
@@ -101,7 +101,7 @@ class Report extends Component {
 				// Change type to "doughnut", "line", "splineArea", etc.
 				type: "column",
                 axisYType: "secondary",
-                legendText: "Maximum Number of Findings",
+                legendText: "Maximum  Scores",
 		        showInLegend: true, 
 				dataPoints: [
 					{ label: "Home Safety",  y: 15 },
@@ -123,10 +123,10 @@ class Report extends Component {
                 <table >
                     <tr>
                         <th style={{width:300}}>Safety</th>
-                        <th style={{width:150}}> Maximum Number Of Findings</th>
-                        <th style={{width:150}}>Maximum Percentage of Findings</th>
-                        <th style={{width:150}}>Actual Number Of Findings</th>
-                        <th style={{width:150}}>Actual Percentage of Findings</th>
+                        <th style={{width:150}}> Maximum  Scores</th>
+                        <th style={{width:150}}>Maximum Percentages</th>
+                        <th style={{width:150}}>Actual Scores</th>
+                        <th style={{width:150}}>Actual Percentages</th>
                     </tr>
                     <tr>
                         <td style={{color:"lightseagreen"}}>Home Safety Report</td>
@@ -172,7 +172,6 @@ class Report extends Component {
 			/>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>
-        <br/>
 
 
                 <button class="ui left labeled icon button previous blue" onClick={this.previous}>
@@ -191,4 +190,4 @@ class Report extends Component {
 
 }
 
-export default Report
+export default InteriorChart
